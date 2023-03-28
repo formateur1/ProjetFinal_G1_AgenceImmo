@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -21,5 +22,17 @@ export class AppComponent {
   cliquer():void{
     console.log("on a cliquer sur le bouton dans html")
   }
+
   msgModel:string="";
+
+// faire des route option 1
+  //  private maRoute;
+  // constructor(maRoute:Router){
+   //   this.maRoute=maRoute;
+  // }
+//option 2
+  constructor(private maRoute:Router){ }
+  onInfo(){
+  this.maRoute.navigate(['infos']);
+  }
 }

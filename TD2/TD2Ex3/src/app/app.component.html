@@ -309,7 +309,7 @@
     alt="Angular Logo"
     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
   />
- 
+  <span>Welcome</span>
     <div class="spacer"></div>
     <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
       <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
@@ -340,7 +340,7 @@
         </g>
       </g>
     </svg>
-<!-- on écrit par la-->
+
     <span>{{ title }} app is running!</span>
 
     <svg id="rocket-smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
@@ -349,56 +349,8 @@
     </svg>
 
   </div>
- 
- 
- 
- 
-  <span>{{title}} app is running bro !</span>
-  <h1>Nom: {{nom}} </h1>
 
-                <!-- faire un if-->
-<!--option 1 -->
-  <p *ngIf ="test">Salut salut voisinou</p>
-<!--option 2 -->
-  <p *ngIf="test else msgFalse">J'affiche ce message si la condition test=false</p>
-  <ng-template msgFalse><p> message si la premiere cdtion = false </p></ng-template>
-<!--option 3 -->
-  <p *ngIf="test; then msgVrai; else msgFaux">Info pour nous ne s affiche pas</p>
-  <ng template #msgVrai> <p> Mon message vrai</p></ng>
-  <ng template #msgFaux> <p> Mon message faux</p></ng>
-<!--option 4: commande ternaire -->
-  <p>{{ test ? "Mon msg vrai ternaire avc le nom: "+nom : "mon mesg faux ternaire, nom: " + nom }}</p>
-  
-  <!--Boucle ; besoin dune liste / tableau:  let i=index permet d'auto impl un index (identifiant), {{i}} demare a 0,{{i+1}} à 1.-->
-<ul>
-<li *ngFor="let v of voitures; let i=index; let f=first; let l=last; let e=even; let o=odd">
- {{i+1}}: {{v.marque}} - {{v.model}} à {{v.prix}}€ info premier: {{f}} dernier : {{l}} pair : {{e}} impair:{{o}}.
-</li>
-</ul>
-
-<!--Image sans/avec declarer url comme variable-->
-<img width="50" src="C:\Users\libel\OneDrive\Images\Saved Pictures\fond d ecran.jpg" alt="mon message si limage marche pas">
-<img [width="tailleImage"] [src]="urlImage" [alt]="altImg">
- 
-<!--les actions : envoyer info html-> ts EVENT BINDING -->
-<button (click)="cliquer" >Click ici</button>
-<br><br>
-<!--TWO WAY BINDINGS: envoyer info dans les deux sens classe<-> html -->
-Ecrire un message : <input type="text" [(ngModel)]="msg">
-<p>Mon message entrée dans le input: {{msg}}</p>
-<!--*
-  faire des chemins / routes -->
-  <!--Option 1 : ici + creer fonction et constructeur -->
-<button (click)="onInfo">Infos </button>
-<!--Option2-->
-<ul>
-  <li><button routerLink="/infos"> Info2</button> </li>
-<li><button routerLink="/actus">>Actus</button></li>
-</ul>
-
-
-
-<!-- Resources -->
+  <!-- Resources -->
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>
 
