@@ -1,9 +1,5 @@
 package com.inti.controller;
 
-<<<<<<< HEAD
-public class ClientController {
-=======
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +14,5 @@ import com.inti.repository.IClientRepository;
 @RequestMapping("client")
 public class ClientController {
 
-
->>>>>>> branch 'master' of https://github.com/Mariambmb/ProjetFinal_G1.git
 
 }
