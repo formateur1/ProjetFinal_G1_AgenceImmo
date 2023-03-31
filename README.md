@@ -65,7 +65,8 @@
  La classe mère Personne a été configurée en abstract puisqu'une personne est forcément dans une des 3 classes filles. <br>
  Pour les classes filles, mettre uniquement les @Entity, @Table et @Data si il y a des arguments propres à la classe fille
  Création des relations entre les classes : @OneToMany et @ManyToOne avec la commande @JoinColumn(name="") dans la classe avec la plus petite cardinalité. L'autre classe n'a pas besoin de faire le @JoinColumn, il suffit de préciser @ManyToOne(mappedBy = "NomObjet"). Avec les relations, il y a un risque que certaines fonctions appellent en boucle des objets. La commande @JsonIgnoreProperties permet d'anticiper ces erreurs.</li><li>
- Pour créer les tables sur SQL en prenant en compte l'héritage, on ajoute les annotations @Inheritance (strategy=InheritanceType.JOINED) et @PrimaryKeyColumn(name=""). Ces annotations permettent de créer une table de la classe mère et une table par classe fille, avec les attributs associés.</li><li>
+   Problème : Affichage sur MySQL uniquement de la classe abstraite mère 'Personne' et non des classes filles 'Client', 'Administrateur' et 'Gerant'. <br>
+ Pour créer les tables sur SQL en prenant en compte l'héritage, on ajoute les annotations @Inheritance (strategy=InheritanceType.JOINED) dans la table MERE et @PrimaryKeyColumn(name="") dans les tables FILLES. Ces annotations permettent de créer une table de la classe mère et une table par classe fille, avec les attributs associés.</li><li>
  On lance le projet en Spring Boot App (Run as -> Spring Boot App), ce qui crée automatiquement les tables en base de données. </li><li>
  Liaison avec github : Team -> Push Branch master puis coller le lien du github utilisé </li><li>
  Push du projet créé </li>
@@ -80,28 +81,41 @@
 </ul>
 
 -Répartition des fonctionnalités entre les personnes de l'équipe<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- CRUD Back-end <br>
+<ul>
+* Gerant : <br> <li>
+  Ajout des fonctions ajouter/modifier (save), supprimer (delete), récupérer de la BDD une/des offre(s)  </li><li>
+  La liste des offres doit être visible par tous (client-gérant) : choix de faire la fonction 'getListeOffres' dans le controller du gerant pour avoir tous les CRUD     'Offre' au même endroit, l'accès sera donné plus tard au client.  </li><li>
+  Ajout des fonctions getListeClients() et getClientByID() mais l'ajout, la modification et la suppression se feront par le client avec la validation de l'admin. </li><li>
+  Ajout d'une liste d'offre proposé par le gérant en attribut de la classe client pour que le client puisse les consulter. </li><li>
+  Ajout d'une fonction permettant d'ajouter des offres à proposer à un client précis: récuperer le client avec son ID et mettre a jour sa liste d'offres proposées.<br>
+  **Reflexion sur le possible futur ajout d'une liste similaire pour les croquis proposés
+ </li>
+ </ul>
+ - Configuration Front-end <br>
+ <ul> 
+  <li> 
+ Création du projet coté angular avec la commande: ng new ProjetFinal_G1 --defaults </li><li>
+ Mettre le projet sur GitHub, sur GitHub : new File et ajouté le lien du projet créer sur Visual Code  </li><li>
+ Creer une nouvelle branche: dans Visual Code -> Source Controll -> configurer push et ajouter une nouvelle branche  </li><li>
+ Ajout du mapping avec @CrossOrigin(origins = {"URL"}) dans controller <br>
+ **Probleme de requètes http, erreur dans la connexion angular-eclipse NON REGLÉ   </li>
+ </ul>
+  -  Creation des modèles Front-end  <br> <ul> 
+  <li>
+    Ajout des modèles (client, gerant, admin, offre) dans un dossier 'model": ng g class model/gerant --type=model  </li><li>
+    Ajout component (offre, gerant, ...) dans un dossier 'component': ng g c component/gerantComponent  </li><li>
+    Ajout des service (offre, gerant, ...) dans un dossier 'service': ng g s service/gerantService  </li> <br>
+   </ul>
+<ul>
+* Fonctionnalite Gerant: Acceder aux listes (client et offres)  <br>  
+  <li>
+    Ajout du html affichachant la liste des clients :  </li><li>
+    Creation manuelle provisoire de clients et d'offres  </li><li> 
+    Ajout des clients et des offres dans des listes  </li><li> 
+    Affichage des information des clients (id,nom, prenom, mail) et de boutons d'action (proposer offre, proposer croquis) ...EN COURS...
+     </li><li> 
+  </li>
+  </ul>
 
 
