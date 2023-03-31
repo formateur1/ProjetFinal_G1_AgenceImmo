@@ -33,11 +33,40 @@ public class Offre {
     private boolean achat;
     private boolean exterieur;
     private String croquis;
-    private String note;
+    private List<Double> notes = new ArrayList<>();
 
     
 
 @ManyToOne
 @JoinColumn(name = "id_agence_immmobiliere")
 private AgenceImmobiliere agence_immobiliere;
+
+
+	public void ajouterNote(double note)
+	{
+	notes.add(note);
+	}
+
+	public double MoyenneNotes()
+	{
+		if(notes.size() != 0)
+		{
+			double somme = 0.0;
+			for(double note : notes)
+			{
+				somme += note;
+			}
+			
+			return somme/notes.size();
+		}
+		return 0.0;
+	}
+			
+		
+		
+
+
 }
+
+
+	
