@@ -1,5 +1,9 @@
 package com.inti.repository;
 
-public interface IAdministrateurRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.inti.model.Administrateur;
+
+public interface IAdministrateurRepository extends JpaRepository<Administrateur, Integer>{
 
 }
