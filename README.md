@@ -75,7 +75,8 @@
 -Diagramme MCD<br>
 -Répartition des fonctionnalités entre les personnes de l'équipe<br>
 
-<ul>- *CRUD Back-end <br>
+- CRUD Back-end <br>
+<ul>
 <li>  Gerant : <br>
   Ajout des fonctions ajouter/modifier (save), supprimer (delete), récupérer de la BDD une/des offre(s)  </li><li>
   La liste des offres doit être visible par tous (client-gérant) : choix de faire la fonction 'getListeOffres' dans le controller du gerant pour avoir tous les CRUD     'Offre' au même endroit, l'accès sera donné plus tard au client.  </li><li><br>
@@ -85,16 +86,18 @@
   **Reflexion sur le possible futur ajout d'une liste similaire pour les croquis proposés
  </li>
  </ul>
- <ul> *Configuration Front-end <br>
+ - Configuration Front-end <br>
+ <ul> 
 <li> 
-  - Associer Back-end et Front-end <br>
+  *Associer Back-end et Front-end <br>
  Création du projet coté angular avec la commande: ng new ProjetFinal_G1 --defaults </li><li>
  Mettre le projet sur GitHub, sur GitHub : new File et ajouté le lien du projet créer sur Visual Code  </li><li>
  Creer une nouvelle branche: dans Visual Code -> Source Controll -> configurer push et ajouter une nouvelle branche  </li><li>
-  Ajout du mapping avec @CrossOrigin(origins = {"URL"}) dans controller <br>
-    - Probleme de requètes http, erreur dans la connexion angular-eclipse NON REGLÉ   </li>
-  
-  <ul>-  *CRUD Front-end <li>
+ Ajout du mapping avec @CrossOrigin(origins = {"URL"}) dans controller <br>
+ **Probleme de requètes http, erreur dans la connexion angular-eclipse NON REGLÉ   </li>
+ </ul>
+  -  CRUD Front-end  <ul> 
+  <li>
     Ajout des modèles (client, gerant, admin, offre) dans un dossier 'model": ng g class model/gerant --type=model  </li><li>
     Ajout component (offre, gerant, ...) dans un dossier 'component': ng g c component/gerantComponent  </li><li>
     Ajout des service (offre, gerant, ...) dans un dossier 'service': ng g s service/gerantService  </li><li>
