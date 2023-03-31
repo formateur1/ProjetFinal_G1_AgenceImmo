@@ -88,7 +88,7 @@
  </ul>
  - Configuration Front-end <br>
  <ul> 
-  *Associer Back-end et Front-end <li>  <br>
+  <li> 
  Création du projet coté angular avec la commande: ng new ProjetFinal_G1 --defaults </li><li>
  Mettre le projet sur GitHub, sur GitHub : new File et ajouté le lien du projet créer sur Visual Code  </li><li>
  Creer une nouvelle branche: dans Visual Code -> Source Controll -> configurer push et ajouter une nouvelle branche  </li><li>
