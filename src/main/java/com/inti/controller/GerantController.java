@@ -27,6 +27,7 @@ public class GerantController {
 	@Autowired
 	IOffreRepository ior;
 
+	// Acces aux clients
 	@GetMapping("listeClients")
 	public List<Client> listeClients() {
 		List<Client> listeClients = icr.findAll();
@@ -38,6 +39,7 @@ public class GerantController {
 		System.out.println("id : " + id);
 		return icr.getReferenceById(id);
 	}
+	// CRUD Offres
 	@GetMapping("listeOffres")
 	public List<Offre> listeOffres() {
 		List<Offre> listeOffres = ior.findAll();
@@ -66,6 +68,13 @@ public class GerantController {
 		ior.save(o);
 	}
 	
+	// proposer offres
+	@PutMapping("proposerOffre/{idClient}")
+	public void proposerOffre(@PathVariable("id") int id, List<Offre> listeO) {
+		Client c1 = icr.getReferenceById(id);
+		List<Offre>listeOClient = c1.getListePropOffres();
+		listeOClient.addAll(listeO);
+	}
 	
 	
 }

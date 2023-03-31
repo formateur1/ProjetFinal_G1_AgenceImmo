@@ -23,6 +23,7 @@ public class Client extends Personne {
    
     private String adresse;
     private String telephone;
+    private List<Offre> listePropOffres;
     
     @OneToMany(mappedBy = "client")
     private List<Questions> listeQuestions;
