@@ -31,9 +31,7 @@ public class Client extends Personne {
 			String telephone) {
 		super(id, nom, prenom, login, mdp, mail);
 		this.adresse = adresse;
-		this.telephone = telephone;
-		
-		
+		this.telephone = telephone;	
 	}
     
     public void consulterListOffres() {

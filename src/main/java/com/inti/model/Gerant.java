@@ -29,17 +29,17 @@ public class Gerant extends Personne {
 
     public Gerant() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Gerant(int id, String nom, String prenom, String login, String mdp, String mail) {
 		super(id, nom, prenom, login, mdp, mail);
-		// TODO Auto-generated constructor stub
 	}
+	
+	
 	public void propOffres() {
-        // TODO implement here
+		
     }
     public void propCroquis() {
-        // TODO implement here
+    	
     }
 
     public void repClients() {
