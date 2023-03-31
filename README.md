@@ -74,14 +74,13 @@
 //Jour2// (Scrum master : Lucie Argaud) <br>
 -Diagramme MCD<br>
 <ul>
-<li></li> Apres la création des tables en base de données, on genere un diagramme MCD à partir des tables. Dans file, on cree un new model -> add diagramm -> dans l'onglet database, on clique sur reverse engineer -> bien choisir dans "stored connection" la base de donnée utilisée (qui contient les tables genereés) -> next -> dans "connect to DBMS" on ne touche pas aux paramètres -> next -> on selectionne le nom de la DB dans laquelle les tables ont été crées -> next -> dans "select objects", si la DB comporte plusieurs tables on clique sur "show filter" de "MySQL Table Objects", on selectionne les tables dont on veut generer le schema MCD -> execute et ensuite next -> on obtient le diagramme MCD des tables (relations et clés étrangères y compris. <Li></li>
+<li></li> 
+Apres la création des tables en base de données, on genere un diagramme MCD à partir des tables. Dans file, on cree un new model -> add diagramm -> dans l'onglet database, on clique sur reverse engineer -> bien choisir dans "stored connection" la base de donnée utilisée (qui contient les tables genereés) -> next -> dans "connect to DBMS" on ne touche pas aux paramètres -> next -> on selectionne le nom de la DB dans laquelle les tables ont été crées -> next -> dans "select objects", si la DB comporte plusieurs tables on clique sur "show filter" de "MySQL Table Objects", on selectionne les tables dont on veut generer le schema MCD -> execute et ensuite next -> on obtient le diagramme MCD des tables (relations et clés étrangères y compris. <Li></li>
 <li></li> Dans file on enregistre ensuite le schéma ou effectue une capture d'écran et enregistre l'image en format PNG dans un dossier. <li></li>
+<li></li>
+Dans github on insère les images des 3 diagrammes(cas d'utilisatio, classe, MCD) dans le projet avec l'onglet : add file -> upload files -> choose your files -> on selectionne les images png enregistrer -> et on effectue un commit changes.
+<li></li>
 </ul>
-<li></li>
-Dans github on insère les images des 3 diagrammes(cas d'utilisatio, classe, MCD)
-<li></li>
-
-
 
 -Répartition des fonctionnalités entre les personnes de l'équipe<br>
 
