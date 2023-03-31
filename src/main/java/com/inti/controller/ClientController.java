@@ -54,6 +54,7 @@ public class ClientController {
 	{
 		icr.save(c);
 		
+		
 		return "redirect:/inscriptionClients";
 	}
 	
