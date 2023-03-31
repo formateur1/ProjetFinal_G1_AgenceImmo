@@ -75,6 +75,13 @@ public class GerantController {
 		List<Offre>listeOClient = c1.getListePropOffres();
 		listeOClient.addAll(listeO);
 	}
+	// proposer croquis --> new class Croquis 
+//		@PutMapping("proposerCroquis/{idClient}")
+//		public void proposerOffre(@PathVariable("id") int id, List<Croquis> listeC) {
+//			Client c1 = icr.getReferenceById(id);
+//			List<Croquis>listeCClient = c1.getListePropCroquis();
+//			listeCClient.addAll(listeC);
+//		}
 	
 	
 }
