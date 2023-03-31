@@ -95,12 +95,14 @@
  Ajout du mapping avec @CrossOrigin(origins = {"URL"}) dans controller <br>
  **Probleme de requètes http, erreur dans la connexion angular-eclipse NON REGLÉ   </li>
  </ul>
-  -  CRUD Front-end  <br> <ul> 
+  -  Creation des modèles Front-end  <br> <ul> 
   <li>
     Ajout des modèles (client, gerant, admin, offre) dans un dossier 'model": ng g class model/gerant --type=model  </li><li>
     Ajout component (offre, gerant, ...) dans un dossier 'component': ng g c component/gerantComponent  </li><li>
     Ajout des service (offre, gerant, ...) dans un dossier 'service': ng g s service/gerantService  </li> <br>
-  *Fonctionnalite Gerant: Acceder aux listes (client et offres) <li>
+   </ul>
+  -  Fonctionnalite Gerant: Acceder aux listes (client et offres)  <br> <ul> 
+  <li>
     Ajout du html affichachant la liste des clients :  </li><li>
     Creation manuelle provisoire de clients et d'offres  </li><li> 
     Ajout des clients et des offres dans des listes  </li><li> 
