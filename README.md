@@ -101,10 +101,11 @@
     Ajout des modèles (client, gerant, admin, offre) dans un dossier 'model": ng g class model/gerant --type=model  </li><li>
     Ajout component (offre, gerant, ...) dans un dossier 'component': ng g c component/gerantComponent  </li><li>
     Ajout des service (offre, gerant, ...) dans un dossier 'service': ng g s service/gerantService  </li><li>
-    Ajout du html affichachant la liste des clients :  </li><li> <br>
-      - Creation manuelle provisoire de clients et d'offres  <br>
-      - Ajout des clients et des offres dans des listes <br>
-      - Affichage des information des clients (id,nom, prenom, mail) et de boutons d'action (proposer offre, proposer croquis) ...EN COURS...
+  *Fonctionnalite Gerant: Acceder aux listes (client et offres) 
+    Ajout du html affichachant la liste des clients :  </li><li>
+    Creation manuelle provisoire de clients et d'offres  </li><li> 
+    Ajout des clients et des offres dans des listes  </li><li> 
+    Affichage des information des clients (id,nom, prenom, mail) et de boutons d'action (proposer offre, proposer croquis) ...EN COURS...
     </li>
   </ul>
 
