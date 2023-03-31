@@ -82,6 +82,7 @@
 
 -Répartition des fonctionnalités entre les personnes de l'équipe<br>
 - CRUD Back-end <br>
+<p>--- <br>
 <ul>
 * Gerant : <br> <li>
   Ajout des fonctions ajouter/modifier (save), supprimer (delete), récupérer de la BDD une/des offre(s)  </li><li>
@@ -117,5 +118,38 @@
      </li><li> 
   </li>
   </ul>
-
-
+  </p>
+  <p>--- <br>
+ -Fonctionnalité gestion des utilisateurs
+<ul>
+<li>
+  Création du controller admin avec les fonctions de création d'utilisateurs (client, gérant et admin) </li><li>
+  Annotations @RestController et @RequestMapping("admin") pour configurer le controller</li><li>
+  Annotations @Autowired pour les repository et @Repository dans les interfaces Repository</li><li>
+  Annotations @Post/Get/DeleteMapping pour les fonctions CRUD d'utilisateurs
+</li>
+</ul>
+-Création des classes et repository utilisateurs en attente de validation
+<ul>
+<li>
+  Les classes ont les mêmes caractéristiques que les classes utilisateurs qui sont utilisées dans les autres fonctionnalités</li><li>
+  Les repository permettent d'accéder à la base de donnée
+</li>
+</ul>
+-Passage à Angular
+<ul>
+<li>
+  Les classes ont les mêmes caractéristiques que les classes utilisateurs qui sont utilisées dans les autres fonctionnalités</li><li>
+ Import du fichier git : git clone [urlGitHub]</li><li>
+ Commande npm install pour compléter le projet avec les fichiers nécessaires</li><li>
+ Utilisation de la branche angular de github : git checkout angular</li><li>
+ Création d'un component formClient</li><li>
+ Ajout des modules FormsModule, ReactiveFormsModule, HttpClientModule dans app.module.ts</li><li>
+ Création des fichiers Client pour la configuration de la classe (.model.ts => attributs) et des 
+ fonctions associées (.service.ts => fonctions CRUD)</li><li>
+ Configuration de la page html formClient : import des modules FormGroup, FormBuilder, Router dans .component.ts</li><li>
+ Instanciation de l'objet formGroup qui contient les attributs de la classe Client (sauf id qui est généré par la BDD)</li><li>
+ Code de la page html du formulaire à l'aide de ngModel
+</li>
+</ul>
+---</p>
