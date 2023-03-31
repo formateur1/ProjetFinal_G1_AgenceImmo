@@ -101,7 +101,8 @@
     Ajout component (offre, gerant, ...) dans un dossier 'component': ng g c component/gerantComponent  </li><li>
     Ajout des service (offre, gerant, ...) dans un dossier 'service': ng g s service/gerantService  </li> <br>
    </ul>
-  -  Fonctionnalite Gerant: Acceder aux listes (client et offres)  <br> <ul> 
+<ul>
+* Fonctionnalite Gerant: Acceder aux listes (client et offres)  <br>  
   <li>
     Ajout du html affichachant la liste des clients :  </li><li>
     Creation manuelle provisoire de clients et d'offres  </li><li> 
