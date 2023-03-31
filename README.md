@@ -74,12 +74,11 @@
 //Jour2// (Scrum master : Lucie Argaud) <br>
 -Diagramme MCD<br>
 -Répartition des fonctionnalités entre les personnes de l'équipe<br>
-<ul> *Base de données (BDD) 
 
 <ul>- *CRUD Back-end <br>
 <li>  Gerant : <br>
   Ajout des fonctions ajouter/modifier (save), supprimer (delete), récupérer de la BDD une/des offre(s)  </li><li>
-  La liste des offres doit être visible par tous (client-gérant) : choix de faire la fonction 'getListeOffres' dans le controller du gerant pour avoir tous les CRUD     'Offre' au même endroit, l'accès sera donné plus tard au client. <br>
+  La liste des offres doit être visible par tous (client-gérant) : choix de faire la fonction 'getListeOffres' dans le controller du gerant pour avoir tous les CRUD     'Offre' au même endroit, l'accès sera donné plus tard au client.  </li><li><br>
   Ajout des fonctions getListeClients() et getClientByID() mais l'ajout, la modification et la suppression se feront par le client avec la validation de l'admin. </li><li>
   Ajout d'une liste d'offre proposé par le gérant en attribut de la classe client pour que le client puisse les consulter. </li><li>
   Ajout d'une fonction permettant d'ajouter des offres à proposer à un client précis: récuperer le client avec son ID et mettre a jour sa liste d'offres proposées.<br>
@@ -87,18 +86,19 @@
  </li>
  </ul>
  <ul> *Configuration Front-end <br>
-<li> - Associer Back-end et Front-end <br>
+<li> 
+  - Associer Back-end et Front-end <br>
  Création du projet coté angular avec la commande: ng new ProjetFinal_G1 --defaults </li><li>
  Mettre le projet sur GitHub, sur GitHub : new File et ajouté le lien du projet créer sur Visual Code  </li><li>
- Creer une nouvelle branche: dans Visual Code -> Source Controll -> configurer push et ajouter une nouvelle branche <br>
+ Creer une nouvelle branche: dans Visual Code -> Source Controll -> configurer push et ajouter une nouvelle branche  </li><li>
   Ajout du mapping avec @CrossOrigin(origins = {"URL"}) dans controller <br>
     - Probleme de requètes http, erreur dans la connexion angular-eclipse NON REGLÉ   </li>
   
-  <ul>-  *CRUD Front-end
-    <li> Ajout des modèles (client, gerant, admin, offre) dans un dossier 'model": ng g class model/gerant --type=model  </li><li>
+  <ul>-  *CRUD Front-end <li>
+    Ajout des modèles (client, gerant, admin, offre) dans un dossier 'model": ng g class model/gerant --type=model  </li><li>
     Ajout component (offre, gerant, ...) dans un dossier 'component': ng g c component/gerantComponent  </li><li>
     Ajout des service (offre, gerant, ...) dans un dossier 'service': ng g s service/gerantService  </li><li>
-    Ajout du html affichachant la liste des clients : <br>
+    Ajout du html affichachant la liste des clients :  </li><li> <br>
       - Creation manuelle provisoire de clients et d'offres  <br>
       - Ajout des clients et des offres dans des listes <br>
       - Affichage des information des clients (id,nom, prenom, mail) et de boutons d'action (proposer offre, proposer croquis) ...EN COURS...
