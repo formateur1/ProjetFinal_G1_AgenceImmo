@@ -25,6 +25,7 @@ public class ClientController {
 	@Autowired
 	IOffreRepository ior;
 
+	//Consulter la liste des offres
 	
 	@GetMapping("consulterOffres")
 	public String getAllOffre(Model m)
@@ -33,6 +34,9 @@ public class ClientController {
 		return"listeOffres";
 	}
 	
+	
+	//Consulter les informations d'une offre
+	
 	@GetMapping("consulterInfos")
 	public String getInfo(@RequestParam("id") int id, Model m)
 	{
@@ -40,9 +44,27 @@ public class ClientController {
 		return"offreId";
 	}
 	
+	
 	//Recherche avancée selon plusieurs critères : voir Angular
 	//Faire un bouton 'details'qui affiche offres selon un critere donnee 
 	
+	//A rediger
+//	    private String type_bien;
+//	    private String adresse;
+//	    private String ville;
+//	    private double prix;
+//	    private double surface;
+//	    private int nb_piece;
+//	    private boolean meuble;
+//	    private boolean achat;
+//	    private boolean exterieur;
+//	    private String croquis;
+//	    private String note;
+	
+	
+	
+	
+	//CRUD client (inscription, liste, suppression) -> voir gerant
 	@GetMapping("inscriptionClients")
 	public String inscription()
 	{
