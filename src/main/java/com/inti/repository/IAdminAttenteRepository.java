@@ -3,8 +3,9 @@ package com.inti.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.inti.model.Client;
+import com.inti.model.AdminAttente;
+
 @Repository
-public interface IClientRepository extends JpaRepository<Client, Integer>{
+public interface IAdminAttenteRepository extends JpaRepository<AdminAttente, Integer>{
 
 }
