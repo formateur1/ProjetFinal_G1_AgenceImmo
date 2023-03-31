@@ -33,6 +33,7 @@
 <li>
   Créer un nouveau repository </li><li>
   Ajouter des collaborateurs : Settings -> Collaborators -> Add people </li><li>
+  Ajout du fichier Jenkinsfile</li><li>
   Pour la personne qui crée le repository : création du projet Spring puis lier le repository avec Team -> Share Project -> Pull puis entrer l'url du repository Github</li><li>
   Pour les autres collaborateurs : dans Eclipse File -> Import -> Project from Git (with smart import) -> Clone URI puis entrer l'url du repository. Importer la branche master et faire un update du projet Maven
 </li>
