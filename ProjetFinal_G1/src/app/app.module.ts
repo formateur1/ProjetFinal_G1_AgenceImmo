@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormClientComponent } from './form-client/form-client.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormClientComponent
   ],
   imports: [
     BrowserModule,
