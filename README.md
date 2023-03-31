@@ -77,9 +77,9 @@
 
 - CRUD Back-end <br>
 <ul>
-<li>  Gerant : <br>
+* Gerant : <br> <li>
   Ajout des fonctions ajouter/modifier (save), supprimer (delete), récupérer de la BDD une/des offre(s)  </li><li>
-  La liste des offres doit être visible par tous (client-gérant) : choix de faire la fonction 'getListeOffres' dans le controller du gerant pour avoir tous les CRUD     'Offre' au même endroit, l'accès sera donné plus tard au client.  </li><li><br>
+  La liste des offres doit être visible par tous (client-gérant) : choix de faire la fonction 'getListeOffres' dans le controller du gerant pour avoir tous les CRUD     'Offre' au même endroit, l'accès sera donné plus tard au client.  </li><li>
   Ajout des fonctions getListeClients() et getClientByID() mais l'ajout, la modification et la suppression se feront par le client avec la validation de l'admin. </li><li>
   Ajout d'une liste d'offre proposé par le gérant en attribut de la classe client pour que le client puisse les consulter. </li><li>
   Ajout d'une fonction permettant d'ajouter des offres à proposer à un client précis: récuperer le client avec son ID et mettre a jour sa liste d'offres proposées.<br>
@@ -88,20 +88,19 @@
  </ul>
  - Configuration Front-end <br>
  <ul> 
-<li> 
-  *Associer Back-end et Front-end <br>
+  *Associer Back-end et Front-end <li>  <br>
  Création du projet coté angular avec la commande: ng new ProjetFinal_G1 --defaults </li><li>
  Mettre le projet sur GitHub, sur GitHub : new File et ajouté le lien du projet créer sur Visual Code  </li><li>
  Creer une nouvelle branche: dans Visual Code -> Source Controll -> configurer push et ajouter une nouvelle branche  </li><li>
  Ajout du mapping avec @CrossOrigin(origins = {"URL"}) dans controller <br>
  **Probleme de requètes http, erreur dans la connexion angular-eclipse NON REGLÉ   </li>
  </ul>
-  -  CRUD Front-end  <ul> 
+  -  CRUD Front-end  <br> <ul> 
   <li>
     Ajout des modèles (client, gerant, admin, offre) dans un dossier 'model": ng g class model/gerant --type=model  </li><li>
     Ajout component (offre, gerant, ...) dans un dossier 'component': ng g c component/gerantComponent  </li><li>
-    Ajout des service (offre, gerant, ...) dans un dossier 'service': ng g s service/gerantService  </li><li>
-  *Fonctionnalite Gerant: Acceder aux listes (client et offres) 
+    Ajout des service (offre, gerant, ...) dans un dossier 'service': ng g s service/gerantService  </li><li> <br>
+  </li> *Fonctionnalite Gerant: Acceder aux listes (client et offres) <li>
     Ajout du html affichachant la liste des clients :  </li><li>
     Creation manuelle provisoire de clients et d'offres  </li><li> 
     Ajout des clients et des offres dans des listes  </li><li> 
