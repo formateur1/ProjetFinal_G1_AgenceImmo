@@ -1,0 +1,26 @@
+<p>liste des clients</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of listeC$ | async">
+        <th scope="row">{{c.id}}</th>
+        <td>{{c.nom}}</td>
+        <td>{{c.prenom}}</td>
+        <td>{{c.mail}}</td>
+        <td>
+          <button (click)="propositionOffre(c.id)">Proposer Offre</button>
+          <button (click)="">Proposer Croquis</button>
+          <button (click)="supprimer(c.id)">Supprimer</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
