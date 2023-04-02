@@ -11,8 +11,13 @@ export class OffreComponentComponent implements OnInit {
 
   listeOffres:Offre[]=[];
   constructor(private os:OffreService){}
+
   ngOnInit(): void {
     this.listeOffres= this.os.getListeOffres();
   }
+  //BOUTONS
+  // false boutonGerant si connexion avec un compte gerant -> fait apparaitre bouton pour proposer offre
+  boutonGerant!:boolean;
+  boutonClient!:boolean;
 
 }

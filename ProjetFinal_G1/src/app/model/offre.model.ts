@@ -15,7 +15,7 @@ export class Offre {
         //true = exterieur, false = absence d'exterieur
     public exterieur!:boolean;
         //croquis = string lien URL du croquis
-    public croquis!:string;
+    public croquis:string="";
         // moyenne des notes des clients
     public note!:number;
 

@@ -1,5 +1,9 @@
 <p>liste des clients</p>
 <table class="table">
+  <button (click)="ajoutOffre()">Ajouter une offre</button>
+  <button (click)="afficherListeOffres()"> Voir toutes les offres </button>
+  <button (click)="afficherListeProposition()">Ma liste de proposition</button>
+  <button (click)="afficherListeClients()">Voir la liste des clients</button>
     <thead>
       <tr>
         <th scope="col">Id</th>
@@ -16,7 +20,7 @@
         <td>{{c.prenom}}</td>
         <td>{{c.mail}}</td>
         <td>
-          <button (click)="propositionOffre(c.id)">Proposer Offre</button>
+          <button (click)="propositionOffre(c.id)">Proposer des offres</button>
           <button (click)="">Proposer Croquis</button>
           <button (click)="supprimer(c.id)">Supprimer</button>
 

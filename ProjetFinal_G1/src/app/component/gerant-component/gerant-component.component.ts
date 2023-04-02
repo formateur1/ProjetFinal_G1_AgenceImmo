@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/model/client.model';
 import { Router } from '@angular/router';
+import { OffreComponentComponent } from '../offre-component/offre-component.component';
 
 @Component({
   selector: 'app-gerant-component',
@@ -8,19 +9,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./gerant-component.component.css']
 })
 export class GerantComponentComponent implements OnInit{
-  private router!: Router;
+  //private http!:HttpClient;
+  private oc!:OffreComponentComponent;
 
-  constructor(private httpclient:HttpClient){}
+  constructor(private router:Router){}
   
-
  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  // Gerant connecter : donne acces au bouton pour proposer une offre 
+     this.oc.boutonGerant = false;
+     this.oc.boutonClient = true;
   }
 
-  // Option 1:Choisir l'offre a proposer au client (id)
-  propositionOffre(id:number) {
-   this.router.navigate(['/listeOffres']);
-};
-//Option 2Choisir le client a qui proposer les offres
+  // A FAIRE...
 
+  // - menu dans html gerant
+
+  // - crud offre
+  //* Nouvelle offre 
+  ajoutOffre():void{
+    this.router.navigate(['./formulaire/formOffre']);
+  }
+  //* Modifier/supprimé une offre 
+
+  // - fonctions gérant
+  //* Proposer offres
+  //Choisir les offres a proposer au client et les ajouter a une liste
+  afficherOffre() {
+   this.router.navigate(["/offre-component/offre-component.component.html"]);
+};
+// Choisir le client a qui proposer les offres de la liste
+// supprimer une offre de la liste des propositions
+//* CROQUIS...
 }
