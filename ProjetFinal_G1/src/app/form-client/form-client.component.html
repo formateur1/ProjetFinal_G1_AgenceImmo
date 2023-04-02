@@ -1,0 +1,31 @@
+<p>form-client works!</p>
+
+<form [formGroup]="ClientForm" (ngSubmit)="saveClient()">
+    <div class="row">
+        <div class="col">
+            <label for="nom" class="form-label">Nom</label>
+          <input type="text" class="form-control" name="nom" [(ngModel)]="nom">
+        </div>
+        <div class="col">
+            <label for="prenom" class="form-label">Prénom</label>
+          <input type="text" class="form-control" name="prenom" [(ngModel)]="prenom">
+        </div>
+        <div class="col">
+            <label for="login" class="form-label">Login</label>
+          <input type="text" class="form-control" name="login" [(ngModel)]="login">
+        </div>
+        <div class="col">
+            <label for="mdp" class="form-label">Mot de passe</label>
+          <input type="password" class="form-control" name="mdp" [(ngModel)]="mdp">
+        </div>
+        <div class="col">
+            <label for="mail" class="form-label">Mail</label>
+          <input type="text" class="form-control" name="mail" [(ngModel)]="mail">
+        </div>
+        <div class="col">
+            <label for="agence_immobiliere" class="form-label">Agence Immobilière</label>
+          <input type="text" class="form-control" name="agence_immobiliere" [(ngModel)]="agence_immobiliere">
+        </div>
+        <button type="submit">Envoyer</button>
+      </div>
+    </form>
