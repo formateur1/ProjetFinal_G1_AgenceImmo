@@ -1,0 +1,41 @@
+<p>offre-gerant works!</p>
+<p>Liste des offres AVEC Details pour le gérant</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Type de bien</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Ville</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Surface(m2)</th>
+        <th scope="col">Nombre de pièce</th>
+        <th scope="col">Meublé</th>
+        <th scope="col">Achat (false=location)</th>
+        <th scope="col">Exterieur disponible</th>
+        <th scope="col">Note</th>
+        <th scope="col">Croquis</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let o of listeOffres$ | async">
+        <th scope="row">{{o.id}}</th>
+        <td>{{o.type_bien}}</td>
+        <td>{{o.adresse}}</td>
+        <td>{{o.ville}}</td>
+        <td>{{o.surface}} m2</td>
+        <td>{{o.nb_piece}}</td>
+        <td>{{o.meuble}}</td>
+        <td>{{o.achat}}</td>
+        <td>{{o.exterieur}}</td>
+        <td>{{o.note}}/5</td>
+        <td><img src = "{{o.croquis}}" width="100%"> Croquis Indisponible</td>
+        <td>
+          <button (click)="ajoutProposition()" >Ajouter aux propositions</button>
+          <button (click)="modifierOffre(o.id)" >Modifier</button>
+          <button (click)="deleteOffre()">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

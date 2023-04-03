@@ -11,24 +11,25 @@ export class ClientService {
 
   getClients() :Observable<Client[]>{
 
-    return this.http.get<Client[]>("http://localhost8080/client/liste");
+    return this.http.get<Client[]>("http://localhost:8080/client/listeClients");
   }
   
   addClient(client:Client):Observable<Client>
   {
-    return this.http.post<Client>("http://localhost8080/admin/inscriptionClients", client);
+    console.log(client);
+    return this.http.post<Client>("http://localhost:8080/client/enregistrerClient", client);
   }
   
   delete(id:number):Observable<void>
   {
-    return this.http.delete<void>("http://localhost8080/client/delete"+id)
+    return this.http.delete<void>("http://localhost:8080/client/delete"+id)
   }
   getClientById(id:number):Observable<Client>
   {
-    return this.http.get<Client>("http://localhost8080/client/get"+id)
+    return this.http.get<Client>("http://localhost:8080/client/get"+id)
   }
   modify(client:Client):Observable<void>
   {
-    return this.http.put<void>("http://localhost8080/client/modify", client.id)
+    return this.http.put<void>("http://localhost:8080/client/modify", client.id)
   }
 }

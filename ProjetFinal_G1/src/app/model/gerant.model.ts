@@ -1,3 +1,6 @@
+import { Offre } from "./offre.model";
+
 export class Gerant {
-    // coucou
+    private listeProposition!:Offre[];
+
 }
