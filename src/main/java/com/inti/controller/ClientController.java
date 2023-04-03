@@ -37,7 +37,7 @@ public class ClientController {
 		m.addAttribute("consulter", ior.findAll());
 		return"listeOffres";
 	}
-	
+
 
 	//Consulter les informations d'une offre
 	
