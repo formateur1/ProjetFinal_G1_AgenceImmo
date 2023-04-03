@@ -29,7 +29,7 @@ export class FormOffreComponent implements OnInit {
       
     })
   }
-     id!:number;
+    id!:number;
      type_bien:string="";
      adresse:string="";
      ville:string="";
@@ -41,17 +41,40 @@ export class FormOffreComponent implements OnInit {
      exterieur!:boolean;
      croquis:string="";
 
-     o!:Offre;
+     savedOffre!:Offre;
      offreForm!:FormGroup;
+     savedMeuble!:boolean;
+     savedExt!:boolean;
+     savedAchat!:boolean;
+     
+
 
   addOffre()
   {
-    this.os.saveOffre
+    if( this.offreForm.value.meuble = "true"){
+      this.savedMeuble=true;
+    } else{ this.savedMeuble=false}
+
+    if( this.offreForm.value.exterieur = "true"){
+      this.savedExt=true;
+    }else{ this.savedExt=false}
+    if( this.offreForm.value.achat = "true"){
+      this.savedAchat=true;
+    } else{ this.savedAchat=false}
+
+
+    this.savedOffre= new Offre
     (
       this.offreForm.value.type_bien,this.offreForm.value.adresse,this.offreForm.value.ville,
       this.offreForm.value.prix,this.offreForm.value.surface,this.offreForm.value.nb_piece,
-      this.offreForm.value.meuble, this.offreForm.value.achat,this.exterieur,this.offreForm.value.croquis
+      this.savedMeuble, this.savedAchat,this.savedExt,this.offreForm.value.croquis
     )
-    );
-}
+
+   if(this.savedOffre!=null) {
+      this.os.saveOffre (this.savedOffre);
+      console.log("formulaire correct : " + this.savedOffre.adresse + " "+this.savedOffre.prix +"€ pour "+ this.savedOffre.surface+"m2.");
+    } else {
+      alert("erreur dans le formulaire, offre incorrecte ")
+    }
+  }
 }
