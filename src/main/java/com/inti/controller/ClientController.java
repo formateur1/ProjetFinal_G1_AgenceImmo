@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -65,34 +67,31 @@ public class ClientController {
 	
 	
 	//CRUD client (inscription, liste, suppression) -> voir gerant
-	@GetMapping("inscriptionClients")
-	public String inscription()
-	{
-		return "inscriptionClient";
-	}
-	
-	@PostMapping("inscriptionClients")
-	public String inscription(@ModelAttribute("client") Client c)
-	{
-		icr.save(c);
-		
-		return "redirect:/inscriptionClients";
-	}
 	
 	@GetMapping("listeClients")
-	public String listeClients(Model m)
+	public List<Client> listeClients()
 	{
-		m.addAttribute("listeC", icr.findAll());
-		
-		return "listeClients";
+		return icr.findAll();
 	}
 	
-	@GetMapping("deleteClients/{id}")
-	public String deleteClients(@PathVariable("id") int id)
+	@PostMapping("saveClient")
+	public Client saveClient(@RequestBody Client c)
 	{
-		icr.deleteById(id);
-		
-		return "redirect:/listeClients";
+		return icr.save(c);
 	}
+	
+	@DeleteMapping("supprimerClient/{id}")
+	public void supprimerClient(@PathVariable("id") int id)
+	{
+		icr.deleteById(id);	
+	}
+	
+	@PutMapping("modifierClient/{id}")
+	public Client modifierClient(@RequestBody Client c)
+	{
+		return icr.save(c);
+	}
+	
+	
 
 }
