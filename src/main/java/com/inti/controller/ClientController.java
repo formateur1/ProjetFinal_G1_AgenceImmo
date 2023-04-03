@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +21,10 @@ import com.inti.repository.IOffreRepository;
 
 @RestController
 @RequestMapping("client")
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class ClientController {
 
-	@Autowired
+	@Autowired 
 	IClientRepository icr;
 	@Autowired
 	IOffreRepository ior;
@@ -35,8 +37,7 @@ public class ClientController {
 		m.addAttribute("consulter", ior.findAll());
 		return"listeOffres";
 	}
-	
-	
+
 	//Consulter les informations d'une offre
 	
 	@GetMapping("consulterInfos")
@@ -45,7 +46,6 @@ public class ClientController {
 		m.addAttribute("info", ior.findAll());
 		return"offreId";
 	}
-	
 	
 	//Recherche avancée selon plusieurs critères : voir Angular
 	//Faire un bouton 'details'qui affiche offres selon un critere donnee 
@@ -74,8 +74,8 @@ public class ClientController {
 		return icr.findAll();
 	}
 	
-	@PostMapping("saveClient")
-	public Client saveClient(@RequestBody Client c)
+	@PostMapping("enregistrerClient")
+	public Client enregistrerClient(@RequestBody Client c)
 	{
 		return icr.save(c);
 	}

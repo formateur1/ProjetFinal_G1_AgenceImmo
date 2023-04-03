@@ -8,9 +8,12 @@ import javax.persistence.InheritanceType;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Table(name="g1_administrateur")
 @Entity 
 @PrimaryKeyJoinColumn(name="id_administrateur")
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class Administrateur extends Personne {
 
 
@@ -23,15 +26,4 @@ public class Administrateur extends Personne {
 		super(id, nom, prenom, login, mdp, mail);
 		// TODO Auto-generated constructor stub
 	}
-
-
-	public void gerCompteClient() {
-        // TODO implement here
-    }
-
-  
-    public void generStat() {
-        // TODO implement here
-    }
-
 }
