@@ -34,11 +34,11 @@ export class Offre {
     }
     
 
-    constructor(id:number, type_bien:string, adresse:string, ville:string, prix:number, surface:number
-        , nb_piece:number, meuble:boolean, achat:boolean , exterieur:boolean, croquis:string, note:number)
+    constructor(type_bien:string, adresse:string, ville:string, prix:number, surface:number
+        , nb_piece:number, meuble:boolean, achat:boolean , exterieur:boolean, croquis:string)
     {
         //Enlever id car auto-generé -> voir por formulaire incomplet
-        this.id = id;
+        //this.id = id;
         this.type_bien = type_bien;
         this.adresse = adresse;
         this.ville = ville;
@@ -49,7 +49,8 @@ export class Offre {
         this.achat = achat;
         this.exterieur = exterieur;
         this.croquis = croquis;
-        this.note = note;
+        //Note donné par les clients
+        //this.note = note;
     }
 }
 
