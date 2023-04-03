@@ -38,7 +38,6 @@ public class ClientController {
 		return"listeOffres";
 	}
 
-
 	//Consulter les informations d'une offre
 	
 	@GetMapping("consulterInfos")
@@ -47,7 +46,6 @@ public class ClientController {
 		m.addAttribute("info", ior.findAll());
 		return"offreId";
 	}
-	
 	
 	//Recherche avancée selon plusieurs critères : voir Angular
 	//Faire un bouton 'details'qui affiche offres selon un critere donnee 
