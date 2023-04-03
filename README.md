@@ -152,4 +152,10 @@
  Code de la page html du formulaire à l'aide de ngModel
 </li>
 </ul>
----</p>
+---</p> <br>
+
+<p>
+  <li>Fonctionnalités Questions</li>
+  
+  
+</p>
