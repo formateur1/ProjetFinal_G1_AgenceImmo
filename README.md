@@ -112,10 +112,3 @@
   </li>
   </ul>
 <br> 
-* Fonctionnalite Client: Noter une offre (client et offres) 
-<li>
-    Ajout du html affichachant la liste des clients :  </li><li>
-    Creation manuelle provisoire de clients et d'offres  </li><li> 
-    Ajout des clients et des offres dans des listes  </li><li> 
-    Affichage des information des clients (id,nom, prenom, mail) et de boutons d'action (proposer offre, proposer croquis) ...EN COURS...
-</li>
