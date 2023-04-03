@@ -21,7 +21,6 @@ import com.inti.repository.IOffreRepository;
 
 @RestController
 @RequestMapping("client")
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4201"})
 public class ClientController {
 
 	@Autowired
@@ -82,8 +81,8 @@ public class ClientController {
 		return icr.findAll();
 	}
 	
-	@PostMapping("enregistrerClient")
-	public Client enregistrerClient(@RequestBody Client c)
+	@PostMapping("saveClient")
+	public Client saveClient(@RequestBody Client c)
 	{
 		return icr.save(c);
 	}
