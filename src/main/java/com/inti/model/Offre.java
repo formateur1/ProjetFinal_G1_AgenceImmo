@@ -37,6 +37,23 @@ public class Offre {
 
     
 
+public Offre(String type_bien, String adresse, String ville, double prix, double surface, int nb_piece,
+			boolean meuble, boolean achat, boolean exterieur, String croquis) {
+		super();
+		this.type_bien = type_bien;
+		this.adresse = adresse;
+		this.ville = ville;
+		this.prix = prix;
+		this.surface = surface;
+		this.nb_piece = nb_piece;
+		this.meuble = meuble;
+		this.achat = achat;
+		this.exterieur = exterieur;
+		this.croquis = croquis;
+	}
+
+
+
 @ManyToOne
 @JoinColumn(name = "id_agence_immmobiliere")
 private AgenceImmobiliere agence_immobiliere;
