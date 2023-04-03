@@ -36,7 +36,7 @@ public class ClientController {
 		return"listeOffres";
 	}
 	
-	
+
 	//Consulter les informations d'une offre
 	
 	@GetMapping("consulterInfos")
