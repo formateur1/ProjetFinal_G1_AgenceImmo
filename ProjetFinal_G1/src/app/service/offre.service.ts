@@ -23,6 +23,5 @@ export class OffreService {
   saveOffre(offre:Offre):Observable<Offre>
   {
       alert("Offre enregistrée :"+ offre);
-      return this.http.post<Offre>("http://localhost8080/gerant/saveOffre", offre);
 }
 }
