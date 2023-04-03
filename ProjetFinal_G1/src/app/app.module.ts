@@ -20,6 +20,6 @@ import { FormClientComponent } from './form-client/form-client.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, FormClientComponent]
 })
 export class AppModule { }
