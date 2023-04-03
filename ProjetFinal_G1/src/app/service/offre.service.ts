@@ -20,5 +20,5 @@ export class OffreService {
   getListeOffres():Observable<Offre[]>{
   return  this.http.get<Offre[]>("http://localhost8080/getListeOffres");
   }
-
+  
 }
