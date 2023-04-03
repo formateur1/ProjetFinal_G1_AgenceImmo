@@ -19,4 +19,11 @@ export class OffreComponentComponent implements OnInit {
     this.listeOffres$= this.os.getListeOffres();
   }
 
+  ajouterNote(offreId: number, note: number): void {
+    this.os.ajouterNote(offreId, note).subscribe(() => {
+      console.log("La note a bien été prise en compte");
+      this.listeOffres$ = this.os.getListeOffres();
+    });
+  }
+
 }
