@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.inti.model.Client;
+import com.inti.model.Offre;
 import com.inti.repository.IClientRepository;
 import com.inti.repository.IOffreRepository;
 
 @RestController
 @RequestMapping("client")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4201"})
 public class ClientController {
 
 	@Autowired 
@@ -31,21 +31,26 @@ public class ClientController {
 
 	//Consulter la liste des offres
 	
-	@GetMapping("consulterOffres")
-	public String getAllOffre(Model m)
-	{
-		m.addAttribute("consulter", ior.findAll());
-		return"listeOffres";
-	}
+		@GetMapping("consulterOffres")
+		public List<Offre> listeOffres() 
+		{
+			return ior.findAll();
+		}	
+		//Consulter les informations d'une offre selectionnée
 
-	//Consulter les informations d'une offre
-	
-	@GetMapping("consulterInfos")
-	public String getInfo(@RequestParam("id") int id, Model m)
-	{
-		m.addAttribute("info", ior.findAll());
-		return"offreId";
-	}
+		
+		@GetMapping("consulterInfos/{id}")
+		public Offre getoffre(@PathVariable("id") int id)
+		{
+			try {
+				System.out.println("Affichage des informations d'une offre selon son id");
+				return ior.findById(id).get();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			System.out.println("Affichage des informations d'une offre : " + id + "erreur sur l'id");
+			return null;
+		}
 	
 	//Recherche avancée selon plusieurs critères : voir Angular
 	//Faire un bouton 'details'qui affiche offres selon un critere donnee 
