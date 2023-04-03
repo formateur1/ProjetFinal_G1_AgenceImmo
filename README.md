@@ -83,8 +83,22 @@
   Ajout des fonctions getListeClients() et getClientByID() mais l'ajout, la modification et la suppression se feront par le client avec la validation de l'admin. </li><li>
   Ajout d'une liste d'offre proposé par le gérant en attribut de la classe client pour que le client puisse les consulter. </li><li>
   Ajout d'une fonction permettant d'ajouter des offres à proposer à un client précis: récuperer le client avec son ID et mettre a jour sa liste d'offres proposées.<br>
-  **Reflexion sur le possible futur ajout d'une liste similaire pour les croquis proposés
- </li>
+  **Reflexion sur le possible futur ajout d'une liste similaire pour les croquis proposés.
+  
+  <br>
+ * Offre : 
+  <li>Ajout de la fonction noter Offre</li>
+  <li>Dans le model Offre, ajouter en attribut une liste de notes, une fonction permettant d'ajouter un note dans cette liste et une autre fonction calculant   la moyenne de ces notes.</li>
+  <li>
+  Création du repository IOffreRepository avec en extends JpaRepository.
+  </li>
+  <li>
+  Création du controller OffreController pour définir le type et le chemin du contrôleur. Injection du repository IOffreRepository avec l'annotation          @Autowired
+  </li>
+  <li>
+  Dans ce contrôleur ajout des méthodes API ajouterNote et MoyenneNotes avec les mappers correspondants.
+  </li>
+  
  </ul>
  - Configuration Front-end <br>
  <ul> 
