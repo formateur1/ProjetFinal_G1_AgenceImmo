@@ -1,0 +1,47 @@
+<p>form-offre works!</p>
+
+<form [formGroup]="OffreForm" (ngSubmit)="saveOffre()">
+    <div class="row">
+        <div class="col">
+            <label for="type_bien" class="form-label">Type de bien</label>
+          <input type="text" class="form-control" name="type_bien" [(ngModel)]="type_bien">
+        </div>
+        <div class="col">
+            <label for="adresse" class="form-label">Adresse</label>
+          <input type="text" class="form-control" name="adresse" [(ngModel)]="adresse">
+        </div>
+        <div class="col">
+            <label for="ville" class="form-label">Ville</label>
+          <input type="text" class="form-control" name="ville" [(ngModel)]="ville">
+        </div>
+        <div class="col">
+            <label for="prix" class="form-label">Prix</label>
+          <input type="number" class="form-control" name="prix" [(ngModel)]="prix">
+        </div>
+        <div class="col">
+            <label for="surface" class="form-label">Surface </label>
+          <input type="number" class="form-control" name="surface" [(ngModel)]="surface">
+        </div>
+        <div class="col">
+            <label for="nb_piece" class="form-label">Nombre de pièce</label>
+          <input type="number" class="form-control" name="nb_piece" [(ngModel)]="nb_piece">
+        </div>
+        <div class="col">
+            <label for="meuble" class="form-label">Meublé ?</label>
+          <input type="radio" class="form-control" name="meuble" [(ngModel)]="meuble">
+        </div>
+        <div class="col">
+            <label for="achat" class="form-label">Achat ? (false=location)</label>
+          <input type="radio" class="form-control" name="achat" [(ngModel)]="achat">
+        </div>
+        <div class="col">
+            <label for="exterieur" class="form-label">Exterieur ?</label>
+          <input type="radio" class="form-control" name="exterieur" [(ngModel)]="exterieur">
+        </div>
+        <div class="col">
+            <label for="croquis" class="form-label">Lien du croquis</label>
+          <input type="text" class="form-control" name="croquis" [(ngModel)]="croquis">
+        </div>
+        <button type="submit">Envoyer</button>
+      </div>
+    </form>

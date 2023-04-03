@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Offre } from 'src/app/model/offre.model';
 import { OffreService } from 'src/app/service/offre.service';
+import { Observable } from 'rxjs/internal/Observable';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-offre-component',
@@ -9,12 +12,15 @@ import { OffreService } from 'src/app/service/offre.service';
 })
 export class OffreComponentComponent implements OnInit {
 
-  listeOffres:Offre[]=[];
-  constructor(private os:OffreService){}
+  listeOffres$!:Observable<Offre[]>;
+  private os!:OffreService;
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.listeOffres= this.os.getListeOffres();
+    this.listeOffres$= this.os.getListeOffres();
   }
+
+  
   //BOUTONS
   // false boutonGerant si connexion avec un compte gerant -> fait apparaitre bouton pour proposer offre
   boutonGerant!:boolean;

@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Offre } from '../model/offre.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +15,10 @@ export class OffreService {
     new Offre(3,"studio","120 place Liberté","Paris",278000,20,1,true,false,false,"",2),
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
   
-  getListeOffres(){
-return this.listeO;
+  getListeOffres():Observable<Offre[]>{
+  return  this.http.get<Offre[]>("http://localhost8080/getListeOffres");
   }
+
 }
