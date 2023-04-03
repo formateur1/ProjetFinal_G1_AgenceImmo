@@ -155,7 +155,8 @@
 ---</p> <br>
 
 <p>
-  <li>Fonctionnalités Questions</li>
+  - Fonctionnalités Questions
   
-  
+  <li>Creation des CRUD en back (liste, ajout et réponse aux questions des clients au gérant)</li>
+  <li>Creation en front de la liste des questions qui sera accessible par le gérant</li>
 </p>
