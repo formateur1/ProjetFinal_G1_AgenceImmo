@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormClientComponent } from './form-client/form-client.component';
 import { FormOffreComponent } from './formulaire/form-offre/form-offre.component';
+import { OffreGerantComponent } from './component/offre-gerant/offre-gerant.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormClientComponent,
-    FormOffreComponent
+    FormOffreComponent,
+    OffreGerantComponent
   ],
   imports: [
     BrowserModule,

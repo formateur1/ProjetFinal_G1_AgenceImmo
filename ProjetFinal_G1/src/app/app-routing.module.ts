@@ -1,12 +1,13 @@
 import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { OffreService } from './service/offre.service';
-import { OffreComponentComponent } from './component/offre-component/offre-component.component';
+import { OffreComponentComponent } from './component/offre-client/offre-component.component';
 import { FormOffreComponent } from './formulaire/form-offre/form-offre.component';
+import { Routes, RouterModule } from '@angular/router';
+
 
 const routes: Routes = [
   {path:"listeOffres", component:OffreComponentComponent},
   {path:"formOffre", component:FormOffreComponent}
+ // {path:"modifierOffre", }
   
 ];
 

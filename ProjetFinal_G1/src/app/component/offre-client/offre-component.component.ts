@@ -11,19 +11,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./offre-component.component.css']
 })
 export class OffreComponentComponent implements OnInit {
+  
+  constructor(private http: HttpClient,private os:OffreService) { }
 
   listeOffres$!:Observable<Offre[]>;
-  private os!:OffreService;
-  constructor(private http: HttpClient) { }
-
   ngOnInit(): void {
     this.listeOffres$= this.os.getListeOffres();
   }
-
-  
-  //BOUTONS
-  // false boutonGerant si connexion avec un compte gerant -> fait apparaitre bouton pour proposer offre
-  boutonGerant!:boolean;
-  boutonClient!:boolean;
 
 }

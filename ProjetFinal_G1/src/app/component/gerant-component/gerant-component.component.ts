@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/model/client.model';
-import { Router } from '@angular/router';
-import { OffreComponentComponent } from '../offre-component/offre-component.component';
+
+import { OffreComponentComponent } from '../offre-client/offre-component.component';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Offre } from 'src/app/model/offre.model';
+import { OffreGerantComponent } from '../offre-gerant/offre-gerant.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gerant-component',
@@ -13,14 +15,12 @@ import { Offre } from 'src/app/model/offre.model';
 })
 export class GerantComponentComponent implements OnInit{
   //private http!:HttpClient;
-  private oc!:OffreComponentComponent;
+  private ocg!:OffreGerantComponent;
 
   constructor(private router:Router,private http: HttpClient){}
   
  ngOnInit(): void {
-  // Gerant connecter : donne acces au bouton pour proposer une offre 
-     this.oc.boutonGerant = false;
-     this.oc.boutonClient = true;
+  
   }
 
   // A FAIRE...
@@ -44,7 +44,7 @@ export class GerantComponentComponent implements OnInit{
   }
   modify(offre:Offre):Observable<void>
   {
-    return this.http.put<void>("http://localhost8080/gerant/modifierOffre", offre.id)
+    return this.http.put<void>("http://localhost8080/gerant/updateOffre", offre.id)
   }
   // - fonctions gérant
   //* Proposer offres

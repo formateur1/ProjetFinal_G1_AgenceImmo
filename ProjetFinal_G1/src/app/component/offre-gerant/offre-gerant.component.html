@@ -1,5 +1,5 @@
-<p>offre-component works!</p>
-<p>Liste des offres AVEC Details</p>
+<p>offre-gerant works!</p>
+<p>Liste des offres AVEC Details pour le gérant</p>
 <table class="table">
     <thead>
       <tr>
@@ -32,8 +32,9 @@
         <td>{{o.note}}/5</td>
         <td><img src = "{{o.croquis}}" width="100%"> Croquis Indisponible</td>
         <td>
-          <button (click)="sauvegarderOffre()" [disabled]="boutonOffreClient">Sauvergarder</button>
-          <button (click)="ajoutProposition()" [disabled]="boutonOffreGerant">Ajouter aux propositions</button>
+          <button (click)="ajoutProposition()" >Ajouter aux propositions</button>
+          <button (click)="modifierOffre(o.id)" >Modifier</button>
+          <button (click)="deleteOffre()">Supprimer</button>
         </td>
       </tr>
     </tbody>
