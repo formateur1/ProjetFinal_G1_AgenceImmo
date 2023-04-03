@@ -157,6 +157,9 @@
 <p>
   - Fonctionnalités Questions
   
-  <li>Creation des CRUD en back (liste, ajout et réponse aux questions des clients au gérant)</li>
+  <li>Creation des CRUD en back (liste, ajout et réponse aux questions des clients au gérant)
+    <ul>La date est gérée en back</ul>
+  </li>
   <li>Creation en front de la liste des questions qui sera accessible par le gérant</li>
-</p>
+  <br>
+--- </p>
