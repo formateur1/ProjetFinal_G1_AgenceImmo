@@ -24,6 +24,6 @@ import { OffreGerantComponent } from './component/offre-gerant/offre-gerant.comp
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, FormClientComponent]
 })
 export class AppModule { }

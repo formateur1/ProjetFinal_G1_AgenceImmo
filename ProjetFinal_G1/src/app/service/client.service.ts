@@ -13,12 +13,12 @@ export class ClientService {
 
     return this.http.get<Client[]>("http://localhost8080/client/liste");
   }
-
+  
   addClient(client:Client):Observable<Client>
   {
-    return this.http.post<Client>("http://localhost8080/client/inscriptionClients", client);
+    return this.http.post<Client>("http://localhost8080/admin/inscriptionClients", client);
   }
-
+  
   delete(id:number):Observable<void>
   {
     return this.http.delete<void>("http://localhost8080/client/delete"+id)
