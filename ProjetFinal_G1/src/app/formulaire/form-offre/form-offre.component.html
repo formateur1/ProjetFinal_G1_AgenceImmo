@@ -3,10 +3,6 @@
 <form [formGroup]="offreForm" (ngSubmit)="addOffre()">
     <div class="row">
       <div class="col">
-        <label for="id" class="form-label">Id</label>
-      <input type="number" class="form-control" name="id" [(ngModel)]="id">
-    </div>
-        <div class="col">
             <label for="type_bien" class="form-label">Type de bien</label>
           <input type="text" class="form-control" name="type_bien" [(ngModel)]="type_bien">
         </div>
@@ -47,5 +43,4 @@
           <input type="text" class="form-control" name="croquis" [(ngModel)]="croquis">
         </div>
         <button type="submit">Envoyer</button>
-      </div>
     </form>

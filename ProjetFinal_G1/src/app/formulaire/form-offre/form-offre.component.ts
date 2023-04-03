@@ -40,7 +40,6 @@ export class FormOffreComponent implements OnInit {
      achat!:boolean;
      exterieur!:boolean;
      croquis:string="";
-     note!:number;
 
      o!:Offre;
      offreForm!:FormGroup;
@@ -49,11 +48,10 @@ export class FormOffreComponent implements OnInit {
   {
     this.os.saveOffre
     (
-      new Offre(
-        this.offreForm.value.type_bien,this.offreForm.value.adresse,this.offreForm.value.ville,
-        this.offreForm.value.prix,this.offreForm.value.surface,this.offreForm.value.nb_piece,
-        this.offreForm.value.meuble, this.offreForm.value.achat,this.exterieur,this.offreForm.value.croquis
-      )
+      this.offreForm.value.type_bien,this.offreForm.value.adresse,this.offreForm.value.ville,
+      this.offreForm.value.prix,this.offreForm.value.surface,this.offreForm.value.nb_piece,
+      this.offreForm.value.meuble, this.offreForm.value.achat,this.exterieur,this.offreForm.value.croquis
+    )
     );
 }
 }
