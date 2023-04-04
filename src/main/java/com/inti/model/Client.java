@@ -17,7 +17,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString.Exclude;
 
-
 @Table(name = "g1_client")
 @Entity
 @AllArgsConstructor
@@ -40,7 +39,6 @@ public class Client extends Personne {
 		super(id, nom, prenom, login, mdp, mail);
 		this.adresse = adresse;
 		this.telephone = telephone;
-
 	}
 
 	public void consulterListOffres() {

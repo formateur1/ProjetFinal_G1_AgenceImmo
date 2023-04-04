@@ -17,8 +17,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString.Exclude;
 
-
-
 @Table(name = "g1_agence_immobiliere")
 @Entity
 @AllArgsConstructor

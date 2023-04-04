@@ -1,5 +1,4 @@
 package com.inti.model;
-
 import java.util.*;
 
 import javax.persistence.Entity;
@@ -10,37 +9,28 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString.Exclude;
 
-@Table(name = "g1_gerant")
-@Entity
-@JsonIgnoreProperties({ "hibernateLazyInitializer" })
-@PrimaryKeyJoinColumn(name = "id_gerant")
-public class Gerant extends Personne {
+@Table(name="g1_gerant_attente")
+@Entity 
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
+@PrimaryKeyJoinColumn(name="id_gerant")
+public class GerantAttente extends Personne {
 
+	
 	@OneToMany(mappedBy = "gerant")
 	@Exclude
 	@JsonIgnore
-	private List<Questions> listeQuestions;
+    private List<Questions> listeQuestions;
 
-	public Gerant() {
+    public GerantAttente() {
 		super();
 	}
-
-	public Gerant(int id, String nom, String prenom, String login, String mdp, String mail) {
+	public GerantAttente(int id, String nom, String prenom, String login, String mdp, String mail) {
 		super(id, nom, prenom, login, mdp, mail);
-	}
-
-	public void propOffres() {
-
-	}
-
-	public void propCroquis() {
-
-	}
-
-	public void repClients() {
-
 	}
 
 }
