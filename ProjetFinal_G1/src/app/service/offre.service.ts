@@ -20,7 +20,7 @@ export class OffreService {
   return  this.http.get<Offre[]>("http://localhost:8080/gerant/listeOffres");
   }
 
-  getOffre(id:number):Observable<Offre>{
+  getOffre(id:number):Observable<Offre> {
     return this.http.get<Offre>("http://localhost:8080/gerant/offreId/"+id);
   }
   
@@ -33,10 +33,11 @@ export class OffreService {
   modifierOffre(offre:Offre):Observable<Offre>{
   return  this.http.put<Offre>("http://localhost:8080/gerant/updateOffre", offre);
   }
-
+  
   deleteOffre(id:number)
   {
     alert ("L'offre "+id + " a été supprimée")
     return this.http.delete<void>("http://localhost8080/gerant/deleteOffre/"+id)
   }
+
 }
