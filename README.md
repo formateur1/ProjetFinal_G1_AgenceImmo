@@ -137,7 +137,7 @@
   Ajouter la  fonction saveOffre() dans offreService qui effectue une requette de type post, et renvoie un observable. <br>
   
   Coté back-end faire appel à la fonction dans le controller de la classe gérant qui permet de sauvegarder l'offre envoyé par la requete. </li><li>
-  <br> S'assurer que les fonctions aient le même nom.
+  <br> S'assurer que les fonctions aient le même nom. (Idem pour les fonctitons delete, uptade, getById et getAll)
   
   Probleme avec les attribut en boolean car récupéré en string dans le formulaire html : utiliser des boucles if pour convertir "true" et "false" en true et false <br>
   Problème de connexion entre le formulaire et la base de donnée :   Test de récupération du modèle avec des console.log et d'alert<br> 
@@ -175,7 +175,7 @@
   Ajouter un nouveau composent : ng g c offreById <br>
   Recupérer l'id dans l'url avec le constructeur comme pour la fonction modifier <br>
   Implémenter OnInit () et y récupéré l'offre par son id en appelant la fonction getOffreById(id) dans offre service (requete de type get, retourne un observable) <br>
-  Afficher toutes les informations de l'offre avec une boucle *ngIf="offre$ | async as o; else faux" où <ng-template #faux> affiche un message si l'offre n'est pas correctement récupérée. <br>
+  Afficher toutes les informations de l'offre avec une boucle *ngIf="offre$ | async as o; else faux" où <ng-template # faux > affiche un message si l'offre n'est pas correctement récupérée. <br>
   Ajouter les fonctions pour supprimé et modifié une offre (identiques à celles dans la liste de toutes les offres).
   </ul>
   
