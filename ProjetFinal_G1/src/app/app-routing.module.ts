@@ -1,3 +1,4 @@
+
 import { Component, NgModule } from '@angular/core';
 import { OffreComponentComponent } from './component/offre-client/offre-component.component';
 import { FormOffreComponent } from './formulaire/form-offre/form-offre.component';
@@ -10,7 +11,7 @@ const routes: Routes = [
   {path:"listeOffres", component:OffreComponentComponent},
   {path:"formOffre", component:FormOffreComponent}
   {path:"formOffre", component:FormOffreComponent},
-  {path:'formClient', component:FormClientComponent},
+  {path:'formClient', component:FormClientComponent}
   {path:'clients', component:ListeClientComponent},
   {path:'accueil', component:AccueilComponent},
   {path:'', component:AccueilComponent}
