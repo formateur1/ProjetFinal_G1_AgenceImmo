@@ -1,16 +1,16 @@
 package com.inti.model;
 import java.util.*;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,10 +33,32 @@ public class Offre {
     private boolean achat;
     private boolean exterieur;
     private String croquis;
-    private String note;
+    @OneToMany(mappedBy = "offre", cascade = CascadeType.ALL)
+    private List<Note> notes = new ArrayList<>();
 
     @ManyToOne
 	@JoinColumn(name = "id_agence_immmobiliere")
     private AgenceImmobiliere agence_immobiliere;
+
+
+	public void ajouterNote(Note note)
+	{
+	notes.add(note);
+	}
+
+	public double MoyenneNotes()
+	{
+		if(notes.size() != 0)
+		{
+			double somme = 0.0;
+			for(Note note : notes)
+			{
+				somme += note.getValeur();
+			}
+			
+			return somme/notes.size();
+		}
+		return 0.0;
+	}
 
 }
