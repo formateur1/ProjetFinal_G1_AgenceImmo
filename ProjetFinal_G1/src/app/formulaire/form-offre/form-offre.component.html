@@ -1,51 +1,53 @@
 <p>form-offre works!</p>
 
-<form [formGroup]="OffreForm" (ngSubmit)="saveOffre()">
+<form [formGroup]="offreForm" (ngSubmit)="addOffre()">
     <div class="row">
-      <div class="col">
-        <label for="id" class="form-label">Id</label>
-      <input type="number" class="form-control" name="id" [(ngModel)]="id">
-    </div>
+      
         <div class="col">
             <label for="type_bien" class="form-label">Type de bien</label>
-          <input type="text" class="form-control" name="type_bien" [(ngModel)]="type_bien">
+          <input type="text" name="type_bien" formControlName="type_bien">
         </div>
+        <br><br>
         <div class="col">
             <label for="adresse" class="form-label">Adresse</label>
-          <input type="text" class="form-control" name="adresse" [(ngModel)]="adresse">
-        </div>
+          <input type="text" class="form-control" formControlName="adresse">
+        </div><br><br>
         <div class="col">
             <label for="ville" class="form-label">Ville</label>
-          <input type="text" class="form-control" name="ville" [(ngModel)]="ville">
-        </div>
+          <input type="text" class="form-control" formControlName="ville">
+        </div><br><br>
         <div class="col">
             <label for="prix" class="form-label">Prix</label>
-          <input type="number" class="form-control" name="prix" [(ngModel)]="prix">
-        </div>
+          <input type="number" class="form-control" formControlName="prix">
+        </div><br><br>
         <div class="col">
-            <label for="surface" class="form-label">Surface </label>
-          <input type="number" class="form-control" name="surface" [(ngModel)]="surface">
-        </div>
+            <label for="surface" class="form-label">Surface (en m2) </label>
+          <input type="number" class="form-control" formControlName="surface">
+        </div><br><br>
         <div class="col">
             <label for="nb_piece" class="form-label">Nombre de pièce</label>
-          <input type="number" class="form-control" name="nb_piece" [(ngModel)]="nb_piece">
-        </div>
+          <input type="number" class="form-control" formControlName="nb_piece">
+        </div><br><br>
         <div class="col">
-            <label for="meuble" class="form-label">Meublé ?</label>
-          <input type="radio" class="form-control" name="meuble" [(ngModel)]="meuble">
-        </div>
+            <label for="meuble" class="form-label">Aménagement : </label>
+          <input type="radio" class="form-control" formControlName="meuble" value="true">Meublé
+          <input type="radio" class="form-control" formControlName="meuble" value="false">Non meublé
+
+        </div><br><br>
         <div class="col">
-            <label for="achat" class="form-label">Achat ? (false=location)</label>
-          <input type="radio" class="form-control" name="achat" [(ngModel)]="achat">
-        </div>
+            <label for="achat" class="form-label">Offre</label>
+          <input type="radio" class="form-control" formControlName="achat" value="true">Achat
+          <input type="radio" class="form-control" formControlName="achat" value="false">Location
+        </div><br><br>
         <div class="col">
-            <label for="exterieur" class="form-label">Exterieur ?</label>
-          <input type="radio" class="form-control" name="exterieur" [(ngModel)]="exterieur">
-        </div>
+            <label for="exterieur" class="form-label">Exterieur</label>
+          <input type="radio" class="form-control" formControlName="exterieur" value="true">Présent
+          <input type="radio" class="form-control" formControlName="exterieur" value="false">Absent
+        </div><br><br>
         <div class="col">
             <label for="croquis" class="form-label">Lien du croquis</label>
-          <input type="text" class="form-control" name="croquis" [(ngModel)]="croquis">
-        </div>
+          <input type="text" class="form-control" formControlName="croquis">
+        </div><br><br>
         <button type="submit">Envoyer</button>
-      </div>
-    </form>
+    </div>
+</form>
