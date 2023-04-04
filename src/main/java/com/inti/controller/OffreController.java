@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.inti.model.Note;
 import com.inti.model.Offre;
 import com.inti.repository.IOffreRepository;
 
@@ -20,7 +21,7 @@ public class OffreController {
 	IOffreRepository ior;
 	
 	@PostMapping("/{offreId}/ajouterNote/{note}")
-	public void ajouterNote(@PathVariable int offreId, @PathVariable double note)
+	public void ajouterNote(@PathVariable int offreId, @PathVariable Note note)
 	{
 		Optional<Offre> ofr = ior.findById(offreId);
 		Offre offre = ofr.get();
