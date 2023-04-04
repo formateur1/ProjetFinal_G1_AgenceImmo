@@ -39,7 +39,7 @@ public class ClientController {
 	//Consulter les informations d'une offre selectionnée
 	
 	@GetMapping("consulterInfos/{id}")
-	public Offre getoffre(@PathVariable("id") int id)
+	public Offre getOffre(@PathVariable("id") int id)
 	{
 		try {
 			System.out.println("Affichage des informations d'une offre selon son id");
