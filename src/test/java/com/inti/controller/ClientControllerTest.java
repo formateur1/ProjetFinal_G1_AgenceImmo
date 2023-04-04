@@ -27,12 +27,20 @@ public class ClientControllerTest {
 	@MockBean
 	private IClientRepository icr;
 	
+	@Test
+	@DisplayName("Test d'inscription d'un client")
+	public void inscriptionClients() throws Exception
+	{
+		mock.perform(get("/inscriptionClients"))
+		.andExpect(status().isOk())
+		.andDo(print());
+	}
 	
 	@Test
 	@DisplayName("Test d'enregistrement d'un client")
-	public void enregistrerClient() throws Exception 
+	public void enregistrementClients() throws Exception 
 	{
-		mock.perform(post("/enregistrerClient").sessionAttr("client", new Client(1, "Dureaud", "Louise", "loulou", "loulou", 
+		mock.perform(post("/inscriptionClients").sessionAttr("client", new Client(1, "Dureaud", "Louise", "loulou", "loulou", 
 				"louise@tst.fr", "Rue de la gare", "0123456")))
 		.andExpect(status().is3xxRedirection())
 		.andDo(print());
@@ -50,9 +58,9 @@ public class ClientControllerTest {
 	
 	@Test
 	@DisplayName("Test de suppression d'un client")
-	public void supprimerClient() throws Exception
+	public void deleteClients() throws Exception
 	{
-		mock.perform(get("/supprimerClient/1"))
+		mock.perform(get("/deleteClients/1"))
 		.andExpect(status().is3xxRedirection())
 		.andExpect(redirectedUrl("/listeClients"))
 		.andDo(print());
