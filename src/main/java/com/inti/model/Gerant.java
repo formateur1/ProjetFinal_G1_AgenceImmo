@@ -1,4 +1,5 @@
 package com.inti.model;
+
 import java.util.*;
 
 import javax.persistence.Entity;
@@ -11,39 +12,45 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.ToString.Exclude;
 import lombok.NoArgsConstructor;
 
-@Table(name="g1_gerant")
-@Entity 
-@JsonIgnoreProperties({"hibernateLazyInitializer"})
-@PrimaryKeyJoinColumn(name="id_gerant")
+@Table(name = "g1_gerant")
+@Entity
+@JsonIgnoreProperties({ "hibernateLazyInitializer" })
+@PrimaryKeyJoinColumn(name = "id_gerant")
 public class Gerant extends Personne {
 
-	
 	@OneToMany(mappedBy = "gerant")
-    private List<Questions> listeQuestions;
+	@Exclude
+	@JsonIgnore
+	private List<Questions> listeQuestions;
 
-    public Gerant() {
+	public Gerant() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public Gerant(int id, String nom, String prenom, String login, String mdp, String mail) {
 		super(id, nom, prenom, login, mdp, mail);
 		// TODO Auto-generated constructor stub
 	}
-	public void propOffres() {
-        // TODO implement here
-    }
-    public void propCroquis() {
-        // TODO implement here
-    }
 
-    public void repClients() {
-        // TODO implement here
-    }
+	public void propOffres() {
+		// TODO implement here
+	}
+
+	public void propCroquis() {
+		// TODO implement here
+	}
+
+	public void repClients() {
+		// TODO implement here
+	}
 
 }
