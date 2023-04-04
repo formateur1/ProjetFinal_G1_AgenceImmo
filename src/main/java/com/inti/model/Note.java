@@ -16,7 +16,7 @@ public class Note {
 	private double valeur;
 	
 	@ManyToOne
-	@JoinColumn(name = "offre_id")
+	@JoinColumn(name = "offre_id" )
 	private Offre offre;
 	
 	
