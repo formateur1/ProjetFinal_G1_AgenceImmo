@@ -35,9 +35,8 @@ public class Offre {
     private String croquis;
     private String note;
 
-    
+    @ManyToOne
+	@JoinColumn(name = "id_agence_immmobiliere")
+    private AgenceImmobiliere agence_immobiliere;
 
-@ManyToOne
-@JoinColumn(name = "id_agence_immmobiliere")
-private AgenceImmobiliere agence_immobiliere;
 }
