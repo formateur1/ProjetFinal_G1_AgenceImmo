@@ -13,6 +13,7 @@ import { OffreGerantComponent } from './component/offre-gerant/offre-gerant.comp
 import { BrowserModule } from '@angular/platform-browser';
 import { ModifierOffreComponent } from './component/modifier-offre/modifier-offre.component';
 import { OffreByIdComponent } from './component/offre-by-id/offre-by-id.component';
+import { GerantComponentComponent } from './component/gerant-component/gerant-component.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { OffreByIdComponent } from './component/offre-by-id/offre-by-id.componen
     FormOffreComponent,
     OffreGerantComponent,
     ModifierOffreComponent,
-    OffreByIdComponent
+    OffreByIdComponent,
+    GerantComponentComponent
   ],
   imports: [
     BrowserModule,

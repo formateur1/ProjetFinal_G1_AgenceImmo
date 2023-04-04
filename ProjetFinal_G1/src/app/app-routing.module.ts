@@ -9,6 +9,7 @@ import { ModifierOffreComponent } from './component/modifier-offre/modifier-offr
 import { ListeClientComponent } from './liste-client/liste-client.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { GerantComponentComponent } from './component/gerant-component/gerant-component.component';
+import { OffreByIdComponent } from './component/offre-by-id/offre-by-id.component';
 
 const routes: Routes = [
   {path:"listeOffres", component:OffreComponentComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'listeOffresGerant', component:OffreGerantComponent},
   {path:'modifierOffre/:id',component:ModifierOffreComponent },
   {path:'', component:AccueilComponent},
-  {path:'accueilGerant',component:GerantComponentComponent}
+  {path:'accueilGerant',component:GerantComponentComponent},
+  {path:'offreById/:idOffre',component:OffreByIdComponent}
  
 ];
 

@@ -1,33 +1,8 @@
 <p>liste des clients</p>
 
-  <button (click)="ajoutOffre()">Ajouter une offre</button>
-  <button (click)="afficherListeOffres()"> Voir toutes les offres </button>
-  <button (click)="getOffreById({{id}})"> Rechercher une offre </button>
-  <input type="number" ([ngModel])="idOffre" >(Id)
-  
- <!--<table class="table">
-<button (click)="afficherListeProposition()">Ma liste de proposition</button>
-  <button (click)="afficherListeClients()">Voir la liste des clients</button>--> 
-     <!-- <thead>
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Nom</th>
-        <th scope="col">Prenom</th>
-        <th scope="col">Email</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let c of listeC$ | async">
-        <th scope="row">{{c.id}}</th>
-        <td>{{c.nom}}</td>
-        <td>{{c.prenom}}</td>
-        <td>{{c.mail}}</td>
-        <td>
-        <button (click)="propositionOffre(c.id)">Proposer des offres</button>
-          <button (click)="">Proposer Croquis</button>
-          <button (click)="supprimer(c.id)">Supprimer</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>-->
+<button (click)="ajoutOffre()">Ajouter une offre</button>
+<button (click)="afficherListeOffres()"> Voir toutes les offres </button>
+Rechercher une offre avec l'ID : <input  [(ngModel)]="idOffre" type="text"  name="idOffre"  >
+<button (click) ="getOffreById()"> Rechercher</button>
+
+
