@@ -27,9 +27,9 @@ export class OffreGerantComponent implements OnInit{
     return this.router.navigate(['modifierOffre']);
   }
 
-  deleteOffre(id:number):Observable<void>
+  deleteOffre(id:number)
   {
     alert ("L'offre "+id + " va être supprimée")
-    return this.http.delete<void>("http://localhost8080/gerant/deleteOffre"+id)
+    return this.os.deleteOffre(id);
   }
 }

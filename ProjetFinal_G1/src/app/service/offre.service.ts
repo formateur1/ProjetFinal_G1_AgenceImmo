@@ -26,4 +26,9 @@ export class OffreService {
       alert("Offre enregistrée :"+ offre.adresse);
       return  this.http.post<Offre>("http://localhost:8080/gerant/saveOffre", offre);
 }
+deleteOffre(id:number)
+  {
+    alert ("L'offre "+id + " a été supprimée")
+    return this.http.delete<void>("http://localhost8080/gerant/deleteOffre"+id)
+  }
 }
