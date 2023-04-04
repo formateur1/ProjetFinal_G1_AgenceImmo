@@ -9,13 +9,15 @@ import { FormClientComponent } from './form-client/form-client.component';
 import { FormOffreComponent } from './formulaire/form-offre/form-offre.component';
 import { OffreGerantComponent } from './component/offre-gerant/offre-gerant.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { ModifierOffreComponent } from './component/modifier-offre/modifier-offre.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormClientComponent,
     FormOffreComponent,
-    OffreGerantComponent
+    OffreGerantComponent,
+    ModifierOffreComponent
   ],
   imports: [
     BrowserModule,

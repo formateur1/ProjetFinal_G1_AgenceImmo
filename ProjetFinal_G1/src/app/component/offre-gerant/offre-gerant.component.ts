@@ -21,10 +21,13 @@ export class OffreGerantComponent implements OnInit{
    return this.listeOffres$= this.os.getListeOffres();
   }
 
-
+  getOffre(id:number){
+    return this.os.getOffre(id);
+  }
+  
   modifierOffre(id:number)
   {
-    return this.router.navigate(['modifierOffre']);
+    return this.router.navigate(['modifierOffre/'+id]);
   }
 
   deleteOffre(id:number)

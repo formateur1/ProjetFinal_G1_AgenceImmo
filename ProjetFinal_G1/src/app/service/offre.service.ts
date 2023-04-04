@@ -28,11 +28,11 @@ export class OffreService {
   {
       alert("Offre enregistrée :"+ offre.adresse);
       return  this.http.post<Offre>("http://localhost:8080/gerant/saveOffre", offre);
-}
+  }
 
-modifierOffre(offre:Offre):Observable<Offre>{
+  modifierOffre(offre:Offre):Observable<Offre>{
   return  this.http.put<Offre>("http://localhost:8080/gerant/updateOffre", offre);
-}
+  }
 
   deleteOffre(id:number)
   {
