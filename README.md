@@ -153,29 +153,29 @@
   Ajouter un nouveau composent : ng g c offreGerant <br>
   Implémenter et récuperer la liste des offres dans OnInit() en appelant la fonction getListeOffres() dans offre service <br>
   Ajouter la fonction getListeOffres() qui effectue une requete de type post et retourne une liste d'observable, elle fait appel à la fonction findAllOffres() dans le controller de la classe gérant.
-  Afficher la liste récupéré dans le offreGerant.html avec une boucle  *ngFor="let o of listeOffres$ | async" 
+  Afficher la liste récupéré dans le offreGerant.html avec une boucle " *ngFor="let o of listeOffres$ | async" " 
   Ajouter une colonne actions. <br>
   Ajouter la fonction deleteOffre avec un bouton dans la liste des offres gerant. </li><li>
   Appelé la fonction deletOffre(o.id) dans offre service pour effectuer une requete de type delete et ne retourne rien.
   Ajouter la fonciton updateOffre(o.id) avec un bouton dans la liste des offres gerant. </li><li>
   Rediriger vers un formulaire de modification d'une offre avec this.router.navigate(['modifierOffre/'+id]); <br>
   Ajouter un nouveau composent : ng g c modifierOffre <br>
-  Recupérer l'id dans l'url avec le constructeur : constructor(private ar: ActivatedRoute, private os: OffreService, private fb: FormBuilder) { <br>
-    this.id = this.ar.snapshot.params['id']; <br>
-  } <br>
+  Recupérer l'id dans l'url avec le constructeur : " constructor(private ar: ActivatedRoute, private os: OffreService, private fb: FormBuilder) { 
+    this.id = this.ar.snapshot.params['id'] ;
+  } " <br>
  Dans le html faire un formulaire <form [formGroup]="offreForm" (ngSubmit)="updateOffre()"> <br>
   Avec la fonction updateOffre(), rediriger vers offre service pour faire la requete : this.os.modifierOffre(this.offreForm.value).subscribe();
   <br> Le subscribe() est nécéssaire avec des observables. <br>
   Dans offre service faire la requete de type put et qui retourne un observable.
   Ajouter dans le menu du gérant la possibilité de chercher une offre par son id </li><li>
-  Faire un input permettant de rentrer l'id dans l'url avant de rediriger vers elle avec  [(ngModel)]="idOffre" dans le input. <br>
+  Faire un input permettant de rentrer l'id dans l'url avant de rediriger vers elle avec " [(ngModel)]="idOffre" " dans le input. <br>
   Problème de reconnaissance du formulaire actif : ajouter un name dans le input et bien déclarer ET initialiser la variable idOffre dans le .ts 
    <br>
   Rediriger vers un la page d'affichage d'une offre this.router.navigate(['offreById/'+idOffre]); <br>
   Ajouter un nouveau composent : ng g c offreById <br>
   Recupérer l'id dans l'url avec le constructeur comme pour la fonction modifier <br>
   Implémenter OnInit () et y récupéré l'offre par son id en appelant la fonction getOffreById(id) dans offre service (requete de type get, retourne un observable) <br>
-  Afficher toutes les informations de l'offre avec une boucle *ngIf="offre$ | async as o; else faux" où <ng-template # faux > affiche un message si l'offre n'est pas correctement récupérée. <br>
+  Afficher toutes les informations de l'offre avec une boucle *ngIf="offre$ | async as o; else faux" où "<ng-template #faux >" affiche un message si l'offre n'est pas correctement récupérée. <br>
   Ajouter les fonctions pour supprimé et modifié une offre (identiques à celles dans la liste de toutes les offres).
   </ul>
   
