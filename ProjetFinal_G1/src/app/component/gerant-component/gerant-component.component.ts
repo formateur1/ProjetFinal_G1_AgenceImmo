@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { Offre } from 'src/app/model/offre.model';
 import { OffreGerantComponent } from '../offre-gerant/offre-gerant.component';
 import { Router } from '@angular/router';
+import { OffreService } from 'src/app/service/offre.service';
 
 @Component({
   selector: 'app-gerant-component',
@@ -16,40 +17,34 @@ import { Router } from '@angular/router';
 export class GerantComponentComponent implements OnInit{
   //private http!:HttpClient;
   private ocg!:OffreGerantComponent;
-
-  constructor(private router:Router,private http: HttpClient){}
+  private idOffre!:number;
+  constructor(private router:Router,private http: HttpClient, private os:OffreService){}
   
  ngOnInit(): void {
   
+  }
+// - crud offre : bouton dans la liste offre-Gerant
+//* Nouvelle offre 
+ajoutOffre():void{
+    this.router.navigate(['formOffre']);
   }
 
   // A FAIRE...
 
   // - menu dans html gerant
+  
+  //Retrouver une offre
 
-  // - crud offre
-  //* Nouvelle offre 
-  ajoutOffre():void{
-    this.router.navigate(['formOffre']);
+  getOffreById()
+  {
+    
+    return this.router.navigate(['offreById/'+this.idOffre]);
   }
-  //* Modifier/supprimé une offre 
 
-  deleteOffre(id:number):Observable<void>
-  {
-    return this.http.delete<void>("http://localhost8080/gerant/deleteOffre"+id)
-  }
-  getOffreById(id:number):Observable<Offre>
-  {
-    return this.http.get<Offre>("http://localhost8080/gerant/getOffreById"+id)
-  }
-  modify(offre:Offre):Observable<void>
-  {
-    return this.http.put<void>("http://localhost8080/gerant/updateOffre", offre.id)
-  }
   // - fonctions gérant
   //* Proposer offres
   //Choisir les offres a proposer au client et les ajouter a une liste
-  afficherOffre() {
+  afficherListeOffres() {
    this.router.navigate(["listeOffres"]);
 };
 // Choisir le client a qui proposer les offres de la liste
