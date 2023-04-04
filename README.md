@@ -80,7 +80,7 @@
 - Configuration Front-end (Framework : Angular couplé à Node JS)<br>
 <ul> 
   <li> Création du projet coté angular avec la commande: ng new ProjetFinal_G1 --defaults </li><li>
- Mettre le projet sur GitHub, sur GitHub : new File et ajouté le lien du projet créer sur Visual Code  </li><li>
+ Mettre le projet sur GitHub, sur GitHub : new File et ajouté le lien du projet créer sur Visual Code </li><li>
  Creer une nouvelle branche: dans Visual Code -> Source Controll -> configurer push et ajouter une nouvelle branche  </li><li>
  Ajout du mapping avec @CrossOrigin(origins = {"URL"}) dans controller <br>
  **Probleme de requètes http, erreur dans la connexion angular-eclipse NON REGLÉ </li>
@@ -99,14 +99,14 @@
  -En BackEnd -> Création et configuration du controller. 
   <li>Annotations @RestController et @RequestMapping("gerant") pour configurer le controller</li><li>
   Annotations @Autowired pour les repository et @Repository dans les interfaces Repository</li><li>
-  Annotations @Post/Get/DeleteMapping pour les fonctions CRUD (create, read, update, delete) pour l'objet Gerant
-  <li>Ajout des fonctions ajouter/modifier (save), supprimer (delete), récupérer de la BDD une/des offre(s)  </li><li>
+  Annotations @Post/Get/DeleteMapping pour les fonctions CRUD (create, read, update, delete) pour l'objet Gerant </li><li>
+  Ajout des fonctions ajouter/modifier (save), supprimer (delete), récupérer de la BDD une/des offre(s)  </li><li>
   La liste des offres doit être visible par tous (client-gérant) : choix de faire la fonction 'getListeOffres' dans le controller du gerant pour avoir tous     les CRUD 'Offre' au même endroit, l'accès sera donné plus tard au client. </li><li>
   Ajout des fonctions getListeClients() et getClientByID() mais l'ajout, la modification et la suppression se feront par le client 
-  avec la validation de   l'admin. </li><li>
+  avec la validation de l'admin. </li><li>
   Ajout d'une liste d'offre proposé par le gérant en attribut de la classe client pour que le client puisse les consulter. </li><li>
   Ajout d'une fonction permettant d'ajouter des offres à proposer à un client précis: récuperer le client avec son ID et mettre a jour sa liste 
-  d'offres proposées.<br>
+  d'offres proposées.</li><li>
   --Reflexion sur le possible futur ajout d'une liste similaire pour les croquis proposés</li>
 </ul> <br>
 <ul>
@@ -151,9 +151,9 @@
  -En BackEnd -> Création et configuration du controller. 
   <li>Annotations @RestController et @RequestMapping("client") pour configurer le controller</li><li>
   Annotations @Autowired pour les repository et @Repository dans les interfaces Repository</li><li>
-  Annotations @Post/Get/DeleteMapping pour les fonctions CRUD (create, read, update, delete) pour l'objet Client
-  <li>Ajout des fonctions enregistrer/modifier (save), supprimer (delete), sur une liste en BDD -> gerer par le Gerant </li><li>
-  <li>Ajout des fonctions "consulterOffre" afin que les clients puissent avoir acces à la liste des offres (gerer par le gerant), et "getOffre" pour consulter les informations des offres selon leur id.</li><li>
+  Annotations @Post/Get/DeleteMapping pour les fonctions CRUD (create, read, update, delete) pour l'objet Client</li><li>
+  Ajout des fonctions enregistrer/modifier (save), supprimer (delete), sur une liste en BDD -> gerer par le Gerant </li><li>
+  Ajout des fonctions "consulterOffre" afin que les clients puissent avoir acces à la liste des offres (gerer par le gerant), et "getOffre" pour consulter les informations des offres selon leur id.</li>
 </ul> 
 <ul>
 -En FrontEnd -> sur Angular
@@ -178,11 +178,11 @@
 *Fonctionnalite Client:
 <ul>
  -En BackEnd 
-   <li>Ajout des fonctions "consulterOffre" afin que les clients puissent avoir acces à la liste des offres (gerer par le gerant), et "getOffre" pour consulter les informations des offres selon leur id.</li><li>
+   <li>Ajout des fonctions "consulterOffre" afin que les clients puissent avoir acces à la liste des offres (gerer par le gerant), et "getOffre" pour consulter les informations des offres selon leur id.</li>
 </ul> 
 <ul>
   -En FrontEnd -> sur Angular dans le composant offre
- <li>Redaction de plusieurs fonctions afin que les clients puissent effectuer des recherches avancées sur les offres (selon certains critères) </li>
+ <li>Redaction de plusieurs fonctions afin que les clients puissent effectuer des recherches avancées sur les offres (selon certains critères)
    ==> EN COURS</li>
 </ul> <br>
 
@@ -193,10 +193,10 @@
 
 - Compte rendu du reunion à 9h :
 <ul>
-#Fonctionnalité client : test des fonctions CRUD:ok, suggestion sur la creation de menu dderoulant sur Angular pour que les clients effectuent des recherches avancées sur les offres.
-# Fonctionnalité gerant :.....
-#Fonctionnalité utilisateurs :.....
-#.....
+ <li>#Fonctionnalité client : test des fonctions CRUD:ok, suggestion sur la creation de menu dderoulant sur Angular pour que les clients effectuent des recherches avancées sur les offres.</li><li>
+# Fonctionnalité gerant :.....</li><li>
+#Fonctionnalité utilisateurs :.....</li><li>
+#..... </li>
 </ul><br>
 
 *Fonctionnalite Client: 
