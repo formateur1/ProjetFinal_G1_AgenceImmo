@@ -8,6 +8,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 
 const routes: Routes = [
   {path:"listeOffres", component:OffreComponentComponent},
+  {path:"formOffre", component:FormOffreComponent}
   {path:"formOffre", component:FormOffreComponent},
   {path:'formClient', component:FormClientComponent},
   {path:'clients', component:ListeClientComponent},
