@@ -17,17 +17,13 @@ export class OffreService {
   constructor(private http: HttpClient) { }
   
   getListeOffres():Observable<Offre[]>{
-  return  this.http.get<Offre[]>("http://localhost:8080/getListeOffres");
+  return  this.http.get<Offre[]>("http://localhost:8080/gerant/listeOffres");
   }
 
   
-  saveOffre(offre:Offre)
+  saveOffre(offre:Offre):Observable<Offre>
   {
       alert("Offre enregistrée :"+ offre.adresse);
-     } catch (error) {
-      alert("echec requete http")
-     }
-
-      
+      return  this.http.post<Offre>("http://localhost:8080/gerant/saveOffre", offre);
 }
 }

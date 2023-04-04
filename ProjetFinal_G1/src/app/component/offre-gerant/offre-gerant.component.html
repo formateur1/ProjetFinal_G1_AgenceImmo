@@ -8,14 +8,14 @@
         <th scope="col">Adresse</th>
         <th scope="col">Ville</th>
         <th scope="col">Prix</th>
-        <th scope="col">Surface(m2)</th>
+        <th scope="col">Surface</th>
         <th scope="col">Nombre de pièce</th>
         <th scope="col">Meublé</th>
         <th scope="col">Achat (false=location)</th>
         <th scope="col">Exterieur disponible</th>
         <th scope="col">Note</th>
         <th scope="col">Croquis</th>
-        <th scope="col">Action</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -30,7 +30,7 @@
         <td>{{o.achat}}</td>
         <td>{{o.exterieur}}</td>
         <td>{{o.note}}/5</td>
-        <td><img src = "{{o.croquis}}" width="100%"> Croquis Indisponible</td>
+        <td><img src = "{{o.croquis}}" width="20%"> </td>
         <td>
           <!--<button (click)="ajoutProposition()" >Ajouter aux propositions</button>
           <button (click)="modifierOffre(o.id)" >Modifier</button>
