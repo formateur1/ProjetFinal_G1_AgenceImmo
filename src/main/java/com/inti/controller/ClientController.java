@@ -4,7 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+
+
 import org.springframework.data.repository.query.Param;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import org.springframework.ui.Model;
@@ -58,52 +61,8 @@ public class ClientController {
 			return null;
 		}
 	
-	//Recherche avancée selon plusieurs critères : voir Angular
-	//Faire un bouton 'details'qui affiche offres selon un critere donnee 
-	
-	//A rediger
-//	    private String type_bien;
-//	    private String adresse;
-//	    private String ville;
-//	    private double prix;
-//	    private double surface;
-//	    private int nb_piece;
-//	    private boolean meuble;
-//	    private boolean offre;
-//	    private boolean exterieur;
-//	    private String croquis;
-//	    private String note;
-	
-//	@GetMapping("/rechercheOffre")
-//	public List<Offre> rechercheOffre (@RequestBody Offre o) 
-//	{ 
-//		System.out.println("Recherche d'une offre grâce à tous ses paramètres");
-//		return ior.rechercheOffre.findAll();;
-//	}
-//	
-//	@GetMapping("/rechercheoffreVille")
-//	public List<Offre> rechercheoffreVille( @RequestParam String adresse)
-//	{
-//		System.out.println("Recherche d'une offre d'offre par Ville");
-//		return ior.rechercheOffreVille(adresse);
-//	}
-//	
-//	@GetMapping("/rechercheAchatLocation")
-//	public List<Offre> rechercheoffreVilleType( @RequestParam String adresse, @RequestParam String description)
-//	{
-//		System.out.println("Recherche d'une offre d'offre par Ville et Type");
-//		return ioffreRepository.rechercheoffreVilleType(adresse, description);
-//		List<Offre> rechercheAchatLocation(@Param ("offre") String offre);
-//		}
-//	
-//	@GetMapping("/rechercheoffrePieceChambre")
-//	public List<offre> rechercheoffrePieceChambre( @RequestParam int piece, @RequestParam int chambre)
-//	{
-//		System.out.println("Recherche d'une offre d'offre par nombre de Piece et de Chambre");
-//		return ioffreRepository.rechercheoffrePieceChambre(piece, chambre);
-//	}
-
-	
+	/*Recherche avancée selon plusieurs critères : voir Angular
+	 * Faire un bouton 'details'qui affiche offres selon un critere donnee */ 
 	
 	
 	//CRUD client (inscription, liste, suppression) -> voir gerant
