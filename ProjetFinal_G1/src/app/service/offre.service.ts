@@ -20,7 +20,6 @@ export class OffreService {
   return  this.http.get<Offre[]>("http://localhost:8080/getListeOffres");
   }
 
-  
   saveOffre(offre:Offre)
   {
      try {
@@ -32,4 +31,5 @@ export class OffreService {
 
       
 }
+
 }
