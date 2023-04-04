@@ -4,58 +4,36 @@
     <div class="row">
         <div class="col">
             <label for="nom" class="form-label">Nom</label>
-          <input type="text" class="form-control" name="nom" [(ngModel)]="nom">
+          <input type="text" class="form-control" name="nom" formControlName="nom">
         </div>
         <div class="col">
             <label for="prenom" class="form-label">Prénom</label>
-          <input type="text" class="form-control" name="prenom" [(ngModel)]="prenom">
+          <input type="text" class="form-control" name="prenom" formControlName="prenom">
         </div>
         <div class="col">
             <label for="login" class="form-label">Login</label>
-          <input type="text" class="form-control" name="login" [(ngModel)]="login">
+          <input type="text" class="form-control" name="login" formControlName="login">
         </div>
         <div class="col">
             <label for="mdp" class="form-label">Mot de passe</label>
-          <input type="password" class="form-control" name="mdp" [(ngModel)]="mdp">
+          <input type="password" class="form-control" name="mdp" formControlName="mdp">
         </div>
         <div class="col">
             <label for="mail" class="form-label">Mail</label>
-          <input type="text" class="form-control" name="mail" [(ngModel)]="mail">
+          <input type="text" class="form-control" name="mail" formControlName="mail">
         </div>
         <div class="col">
             <label for="agence_immobiliere" class="form-label">Agence Immobilière</label>
-          <input type="text" class="form-control" name="agence_immobiliere" [(ngModel)]="agence_immobiliere">
+          <input type="text" class="form-control" name="agence_immobiliere" formControlName="agence_immobiliere">
         </div>
+        <div class="col">
+          <label for="adresse" class="form-label">Adresse</label>
+        <input type="text" class="form-control" name="adresse" formControlName="adresse">
+      </div>
+      <div class="col">
+          <label for="telephone" class="form-label">Téléphone</label>
+        <input type="text" class="form-control" name="telephone" formControlName="telephone">
+      </div>
         <button type="submit">Envoyer</button>
       </div>
     </form>
-
-    <!-- <form>
-      <div class="row">
-          <div class="col">
-              <label for="nom" class="form-label">Nom</label>
-            <input type="text" class="form-control" name="nom" >
-          </div>
-          <div class="col">
-              <label for="prenom" class="form-label">Prénom</label>
-            <input type="text" class="form-control" name="prenom" >
-          </div>
-          <div class="col">
-              <label for="login" class="form-label">Login</label>
-            <input type="text" class="form-control" name="login" >
-          </div>
-          <div class="col">
-              <label for="mdp" class="form-label">Mot de passe</label>
-            <input type="password" class="form-control" name="mdp" >
-          </div>
-          <div class="col">
-              <label for="mail" class="form-label">Mail</label>
-            <input type="text" class="form-control" name="mail">
-          </div>
-          <div class="col">
-              <label for="agence_immobiliere" class="form-label">Agence Immobilière</label>
-            <input type="text" class="form-control" name="agence_immobiliere">
-          </div>
-          <button type="submit">Envoyer</button>
-        </div>
-      </form> -->

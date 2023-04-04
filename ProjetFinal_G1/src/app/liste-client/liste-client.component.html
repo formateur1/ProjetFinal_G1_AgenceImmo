@@ -1,0 +1,30 @@
+<p>liste-client works!</p>
+<table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Login</th>
+        <th>Mdp</th>
+        <th>Mail</th>
+        <th>Agence immobilière</th>
+        <th>Adresse</th>
+        <th>Téléphone</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of listeC$ | async">
+        <td>{{c.id}}</td>
+        <td>{{c.nom}}</td>
+        <td>{{c.prenom}}</td>
+        <td >{{c.login}}</td>
+        <td >{{c.mdp}}</td>
+        <td >{{c.mail}}</td>
+        <td >{{c.agence_immobiliere}}</td>
+        <td >{{c.adresse}}</td>
+        <td >{{c.telephone}}</td>
+      </tr>
+    </tbody>
+  </table> 
