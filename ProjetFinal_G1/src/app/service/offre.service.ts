@@ -23,8 +23,6 @@ export class OffreService {
   
   saveOffre(offre:Offre)
   {
-     try {
-      this.http.post<Offre>("http://localhost:8080/gerant/saveOffre", offre);
       alert("Offre enregistrée :"+ offre.adresse);
      } catch (error) {
       alert("echec requete http")
