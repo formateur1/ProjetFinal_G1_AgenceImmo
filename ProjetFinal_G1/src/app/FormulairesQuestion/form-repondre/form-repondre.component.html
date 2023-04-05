@@ -1,6 +1,6 @@
-<h1>Répondre à la question</h1>
+<h1 style="color: white; text-align: center;">Répondre à la question</h1>
 
-<form *ngIf="questionForm" [formGroup]="questionForm" (ngSubmit)="repQuestion()"> 
+<form *ngIf="questionForm" [formGroup]="questionForm" (ngSubmit)="repQuestion()" style="color: white; text-align: center; margin-left: 15em; margin-right: 15em;"> 
     <div class="mb-3">
         <label for="id" class="form-label">id de la question</label>
         <input class="form-control" type="text" id="id" value="{{this.questionForm.value.id}}" disabled>

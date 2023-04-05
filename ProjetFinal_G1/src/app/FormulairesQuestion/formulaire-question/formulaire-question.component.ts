@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionService } from '../service/question.service';
+import { QuestionService } from '../../service/question.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Question } from '../model/question';
+import { Question } from '../../model/question';
 
 @Component({
   selector: 'app-formulaire-question',

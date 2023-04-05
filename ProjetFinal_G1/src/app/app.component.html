@@ -1,2 +1,45 @@
+<header>
+    <h1 class="site-heading text-center text-faded d-none d-lg-block">
+        <span class="site-heading-lower">AgenceNulos</span>
+    </h1>
+</header>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="/accueil">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/accueil">Home</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">Mes offres</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Mon compte</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/question/form">Contact</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeOffres">Faire une recherche</a></li>
+            </ul>
+            <div id="btn-gerant" class="nav-item px-lg-4" class="form-check form-switch">
+              <input id="checkboxGerant" class="form-check-input" type="checkbox" name="checkboxGerant" (click)="changerCheck()">
+              <label class="form-check-label" for="checkbox-gerant">MODE GERANT</label>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<nav *ngIf="checkboxGerant" class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+  <div class="container">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+              <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/accueil">Afficher la liste des client</a></li>
+              <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/question">Afficher les questions</a></li>
+              <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Afficher les statistiques</a></li>
+              <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formOffre">Ajouter une offre</a></li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
 <router-outlet></router-outlet>
-<app-form-client></app-form-client>
+
+
+<footer class="footer text-faded text-center py-5">
+    <div class="container"><p class="m-0 small">Copyright &copy; AgenceNulos Website 2023</p></div>
+</footer>

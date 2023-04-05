@@ -9,9 +9,9 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { FormOffreComponent } from './formulaire/form-offre/form-offre.component';
 import { OffreGerantComponent } from './component/offre-gerant/offre-gerant.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { QuestionComponent } from './question/question.component';
-import { FormulaireQuestionComponent } from './formulaire-question/formulaire-question.component';
-import { FormRepondreComponent } from './form-repondre/form-repondre.component';
+import { QuestionComponent } from './component/question/question.component';
+import { FormulaireQuestionComponent } from './FormulairesQuestion/formulaire-question/formulaire-question.component';
+import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-repondre.component';
 
 
 @NgModule({
