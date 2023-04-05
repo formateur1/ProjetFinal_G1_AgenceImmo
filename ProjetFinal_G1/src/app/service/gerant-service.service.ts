@@ -1,36 +1,42 @@
 import { Injectable } from '@angular/core';
 import { Offre } from '../model/offre.model';
 import { Client } from '../model/client.model';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Gerant } from '../model/gerant.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GerantServiceService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   listeOffres:Offre[] = []
   listeClients:Client[] = []
 
   addOffre(offre:Offre):Observable <Offre> {
-    return this.http.post<Offre>("URL/gerant/saveOffre",offre)
+    return this.http.post<Offre>("http://localhost:8080/gerant/saveOffre",offre)
   }
   updateOffre(offre:Offre):Observable <Offre> {
-    return this.http.post<Offre>("URL/gerant/saveOffre",offre)
+    return this.http.post<Offre>("http://localhost:8080/gerant/saveOffre",offre)
   }
 
   deleteOffre(id:number):Observable<void>{
-    return this.http.delete<void>("/deleteOffre/"+id);
+    return this.http.delete<void>("http://localhost:8080/gerant/deleteOffre/"+id);
   }
 
   getAllOffres():Observable<Offre[]>{
-    return this.http.get<Offre[]>("/client/listeOffres");
+    return this.http.get<Offre[]>("http://localhost:8080/gerant/listeOffres");
   }
 
   getOffrebyID(id:number):Observable<Offre>{
-    return this.http.get<Offre>("/gerant/offre/"+id);
+    return this.http.get<Offre>("http://localhost:8080/gerant/offre/"+id);
   }
 
-  
+  getGerants() :Observable<Gerant[]>{
+
+    return this.http.get<Gerant[]>("http://localhost:8080/gerant/getGerants");
+  }
   
 }

@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder} from '@angular/forms';
 import { Router } from '@angular/router';
 import { Client } from '../model/client.model';
 import { ClientService } from '../service/client.service';
+import { AdminService } from '../service/admin.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { ClientService } from '../service/client.service';
 })
 export class FormClientComponent implements OnInit {
 
-  constructor(private fb:FormBuilder, private r:Router, private cs:ClientService){}
+  constructor(private fb:FormBuilder, private r:Router, private as:AdminService){}
   ngOnInit(): void {
     this.clientForm=this.fb.group({
       nom:[''],
@@ -25,7 +26,6 @@ export class FormClientComponent implements OnInit {
       telephone:['']
   })
   }
-  id!:string;
   nom:string="";
   prenom:string="";
   login:string="";
@@ -35,13 +35,13 @@ export class FormClientComponent implements OnInit {
   adresse:string="";
   telephone:string="";
   
-  c!:Client;
   clientForm!:FormGroup;
 
   saveClient()
   { 
-    this.cs.addClient(new Client(this.clientForm.value.nom, this.clientForm.value.prenom, 
+    this.as.addClient(new Client(this.clientForm.value.nom, this.clientForm.value.prenom, 
       this.clientForm.value.login, this.clientForm.value.mdp, this.clientForm.value.mail, 
       this.clientForm.value.agence_immobiliere, this.clientForm.value.adresse, this.clientForm.value.telephone)).subscribe();
-  }
+      alert("La demande de création de compte client a bien été ajoutée")
+    }
 }

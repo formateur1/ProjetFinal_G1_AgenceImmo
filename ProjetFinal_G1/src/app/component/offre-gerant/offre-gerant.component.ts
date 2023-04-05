@@ -16,17 +16,23 @@ export class OffreGerantComponent implements OnInit{
 
   listeOffres$!:Observable<Offre[]>;
 
-  ngOnInit(): void {
-    this.listeOffres$= this.os.getListeOffres();
+  ngOnInit():Observable<Offre[]> {
+    
+   return this.listeOffres$= this.os.getListeOffres();
   }
 
+  getOffre(id:number){
+    return this.os.getOffre(id);
+  }
+  
   modifierOffre(id:number)
   {
-    return this.router.navigate(['modifierOffre']);
+    return this.router.navigate(['modifierOffre/'+id]);
   }
-  deleteOffre(id:number):Observable<void>
+
+  deleteOffre(id:number)
   {
-    alert ("L'offre "+id + " est supprimée")
-    return this.http.delete<void>("http://localhost8080/gerant/deleteOffre"+id)
+    alert ("L'offre "+id + " va être supprimée")
+    return this.os.deleteOffre(id);
   }
 }

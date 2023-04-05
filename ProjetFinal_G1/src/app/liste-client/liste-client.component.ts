@@ -17,11 +17,4 @@ export class ListeClientComponent {
   ngOnInit(): void {
     this.listeC$=this.cs.getClients();
   }
-
-supprimer(id:number)
-{
-  this.cs.delete(id);
-  this.router.navigate(['clients'])
-}
-
 }

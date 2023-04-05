@@ -22,14 +22,14 @@ export class ClientService {
   
   delete(id:number):Observable<void>
   {
-    return this.http.delete<void>("http://localhost:8080/client/delete"+id)
+    return this.http.delete<void>("http://localhost:8080/client/supprimerClient/"+id)
   }
   getClientById(id:number):Observable<Client>
   {
-    return this.http.get<Client>("http://localhost:8080/client/get"+id)
+    return this.http.get<Client>("http://localhost:8080/client/get/"+id)
   }
   modify(client:Client):Observable<void>
   {
-    return this.http.put<void>("http://localhost:8080/client/modify", client.id)
+    return this.http.put<void>("http://localhost:8080/client/modify/", client.id)
   }
 }

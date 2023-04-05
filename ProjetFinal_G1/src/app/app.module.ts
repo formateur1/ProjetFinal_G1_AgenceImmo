@@ -9,6 +9,12 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { FormOffreComponent } from './formulaire/form-offre/form-offre.component';
 import { OffreGerantComponent } from './component/offre-gerant/offre-gerant.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { ModifierOffreComponent } from './component/modifier-offre/modifier-offre.component';
+import { OffreByIdComponent } from './component/offre-by-id/offre-by-id.component';
+import { GerantComponentComponent } from './component/gerant-component/gerant-component.component';
+import { FormAdminComponent } from './form-admin/form-admin.component';
+import { FormGerantComponent } from './form-gerant/form-gerant.component';
+import { ValiderUtilisateurComponent } from './valider-utilisateur/valider-utilisateur.component';
 import { QuestionComponent } from './component/question/question.component';
 import { FormulaireQuestionComponent } from './FormulairesQuestion/formulaire-question/formulaire-question.component';
 import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-repondre.component';
@@ -18,10 +24,16 @@ import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-
   declarations: [
     AppComponent,
     FormClientComponent,
+    FormAdminComponent,
+    FormGerantComponent,
     ListeClientComponent,
     AccueilComponent,
     FormOffreComponent,
     OffreGerantComponent,
+    ValiderUtilisateurComponent,
+    ModifierOffreComponent,
+    OffreByIdComponent,
+    GerantComponentComponent,
     QuestionComponent,
     FormulaireQuestionComponent,
     FormRepondreComponent
@@ -35,6 +47,6 @@ import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent, FormClientComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
