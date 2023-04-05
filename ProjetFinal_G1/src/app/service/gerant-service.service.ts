@@ -14,8 +14,9 @@ export class GerantServiceService {
 
   listeOffres:Offre[] = []
   listeClients:Client[] = []
+  
 
-  addOffre(offre:Offre):Observable <Offre> {
+  /*addOffre(offre:Offre):Observable <Offre> {
     return this.http.post<Offre>("http://localhost:8080/gerant/saveOffre",offre)
   }
   updateOffre(offre:Offre):Observable <Offre> {
@@ -33,7 +34,7 @@ export class GerantServiceService {
   getOffrebyID(id:number):Observable<Offre>{
     return this.http.get<Offre>("http://localhost:8080/gerant/offre/"+id);
   }
-
+*/
   getGerants() :Observable<Gerant[]>{
 
     return this.http.get<Gerant[]>("http://localhost:8080/gerant/getGerants");
@@ -44,6 +45,13 @@ export class GerantServiceService {
     console.log(Gerant);
     return this.http.post<Gerant>("http://localhost:8080/gerant/ajouterGerant", gerant);
   }
+  
+  ajoutProposition( idGerant:number,idOffre:number):Observable<Offre[]>
+  {
+  const url = `http://localhost:8080/gerant/ajoutPropOffre/${idOffre}/${idGerant}`;
+  return this.http.put<Offre[]>(url, null);
+  } 
+
   
   
 }

@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Offre } from 'src/app/model/offre.model';
 import { OffreService } from 'src/app/service/offre.service';
 import { Router } from '@angular/router';
+import { Gerant } from 'src/app/model/gerant.model';
+import { GerantServiceService } from 'src/app/service/gerant-service.service';
 
 @Component({
   selector: 'app-offre-gerant',
@@ -12,9 +14,11 @@ import { Router } from '@angular/router';
 })
 export class OffreGerantComponent implements OnInit{
 
-  constructor(private http: HttpClient,private os:OffreService, private router:Router) { }
+  constructor(private http: HttpClient,private os:OffreService,private gs:GerantServiceService ,  private router:Router ) { }
 
   listeOffres$!:Observable<Offre[]>;
+  newPropositionOffre!:Observable<Offre>;
+idGerant:number=0;
 
   ngOnInit():Observable<Offre[]> {
     
@@ -34,5 +38,8 @@ export class OffreGerantComponent implements OnInit{
   {
     alert ("L'offre "+id + " va être supprimée")
     return this.os.deleteOffre(id);
+  }
+  ajoutProposition(idOffre:number, idGerant:number){
+    return this.gs.ajoutProposition(idOffre,idGerant);
   }
 }

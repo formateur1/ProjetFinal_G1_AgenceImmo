@@ -29,7 +29,7 @@ export class FormOffreComponent implements OnInit {
       
     })
   }
-    id!:number;
+   
      type_bien:string="";
      adresse:string="";
      ville:string="";
@@ -51,7 +51,7 @@ export class FormOffreComponent implements OnInit {
 
   addOffre()
   {
-    if( this.offreForm.value.meuble = "true"){
+   /* if( this.offreForm.value.meuble = "true"){
       this.savedMeuble=true;
     } else{ this.savedMeuble=false}
 
@@ -70,11 +70,11 @@ export class FormOffreComponent implements OnInit {
       this.savedMeuble, this.savedAchat,this.savedExt,this.offreForm.value.croquis
     )
 
-   if(this.savedOffre!=null) {
-      this.os.saveOffre (this.savedOffre);
-      console.log("formulaire correct : " + this.savedOffre.adresse + " "+this.savedOffre.prix +"€ pour "+ this.savedOffre.surface+"m2.");
-    } else {
-      alert("erreur dans le formulaire, offre incorrecte ")
-    }
+   if(this.savedOffre!=null) {*/
+      this.os.saveOffre(this.offreForm.value).subscribe();
+      console.log(this.offreForm.value);
+   // } else { "formulaire correct : " + this.savedOffre.adresse + " "+this.savedOffre.prix +"€ pour "+ this.savedOffre.surface+"m2."
+   //   alert("erreur dans le formulaire, offre incorrecte ")
+   // }
   }
 }
