@@ -8,11 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString.Exclude;
 
 @Table(name="g1_agence_immobiliere")
 @Entity @AllArgsConstructor @NoArgsConstructor @Data
@@ -27,9 +29,13 @@ public class AgenceImmobiliere {
 
     
   @OneToMany(mappedBy = "agence_immobiliere")
+  @Exclude
+  @JsonIgnore
   private List<Personne> listePersonne;
   
   @OneToMany(mappedBy = "agence_immobiliere")
+  @Exclude
+  @JsonIgnore
   private List<Offre> listeOffre;
 
 }
