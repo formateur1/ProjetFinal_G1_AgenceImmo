@@ -3,6 +3,7 @@ package com.inti.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,7 @@ import com.inti.repository.IGerantRepository;
 
 @RestController
 @RequestMapping("admin")
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4201"})
 public class AdministrateurController {
 
 	@Autowired
@@ -53,14 +55,14 @@ public class AdministrateurController {
 		
 		return icar.save(c);
 	}
-	
+	 
 	@GetMapping("getClients")
 	public List<ClientAttente> getClientsAttente()
 	{
 		return icar.findAll();
 	}
 	
-	@DeleteMapping("valider/{id}")
+	@DeleteMapping("validerClient/{id}")
 	public void validerClientAttente(@RequestBody Client c, @PathVariable int id)
 	{
 		icr.save(c);
@@ -76,13 +78,13 @@ public class AdministrateurController {
 		return iaar.save(a);
 	}
 	
-	@GetMapping("getGerants")
+	@GetMapping("getAdmins")
 	public List<AdminAttente> getAdminsAttente()
 	{
 		return iaar.findAll();
 	}
 	
-	@DeleteMapping("valider/{id}")
+	@DeleteMapping("validerAdmin/{id}")
 	public void validerAdminAttente(@RequestBody Administrateur a, @PathVariable int id)
 	{
 		iar.save(a);
@@ -103,7 +105,7 @@ public class AdministrateurController {
 		return igar.findAll();
 	}
 		
-	@DeleteMapping("valider/{id}")
+	@DeleteMapping("validerGerant/{id}")
 	public void validerGerantAttente(@RequestBody Gerant g, @PathVariable int id)
 	{
 		igr.save(g);

@@ -11,11 +11,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString.Exclude;
 
 @Table(name="g1_gerant")
 @Entity 
@@ -25,6 +27,8 @@ public class Gerant extends Personne {
 
 	
 	@OneToMany(mappedBy = "gerant")
+	@Exclude
+	@JsonIgnore
     private List<Questions> listeQuestions;
 
     public Gerant() {
