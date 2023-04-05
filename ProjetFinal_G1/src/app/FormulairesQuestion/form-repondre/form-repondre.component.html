@@ -1,0 +1,31 @@
+<h1 style="color: white; text-align: center;">Répondre à la question</h1>
+
+<form *ngIf="questionForm" [formGroup]="questionForm" (ngSubmit)="repQuestion()" style="color: white; text-align: center; margin-left: 15em; margin-right: 15em;"> 
+    <div class="mb-3">
+        <label for="id" class="form-label">id de la question</label>
+        <input class="form-control" type="text" id="id" value="{{this.questionForm.value.id}}" disabled>
+    </div>
+    <div class="mb-3">
+        <label for="date" class="form-label">Date de la question</label>
+        <input class="form-control" type="date" id="date" value="{{this.questionForm.value.date}}" disabled>
+    </div>
+    <div class="mb-3">
+        <label for="contenu" class="form-label">Contenu de la question</label>
+        <input class="form-control" type="text" id="contenu" value="{{this.questionForm.value.contenu}}" disabled>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" type="number" id="idC" value="{{this.questionForm.value.idC}}" hidden>
+        <input class="form-control" type="number" id="idG" value="{{this.questionForm.value.idG}}" hidden>
+        <input class="form-control" type="number" id="client" value="{{this.questionForm.value.client}}" hidden>
+        <input class="form-control" type="number" id="gerant" value="{{this.questionForm.value.gerant}}" hidden>
+    </div>
+    <div class="mb-3">
+        <label for="reponse" class="form-label">Réponse</label>
+        <input type="text" class="form-control" id="reponse" formControlName="reponse" required="true">
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-outline-primary">Envoyer</button>
+    </div>
+
+</form>
