@@ -21,7 +21,7 @@ export class AdminService {
   {
     return this.http.post<Administrateur>("http://localhost:8080/admin/ajouterAdmin", admin);
   }
-  validerdmin(admin:Administrateur):Observable<Administrateur>
+  validerAdmin(admin:Administrateur):Observable<Administrateur>
   {
     return this.http.post<Administrateur>("http://localhost:8080/admin/validerAdmin", admin);
   }

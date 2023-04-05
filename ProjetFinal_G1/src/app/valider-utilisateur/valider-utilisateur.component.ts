@@ -35,7 +35,7 @@ supprimerAdmin(id:string)
 validerAdmin(a:Administrateur, id:string)
 {
   this.as.delete(parseInt(id)).subscribe(); 
-  this.as.addAdmin(a).subscribe();
+  this.as.validerAdmin(a).subscribe();
   this.router.navigate(['validerUtilisateur'])
 }
 supprimerGerant(id:string)
@@ -47,7 +47,7 @@ supprimerGerant(id:string)
 validerGerant(g:Gerant, id:string)
 {
   this.as.deleteGerant(parseInt(id)).subscribe(); 
-  this.as.addGerant(g).subscribe();
+  this.as.validerGerant(g).subscribe();
   this.router.navigate(['validerUtilisateur'])
 }
 supprimerClient(id:string)
@@ -59,7 +59,7 @@ supprimerClient(id:string)
 validerClient(c:Client, id:string)
 {
   this.as.deleteClient(parseInt(id)).subscribe(); 
-  this.as.addClient(c).subscribe();
+  this.as.validerClient(c).subscribe();
   this.router.navigate(['validerUtilisateur'])
 }
 }
