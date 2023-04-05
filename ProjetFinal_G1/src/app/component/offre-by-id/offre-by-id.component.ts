@@ -14,7 +14,6 @@ export class OffreByIdComponent implements OnInit {
   id!:number;
 
   constructor(private os:OffreService, private ar:ActivatedRoute, private router:Router){
-    this.id = ar.snapshot.params['id'];
   }
 
   offre$!:Observable<Offre>;
