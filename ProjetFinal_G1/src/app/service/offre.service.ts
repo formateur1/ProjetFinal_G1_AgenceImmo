@@ -27,20 +27,15 @@ export class OffreService {
       alert("Offre enregistrée :"+ offre.adresse);
      } catch (error) {
       alert("echec requete http")
-     }
-
-      
-}
-
-  return  this.http.get<Offre[]>("http://localhost:8080/getListeOffres");
+     }   
   }
 
   ajouterNote(offreId: number, note: number): Observable<void> {
-    return this.http.put<void>("http://localhost:8080/offres/${offreId}/note/${note}", {})
+    return this.http.put<void>("http://localhost:8080/offres/" + offreId + "/note/" + note, {})
   }
 
   moyenneNotes(offreId: number): Observable<number> {
-    return this.http.get<number>("http://localhost:8080/offres/${offreId}/moyenneNotes")
+    return this.http.get<number>("http://localhost:8080/offres/" + offreId + "/moyenneNotes")
   }
   
 }

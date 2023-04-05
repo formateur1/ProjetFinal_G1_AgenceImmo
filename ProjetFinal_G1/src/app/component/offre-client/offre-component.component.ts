@@ -18,9 +18,13 @@ export class OffreComponentComponent implements OnInit {
   ngOnInit(): void {
     this.listeOffres$= this.os.getListeOffres();
   }
+  
 
-  ajouterNote(offreId: number, note: number): void {
-    this.os.ajouterNote(offreId, note).subscribe(() => {
+  ajouterNote(offreId: number, note: string): void {
+    // Attention : ce qui est récupérer depuis le fichier html est toujours un string même si c'est un number qui est saisi, il faut donc le reconvertir en number.
+    // Const c'est une variable dont la valuer ne peut être modifiée
+    const noteEnNumber = parseFloat(note);
+    this.os.ajouterNote(offreId, noteEnNumber).subscribe(() => {
       console.log("La note a bien été prise en compte");
       this.listeOffres$ = this.os.getListeOffres();
     });
