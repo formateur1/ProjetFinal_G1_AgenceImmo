@@ -13,12 +13,14 @@ export class OffreByIdComponent implements OnInit {
 
   id!:number;
 
-  constructor(private os:OffreService, private ar:ActivatedRoute, private router:Router){
+  constructor(private os:OffreService, private ar:ActivatedRoute, private router:Router){ 
+    this.id = ar.snapshot.params['idOffre'];
   }
 
   offre$!:Observable<Offre>;
 
   ngOnInit(): void {
+   
     this.offre$ = this.os.getOffre(this.id);
 
     console.log(this.offre$.subscribe())
