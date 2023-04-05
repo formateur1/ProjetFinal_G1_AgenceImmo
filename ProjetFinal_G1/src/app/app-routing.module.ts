@@ -10,11 +10,16 @@ import { ListeClientComponent } from './liste-client/liste-client.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { GerantComponentComponent } from './component/gerant-component/gerant-component.component';
 import { OffreByIdComponent } from './component/offre-by-id/offre-by-id.component';
+import { FormAdminComponent } from './form-admin/form-admin.component';
+import { FormGerantComponent } from './form-gerant/form-gerant.component';
+
 
 const routes: Routes = [
   {path:"listeOffres", component:OffreComponentComponent},
   {path:"formOffre", component:FormOffreComponent},
   {path:'formClient', component:FormClientComponent},
+  {path:'formAdmin', component:FormAdminComponent},
+  {path:'formGerant', component:FormGerantComponent},
   {path:'clients', component:ListeClientComponent},
   {path:'accueil', component:AccueilComponent},
   {path:'listeOffresGerant', component:OffreGerantComponent},
