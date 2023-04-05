@@ -83,7 +83,6 @@
  Mettre le projet sur GitHub, sur GitHub : new File et ajouté le lien du projet créer sur Visual Code </li><li>
  Creer une nouvelle branche: dans Visual Code -> Source Controll -> configurer push et ajouter une nouvelle branche  </li><li>
  Ajout du mapping avec @CrossOrigin(origins = {"URL"}) dans controller <br>
- **Probleme de requètes http, erreur dans la connexion angular-eclipse NON REGLÉ </li>
 </ul>
 
 - Creation des modèles Front-end  <br> 
