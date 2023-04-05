@@ -1,5 +1,6 @@
 package com.inti.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,12 +11,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.lang.Nullable;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.ToString.Exclude;
 
 
@@ -33,7 +37,11 @@ public abstract class Personne {
 	protected int id;
 	protected String nom;
 	protected String prenom;
+	@NonNull
+	@Column(unique = true, nullable = false)
 	protected String login;
+	@NonNull
+	@Column(nullable = false)
 	protected String mdp;
 	protected String mail;
 
