@@ -215,6 +215,13 @@ Ajout de .subscribe() dans les fonctions du .component.ts qui appellent un objet
 Problème d'execution : utilisation de console.log() pour vérifier les étapes du code et de Postman pour la liaison Eclipse-BDD pour gérer les erreurs</li>
 </ul> <br>
 
+*Fonctionnalités Questions
+
+<ul>
+  -En FrontEnd -> sur Angular
+ <li>Finitions des options (afficher la liste des questions avec option pour y repondre, envois des questions)</li>
+</ul> <br>
+
 //Jour4// (Scrum master : Théodore Michielin)
 <li>04/04/2023</li><br>
 
@@ -279,3 +286,7 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
      - En back-end 
    Faire appel aux fonctions (CRUD) dans le controller de la classe gérant et s'assurer de la connexion (que les fonctions aient le même nom, URL et URI correctes).  <li><li>
   <br>
+  
+  <ul>
+     - Etablissement du front global (page d'accueil du site)
+  </ul>
