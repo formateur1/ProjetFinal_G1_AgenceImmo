@@ -22,7 +22,7 @@ export class ClientService {
   
   delete(id:number):Observable<void>
   {
-    return this.http.delete<void>("http://localhost:8080/client/delete"+id)
+    return this.http.delete<void>("http://localhost:8080/admin/deleteClient"+id)
   }
   getClientById(id:number):Observable<Client>
   {

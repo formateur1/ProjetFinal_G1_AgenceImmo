@@ -13,6 +13,7 @@ import { OffreGerantComponent } from './component/offre-gerant/offre-gerant.comp
 import { BrowserModule } from '@angular/platform-browser';
 import { FormAdminComponent } from './form-admin/form-admin.component';
 import { FormGerantComponent } from './form-gerant/form-gerant.component';
+import { ValiderUtilisateurComponent } from './valider-utilisateur/valider-utilisateur.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormGerantComponent } from './form-gerant/form-gerant.component';
     ListeClientComponent,
     AccueilComponent,
     FormOffreComponent,
-    OffreGerantComponent
+    OffreGerantComponent,
+    ValiderUtilisateurComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,6 @@ import { FormGerantComponent } from './form-gerant/form-gerant.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent, FormClientComponent, FormGerantComponent, FormAdminComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
