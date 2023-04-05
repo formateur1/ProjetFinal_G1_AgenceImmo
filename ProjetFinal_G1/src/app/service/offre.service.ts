@@ -17,17 +17,28 @@ export class OffreService {
   constructor(private http: HttpClient) { }
   
   getListeOffres():Observable<Offre[]>{
-  return  this.http.get<Offre[]>("http://localhost:8080/getListeOffres");
+  return  this.http.get<Offre[]>("http://localhost:8080/gerant/listeOffres");
   }
 
-  saveOffre(offre:Offre)
+  getOffre(id:number):Observable<Offre> {
+    return this.http.get<Offre>("http://localhost:8080/gerant/offreId/"+id);
+  }
+  
+  saveOffre(offre:Offre):Observable<Offre>
   {
-     try {
-      this.http.post<Offre>("http://localhost:8080/gerant/saveOffre", offre);
       alert("Offre enregistrée :"+ offre.adresse);
-     } catch (error) {
-      alert("echec requete http")
-     }   
+      return  this.http.post<Offre>("http://localhost:8080/gerant/saveOffre", offre);
+  }   
+  }
+
+  modifierOffre(offre:Offre):Observable<Offre>{
+  return  this.http.put<Offre>("http://localhost:8080/gerant/updateOffre", offre);
+  }
+  
+  deleteOffre(id:number)
+  {
+    alert ("L'offre "+id + " a été supprimée")
+    return this.http.delete<void>("http://localhost8080/gerant/deleteOffre/"+id)
   }
 
   ajouterNote(offreId: number, note: number): Observable<void> {

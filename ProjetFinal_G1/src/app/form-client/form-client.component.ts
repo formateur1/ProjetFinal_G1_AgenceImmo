@@ -25,7 +25,6 @@ export class FormClientComponent implements OnInit {
       telephone:['']
   })
   }
-  id!:string;
   nom:string="";
   prenom:string="";
   login:string="";
@@ -35,7 +34,6 @@ export class FormClientComponent implements OnInit {
   adresse:string="";
   telephone:string="";
   
-  c!:Client;
   clientForm!:FormGroup;
 
   saveClient()
