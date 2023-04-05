@@ -18,7 +18,7 @@ import lombok.ToString.Exclude;
 @Entity @AllArgsConstructor @NoArgsConstructor @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @PrimaryKeyJoinColumn(name="id_client")
-public class ClientAttente extends Personne {
+public class ClientAttente extends PersonneAttente {
 
    
     private String adresse;
