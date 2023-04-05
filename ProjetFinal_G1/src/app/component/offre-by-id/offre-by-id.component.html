@@ -1,5 +1,5 @@
-<p>offre-gerant works!</p>
-<p>Liste des offres AVEC Details pour le gérant</p>
+<p>offre-by-id works!</p>
+
 <table class="table">
     <thead>
       <tr>
@@ -19,7 +19,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let o of listeOffres$ | async">
+      <tr *ngIf="offre$ | async as o; else faux">
         <th scope="row">{{o.id}}</th>
         <td>{{o.type_bien}}</td>
         <td>{{o.adresse}}</td>
@@ -38,5 +38,6 @@
           <button (click)="deleteOffre(o.id)">Supprimer</button>
         </td>
       </tr>
+      <ng-template #faux><p>L'offre {{id}} n'a pas pu être récupéré !</p></ng-template>
     </tbody>
   </table>
