@@ -120,12 +120,12 @@
 <ul>
   -En BackEnd -> Création et configuration du controller. 
  <li>Création du controller admin avec les fonctions de création d'utilisateurs (client, gérant et admin) </li><li>
-  Annotations @RestController et @RequestMapping("admin") pour configurer le controller</li><li>
+  Annotations @RestController, @CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4201"}) et @RequestMapping("admin") pour configurer le controller</li><li>
   Annotations @Autowired pour les repository et @Repository dans les interfaces Repository</li><li>
   Annotations @Post/Get/DeleteMapping pour les fonctions CRUD d'utilisateurs
 </li>
 </ul>
-- Création des classes et repository utilisateurs en attente de validation
+- Création des classes et repository utilisateurs en attente de validation (PersonneAttente, ClientAttente, GerantAttente, AdminAttente)
 <ul>
  <li>Les classes ont les mêmes caractéristiques que les classes utilisateurs qui sont utilisées dans les autres fonctionnalités</li><li>
   Les repository permettent d'accéder à la base de donnée</li>
@@ -142,7 +142,7 @@
  fonctions associées (.service.ts => fonctions CRUD)</li><li>
  Configuration de la page html formClient : import des modules FormGroup, FormBuilder, Router dans .component.ts</li><li>
  Instanciation de l'objet formGroup qui contient les attributs de la classe Client (sauf id qui est généré par la BDD)</li><li>
- Code de la page html du formulaire à l'aide de ngModel</li>
+ Code de la page html du formulaire à l'aide de FormGroup et formControlName</li>
 </ul> <br>
 
 *Fonctionnalite Client:
@@ -206,6 +206,14 @@
   Vérifier que tout est lancé (run spring en Eclipse, MySQL ouvert et Visual Code ng serve -o <br> 
   Creation d'un constructeur sans id (autogénéré coté bdd) et sans note (attribuée par les clients) <br> </li><li>
 
+ *Fonctionnalité gestion des utilisateurs:
+<ul>
+  -En FrontEnd -> sur Angular
+ <li> Lien entre Angular et BDD pour l'ajout d'un client : la validation du formulaire appelle une fonction du .component.ts qui fait référence à une fonction du .service.ts <br>
+ Les fonctions CRUD du .service.ts appellent des URL du controller, ce qui execute du code java et lance les requêtes SQL</li><li>
+Ajout de .subscribe() dans les fonctions du .component.ts qui appellent un objet HttpClient</li><li>
+Problème d'execution : utilisation de console.log() pour vérifier les étapes du code et de Postman pour la liaison Eclipse-BDD pour gérer les erreurs</li>
+</ul> <br>
 
 //Jour4// (Scrum master : Théodore Michielin)
 <li>04/04/2023</li><br>
@@ -213,7 +221,7 @@
 - Compte rendu du reunion à 9h :
 <ul>
  <li>#Fonctionnalité client : test des fonctions CRUD:ok, suggestion sur la creation de menu dderoulant sur Angular pour que les clients effectuent des recherches avancées sur les offres.</li><li>
-# Fonctionnalité gerant :.....</li><li>
+# Fonctionnalité gerant : Formulaire création client ok, faire la même chose pour gérant et admin. A créer : page où l'admin peut valider les demandes de création </li><li>
 #Fonctionnalité utilisateurs :.....</li><li>
 #..... </li>
 </ul><br>
@@ -224,7 +232,16 @@
  <li>Redaction de plusieurs fonctions pour la creation de menu deroulant sur afin que les clients puissent effectuer des recherches avancées sur les offres
    ==> EN COURS</li>
 </ul><br>
-  
+
+  *Fonctionnalité gestion des utilisateurs:
+<ul>
+  -En FrontEnd -> sur Angular
+ <li> Formulaires de création de client, gérant et utilisateurs finis</li><li>
+ Création d'un component qui affiche la liste de toutes les personnes en attente avec un tableau et *ngFor="let x of listeX$ | async et qui permet à l'admin de valider ou supprimer une demande de compte avec des buttons <br>
+Les buttons appellent des fonctions valider() et supprimer() dans le component.ts <br>
+Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé (sous la forme de ClientAttente, GerantAttente ou AdminAttente) et un objet Personne est créé (sous la forme de Client, Gerant ou Administrateur)
+</li>
+</ul> <br>
 
  *Fonstionnalité gérant 
 <ul>
