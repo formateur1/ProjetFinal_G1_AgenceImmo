@@ -34,9 +34,7 @@ export class FormGerantComponent implements OnInit {
 
   saveGerant()
   { 
-    this.as.addGerant(new Gerant(this.gerantForm.value.nom, this.gerantForm.value.prenom, 
-      this.gerantForm.value.login, this.gerantForm.value.mdp, this.gerantForm.value.mail, 
-      this.gerantForm.value.agence_immobiliere)).subscribe();
-      alert("La demande de création de compte gérant a bien été ajoutée")
+    this.as.addGerant(this.gerantForm.value).subscribe();
+      this.r.navigate(['validerUtilisateur'])
   }
 }

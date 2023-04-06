@@ -22,49 +22,49 @@ export class ValiderUtilisateurComponent {
   listeG$!:Observable<Gerant[]>;
 
   ngOnInit(): void {
-    this.listeC$=this.as.getClients();
-    this.listeA$=this.as.getAdmins();
-    this.listeG$=this.as.getGerants();
+    this.listeC$=this.as.getClientsAttente();
+    this.listeA$=this.as.getAdminsAttente();
+    this.listeG$=this.as.getGerantsAttente();
   }
 
 supprimerAdmin(id:string)
 {
-  this.as.delete(parseInt(id)).subscribe();
+  this.as.deleteAdminAttente(parseInt(id)).subscribe();
   this.router.navigate(['validerUtilisateur'])
   location.reload()
 }
 
 validerAdmin(a:Administrateur, id:string)
 {
-  this.as.delete(parseInt(id)).subscribe(); 
+  this.as.deleteAdminAttente(parseInt(id)).subscribe(); 
   this.as.validerAdmin(a).subscribe();
   this.router.navigate(['validerUtilisateur'])
   location.reload()
 }
 supprimerGerant(id:string)
 {
-  this.as.deleteGerant(parseInt(id)).subscribe();
+  this.as.deleteGerantAttente(parseInt(id)).subscribe();
   this.router.navigate(['validerUtilisateur'])
   location.reload()
 }
 
 validerGerant(g:Gerant, id:string)
 {
-  this.as.deleteGerant(parseInt(id)).subscribe(); 
+  this.as.deleteGerantAttente(parseInt(id)).subscribe(); 
   this.as.validerGerant(g).subscribe();
   this.router.navigate(['validerUtilisateur'])
   location.reload()
 }
 supprimerClient(id:string)
 {
-  this.as.deleteClient(parseInt(id)).subscribe();
+  this.as.deleteClientAttente(parseInt(id)).subscribe();
   this.router.navigate(['validerUtilisateur'])
   location.reload()
 }
 
 validerClient(c:Client, id:string)
 {
-  this.as.deleteClient(parseInt(id)).subscribe(); 
+  this.as.deleteClientAttente(parseInt(id)).subscribe(); 
   this.as.validerClient(c).subscribe();
   this.router.navigate(['validerUtilisateur'])
   location.reload()

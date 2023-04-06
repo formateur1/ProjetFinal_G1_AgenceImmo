@@ -19,6 +19,12 @@ import { ValiderUtilisateurComponent } from './valider-utilisateur/valider-utili
 import { QuestionComponent } from './component/question/question.component';
 import { FormulaireQuestionComponent } from './FormulairesQuestion/formulaire-question/formulaire-question.component';
 import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-repondre.component';
+import { CompteComponent } from './compte/compte.component';
+import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
+import { UpdateClientComponent } from './update-utilisateur/update-client/update-client.component';
+// import { UpdateAdminComponent } from './update-utilisateur/update-admin/update-admin.component';
+import { UpdateGerantComponent } from './update-utilisateur/update-gerant/update-gerant.component';
+
 
 
 @NgModule({
@@ -38,7 +44,13 @@ import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-
     OffreComponentComponent,
     QuestionComponent,
     FormulaireQuestionComponent,
-    FormRepondreComponent
+    FormRepondreComponent,
+    CompteComponent,
+    ListeUtilisateurComponent,
+    UpdateClientComponent,
+    // UpdateAdminComponent,
+    UpdateGerantComponent
+
 
   ],
   imports: [

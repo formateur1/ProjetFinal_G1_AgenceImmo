@@ -29,5 +29,7 @@ export class FormulaireQuestionComponent implements OnInit{
     this.qs.ajoutQuestion(new Question(this.questionForm.value.contenu,
       this.questionForm.value.idG,
       this.questionForm.value.idC)).subscribe()
+      alert("La question est envoyée")
+      
   }
 }
