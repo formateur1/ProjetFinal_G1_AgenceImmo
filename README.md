@@ -211,7 +211,8 @@
   -En FrontEnd -> sur Angular
  <li> Lien entre Angular et BDD pour l'ajout d'un client : la validation du formulaire appelle une fonction du .component.ts qui fait référence à une fonction du .service.ts <br>
  Les fonctions CRUD du .service.ts appellent des URL du controller, ce qui execute du code java et lance les requêtes SQL</li><li>
-Ajout de .subscribe() dans les fonctions du .component.ts qui appellent un objet HttpClient</li><li>
+Ajout de .subscribe() dans les fonctions du .component.ts qui appellent un objet HttpClient et renvoient un Observable<Objet> <br>
+Le .subscribe permet de récupérer l'objet de l'observable</li><li>
 Problème d'execution : utilisation de console.log() pour vérifier les étapes du code et de Postman pour la liaison Eclipse-BDD pour gérer les erreurs</li>
 </ul> <br>
 
@@ -290,3 +291,24 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
   <ul>
      - Etablissement du front global (page d'accueil du site)
   </ul>
+
+//Jour5// (Scrum master : )
+<li>05/04/2023</li><br>
+
+ *Fonctionnalité gestion des utilisateurs:
+<ul>
+  -En FrontEnd -> sur Angular
+ <li> Liaison Angular/Java/BDD pour les fonctions Valider et Supprimer une demande de création de compte</li>
+ </ul>
+ <ul>
+ -En BackEnd -> sur Eclipse
+  <li>
+ Tests du controller Admin : création d'un fichier de test dans le dossier src/test/java. <br>
+ Annotations avant la classe : @WebMvcTest(controllers = AdministrateurController.class)<br>
+ Annotations pour les objets de classe : @Autowired pour l'objet de type MockMvc, @MockBean pour les repositorys (IClientRepository, IClientAttenteRepository, ...) <br>
+ Annotations devant les fonctions : @Test, @DisplayName("") (Précise à quoi correspond le test effectué) </li><li>
+ Les fonctions test ont une mention "throws Exception" ou contiennent un try catch pour gérer les erreurs si le test n'est pas validé</li><li>
+ L'objet MockMvc (mock) est utilisé pour tester l'url créé dans le controller. De plus, il faut mettre le @RequestMapping("admin") dans l'url. (Exemple : mock.perform(post("/admin/ajouterGerant") ...)</li><li>
+ On utilise un objet Json pour traduire les objets Personne et PersonneAttente en objet Json: Json.object(new Personne())
+</li>
+</ul> <br>
