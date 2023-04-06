@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -35,6 +36,8 @@ public class Offre {
     private String croquis;
     private String note;
 
+    @ManyToMany(mappedBy = "listePropositionOffre")
+    private List<Gerant> listeGerantOffre;
     
 
 public Offre(String type_bien, String adresse, String ville, double prix, double surface, int nb_piece,
@@ -58,3 +61,5 @@ public Offre(String type_bien, String adresse, String ville, double prix, double
 @JoinColumn(name = "id_agence_immmobiliere")
 private AgenceImmobiliere agence_immobiliere;
 }
+
+
