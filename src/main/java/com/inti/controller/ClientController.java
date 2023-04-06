@@ -136,6 +136,19 @@ public class ClientController {
 		icr.save(c);
 		System.out.println("taille de la liste après retrait : " + c.getListePropositions().size());
 	}
+	@PutMapping("sauvegarderOffre/{idOffre}/{idClient}")
+	public void ajoutPropositionOffre(@PathVariable int idOffre, @PathVariable int idClient) {
+		Client c = icr.getReferenceById(idClient);
+		Offre o = ior.getReferenceById(idOffre);
+
+		System.out.println("Récupération du client " + c.getId() + "pour l'offre " + o.getId());
+		System.out.println("taille de la liste avant ajout : " + c.getListePropositions().size());
+
+		c.getListePropositions().add(o);
+		icr.save(c);
+
+		System.out.println("taille de la liste après ajout : " + c.getListePropositions().size());
+	}
 	
 
 }
