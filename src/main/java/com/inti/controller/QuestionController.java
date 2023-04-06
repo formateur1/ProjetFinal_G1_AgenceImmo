@@ -49,7 +49,6 @@ public class QuestionController {
 		q.setGerant(igr.getReferenceById(q.getIdG()));
 		q.setClient(icr.getReferenceById(q.getIdC()));
 		q.setTraitement(true);
-		q.setDate(LocalDate.now());
 		return iqr.save(q);
 	}
 	

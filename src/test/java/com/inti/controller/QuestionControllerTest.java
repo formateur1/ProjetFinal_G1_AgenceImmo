@@ -1,5 +1,6 @@
 package com.inti.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -47,25 +48,37 @@ public class QuestionControllerTest {
 		}
 	}
 
-//	@Test
-//	public void readQuestionTest() {
-//		try {
-//			mockMvc.perform(get("/question/read"))
-//				.andExpect(status().isOk())
-//				.andDo(print());
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
+	@Test
+	public void readQuestionTest() {
+		try {
+			mockMvc.perform(get("/question/read"))
+				.andExpect(status().isOk())
+				.andDo(print());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-//	@Test
-//	public void repondreQuestionTest() {
-//		try {
-//			mockMvc.perform(post("/question/repondre/2").param("rep", "La reponse est truc"))
-//				.andExpect(status().isOk())
-//				.andDo(print());
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
+	@Test
+	public void repondreQuestionTest() {
+		try {
+			mockMvc.perform(post("/question/create").contentType(MediaType.APPLICATION_JSON)
+					.content(Json.fromObject(new Questions("Salut tu es qui ?", new Gerant(), new Client()))))
+					.andExpect(status().isOk()).andDo(print());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void getQuestionTest() {
+		try {
+			mockMvc.perform(get("/question/get/{id}"))
+				.andExpect(status().isOk())
+				.andDo(print());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
