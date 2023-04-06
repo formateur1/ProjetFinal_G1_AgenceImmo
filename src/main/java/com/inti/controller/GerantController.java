@@ -102,7 +102,6 @@ public class GerantController {
 		igr.save(g);
 
 		System.out.println("taille de la liste après retrait : " + g.getListePropositionOffre().size());
-
 	}
-
+	
 }
