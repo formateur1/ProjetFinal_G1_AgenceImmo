@@ -11,6 +11,7 @@
         <th>Agence immobilière</th>
         <th>Adresse</th>
         <th>Téléphone</th>
+        <th>Actions</th>
 
       </tr>
     </thead>
@@ -25,6 +26,8 @@
         <td >{{c.agence_immobiliere}}</td>
         <td >{{c.adresse}}</td>
         <td >{{c.telephone}}</td>
+        <td><button (click)="proposerOffre(c.id)">Proposer offres</button></td>
       </tr>
+      
     </tbody>
   </table> 

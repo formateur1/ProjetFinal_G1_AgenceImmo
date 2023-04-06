@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Client } from '../model/client.model';
 import { HttpClient } from '@angular/common/http';
+import { Offre } from '../model/offre.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -32,4 +33,15 @@ export class ClientService {
   {
     return this.http.put<void>("http://localhost:8080/client/modify", client.id)
   }
+
+  //Gerer ses propositions 
+  getListePropositions(idClient: number): Observable<Offre[]> {
+    return this.http.get<Offre[]>("http://localhost:8080/client/listePropositions/" + idClient);
+  }
+  retirerProposition(idClient: number, idOffre: number): void {
+    const url = `http://localhost:8080/client/retirerProposition/${idOffre}/${idClient}`;
+    console.log("envoie de la requette retirer proposition" + idOffre)
+    this.http.put<Offre[]>(url, null);
+  }
+
 }

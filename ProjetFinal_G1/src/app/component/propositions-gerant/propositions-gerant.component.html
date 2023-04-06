@@ -1,5 +1,9 @@
-<p>offre-by-id works!</p>
+<p>propositions-gerant works!</p>
 
+<button>Afficher liste clients</button>       
+ID du client :  <input type="text" [(ngModel)]="idClient" type="text"  name="idClient" required="required" > 
+Proposer cette liste d'offres <button (click)="proposerListeOffres(idClient)">Envoyer au client {{idClient}}</button>
+  
 <table class="table">
     <thead>
       <tr>
@@ -19,7 +23,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngIf="offre$ | async as o; else faux">
+        <tr *ngFor="let o of listePropositions$ | async">
         <th scope="row">{{o.id}}</th>
         <td>{{o.type_bien}}</td>
         <td>{{o.adresse}}</td>
@@ -33,12 +37,11 @@
         <td><img src = "{{o.croquis}}" width="25%"> </td>
         <td>{{o.note}}/5</td>
         <td>
-          Votre ID  <input type="text" [(ngModel)]="idGerant" type="text"  name="idGerant"  >
-          <button (click)="ajoutProposition(o.id,idGerant)" >Ajouter aux propositions</button> =
           <button (click)="modifierOffre(o.id)" >Modifier</button>
-          <button (click)="deleteOffre(o.id)">Supprimer</button>
+          <button (click)="deleteProposition(o.id)">Retirer</button>
+          <button (click)="proposerOffre(o.id,idClient)">Proposer cette offre</button>
+          
         </td>
       </tr>
-      <ng-template #faux><p>L'offre {{id}} n'a pas pu être récupéré !</p></ng-template>
     </tbody>
   </table>
