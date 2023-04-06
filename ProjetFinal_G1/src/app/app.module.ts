@@ -18,6 +18,7 @@ import { ValiderUtilisateurComponent } from './valider-utilisateur/valider-utili
 import { QuestionComponent } from './component/question/question.component';
 import { FormulaireQuestionComponent } from './FormulairesQuestion/formulaire-question/formulaire-question.component';
 import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-repondre.component';
+import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-
     GerantComponentComponent,
     QuestionComponent,
     FormulaireQuestionComponent,
-    FormRepondreComponent
+    FormRepondreComponent,
+    ListeUtilisateurComponent
 
   ],
   imports: [
