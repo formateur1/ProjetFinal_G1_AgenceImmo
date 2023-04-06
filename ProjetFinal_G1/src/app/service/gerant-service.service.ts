@@ -49,6 +49,7 @@ export class GerantServiceService {
   ajoutProposition( idGerant:number,idOffre:number):Observable<Offre[]>
   {
   const url = `http://localhost:8080/gerant/ajoutPropOffre/${idOffre}/${idGerant}`;
+  console.log("envoie de la requette")
   return this.http.put<Offre[]>(url, null);
   } 
 

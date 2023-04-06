@@ -40,6 +40,7 @@ idGerant:number=0;
     return this.os.deleteOffre(id);
   }
   ajoutProposition(idOffre:number, idGerant:number){
+    alert("offre "+idOffre+" ajoutée à la liste du gérant "+ idGerant)
     return this.gs.ajoutProposition(idOffre,idGerant);
   }
 }
