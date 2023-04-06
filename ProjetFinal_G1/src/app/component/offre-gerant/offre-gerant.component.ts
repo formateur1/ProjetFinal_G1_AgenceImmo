@@ -18,13 +18,16 @@ export class OffreGerantComponent implements OnInit{
 
   listeOffres$!:Observable<Offre[]>;
   newPropositionOffre!:Observable<Offre>;
-idGerant:number=0;
+  idGerant!:any;
 
   ngOnInit():Observable<Offre[]> {
     
    return this.listeOffres$= this.os.getListeOffres();
   }
 
+  getDataID(){
+    return this.idGerant = sessionStorage.getItem('id')
+  }
   getOffre(id:number){
     return this.os.getOffre(id);
   }
@@ -41,6 +44,7 @@ idGerant:number=0;
   }
   ajoutProposition(idOffre:number, idGerant:number){
     alert("offre "+idOffre+" ajoutée à la liste du gérant "+ idGerant)
-    return this.gs.ajoutProposition(idOffre,idGerant);
+    return this.
+    gs.ajoutProposition(idOffre,idGerant);
   }
 }

@@ -43,5 +43,9 @@ export class ClientService {
     console.log("envoie de la requette retirer proposition" + idOffre)
     this.http.put<Offre[]>(url, null);
   }
-
+  sauvegarderOffre(idOffre:number,idClient:any): void {
+    const url = `http://localhost:8080/client/sauvegarderOffre/${idOffre}/${idClient}`;
+    console.log("envoie de la requette sauvegarder l'offre :"+ idOffre);
+    this.http.put<void>(url, null);
+  }
 }
