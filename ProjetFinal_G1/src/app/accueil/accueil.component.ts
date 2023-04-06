@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AccueilComponent {
 
+  cheminImage1 = "../assets/img/bandeau.jpg"
 }

@@ -11,6 +11,11 @@ import { GerantComponentComponent } from './component/gerant-component/gerant-co
 import { OffreByIdComponent } from './component/offre-by-id/offre-by-id.component';
 import { FormAdminComponent } from './form-admin/form-admin.component';
 import { FormGerantComponent } from './form-gerant/form-gerant.component';
+import { ValiderUtilisateurComponent } from './valider-utilisateur/valider-utilisateur.component';
+import { QuestionComponent } from './component/question/question.component';
+import { FormulaireQuestionComponent } from './FormulairesQuestion/formulaire-question/formulaire-question.component';
+import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-repondre.component';
+import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
 
 
 const routes: Routes = [
@@ -20,7 +25,12 @@ const routes: Routes = [
   {path:'formAdmin', component:FormAdminComponent},
   {path:'formGerant', component:FormGerantComponent},
   {path:'clients', component:ListeClientComponent},
+  {path:"question", component:QuestionComponent},
+  {path:"question/form", component:FormulaireQuestionComponent},
+  {path:"question/:id", component:FormRepondreComponent},
   {path:'accueil', component:AccueilComponent},
+  {path:'validerUtilisateur', component:ValiderUtilisateurComponent},
+  {path:'listeUtilisateur', component:ListeUtilisateurComponent},
   {path:'listeOffresGerant', component:OffreGerantComponent},
   {path:'modifierOffre/:id',component:ModifierOffreComponent },
   {path:'', component:AccueilComponent},

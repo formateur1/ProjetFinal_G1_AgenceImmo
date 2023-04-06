@@ -1,0 +1,20 @@
+<h1 style="color: white; text-align: center;">Posez votre question</h1>
+
+<form [formGroup]="questionForm" (ngSubmit)="saveQuestion()" style="color: white; text-align: center; margin-left: 15em; margin-right: 15em;"> 
+    <div class="mb-3">
+        <label for="idG" class="form-label">id du gérant</label>
+        <input type="text" class="form-control" id="idG" formControlName="idG" required="true" [(ngModel)]="idG">
+    </div>
+    <div class="mb-3">
+        <label for="idC" class="form-label">Votre id</label>
+        <input type="text" class="form-control" id="idC" formControlName="idC" required="true" [(ngModel)]="idC">
+    </div>
+    <div class="mb-3">
+        <label for="contenu" class="form-label">Contenu de la question</label>
+        <input type="text" class="form-control" id="contenu" formControlName="contenu" required="true" [(ngModel)]="contenu">
+    </div>
+    
+    <div>
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </div>
+</form>
