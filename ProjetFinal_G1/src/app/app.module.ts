@@ -14,6 +14,7 @@ import { OffreByIdComponent } from './component/offre-by-id/offre-by-id.componen
 import { GerantComponentComponent } from './component/gerant-component/gerant-component.component';
 import { FormAdminComponent } from './form-admin/form-admin.component';
 import { FormGerantComponent } from './form-gerant/form-gerant.component';
+import { OffreComponentComponent } from './component/offre-client/offre-component.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormGerantComponent } from './form-gerant/form-gerant.component';
     OffreGerantComponent,
     ModifierOffreComponent,
     OffreByIdComponent,
-    GerantComponentComponent
+    GerantComponentComponent,
+    OffreComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,6 @@ import { FormGerantComponent } from './form-gerant/form-gerant.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent, FormClientComponent, FormGerantComponent, FormAdminComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
