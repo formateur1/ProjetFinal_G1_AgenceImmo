@@ -33,7 +33,7 @@ export class AdminService {
 
   getAdminsValide() :Observable<Administrateur[]>{
 
-    return this.http.get<Administrateur[]>("http://localhost:8080/admin/getAdminsValide");
+    return this.http.get<Administrateur[]>("http://localhost:8080/admin/getAdminValide");
   }
 
   getAdminById(id:number):Observable<Administrateur>{
@@ -47,7 +47,7 @@ export class AdminService {
   }
   updateAdmin(admin:Administrateur):Observable<Administrateur>
   {
-    return this.http.put<Administrateur>("http://localhost:8080/admin/modifyAdmin", admin)
+    return this.http.put<Administrateur>("http://localhost:8080/admin/updateAdmin", admin)
   }
 
   // Client
