@@ -1,7 +1,7 @@
 <p>liste-utilisateur works!</p>
 
 <p>Liste des administrateurs</p>
-<table>
+<table class="liste">
     <thead>
         <tr>
             <th>id</th>
@@ -23,12 +23,12 @@
             <td>{{a.mdp}}</td>
             <td>{{a.mail}}</td>
             <td>{{a.agence_immobiliere}}</td>
-            <td><button (click)="updateAdmin(a, a.id)">Modifier</button> <button (click)="supprimerAdmin(a.id)">Supprimer</button></td>
+            <td><button (click)="updateAdmin(a.id)">Modifier</button> <button (click)="supprimerAdmin(a.id)">Supprimer</button></td>
         </tr>
     </tbody>
-</table>
+</table >
 <p>Liste des gérants</p>
-<table>
+<table class="liste">
     <thead>
         <tr>
             <th>id</th>
@@ -51,12 +51,12 @@
             <td>{{g.mdp}}</td>
             <td>{{g.mail}}</td>
             <td>{{g.agence_immobiliere}}</td>
-            <td><button (click)="updateGerant(g, g.id)">Valider</button> <button (click)="supprimerGerant(g.id)">Supprimer</button></td>
+            <td><button (click)="updateGerant(g.id)">Modifier</button> <button (click)="supprimerGerant(g.id)">Supprimer</button></td>
         </tr>
     </tbody>
-</table>
+</table >
 <p>Liste des clients</p>
-<table>
+<table class="liste">
     <thead>
 
         <tr>
@@ -83,7 +83,7 @@
             <td>{{c.agence_immobiliere}}</td>
             <td>{{c.adresse}}</td>
             <td>{{c.telephone}}</td>
-            <td><button (click)="updateClient(c, c.id)">Modifier</button> <button (click)="supprimerClient(c.id)">Supprimer</button></td>
+            <td><button (click)="updateClient(c.id)">Modifier</button> <button (click)="supprimerClient(c.id)">Supprimer</button></td>
         </tr>
     </tbody>
 </table>

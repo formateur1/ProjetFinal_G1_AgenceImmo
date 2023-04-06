@@ -35,6 +35,12 @@ export class AdminService {
 
     return this.http.get<Administrateur[]>("http://localhost:8080/admin/getAdminsValide");
   }
+
+  getAdminById(id:number):Observable<Administrateur>{
+
+    return this.http.get<Administrateur>("http://localhost:8080/admin/getAdminById/"+id);
+  }
+
   deleteAdminValide(id:number)
   {
     return this.http.delete<void>("http://localhost:8080/admin/deleteAdminValide/"+id)
@@ -67,6 +73,10 @@ export class AdminService {
   getClientsValide() :Observable<Client[]>{
 
     return this.http.get<Client[]>("http://localhost:8080/admin/getClientsValide");
+  }
+  getClientById(id:number):Observable<Client>{
+
+    return this.http.get<Client>("http://localhost:8080/admin/getClientById/"+id);
   }
   deleteClientValide(id:number):Observable<void>
   {
@@ -101,12 +111,16 @@ export class AdminService {
 
     return this.http.get<Gerant[]>("http://localhost:8080/admin/getGerantsValide");
   }
+  getGerantById(id:number):Observable<Gerant>{
+
+    return this.http.get<Gerant>("http://localhost:8080/admin/getGerantById/"+id);
+  }
   deleteGerantValide(id:number):Observable<void>
   {
     return this.http.delete<void>("http://localhost:8080/admin/deleteGerantValide/"+id)
   }
   updateGerant(gerant:Gerant):Observable<Gerant>
   {
-    return this.http.put<Gerant>("http://localhost:8080/admin/updateClient", gerant)
+    return this.http.put<Gerant>("http://localhost:8080/admin/updateGerant", gerant)
   }
 }
