@@ -39,7 +39,6 @@ export class GerantServiceService {
 
     return this.http.get<Gerant[]>("http://localhost:8080/gerant/getGerants");
   }
-
   addGerant(gerant: Gerant): Observable<Gerant> {
     console.log(Gerant);
     return this.http.post<Gerant>("http://localhost:8080/gerant/ajouterGerant", gerant);

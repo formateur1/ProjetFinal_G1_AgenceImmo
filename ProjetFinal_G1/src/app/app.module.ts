@@ -14,7 +14,18 @@ import { OffreByIdComponent } from './component/offre-by-id/offre-by-id.componen
 import { GerantComponentComponent } from './component/gerant-component/gerant-component.component';
 import { FormAdminComponent } from './form-admin/form-admin.component';
 import { FormGerantComponent } from './form-gerant/form-gerant.component';
+
 import { PropositionsGerantComponent } from './component/propositions-gerant/propositions-gerant.component';
+
+import { ValiderUtilisateurComponent } from './valider-utilisateur/valider-utilisateur.component';
+import { QuestionComponent } from './component/question/question.component';
+import { FormulaireQuestionComponent } from './FormulairesQuestion/formulaire-question/formulaire-question.component';
+import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-repondre.component';
+import { CompteComponent } from './compte/compte.component';
+import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
+import { UpdateClientComponent } from './update-utilisateur/update-client/update-client.component';
+// import { UpdateAdminComponent } from './update-utilisateur/update-admin/update-admin.component';
+import { UpdateGerantComponent } from './update-utilisateur/update-gerant/update-gerant.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +37,20 @@ import { PropositionsGerantComponent } from './component/propositions-gerant/pro
     AccueilComponent,
     FormOffreComponent,
     OffreGerantComponent,
+    ValiderUtilisateurComponent,
     ModifierOffreComponent,
     OffreByIdComponent,
     GerantComponentComponent,
-    PropositionsGerantComponent
+
+    PropositionsGerantComponent,
+    QuestionComponent,
+    FormulaireQuestionComponent,
+    FormRepondreComponent,
+    CompteComponent,
+    ListeUtilisateurComponent,
+    UpdateClientComponent,
+    // UpdateAdminComponent,
+    UpdateGerantComponent
   ],
   imports: [
     BrowserModule,

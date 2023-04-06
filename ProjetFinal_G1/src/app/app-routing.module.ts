@@ -1,4 +1,3 @@
-
 import { Component, NgModule } from '@angular/core';
 import { OffreComponentComponent } from './component/offre-client/offre-component.component';
 import { FormOffreComponent } from './formulaire/form-offre/form-offre.component';
@@ -12,6 +11,16 @@ import { GerantComponentComponent } from './component/gerant-component/gerant-co
 import { OffreByIdComponent } from './component/offre-by-id/offre-by-id.component';
 import { FormAdminComponent } from './form-admin/form-admin.component';
 import { FormGerantComponent } from './form-gerant/form-gerant.component';
+import { ValiderUtilisateurComponent } from './valider-utilisateur/valider-utilisateur.component';
+import { QuestionComponent } from './component/question/question.component';
+import { FormulaireQuestionComponent } from './FormulairesQuestion/formulaire-question/formulaire-question.component';
+import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-repondre.component';
+import { CompteComponent } from './compte/compte.component';
+import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
+import { UpdateClientComponent } from './update-utilisateur/update-client/update-client.component';
+import { UpdateGerantComponent } from './update-utilisateur/update-gerant/update-gerant.component';
+// import { UpdateAdminComponent } from './update-utilisateur/update-admin/update-admin.component';
+
 
 
 const routes: Routes = [
@@ -21,12 +30,21 @@ const routes: Routes = [
   {path:'formAdmin', component:FormAdminComponent},
   {path:'formGerant', component:FormGerantComponent},
   {path:'clients', component:ListeClientComponent},
+  {path:"question", component:QuestionComponent},
+  {path:"question/form", component:FormulaireQuestionComponent},
+  {path:"question/:id", component:FormRepondreComponent},
   {path:'accueil', component:AccueilComponent},
+  {path:'validerUtilisateur', component:ValiderUtilisateurComponent},
+  {path:'listeUtilisateur', component:ListeUtilisateurComponent},
+  {path:'updateClient/:id',component:UpdateClientComponent },
+  {path:'updateGerant/:id',component:UpdateGerantComponent },
+  // {path:'updateAdmin/:id',component: UpdateAdminComponent },
   {path:'listeOffresGerant', component:OffreGerantComponent},
   {path:'modifierOffre/:id',component:ModifierOffreComponent },
   {path:'', component:AccueilComponent},
   {path:'accueilGerant',component:GerantComponentComponent},
-  {path:'offreById/:idOffre',component:OffreByIdComponent}
+  {path:'offreById/:idOffre',component:OffreByIdComponent},
+  {path:'compte', component:CompteComponent}
  
 ];
 

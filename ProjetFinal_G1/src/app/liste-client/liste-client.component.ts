@@ -31,5 +31,4 @@ proposerOffre(id:any){
     return this.gs.proposerOffre(id, this.idGerant);
   }
 }
-
 }

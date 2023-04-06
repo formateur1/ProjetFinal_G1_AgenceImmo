@@ -1,7 +1,61 @@
-<p>accueil works!</p>
+<!-- <button routerLink="/clients" type="button">Afficher la liste des clients</button>
+<button routerLink="/formClient" type="button">Ajouter un client</button> -->
 
-<button routerLink="/clients" type="button">Afficher la liste des clients</button>
-<button routerLink="/formClient" type="button">Ajouter un client</button>
-<button routerLink="/formGerant" type="button">Ajouter un gérant</button>
-<button routerLink="/formAdmin" type="button">Ajouter un admin</button>
+<h2 *ngIf="connecte == 'true'" style="color: white; text-align: center; font-size: 30px; margin-top: 20px;">Bienvenu à vous {{getData()}}</h2>
+
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="../assets/img/clef maison.jpg" alt="clefs maison" />
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">Nos agents</span>
+                    <span class="section-heading-lower">Pour vous servir</span>
+                </h2>
+                <p class="mb-3">Nos agents sont là pour vous, n'hesitez pas à poser vos questions dans l'onglet Contact</p>
+                <div class="intro-button  mx-auto"><a class="reinitialise" id="btn1" href="/question/form">Nous contacter</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">Nos meilleurs</span>
+                        <span class="section-heading-lower">logements</span>
+                    </h2>
+                    <!-- Ici mettre un defile des meileurs offres -->
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="5000" style="height: 550px;">
+                          <img src="../assets/img/appart 1.jpg" class="d-block w-100" alt="appart1">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000" style="height: 550px;">
+                          <img src="../assets/img/appart 2.jpg" class="d-block w-100" alt="appart2">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000" style="height: 550px;">
+                          <img src="../assets/img/appart 3.jpg" class="d-block w-100" alt="appart3">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                      
+                    </div>
+                </div>
+                <div class="intro-button  mx-auto" ><a class="reinitialise" id="btn2" href="/listeOffres">Faire une recherche</a></div>
+            </div>
+           
+        </div>
+    </div>
+</section>
+
 <router-outlet></router-outlet>
