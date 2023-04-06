@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -20,7 +21,9 @@ import lombok.ToString.Exclude;
 
 @Table(name="g1_offre")
 @Entity @AllArgsConstructor @NoArgsConstructor @Data
-@JsonIgnoreProperties({"hibernateLazyInitializer"})
+@JsonIgnoreProperties({ "hibernateLazyInitializer" })
+@PrimaryKeyJoinColumn(name = "id_offre")
+
 public class Offre {
 
 	@Id

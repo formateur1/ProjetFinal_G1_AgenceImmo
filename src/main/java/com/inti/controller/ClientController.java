@@ -26,6 +26,7 @@ import com.inti.model.Client;
 import com.inti.model.Gerant;
 import com.inti.model.Offre;
 import com.inti.repository.IClientRepository;
+import com.inti.repository.IGerantRepository;
 import com.inti.repository.IOffreRepository;
 
 @RestController
@@ -37,6 +38,8 @@ public class ClientController {
 	IClientRepository icr;
 	@Autowired
 	IOffreRepository ior;
+	@Autowired
+	IGerantRepository igr; 
 
 	//Consulter la liste des offres
 	
@@ -110,6 +113,19 @@ public class ClientController {
 
 		System.out.println("taille de la liste après ajout : " + c.getListePropositions().size());
 		System.out.println("liste proposition après ajout" + c.getListePropositions());
+	}
+	
+	@PutMapping("recevoirListePropositions/{idGerant}/{idClient}")
+	public void recevoirListePropositions( @PathVariable int idClient, @PathVariable int idGerant) {
+		Client c = icr.getReferenceById(idClient);
+		Gerant g = igr.getReferenceById(idGerant);
+		System.out.println("Récupération du client " + c.getId() + "pour recevoir la liste du gérant " + g.getId());
+		System.out.println("taille de la liste avant ajout : " + c.getListePropositions().size());
+		
+		c.getListePropositions().addAll( g.getListePropositionOffre());
+		icr.save(c);
+
+		System.out.println("taille de la liste après ajout : " + c.getListePropositions().size());
 	}
 
 	@DeleteMapping("retirerProposition/{idOffre}/{idClient}")
