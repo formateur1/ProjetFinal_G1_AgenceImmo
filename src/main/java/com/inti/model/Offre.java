@@ -10,11 +10,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString.Exclude;
 
 @Table(name="g1_offre")
 @Entity @AllArgsConstructor @NoArgsConstructor @Data
@@ -36,8 +38,16 @@ public class Offre {
     private String croquis;
     private String note;
 
+    
+    //@Exclude
+	//@JsonIgnore
     @ManyToMany(mappedBy = "listePropositionOffre")
     private List<Gerant> listeGerantOffre;
+    
+    //@Exclude
+	//@JsonIgnore
+    @ManyToMany(mappedBy = "listePropositions")
+    private List<Client> listeClientOffre;
     
 
 public Offre(String type_bien, String adresse, String ville, double prix, double surface, int nb_piece,
