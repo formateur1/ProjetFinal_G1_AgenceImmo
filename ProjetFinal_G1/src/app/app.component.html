@@ -12,7 +12,7 @@
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/accueil">Home</a></li>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">Mes offres</a></li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Mon compte</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/compte">Mon compte</a></li>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/question/form">Contact</a></li>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeOffres">Faire une recherche</a></li>
             </ul>
@@ -33,23 +33,24 @@
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Afficher les statistiques</a></li>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formOffre">Ajouter une offre</a></li>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formOffre"></a></li>
-                <li class="nav-item px-lg-4">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Gerer les utilisateurs
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formClient">Ajouter un client</a></li>
-                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formGerant">Ajouter un gérant</a></li>
-                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formAdmin">Ajouter un admin</a></li>
-                            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/validerUtilisateur">Valider les utilisateurs</a></li>
-                        </ul>
-                    </div>
-                </li>
           </ul>
       </div>
   </div>
 </nav>
+<nav *ngIf="checkboxGerant" class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formClient">Ajouter un client</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formGerant">Ajouter un gérant</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formAdmin">Ajouter un admin</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/validerUtilisateur">Valider les utilisateurs</a></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  
 
 <router-outlet></router-outlet>
 

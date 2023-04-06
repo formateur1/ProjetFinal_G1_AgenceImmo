@@ -15,6 +15,7 @@ import { ValiderUtilisateurComponent } from './valider-utilisateur/valider-utili
 import { QuestionComponent } from './component/question/question.component';
 import { FormulaireQuestionComponent } from './FormulairesQuestion/formulaire-question/formulaire-question.component';
 import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-repondre.component';
+import { CompteComponent } from './compte/compte.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,8 @@ const routes: Routes = [
   {path:'modifierOffre/:id',component:ModifierOffreComponent },
   {path:'', component:AccueilComponent},
   {path:'accueilGerant',component:GerantComponentComponent},
-  {path:'offreById/:idOffre',component:OffreByIdComponent}
+  {path:'offreById/:idOffre',component:OffreByIdComponent},
+  {path:'compte', component:CompteComponent}
  
 ];
 

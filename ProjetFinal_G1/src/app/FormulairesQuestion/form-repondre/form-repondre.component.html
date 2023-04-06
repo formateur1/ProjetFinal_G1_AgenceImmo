@@ -3,15 +3,15 @@
 <form *ngIf="questionForm" [formGroup]="questionForm" (ngSubmit)="repQuestion()" style="color: white; text-align: center; margin-left: 15em; margin-right: 15em;"> 
     <div class="mb-3">
         <label for="id" class="form-label">id de la question</label>
-        <input class="form-control" type="text" id="id" value="{{this.questionForm.value.id}}" disabled>
+        <input class="form-control" type="text" id="id" value="{{this.questionForm.value.id}}" disabled style="text-align: center;">
     </div>
     <div class="mb-3">
         <label for="date" class="form-label">Date de la question</label>
-        <input class="form-control" type="date" id="date" value="{{this.questionForm.value.date}}" disabled>
+        <input class="form-control" type="date" id="date" value="{{this.questionForm.value.date}}" disabled style="text-align: center;">
     </div>
     <div class="mb-3">
         <label for="contenu" class="form-label">Contenu de la question</label>
-        <input class="form-control" type="text" id="contenu" value="{{this.questionForm.value.contenu}}" disabled>
+        <input class="form-control" type="text" id="contenu" value="{{this.questionForm.value.contenu}}" disabled style="text-align: center;">
     </div>
     <div class="mb-3">
         <input class="form-control" type="number" id="idC" value="{{this.questionForm.value.idC}}" hidden>
@@ -21,7 +21,7 @@
     </div>
     <div class="mb-3">
         <label for="reponse" class="form-label">Réponse</label>
-        <input type="text" class="form-control" id="reponse" formControlName="reponse" required="true">
+        <input type="text" class="form-control" id="reponse" formControlName="reponse" required="true" style="text-align: center;">
     </div>
 
     <div>
