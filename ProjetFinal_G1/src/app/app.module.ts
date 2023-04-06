@@ -15,6 +15,11 @@ import { GerantComponentComponent } from './component/gerant-component/gerant-co
 import { FormAdminComponent } from './form-admin/form-admin.component';
 import { FormGerantComponent } from './form-gerant/form-gerant.component';
 import { OffreComponentComponent } from './component/offre-client/offre-component.component';
+import { ValiderUtilisateurComponent } from './valider-utilisateur/valider-utilisateur.component';
+import { QuestionComponent } from './component/question/question.component';
+import { FormulaireQuestionComponent } from './FormulairesQuestion/formulaire-question/formulaire-question.component';
+import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-repondre.component';
+
 
 @NgModule({
   declarations: [
@@ -26,10 +31,15 @@ import { OffreComponentComponent } from './component/offre-client/offre-componen
     AccueilComponent,
     FormOffreComponent,
     OffreGerantComponent,
+    ValiderUtilisateurComponent,
     ModifierOffreComponent,
     OffreByIdComponent,
     GerantComponentComponent,
-    OffreComponentComponent
+    OffreComponentComponent,
+    QuestionComponent,
+    FormulaireQuestionComponent,
+    FormRepondreComponent
+
   ],
   imports: [
     BrowserModule,

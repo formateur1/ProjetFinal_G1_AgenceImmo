@@ -37,5 +37,6 @@ export class FormAdminComponent implements OnInit {
     this.as.addAdmin(new Administrateur(this.adminForm.value.nom, this.adminForm.value.prenom, 
       this.adminForm.value.login, this.adminForm.value.mdp, this.adminForm.value.mail, 
       this.adminForm.value.agence_immobiliere)).subscribe();
+      alert("La demande de création de compte administrateur a bien été ajoutée")
   }
 }
