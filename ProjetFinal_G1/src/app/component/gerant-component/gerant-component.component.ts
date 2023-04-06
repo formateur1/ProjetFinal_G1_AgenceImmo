@@ -16,33 +16,29 @@ export class GerantComponentComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient, private os: OffreService) { }
 
   ngOnInit(): void {
-
+   
   }
-  // - crud offre : bouton dans la liste offre-Gerant
-
-  //* Nouvelle offre 
   ajoutOffre(): void {
     this.router.navigate(['formOffre']);
   }
 
-  // A FAIRE...
+  connecte = sessionStorage.getItem('connecte')
+  getDataPrenom(){
+    return sessionStorage.getItem('prenom')
+  }
 
-  // - menu dans html gerant + inputid pour la recherche ne marche pas
-
-  //Retrouver une offre
 
   getOffreById() {
     console.log(this.idOffre);
     return this.router.navigate(['offreById/' + this.idOffre]);
   }
 
-  // - fonctions gérant
-  //* Proposer offres
-  //Choisir les offres a proposer au client et les ajouter a une liste
   afficherListeOffres(): void {
     this.router.navigate(["listeOffresGerant"]);
   };
-  // Choisir le client a qui proposer les offres de la liste
-  // supprimer une offre de la liste des propositions
-  //* CROQUIS...
+
+  afficherPropositions(): void {
+    this.router.navigate(["listePropositionsGerant"]);
+  };
+
 }

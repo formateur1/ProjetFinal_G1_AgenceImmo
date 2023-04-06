@@ -44,7 +44,7 @@ export class GerantServiceService {
     return this.http.post<Gerant>("http://localhost:8080/gerant/ajouterGerant", gerant);
   }
 //Gerer ka liste des propositions
-  getListePropositions(idGerant: number): Observable<Offre[]> {
+  getListePropositions(idGerant: any): Observable<Offre[]> {
     return this.http.get<Offre[]>("http://localhost:8080/gerant/listePropositions/" + idGerant);
   }
 

@@ -12,7 +12,8 @@ import { GerantServiceService } from '../service/gerant-service.service';
 })
 export class ListeClientComponent {
   constructor(private cs:ClientService, private router:Router, private gs:GerantServiceService) {}
-  idGerant!:any;
+  connecte = sessionStorage.getItem('connecte')
+  idGerant = sessionStorage.getItem('id');
   listeC$!:Observable<Client[]>;
 
   ngOnInit(): void {
@@ -28,7 +29,7 @@ supprimer(id:number)
 proposerOffre(id:any){
   {
     alert ("La liste d'offres du gérant "+this.idGerant +" va être envoyée au client "+id)
-    return this.gs.proposerOffre(id, this.idGerant);
+    return this.gs.proposerListeOffres(id, this.idGerant);
   }
 }
 }

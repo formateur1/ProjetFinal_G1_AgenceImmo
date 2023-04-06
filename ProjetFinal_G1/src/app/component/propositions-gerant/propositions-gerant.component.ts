@@ -14,14 +14,17 @@ export class PropositionsGerantComponent {
   constructor(private http: HttpClient,private ar:ActivatedRoute, private gs:GerantServiceService ,  private router:Router ) { }
 
   listePropositions$!:Observable<Offre[]>;
-  idGerant!:number;
   idClient!:number;
-
+  idG = sessionStorage.getItem('id');
+  idGerant=Number(this.idG);
+  
   ngOnInit():Observable<Offre[]> {
-   this.idGerant = this.ar.snapshot.params['idGerant'];
+   
    return this.listePropositions$= this.gs.getListePropositions(this.idGerant);
   }
-
+  
+  connecte = sessionStorage.getItem('connecte')
+  
   modifierOffre(idOffre:number)
   {
     return this.router.navigate(['modifierOffre/'+idOffre]);
@@ -30,7 +33,7 @@ export class PropositionsGerantComponent {
   deleteProposition(idOffre:number)
   {
     alert ("L'offre "+idOffre + " va être retirée de la liste des proposition du gérant "+this.idGerant)
-    return this.gs.deleteProposition(idOffre,this.idGerant);
+    return this.gs.deleteProposition(this.idGerant,idOffre);
   }
 
   proposerOffre(idOffre: number,idClient:number){
@@ -41,6 +44,6 @@ export class PropositionsGerantComponent {
   proposerListeOffres(idClient:number)
   {
     alert ("La liste d'offres du gérant "+this.idGerant +" va être envoyée au client "+idClient)
-    return this.gs.proposerOffre(idClient, this.idGerant);
+    return this.gs.proposerListeOffres(idClient, this.idGerant);
   }
 }

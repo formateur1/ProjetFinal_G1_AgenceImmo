@@ -11,7 +11,9 @@ import { OffreService } from 'src/app/service/offre.service';
   styleUrls: ['./offre-by-id.component.css']
 })
 export class OffreByIdComponent implements OnInit {
-  idGerant:number=0;
+  connecte = sessionStorage.getItem('connecte')
+  idG= sessionStorage.getItem('id');
+  idGerant = Number(this.idG);
   id!:number;
 
   constructor(private os:OffreService, private ar:ActivatedRoute, private router:Router, private gs:GerantServiceService){ 
@@ -36,8 +38,8 @@ export class OffreByIdComponent implements OnInit {
     alert ("L'offre "+id + " va être supprimée")
     return this.os.deleteOffre(id);
   }
-  ajoutProposition(idOffre:number, idGerant:number){
-    alert("offre "+idOffre+" ajoutée à la liste du gérant "+ idGerant)
-    return this.gs.ajoutProposition(idOffre,idGerant);
+  ajoutProposition(idOffre:number){
+    alert("offre "+idOffre+" ajoutée à la liste du gérant "+ this.idGerant)
+    return this.gs.ajoutProposition(this.idGerant,idOffre);
   }
 }

@@ -52,7 +52,9 @@
                     </div>
                 </div>
                 <div class="intro-button  mx-auto" ><a class="reinitialise" id="btn2" href="/listeOffres">Faire une recherche</a></div>
-            </div>
+                <div *ngIf="connecte == 'true'" class="intro-button  mx-auto" ><a class="reinitialise" id="btn3" href="/listePropositionsClient">Ma selection d'offres</a></div>
+
+              </div>
            
         </div>
     </div>

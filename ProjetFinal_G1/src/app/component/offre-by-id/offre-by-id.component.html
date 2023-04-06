@@ -33,8 +33,7 @@
         <td><img src = "{{o.croquis}}" width="25%"> </td>
         <td>{{o.note}}/5</td>
         <td>
-          Votre ID  <input type="text" [(ngModel)]="idGerant" type="text"  name="idGerant"  >
-          <button (click)="ajoutProposition(o.id,idGerant)" >Ajouter aux propositions</button> =
+          <button (click)="ajoutProposition(o.id)" >Ajouter aux propositions</button> =
           <button (click)="modifierOffre(o.id)" >Modifier</button>
           <button (click)="deleteOffre(o.id)">Supprimer</button>
         </td>
