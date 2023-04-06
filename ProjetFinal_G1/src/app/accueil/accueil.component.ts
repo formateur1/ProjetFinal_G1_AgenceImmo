@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class AccueilComponent {
 
   cheminImage1 = "../assets/img/bandeau.jpg"
+
+  connecte = sessionStorage.getItem('connecte')
+  getData(){
+    return sessionStorage.getItem('prenom')
+  }
 }

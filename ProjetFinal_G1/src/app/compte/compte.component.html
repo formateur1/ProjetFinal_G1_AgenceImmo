@@ -1,10 +1,12 @@
-<form [formGroup]="compteForm" (ngSubmit)="saveData()">
+<form [formGroup]="compteForm$" (ngSubmit)="saveData()" style="text-align: center;">
     <div class="mb-3">
         <label for="idCompte" class="form-label" style="text-align: center; color: white;">Selectionner votre id</label>
-        <input class="form-control" type="text" id="idCompte"  style="text-align: center;">
+        <input class="form-control" type="text" id="idCompte" formControlName="id" [(ngModel)]="id" style="text-align: center;" required>
     </div>
-    <button type="submit">Me connecter</button>
+    <button type="submit" class="btn btn-outline-light" style="margin-right: 5px;">Me connecter</button>
+    <button type="button" class="btn btn-outline-light" style="margin-left: 5px;" (click)="deco()">Me deconnecter</button>
 </form> 
 
-<button (click)="saveData()"></button>
-  <h3 style="color: white;">Hello {{getData()}}</h3>
+
+
+ 
