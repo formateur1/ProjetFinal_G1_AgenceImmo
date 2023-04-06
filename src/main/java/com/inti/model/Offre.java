@@ -42,13 +42,13 @@ public class Offre {
     private String note;
 
     
-    //@Exclude
-	//@JsonIgnore
+    @Exclude
+	@JsonIgnore
     @ManyToMany(mappedBy = "listePropositionOffre")
     private List<Gerant> listeGerantOffre;
     
-    //@Exclude
-	//@JsonIgnore
+    @Exclude
+	@JsonIgnore
     @ManyToMany(mappedBy = "listePropositions")
     private List<Client> listeClientOffre;
     

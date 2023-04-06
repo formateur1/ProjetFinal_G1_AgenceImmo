@@ -115,6 +115,6 @@ public class GerantController {
 	@GetMapping("getGerants")
 	public List<Gerant> getGerants()
 	{
-		return igr.findAll();
+	 return igr.findAll();
 	}
 }
