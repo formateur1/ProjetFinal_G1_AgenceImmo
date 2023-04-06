@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,50 +49,102 @@ public class AdministrateurController {
 	@Autowired
 	IGerantAttenteRepository igar; 
 	
-	//Ajouter client
+	// Client
 	@PostMapping("ajouterClient")
 	public ClientAttente inscriptionClient(@RequestBody ClientAttente c)
 	{
-		
 		return icar.save(c);
 	}
 	 
-	@GetMapping("getClients")
+	@GetMapping("getClientsAttente")
 	public List<ClientAttente> getClientsAttente()
 	{
 		return icar.findAll();
 	}
 	
-	@DeleteMapping("validerClient/{id}")
-	public void validerClientAttente(@RequestBody Client c, @PathVariable int id)
+	@DeleteMapping("deleteClientAttente/{id}")
+	public void deleteClientAttente(@PathVariable("id") int id)
 	{
-		icr.save(c);
 		icar.deleteById(id);
 	}
 	
+    // Validation du compte client
+	@PostMapping("validerClient")
+	public void validerClientAttente(@RequestBody Client c)
+	{
+		icr.save(c);
+	}
 	
-	//Ajouter admin
+	@GetMapping("getClientsValide")
+	public List<Client> getClients()
+	{
+		return icr.findAll();
+	}
+	
+	@GetMapping("getClientById/{id}")
+	public Client getClientById(@PathVariable("id") int id)
+	{
+		return icr.getReferenceById(id);
+	}
+	
+	@DeleteMapping("deleteClientValide/{id}")
+	public void deleteClient(@PathVariable("id") int id)
+	{
+		icr.deleteById(id);
+	}
+	
+	@PutMapping("updateClient")
+	public void updateClient(@RequestBody Client c)
+	{
+		icr.save(c);
+	}
+	
+	// Admin
 	@PostMapping("ajouterAdmin")
 	public AdminAttente inscriptionAdmin(@RequestBody AdminAttente a)
 	{
-		
 		return iaar.save(a);
 	}
-	
-	@GetMapping("getAdmins")
+
+	@GetMapping("getAdminsAttente")
 	public List<AdminAttente> getAdminsAttente()
 	{
 		return iaar.findAll();
 	}
 	
-	@DeleteMapping("validerAdmin/{id}")
-	public void validerAdminAttente(@RequestBody Administrateur a, @PathVariable int id)
+	@DeleteMapping("deleteAdminAttente/{id}")
+	public void deleteAdminAttente(@PathVariable("id") int id)
 	{
-		iar.save(a);
 		iaar.deleteById(id);
 	}
 	
-	//Ajouter gerant
+	 // Validation du compte admin	
+	@PostMapping("validerAdmin")
+	public void validerAdminAttente(@RequestBody Administrateur a)
+	{
+		iar.save(a);
+	}
+	
+	@GetMapping("getAdminsValide")
+	public List<Administrateur> getAdmins()
+	{
+		return iar.findAll();
+	}
+	
+	@GetMapping("getAdminById/{id}")
+	public Administrateur getAdminById(@PathVariable("id") int id)
+	{
+		return iar.getReferenceById(id);
+	}
+	
+	@DeleteMapping("deleteAdmin/{id}")
+	public void deleteAdmin(@PathVariable("id") int id)
+	{
+		iar.deleteById(id);
+	}
+
+	
+	// Gerant
 	@PostMapping("ajouterGerant")
 	public GerantAttente inscriptionGerant(@RequestBody GerantAttente g)
 	{
@@ -99,16 +152,46 @@ public class AdministrateurController {
 		return igar.save(g);
 	}
 		
-	@GetMapping("getGerants")
+	@GetMapping("getGerantsAttente")
 	public List<GerantAttente> getGerantsAttente()
 	{
 		return igar.findAll();
 	}
-		
-	@DeleteMapping("validerGerant/{id}")
-	public void validerGerantAttente(@RequestBody Gerant g, @PathVariable int id)
+	
+	@DeleteMapping("deleteGerantAttente/{id}")
+	public void deleteGerantAttente(@PathVariable("id") int id)
+	{
+		igar.deleteById(id);
+	}
+	
+	 // Validation du compte admin
+	@PostMapping("validerGerant")
+	public void validerGerantAttente(@RequestBody Gerant g)
 	{
 		igr.save(g);
-		igar.deleteById(id);
+	}
+
+	@GetMapping("getGerantsValide")
+	public List<Gerant> getGerants()
+	{
+		return igr.findAll();
+	}
+	
+	@GetMapping("getGerantById/{id}")
+	public Gerant getGerantById(@PathVariable("id") int id)
+	{
+		return igr.getReferenceById(id);
+	}
+		
+	@DeleteMapping("deleteGerantValide/{id}")
+	public void deleteGerant(@PathVariable("id") int id)
+	{
+		igr.deleteById(id);
+	}
+	
+	@PutMapping("updateGerant")
+	public void updateGerant(@RequestBody Gerant g)
+	{
+		igr.save(g);
 	}
 }

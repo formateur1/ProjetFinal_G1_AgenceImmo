@@ -31,6 +31,7 @@ import com.inti.repository.IOffreRepository;
 
 @RestController
 @RequestMapping("client")
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4201"})
 public class ClientController {
 
 	@Autowired 

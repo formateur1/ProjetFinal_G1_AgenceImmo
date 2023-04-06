@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity 
 @PrimaryKeyJoinColumn(name="id_admin")
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
-public class AdminAttente extends Personne {
+public class AdminAttente extends PersonneAttente {
 
 
     public AdminAttente() {
