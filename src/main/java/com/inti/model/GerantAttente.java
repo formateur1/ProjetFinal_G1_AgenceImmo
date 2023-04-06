@@ -6,20 +6,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString.Exclude;
 
 @Table(name="g1_gerant_attente")
 @Entity 
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @PrimaryKeyJoinColumn(name="id_gerant")
-public class GerantAttente extends Personne {
+public class GerantAttente extends PersonneAttente {
 
 	
 	@OneToMany(mappedBy = "gerant")
+	@Exclude
+	@JsonIgnore
     private List<Questions> listeQuestions;
 
     public GerantAttente() {

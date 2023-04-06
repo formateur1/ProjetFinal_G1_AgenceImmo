@@ -4,10 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Table(name="g1_admin_attente")
 @Entity 
 @PrimaryKeyJoinColumn(name="id_admin")
-public class AdminAttente extends Personne {
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
+public class AdminAttente extends PersonneAttente {
 
 
     public AdminAttente() {

@@ -1,4 +1,5 @@
 package com.inti.model;
+
 import java.util.*;
 
 import javax.persistence.Entity;
@@ -16,62 +17,48 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.ManyToAny;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.ToString.Exclude;
 
-@Table(name="g1_gerant")
-@Entity 
-@JsonIgnoreProperties({"hibernateLazyInitializer"})
-@PrimaryKeyJoinColumn(name="id_gerant")
+@Table(name = "g1_gerant")
+@Entity
+@JsonIgnoreProperties({ "hibernateLazyInitializer" })
+@PrimaryKeyJoinColumn(name = "id_gerant")
 public class Gerant extends Personne {
 
-	
-	
+	@Exclude
+	@JsonIgnore
 	@OneToMany(mappedBy = "gerant")
-    private List<Questions> listeQuestions;
-	
+	private List<Questions> listeQuestions;
+
 	@ManyToMany
-	@JoinTable(name = "gerant_propositionOffre", 
-			  joinColumns = @JoinColumn(name = "gerant_id"), 
-			  inverseJoinColumns = @JoinColumn(name = "offre_id"))
+	@JoinTable(name = "gerant_propositionOffre", joinColumns = @JoinColumn(name = "gerant_id"), inverseJoinColumns = @JoinColumn(name = "offre_id"))
 	private List<Offre> listePropositionOffre;
-	
-	
-    public Gerant() {
+
+	public Gerant() {
 		super();
 	}
+
 	public Gerant(int id, String nom, String prenom, String login, String mdp, String mail) {
 		super(id, nom, prenom, login, mdp, mail);
 	}
 //	public Gerant(int id, String nom, String prenom, String login, String mdp, String mail, List<Offre>listePropositionOffre ) {
 //		super(id, nom, prenom, login, mdp, mail);
-//		this.listePropositionOffre = listePropositionOffre;
-//	}
+//		this.listePropositionOffre = listePropositionOffre;}
 	
-	public void propOffres() {
-		
-    }
-    public void propCroquis() {
-    	
-    }
 
-    public void repClients() {
-        // TODO implement here
-    }
+	
+
+	public void repClients() {
+		// TODO implement here
+	}
+
 	/**
 	 * @return the listePropositionOffre
 	 */
 	public List<Offre> getListePropositionOffre() {
 		return listePropositionOffre;
 	}
-	/**
-	 * @param listePropositionOffre the listePropositionOffre to set
-	 */
-	public void setListePropositionOffre(List<Offre> listePropositionOffre) {
-		this.listePropositionOffre = listePropositionOffre;
-	}
-
 }

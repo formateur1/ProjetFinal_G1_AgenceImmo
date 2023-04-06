@@ -25,14 +25,14 @@ import com.inti.repository.IOffreRepository;
 
 @RestController
 @RequestMapping("gerant")
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4201"})
 public class GerantController {
 	@Autowired
 	IClientRepository icr;
 	@Autowired
 	IOffreRepository ior;
 	@Autowired
-	IGerantRepository igr;
+	IGerantRepository igr; 
 
 	@GetMapping("listeClients")
 	public List<Client> listeClients() {
@@ -104,4 +104,18 @@ public class GerantController {
 		System.out.println("taille de la liste après retrait : " + g.getListePropositionOffre().size());
 	}
 	
+
+	
+	@PostMapping("ajouterGerant")
+	public Gerant inscriptionGerant(@RequestBody Gerant g)
+	{
+			
+		return igr.save(g);
+	}
+		
+	@GetMapping("getGerants")
+	public List<Gerant> getGerants()
+	{
+		return igr.findAll();
+	}
 }
