@@ -20,6 +20,13 @@ public class Note {
 	private Offre offre;
 	
 	
+	public Note(double valeur) {
+		super();
+		this.valeur = valeur;
+	}
+	
+	
+	
 
 	public int getId() {
 		return id;

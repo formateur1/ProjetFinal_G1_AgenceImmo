@@ -3,6 +3,7 @@ package com.inti.controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import com.inti.model.Note;
 import com.inti.model.Offre;
 import com.inti.repository.IOffreRepository;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/offres")
 public class OffreController {
@@ -21,11 +23,11 @@ public class OffreController {
 	IOffreRepository ior;
 	
 	@PostMapping("/{offreId}/ajouterNote/{note}")
-	public void ajouterNote(@PathVariable int offreId, @PathVariable Note note)
+	public void ajouterNote(@PathVariable int offreId, @PathVariable double note)
 	{
 		Optional<Offre> ofr = ior.findById(offreId);
 		Offre offre = ofr.get();
-		offre.ajouterNote(note);
+		offre.ajouterNote(new Note(note));
 		ior.save(offre);
 	}
 	
