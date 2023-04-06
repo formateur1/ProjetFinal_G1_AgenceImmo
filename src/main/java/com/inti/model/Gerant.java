@@ -20,10 +20,12 @@ import org.hibernate.annotations.ManyToAny;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.Data;
 import lombok.ToString.Exclude;
 
 @Table(name = "g1_gerant")
 @Entity
+@Data
 @JsonIgnoreProperties({ "hibernateLazyInitializer" })
 @PrimaryKeyJoinColumn(name = "id_gerant")
 public class Gerant extends Personne {
@@ -34,7 +36,7 @@ public class Gerant extends Personne {
 	private List<Questions> listeQuestions;
 
 	@ManyToMany
-	@JoinTable(name = "gerant_propositionOffre", joinColumns = @JoinColumn(name = "gerant_id"), inverseJoinColumns = @JoinColumn(name = "offre_id"))
+	@JoinTable(name = "g1_gerant_propositionOffre", joinColumns = @JoinColumn(name = "gerant_id"), inverseJoinColumns = @JoinColumn(name = "offre_id"))
 	private List<Offre> listePropositionOffre;
 
 	public Gerant() {
@@ -55,10 +57,5 @@ public class Gerant extends Personne {
 		// TODO implement here
 	}
 
-	/**
-	 * @return the listePropositionOffre
-	 */
-	public List<Offre> getListePropositionOffre() {
-		return listePropositionOffre;
-	}
+
 }

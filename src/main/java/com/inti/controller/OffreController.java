@@ -20,23 +20,23 @@ public class OffreController {
 	@Autowired
 	IOffreRepository ior;
 	
-	@PostMapping("/{offreId}/ajouterNote/{note}")
-	public void ajouterNote(@PathVariable int offreId, @PathVariable Note note)
-	{
-		Optional<Offre> ofr = ior.findById(offreId);
-		Offre offre = ofr.get();
-		offre.ajouterNote(note);
-		ior.save(offre);
-	}
-	
-	@GetMapping("/{offreId}/moyenneNotes")
-	public double MoyenneNotes(@PathVariable int offreId)
-	{
-		Optional<Offre> ofr = ior.findById(offreId);
-		Offre offre = ofr.get();
-		double moyenneNote = offre.MoyenneNotes();
-		return moyenneNote;
-	}
+//	@PostMapping("/{offreId}/ajouterNote/{note}")
+//	public void ajouterNote(@PathVariable int offreId, @PathVariable Note note)
+//	{
+//		Optional<Offre> ofr = ior.findById(offreId);
+//		Offre offre = ofr.get();
+//		offre.ajouterNote(note);
+//		ior.save(offre);
+//	}
+//	
+//	@GetMapping("/{offreId}/moyenneNotes")
+//	public double MoyenneNotes(@PathVariable int offreId)
+//	{
+//		Optional<Offre> ofr = ior.findById(offreId);
+//		Offre offre = ofr.get();
+//		double moyenneNote = offre.MoyenneNotes();
+//		return moyenneNote;
+//	}
 	
 
 }
