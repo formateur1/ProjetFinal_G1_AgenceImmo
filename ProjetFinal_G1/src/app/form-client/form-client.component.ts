@@ -39,9 +39,7 @@ export class FormClientComponent implements OnInit {
 
   saveClient()
   { 
-    this.as.addClient(new Client(this.clientForm.value.nom, this.clientForm.value.prenom, 
-      this.clientForm.value.login, this.clientForm.value.mdp, this.clientForm.value.mail, 
-      this.clientForm.value.agence_immobiliere, this.clientForm.value.adresse, this.clientForm.value.telephone)).subscribe();
-      alert("La demande de création de compte client a bien été ajoutée")
+    this.as.addClient(this.clientForm.value).subscribe();
+      this.r.navigate(['validerUtilisateur'])
     }
 }
