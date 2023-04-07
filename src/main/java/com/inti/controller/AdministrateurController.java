@@ -25,6 +25,8 @@ import com.inti.repository.IClientAttenteRepository;
 import com.inti.repository.IClientRepository;
 import com.inti.repository.IGerantAttenteRepository;
 import com.inti.repository.IGerantRepository;
+import com.inti.repository.INoteRepository;
+import com.inti.repository.IOffreRepository;
 
 @RestController
 @RequestMapping("admin")
@@ -48,6 +50,12 @@ public class AdministrateurController {
 	
 	@Autowired
 	IGerantAttenteRepository igar; 
+	
+	@Autowired
+	INoteRepository inr;
+	
+	@Autowired
+	IOffreRepository ior;
 	
 	// Client
 	@PostMapping("ajouterClient")
@@ -125,7 +133,7 @@ public class AdministrateurController {
 		iar.save(a);
 	}
 	
-	@GetMapping("getAdminsValide")
+	@GetMapping("getAdminValide")
 	public List<Administrateur> getAdmins()
 	{
 		return iar.findAll();
@@ -137,10 +145,15 @@ public class AdministrateurController {
 		return iar.getReferenceById(id);
 	}
 	
-	@DeleteMapping("deleteAdmin/{id}")
+	@DeleteMapping("deleteAdminValide/{id}")
 	public void deleteAdmin(@PathVariable("id") int id)
 	{
 		iar.deleteById(id);
+	}
+	@PutMapping("updateAdmin")
+	public void updateAdmin(@RequestBody Administrateur a)
+	{
+		iar.save(a);
 	}
 
 	
@@ -193,5 +206,32 @@ public class AdministrateurController {
 	public void updateGerant(@RequestBody Gerant g)
 	{
 		igr.save(g);
+	}
+	
+	// Statistiques
+	
+	@GetMapping("moyenneNotes")
+	public double moyenneNotes() {
+	
+		double moy = inr.moyenneNotes();
+		System.out.println("Moyenne notes "+ moy);
+		return moy;
+	}
+	
+	@GetMapping("nombreClients")
+	public long nombreClient()
+	{
+		long n=icr.count();
+		System.out.println("Nombre clients " + n);
+		return n;
+	}
+	
+	@GetMapping("nombreOffres")
+	public long nombreOffres()
+	{
+		long n=ior.count();
+		System.out.println("Nombre offres " +n);
+		return (int) n;
+
 	}
 }
