@@ -1,0 +1,16 @@
+.h{
+        text-align: center;
+        display: flex;
+        color: white;
+        width: 100em;
+        font-weight: bold;
+}
+.form-check-label{
+    text-align: center;
+    display: flex;
+    color: white;
+}
+.table{
+    text-align: center;
+    color: white;
+}

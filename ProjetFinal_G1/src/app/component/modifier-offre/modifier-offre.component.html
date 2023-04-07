@@ -1,11 +1,10 @@
-<p>modifier-offre works!</p>
+
 <div *ngIf="offreForm">
   <form [formGroup]="offreForm" (ngSubmit)="updateOffre()">
     <div class="row">
       <div class="col">
         <label for="type_bien" class="form-label">Type de bien</label>
         <input type="text" name="type_bien" formControlName="type_bien" >
-        
       </div>
       <br><br>
       <div class="col">
