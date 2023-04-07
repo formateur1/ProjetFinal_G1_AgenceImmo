@@ -16,7 +16,8 @@
         <td>{{q.idC}}</td>
         <td>{{q.contenu}}</td>
         <div>
-          <button type="button" class="btn btn-primary position-relative" routerLink="/question/{{q.id}}">
+          
+          <button type="button" class="btn btn-outline-light position-relative" routerLink="/question/{{q.id}}">
             Repondre
             <span *ngIf="q.traitement" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">

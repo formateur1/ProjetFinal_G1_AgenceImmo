@@ -25,3 +25,4 @@ export class OffreComponentComponent implements OnInit {
   sauvegarderOffre(idOffre:number){
     this.cs.sauvegarderOffre(idOffre, this.idClient);
   }
+}

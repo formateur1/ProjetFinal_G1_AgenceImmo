@@ -3,7 +3,8 @@
         <label for="idCompte" class="form-label" style="text-align: center; color: white;">Selectionner votre id</label>
         <input class="form-control" type="text" id="idCompte" formControlName="id" [(ngModel)]="id" style="text-align: center;" required>
     </div>
-    Options gérant : <input type="checkbox" name="gerant" id="gerant">
+    <label for="gerant" style="text-align: center; color: white; margin-right: 5px;">Je suis gérant</label>
+    <input type="checkbox" name="gerant" id="gerant" style="text-align: center; color: white; margin-right: 5px;">
     <button type="submit" class="btn btn-outline-light" style="margin-right: 5px;">Me connecter</button>
     <button type="button" class="btn btn-outline-light" style="margin-left: 5px;" (click)="deco()">Me deconnecter</button>
 </form> 

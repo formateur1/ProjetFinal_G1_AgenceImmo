@@ -72,7 +72,7 @@ export class FormOffreComponent implements OnInit {
       this.savedMeuble, this.savedAchat,this.savedExt,this.offreForm.value.croquis
     )
 
-   if(this.savedOffre!=null) {*/
+   if(this.savedOffre!=null) {
       this.os.saveOffre(this.offreForm.value).subscribe();
       console.log(this.offreForm.value);
    // } else { "formulaire correct : " + this.savedOffre.adresse + " "+this.savedOffre.prix +"€ pour "+ this.savedOffre.surface+"m2."
@@ -80,4 +80,5 @@ export class FormOffreComponent implements OnInit {
    // }
 
   }
+}
 }
