@@ -1,5 +1,5 @@
 import { Component, NgModule } from '@angular/core';
-import { OffreComponentComponent } from './component/offre-client/offre-component.component';
+import { OffreComponentComponent } from './component/offre-component/offre-component.component';
 import { FormOffreComponent } from './formulaire/form-offre/form-offre.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FormClientComponent } from './form-client/form-client.component';
@@ -19,12 +19,13 @@ import { CompteComponent } from './compte/compte.component';
 import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
 import { UpdateClientComponent } from './update-utilisateur/update-client/update-client.component';
 import { UpdateGerantComponent } from './update-utilisateur/update-gerant/update-gerant.component';
+import { RechercheComponent } from './recherche/recherche.component';
 // import { UpdateAdminComponent } from './update-utilisateur/update-admin/update-admin.component';
 
 
 
 const routes: Routes = [
-  {path:"listeOffres", component:OffreComponentComponent},
+  {path:"listeOffres", component:RechercheComponent},
   {path:"formOffre", component:FormOffreComponent},
   {path:'formClient', component:FormClientComponent},
   {path:'formAdmin', component:FormAdminComponent},

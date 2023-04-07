@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Offre } from 'src/app/model/offre.model';
 import { OffreService } from 'src/app/service/offre.service';
 import { Observable } from 'rxjs/internal/Observable';
-import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -12,10 +11,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OffreComponentComponent implements OnInit {
   
-  constructor(private http: HttpClient,private os:OffreService) { }
+  constructor(private os:OffreService) { }
 
   listeOffres$!:Observable<Offre[]>;
   ngOnInit(): void {
-    this.listeOffres$= this.os.getListeOffres();
+this.listeOffres$= this.os.getListeOffres();
   }
 }
