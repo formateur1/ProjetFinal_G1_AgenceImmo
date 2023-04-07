@@ -1,7 +1,7 @@
 # ProjetFinal_G1
 
-//Jour1// (Scrum master : Lucie Argaud)
-<li>30/03/2023</li><br>
+//Jour1// (Scrum master : Lucie Argaud)<br>
+30/03/2023<br>
 
 -Mise en place Notion
 <ul>
@@ -67,8 +67,8 @@
 </ul>
 
 
-//Jour2// (Scrum master : Lucie Argaud) 
-<li>31/03/2023</li><br>
+//Jour2// (Scrum master : Lucie Argaud) <br>
+31/03/2023<br>
 
 - Diagramme MCD<br>
 <ul>
@@ -171,8 +171,8 @@
 </ul> <br>
 
 
-//Jour3// (Scrum master : Théodore Michielin)
-<li>03/04/2023</li><br>
+//Jour3// (Scrum master : Théodore Michielin) <br>
+03/04/2023<br>
 
 *Fonctionnalite Client:
 <ul>
@@ -185,27 +185,27 @@
    ==> EN COURS</li>
 </ul> <br>
 
-* Gerant  : focntion ajouter une nouvelle Offre : <br> <li>
+* Gerant  : fonction ajouter une nouvelle Offre : <br>
  <ul>
   - En front-end 
-  Formulaire de création  d'une nouvelle offre via une page d'accueil : </li><li> <br>
+  <li>  Formulaire de création  d'une nouvelle offre via une page d'accueil : <br>
   Dans le component gerant, ajouter un bouton qui redirige sur le formulaire <br>
   Creation du formulaire via un nouveau composent ng g c formOffre <br>
   Implémenter OnInit() dans .ts <br>
   Déclarer et initialiser dans OnInit() les attributs <br>
   Ajouter la fonction ajouterOffre() qui lorsque le formulaire est soumis, appele la fonction saveOffre() dans offreService. <br> 
-  Ajouter la  fonction saveOffre() dans offreService qui effectue une requette de type post, et renvoie un observable. <br>
+  Ajouter la  fonction saveOffre() dans offreService qui effectue une requette de type post, et renvoie un observable. </li><br>
   
   - En back-end 
-   Faire appel à la fonction dans le controller de la classe gérant qui permet de sauvegarder l'offre envoyé par la requete. </li><li>
-  <br> S'assurer que les fonctions aient le même nom. 
+  <li>Faire appel à la fonction dans le controller de la classe gérant qui permet de sauvegarder l'offre envoyé par la requete. </li><li>
+  <br> S'assurer que les fonctions aient le même nom. </li>
   
-  - Probleme avec les attribut en boolean car récupéré en string dans le formulaire html : utiliser des boucles if pour convertir "true" et "false" en true et false <br>
+  <li> Probleme avec les attribut en boolean car récupéré en string dans le formulaire html : utiliser des boucles if pour convertir "true" et "false" en true et false </li><li>
   Problème de connexion entre le formulaire et la base de donnée :   Test de récupération du modèle avec des console.log et d'alert<br> 
   Fermer tout les caches (ctrl C dans Visual Code, fermer via le gestionnaire de taches les taches superflux d'Eclipse) <br>
   Vérifier que tout est lancé (run spring en Eclipse, MySQL ouvert et Visual Code ng serve -o <br> 
-  Creation d'un constructeur sans id (autogénéré coté bdd) et sans note (attribuée par les clients) <br> </li><li>
-
+  Creation d'un constructeur sans id (autogénéré coté bdd) et sans note (attribuée par les clients)</li>
+</ul>
  *Fonctionnalité gestion des utilisateurs:
 <ul>
   -En FrontEnd -> sur Angular
@@ -285,20 +285,20 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
   Ajouter les fonctions pour supprimé et modifié une offre (identiques à celles dans la liste de toutes les offres).
   </ul>
      - En back-end 
-   Faire appel aux fonctions (CRUD) dans le controller de la classe gérant et s'assurer de la connexion (que les fonctions aient le même nom, URL et URI correctes).  <li><li>
-  <br>
-  
+   Faire appel aux fonctions (CRUD) dans le controller de la classe gérant et s'assurer de la connexion (que les fonctions aient le même nom, URL et URI correctes).  <li>
   <ul>
      - Etablissement du front global (page d'accueil du site)
   </ul>
 
-//Jour5// (Scrum master : )
-<li>05/04/2023</li><br>
+//Jour5// (Scrum master : )<br> 
+05/04/2023<br>
 
  *Fonctionnalité gestion des utilisateurs:
 <ul>
   -En FrontEnd -> sur Angular
- <li> Liaison Angular/Java/BDD pour les fonctions Valider et Supprimer une demande de création de compte</li>
+ <li> Liaison Angular/Java/BDD pour les fonctions Valider et Supprimer une demande de création de compte</li><li>
+ Création d'un nouveau component pour afficher la liste des utilisateurs sur le modèle du la liste des demandes de création de compte. Des boutons Modifier et Supprimer ont été ajoutés.
+ </li>
  </ul>
  <ul>
  -En BackEnd -> sur Eclipse
@@ -310,5 +310,52 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
  Les fonctions test ont une mention "throws Exception" ou contiennent un try catch pour gérer les erreurs si le test n'est pas validé</li><li>
  L'objet MockMvc (mock) est utilisé pour tester l'url créé dans le controller. De plus, il faut mettre le @RequestMapping("admin") dans l'url. (Exemple : mock.perform(post("/admin/ajouterGerant") ...)</li><li>
  On utilise un objet Json pour traduire les objets Personne et PersonneAttente en objet Json: Json.object(new Personne())
+</li>
+</ul> <br>
+
+//Jour6// (Scrum master : ) <br>
+06/04/2023
+<br>
+*Fonctionnalité gestion des utilisateurs:
+<ul>
+  -Angular/Eclipse/MySQL
+ <li>Liaison Angular/Java/BDD pour les fonctions Modifier et Supprimer pour la liste des utilisateurs</li>
+ </ul>
+ <ul>
+
+*Fonctionnalité statistiques:
+<ul>
+  -En FrontEnd -> sur Angular
+ <li>Création d'un nouveau component statistiques (ng g c Statistiques) et ajout de nouvelles fonctions dans le admin.service.ts qui feront référence aux liens http dans le controller admin dans Eclipse. Ces fonctions récupéreront les informations nécessaires pour l'affichage des statistiques dans le fichier html.</li><li>
+ Le path a été ajouté dans app.routing-module.ts {path:'statistiques', component:StatistiquesComponent}</li><li>
+ Utilisation des Observables pour récupérer les valeurs de Eclipse</li><li>
+ Ajout de 3 variables dans la classe pour traduire les valeurs et les afficher dans le html avec le binding {{var}}
+</li>
+</ul>
+ <ul>
+ -En BackEnd -> sur Eclipse
+  <li>
+  Création d'un INoteRepository pour les demandes SQL</li><li>
+  Code des fonctions pour transmettre les valeurs à Angular dans le AdminController</li><li>
+  Tests des fonctions de AdminController 
+</li>
+</ul> <br>
+
+//Jour7// (Scrum master : ) <br>
+07/04/2023
+<br>
+*Fonctionnalité statistiques:
+<ul>
+  -En BackEnd -> sur Eclipse
+ <li>Pour récupérer le nombre d'entités dans une table, il suffit d'utiliser la commande du repository .count() qui renvoie un objet de type long. Pour des requêtes plus précises, il faut utiliser une @Query dans le repository.</li><li>
+ Le nombre de clients et d'offres disponibles ont été récupérées grâce à la fonction .count(), mais la note moyenne des offres a été récupérée par une requête dans le INoteRepository avec la commande "@Query(value="SELECT ROUND(AVG(valeur),1) from note", nativeQuery = true, countQuery = "count") double moyenneNotes();". Le "countQuery" est nécessaire à cause de la version utilisée </li><li>
+ Derniers tests avec les nouvelles fonctions ajoutées
+ </li>
+ </ul>
+ <ul>
+  -En FrontEnd -> sur Angular
+  <li> Traduction des objets Observable<Type> en Type avec la commande this.adminService.fonctionAdminService().subscribe(data => {this.variable=data});
+  </li><li>
+  Difficultés : erreur résolue avec le "countQuery", @CrossOrigin manquant dans un controller
 </li>
 </ul> <br>
