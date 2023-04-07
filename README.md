@@ -321,7 +321,6 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
   -Angular/Eclipse/MySQL
  <li>Liaison Angular/Java/BDD pour les fonctions Modifier et Supprimer pour la liste des utilisateurs</li>
  </ul>
- <ul>
 
 *Fonctionnalité statistiques:
 <ul>
