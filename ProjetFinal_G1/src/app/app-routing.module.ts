@@ -40,7 +40,7 @@ const routes: Routes = [
   {path:'listeUtilisateur', component:ListeUtilisateurComponent},
   {path:'updateClient/:id',component:UpdateClientComponent },
   {path:'updateGerant/:id',component:UpdateGerantComponent },
-  // {path:'updateAdmin/:id',component: UpdateAdminComponent },
+  {path:'updateAdmin/:id',component: UpdateAdminComponent },
   {path:'listeOffresGerant', component:OffreGerantComponent},
   {path:'statistiques', component:StatistiquesComponent},
   {path:'modifierOffre/:id',component:ModifierOffreComponent },
