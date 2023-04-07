@@ -20,7 +20,7 @@ import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur
 import { UpdateClientComponent } from './update-utilisateur/update-client/update-client.component';
 import { UpdateGerantComponent } from './update-utilisateur/update-gerant/update-gerant.component';
 import { UpdateAdminComponent } from './update-utilisateur/update-admin/update-admin.component';
-// import { StatistiquesComponent } from './statistiques/statistiques.component';
+import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import { PropositionsGerantComponent } from './component/propositions-gerant/propositions-gerant.component';
 import { PropositionsClientComponent } from './propositions-client/propositions-client.component';
@@ -45,7 +45,7 @@ const routes: Routes = [
   {path:'updateGerant/:id',component:UpdateGerantComponent },
   {path:'updateAdmin/:id',component: UpdateAdminComponent },
   {path:'listeOffresGerant', component:OffreGerantComponent},
-  // {path:'statistiques', component:StatistiquesComponent},
+  {path:'statistiques', component:StatistiquesComponent},
   {path:'modifierOffre/:id',component:ModifierOffreComponent },
   {path:'', component:AccueilComponent},
   {path:'accueilGerant',component:GerantComponentComponent},

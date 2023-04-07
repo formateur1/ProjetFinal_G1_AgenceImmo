@@ -4,7 +4,7 @@
 ID du client :  <input type="text" [(ngModel)]="idClient" type="text"  name="idClient" required="required" > 
 Proposer cette liste d'offres <button  *ngIf="connecte == 'true'" (click)="proposerListeOffres(idClient)">Envoyer au client {{idClient}}</button>
   
-<table class="table"  *ngIf="connecte == 'true'" >
+<table class="table"  *ngIf="connecte == 'ok'" >
     <thead>
       <tr>
         <th scope="col">Id</th>
