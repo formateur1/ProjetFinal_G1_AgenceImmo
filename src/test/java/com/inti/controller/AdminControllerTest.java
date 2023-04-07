@@ -1,6 +1,5 @@
 package com.inti.controller;
 
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -109,6 +108,7 @@ public class AdminControllerTest {
 		mock.perform(delete("/admin/deleteGerant/1"))
 		.andExpect(status().isOk())
 		.andDo(print());
+		
 	}
 	
 	@Test
