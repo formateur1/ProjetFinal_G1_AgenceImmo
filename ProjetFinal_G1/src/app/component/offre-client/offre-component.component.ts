@@ -21,7 +21,7 @@ export class OffreComponentComponent implements OnInit {
   ngOnInit(): void {
     this.listeOffres$= this.os.getListeOffres();
   }
+
   sauvegarderOffre(idOffre:number){
     this.cs.sauvegarderOffre(idOffre, this.idClient);
   }
-}

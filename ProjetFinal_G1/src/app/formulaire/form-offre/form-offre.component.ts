@@ -12,7 +12,7 @@ import { OffreService } from 'src/app/service/offre.service';
 })
 export class FormOffreComponent implements OnInit {
  
-  constructor(private fb:FormBuilder, private http:HttpClient,private os:OffreService){}
+  constructor(private fb:FormBuilder, private http:HttpClient, private os:OffreService){}
 
   ngOnInit(): void {
     this.offreForm=this.fb.group({
@@ -51,14 +51,16 @@ export class FormOffreComponent implements OnInit {
 
   addOffre()
   {
-   /* if( this.offreForm.value.meuble = "true"){
+
+    if( this.offreForm.value.meuble == "true"){
+
       this.savedMeuble=true;
     } else{ this.savedMeuble=false}
 
-    if( this.offreForm.value.exterieur = "true"){
+    if( this.offreForm.value.exterieur == "true"){
       this.savedExt=true;
     }else{ this.savedExt=false}
-    if( this.offreForm.value.achat = "true"){
+    if( this.offreForm.value.achat == "true"){
       this.savedAchat=true;
     } else{ this.savedAchat=false}
 
@@ -76,5 +78,6 @@ export class FormOffreComponent implements OnInit {
    // } else { "formulaire correct : " + this.savedOffre.adresse + " "+this.savedOffre.prix +"€ pour "+ this.savedOffre.surface+"m2."
    //   alert("erreur dans le formulaire, offre incorrecte ")
    // }
+
   }
 }
