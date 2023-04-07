@@ -1,23 +1,25 @@
+<div style="margin: 5%;">
+  <h1 style="color: white; text-align: center;">Liste des clients</h1><br><br>
 
-<table  *ngIf="connecte == 'ok'" >
+  <table class="table" style="color: white; text-align: center;">
     <thead>
       <tr>
-        <th>id</th>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Login</th>
-        <th>Mdp</th>
-        <th>Mail</th>
-        <th>Agence immobilière</th>
-        <th>Adresse</th>
-        <th>Téléphone</th>
-        <th>Actions</th>
+        <th scope="col">id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Login</th>
+        <th scope="col">Mdp</th>
+        <th scope="col">Mail</th>
+        <th scope="col">Agence immobilière</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Téléphone</th>
+        <th scope="col">Actions</th>
 
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let c of listeC$ | async">
-        <td>{{c.id}}</td>
+        <td scope="row">{{c.id}}</td>
         <td>{{c.nom}}</td>
         <td>{{c.prenom}}</td>
         <td >{{c.login}}</td>
@@ -26,8 +28,9 @@
         <td >{{c.agence_immobiliere}}</td>
         <td >{{c.adresse}}</td>
         <td >{{c.telephone}}</td>
-        <td><button (click)="proposerOffre(c.id)">Proposer offres</button></td>
+        <td><button type="button" class="btn btn-outline-light position-relative" (click)="proposerOffre(c.id)">Proposer offres</button></td>
       </tr>
       
     </tbody>
   </table> 
+</div>

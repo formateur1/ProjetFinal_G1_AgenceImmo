@@ -1,21 +1,24 @@
-<form [formGroup]="compteForm$" (ngSubmit)="saveData()" style="text-align: center; margin-left: 30em; margin-right: 30em; margin-bottom: 2%; margin-top: 2%">
-    <div class="mb-3">
-        <select  id="role" formControlName="role" class="form-select" style="text-align: center;">
-            <option [ngValue]="null" disabled>Selectionner un role</option>
-            <option value="client">Client</option>
-            <option value="gerant">Gérant</option>
-            <option value="admin">Admin</option>
-        </select>
-    </div>
+<div style="color: white; margin: 5%; text-align: center; margin-left: 15em; margin-right: 15em;">
+    <h1>Connectez vous</h1>
+    <form [formGroup]="compteForm$" (ngSubmit)="saveData()">
+        <br>
+        <div class="mb-3">
+            <select  id="role" formControlName="role" class="form-select" style="text-align: center;">
+                <option [ngValue]="null" disabled>Selectionner un role</option>
+                <option value="client">Client</option>
+                <option value="gerant">Gérant</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div><br>
 
-    <div class="mb-3">
-        <label for="idCompte" class="form-label" style="text-align: center; color: white;">Selectionner votre id</label>
-        <input class="form-control" type="text" id="idCompte" formControlName="id" [(ngModel)]="id" style="text-align: center;" required>
-    </div>
-    <button type="submit" class="btn btn-outline-light" style="margin-right: 5px;">Me connecter</button>
-    <button type="button" class="btn btn-outline-light" style="margin-left: 5px;" (click)="deco()">Me deconnecter</button>
-</form> 
-
+        <div class="mb-3">
+            <label for="idCompte" class="form-label" style="text-align: center; color: white;">Selectionner votre id</label>
+            <input class="form-control" type="text" id="idCompte" formControlName="id" [(ngModel)]="id" style="text-align: center;" required>
+        </div><br>
+        <button type="submit" class="btn btn-outline-light" style="margin-right: 5px;">Me connecter</button>
+        <button type="button" class="btn btn-outline-light" style="margin-left: 5px;" (click)="deco()">Me deconnecter</button>
+    </form> 
+</div>
 
 
  

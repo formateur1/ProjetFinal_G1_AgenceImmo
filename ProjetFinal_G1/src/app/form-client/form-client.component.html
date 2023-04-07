@@ -1,39 +1,39 @@
-<p>form-client works!</p>
 
-<form [formGroup]="clientForm" (ngSubmit)="saveClient()">
-    <div class="row">
-        <div class="col">
-            <label for="nom" class="form-label">Nom</label>
-          <input type="text" class="form-control" name="nom" formControlName="nom">
-        </div>
-        <div class="col">
-            <label for="prenom" class="form-label">Prénom</label>
-          <input type="text" class="form-control" name="prenom" formControlName="prenom">
-        </div>
-        <div class="col">
-            <label for="login" class="form-label">Login</label>
-          <input type="text" class="form-control" name="login" formControlName="login">
-        </div>
-        <div class="col">
-            <label for="mdp" class="form-label">Mot de passe</label>
-          <input type="password" class="form-control" name="mdp" formControlName="mdp">
-        </div>
-        <div class="col">
-            <label for="mail" class="form-label">Mail</label>
-          <input type="text" class="form-control" name="mail" formControlName="mail">
-        </div>
-        <div class="col">
-            <label for="agence_immobiliere" class="form-label">Agence Immobilière</label>
-          <input type="text" class="form-control" name="agence_immobiliere" formControlName="agence_immobiliere">
-        </div>
-        <div class="col">
-          <label for="adresse" class="form-label">Adresse</label>
-        <input type="text" class="form-control" name="adresse" formControlName="adresse">
-      </div>
+<div style="margin: 5%; color: white; text-align: center;margin-left: 15em; margin-right: 15em;">
+  <h1>Ajouter un client</h1><br><br>
+  <form [formGroup]="clientForm" (ngSubmit)="saveClient()">
       <div class="col">
-          <label for="telephone" class="form-label">Téléphone</label>
-        <input type="text" class="form-control" name="telephone" formControlName="telephone">
-      </div>
-        <button type="submit">Envoyer</button>
-      </div>
-    </form>
+          <label for="nom" class="form-label">Nom</label>
+        <input type="text" class="form-control" name="nom" formControlName="nom" style="text-align: center;">
+      </div><br><br>
+      <div class="col">
+          <label for="prenom" class="form-label">Prénom</label>
+        <input type="text" class="form-control" name="prenom" formControlName="prenom" style="text-align: center;">
+      </div><br><br>
+      <div class="col">
+          <label for="login" class="form-label">Login</label>
+        <input type="text" class="form-control" name="login" formControlName="login" style="text-align: center;">
+      </div><br><br>
+      <div class="col">
+          <label for="mdp" class="form-label">Mot de passe</label>
+        <input type="password" class="form-control" name="mdp" formControlName="mdp" style="text-align: center;">
+      </div><br><br>
+      <div class="col">
+          <label for="mail" class="form-label">Mail</label>
+        <input type="email" class="form-control" name="mail" formControlName="mail" style="text-align: center;">
+      </div><br><br>
+      <div class="col">
+          <label for="agence_immobiliere" class="form-label">Agence Immobilière</label>
+        <input type="number" class="form-control" name="agence_immobiliere" formControlName="agence_immobiliere" style="text-align: center;">
+      </div><br><br>
+      <div class="col">
+        <label for="adresse" class="form-label">Adresse</label>
+      <input type="text" class="form-control" name="adresse" formControlName="adresse" style="text-align: center;">
+      </div><br><br>
+      <div class="col">
+        <label for="telephone" class="form-label">Téléphone</label>
+      <input type="text" class="form-control" name="telephone" formControlName="telephone" style="text-align: center;">
+      </div><br><br>
+      <button type="submit" class="btn btn-outline-light">Envoyer</button>
+  </form>
+</div>

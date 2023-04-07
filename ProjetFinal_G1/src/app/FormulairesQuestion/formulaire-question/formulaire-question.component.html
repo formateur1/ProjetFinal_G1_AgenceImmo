@@ -1,23 +1,23 @@
-<h1 style="color: white; text-align: center;">Posez votre question</h1>
-
-<form [formGroup]="questionForm" (ngSubmit)="saveQuestion()" style="color: white; text-align: center; margin-left: 15em; margin-right: 15em;"> 
-    
-    <div class="mb-3">
-        <label for="idGerant" class="form-label">Selectionner un gerant à contacter</label>
-        <select  id="idGerant" formControlName="idGerant" class="form-select" style="text-align: center;">
-            <option [ngValue]="null" disabled>Selectionner un gérant</option>
-            <option *ngFor="let g of listeGerants$ | async" [ngValue]="g.id">M. {{g.nom}} {{g.prenom}}</option>
-        </select>
-    </div>
-    <div class="mb-3">
-        <label for="contenu" class="form-label">Contenu de la question</label>
-        <input type="text" class="form-control" id="contenu" formControlName="contenu" required="true" style="text-align: center;">
-    </div>
-    
-    <div>
-        <button type="submit" class="btn btn-outline-light">Valider</button>
-    </div>
-</form>
-
+<div style="color: white; margin: 5%; text-align: center; margin-left: 15em; margin-right: 15em;">
+    <h1>Posez votre question</h1>
+    <form [formGroup]="questionForm" (ngSubmit)="saveQuestion()" > 
+        <br>
+        <div class="mb-3">
+            <label for="idGerant" class="form-label">Selectionner un gerant à contacter</label>
+            <select  id="idGerant" formControlName="idGerant" class="form-select" style="text-align: center;">
+                <option [ngValue]="null" disabled>Selectionner un gérant</option>
+                <option *ngFor="let g of listeGerants$ | async" [ngValue]="g.id">M. {{g.prenom}} {{g.nom}}</option>
+            </select>
+        </div><br>
+        <div class="mb-3">
+            <label for="contenu" class="form-label">Contenu de la question</label>
+            <input type="text" class="form-control" id="contenu" formControlName="contenu" required="true" style="text-align: center;">
+        </div><br>
+        
+        <div>
+            <button type="submit" class="btn btn-outline-light">Valider</button>
+        </div>
+    </form>
+</div>
 
 
