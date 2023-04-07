@@ -12,25 +12,27 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/accueil">Home</a></li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">Mes offres</a></li>
+                <li class="nav-item px-lg-4">
+                  <a *ngIf="role == 'client'; else nonConnectMesOffres " class="nav-link text-uppercase" href="/listePropositionsClient">Mes offres</a>
+                  <ng-template #nonConnectMesOffres>
+                    <a class="nav-link text-uppercase" data-bs-toggle="modal" data-bs-target="#exampleModal">Mes Offres</a>
+                  </ng-template>
+                </li>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/compte">Mon compte</a></li>
                 <li class="nav-item px-lg-4">
-                    <a *ngIf="connecte == 'true'; else nonConnect " class="nav-link text-uppercase" href="/question/form">Contact</a>
-                    <ng-template #nonConnect>
-                        <a class="nav-link text-uppercase" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
+                    <a *ngIf="role == 'client'; else nonConnectContact " class="nav-link text-uppercase" href="/question/form">Contact</a> 
+                    <ng-template #nonConnectContact>
+                      <a class="nav-link text-uppercase" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
                     </ng-template>
                 </li>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeOffres">Faire une recherche</a></li>
+                
             </ul>
-            <div id="btn-gerant" class="nav-item px-lg-4" class="form-check form-switch">
-              <input id="checkboxGerant" class="form-check-input" type="checkbox" name="checkboxGerant" (click)="changerCheck()">
-              <label class="form-check-label" for="checkbox-gerant">MODE GERANT</label>
-            </div>
         </div>
     </div>
 </nav>
 
-<nav *ngIf="checkboxGerant" class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+<nav *ngIf="role == 'gerant' || role == 'admin'" class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
   <div class="container">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
@@ -43,7 +45,8 @@
       </div>
   </div>
 </nav>
-<nav *ngIf="checkboxGerant" class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+
+<nav *ngIf="role == 'admin'" class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
@@ -55,10 +58,6 @@
         </div>
     </div>
   </nav>
-
-  
-  
-
 <router-outlet></router-outlet>
 
 
@@ -75,7 +74,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Veuillez vous connecter pour nous contacter 
+          Veuillez vous connecter en tant que client pour accéder
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -84,4 +83,5 @@
       </div>
     </div>
   </div>
+
 
