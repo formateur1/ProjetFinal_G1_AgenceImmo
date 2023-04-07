@@ -22,6 +22,7 @@ import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur
 import { UpdateClientComponent } from './update-utilisateur/update-client/update-client.component';
 import { UpdateAdminComponent } from './update-utilisateur/update-admin/update-admin.component';
 import { UpdateGerantComponent } from './update-utilisateur/update-gerant/update-gerant.component';
+import { StatistiquesComponent } from './statistiques/statistiques.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { UpdateGerantComponent } from './update-utilisateur/update-gerant/update
     ListeUtilisateurComponent,
     UpdateClientComponent,
     UpdateAdminComponent,
-    UpdateGerantComponent
+    UpdateGerantComponent,
+    StatistiquesComponent
 
   ],
   imports: [
