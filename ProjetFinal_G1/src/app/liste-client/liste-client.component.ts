@@ -13,7 +13,8 @@ import { GerantServiceService } from '../service/gerant-service.service';
 export class ListeClientComponent {
   constructor(private cs:ClientService, private router:Router, private gs:GerantServiceService) {}
   connecte = sessionStorage.getItem('connecte')
-  idGerant = sessionStorage.getItem('id');
+  idG = sessionStorage.getItem('id');
+  idGerant = Number(this.idG);
   listeC$!:Observable<Client[]>;
 
   ngOnInit(): void {

@@ -14,7 +14,7 @@ export class GerantComponentComponent implements OnInit {
   idOffre: any="";
 
   constructor(private router: Router, private http: HttpClient, private os: OffreService) { }
-
+  
   ngOnInit(): void {
    
   }

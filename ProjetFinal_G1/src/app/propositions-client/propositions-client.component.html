@@ -1,7 +1,4 @@
-<p>Mes offres sauvegardées ou proposées par nos super agents nullos</p>
-<button  *ngIf="connecte == 'true'" >Afficher liste clients</button>       
-ID du client :  <input type="text" [(ngModel)]="idClient" type="text"  name="idClient" required="required" > 
-Proposer cette liste d'offres <button  *ngIf="connecte == 'true'" (click)="proposerListeOffres(idClient)">Envoyer au client {{idClient}}</button>
+<p>Ma selection d'offres sauvegardées ou proposées par nos super agents nullos</p>   
   
 <table class="table"  *ngIf="connecte == 'true'" >
     <thead>
