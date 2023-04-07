@@ -89,5 +89,11 @@ public class ClientController {
 	{
 		return icr.save(c);
 	}
+	
+	@GetMapping("nombreClients")
+	public long nombreClient()
+	{
+		return icr.count();
+	}
 
 }

@@ -38,5 +38,11 @@ public class OffreController {
 		return moyenneNote;
 	}
 	
+	@GetMapping("nombreOffres")
+	public long nombreOffres()
+	{
+		return ior.count();
+	}
 
+	
 }

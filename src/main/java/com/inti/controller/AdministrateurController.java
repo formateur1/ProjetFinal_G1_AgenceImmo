@@ -25,6 +25,7 @@ import com.inti.repository.IClientAttenteRepository;
 import com.inti.repository.IClientRepository;
 import com.inti.repository.IGerantAttenteRepository;
 import com.inti.repository.IGerantRepository;
+import com.inti.repository.INoteRepository;
 
 @RestController
 @RequestMapping("admin")
@@ -48,6 +49,9 @@ public class AdministrateurController {
 	
 	@Autowired
 	IGerantAttenteRepository igar; 
+	
+	@Autowired
+	INoteRepository inr;
 	
 	// Client
 	@PostMapping("ajouterClient")
@@ -125,7 +129,7 @@ public class AdministrateurController {
 		iar.save(a);
 	}
 	
-	@GetMapping("getAdminsValide")
+	@GetMapping("getAdminValide")
 	public List<Administrateur> getAdmins()
 	{
 		return iar.findAll();
@@ -137,10 +141,15 @@ public class AdministrateurController {
 		return iar.getReferenceById(id);
 	}
 	
-	@DeleteMapping("deleteAdmin/{id}")
+	@DeleteMapping("deleteAdminValide/{id}")
 	public void deleteAdmin(@PathVariable("id") int id)
 	{
 		iar.deleteById(id);
+	}
+	@PutMapping("updateAdmin")
+	public void updateAdmin(@RequestBody Administrateur a)
+	{
+		iar.save(a);
 	}
 
 	
@@ -193,5 +202,13 @@ public class AdministrateurController {
 	public void updateGerant(@RequestBody Gerant g)
 	{
 		igr.save(g);
+	}
+	
+	// Statistiques
+	
+	@GetMapping("moyenneNotes")
+	public int moyenneNotes()
+	{
+		return inr.moyenneNotes();
 	}
 }
