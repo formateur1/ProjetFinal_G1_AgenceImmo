@@ -1,35 +1,35 @@
 <p>form-offre works!</p>
 
-<form [formGroup]="offreForm" (ngSubmit)="addOffre()">
-    <div class="row">
+<form [formGroup]="offreForm" (ngSubmit)="addOffre()" style="margin: 5%; color: white; text-align: center;">
+    
       
         <div class="col">
             <label for="type_bien" class="form-label">Type de bien</label>
-          <input type="text" name="type_bien" formControlName="type_bien">
+          <input type="text" class="form-control" name="type_bien" formControlName="type_bien" style="text-align: center;">
         </div>
         <br><br>
         <div class="col">
             <label for="adresse" class="form-label">Adresse</label>
-          <input type="text" class="form-control" formControlName="adresse">
+          <input type="text" class="form-control" formControlName="adresse" style="text-align: center;">
         </div><br><br>
         <div class="col">
             <label for="ville" class="form-label">Ville</label>
-          <input type="text" class="form-control" formControlName="ville">
+          <input type="text" class="form-control" formControlName="ville" style="text-align: center;">
         </div><br><br>
         <div class="col">
             <label for="prix" class="form-label">Prix</label>
-          <input type="number" class="form-control" formControlName="prix">
+          <input type="number" class="form-control" formControlName="prix" style="text-align: center;">
         </div><br><br>
         <div class="col">
             <label for="surface" class="form-label">Surface (en m2) </label>
-          <input type="number" class="form-control" formControlName="surface">
+          <input type="number" class="form-control" formControlName="surface" style="text-align: center;">
         </div><br><br>
         <div class="col">
             <label for="nb_piece" class="form-label">Nombre de pièce</label>
-          <input type="number" class="form-control" formControlName="nb_piece">
+          <input type="number" class="form-control" formControlName="nb_piece" style="text-align: center;">
         </div><br><br>
         <div class="col">
-            <label for="meuble" class="form-label">Aménagement : </label>
+            <label for="meuble" class="form-label">Aménagement</label>
           <input type="radio" class="form-control" formControlName="meuble" value="true">Meublé
           <input type="radio" class="form-control" formControlName="meuble" value="false">Non meublé
 
@@ -49,5 +49,5 @@
           <input type="text" class="form-control" formControlName="croquis">
         </div><br><br>
         <button type="submit">Envoyer</button>
-    </div>
+    
 </form>

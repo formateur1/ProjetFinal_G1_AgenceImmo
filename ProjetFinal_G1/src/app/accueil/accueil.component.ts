@@ -13,4 +13,5 @@ export class AccueilComponent {
   getData(){
     return sessionStorage.getItem('prenom')
   }
+  
 }

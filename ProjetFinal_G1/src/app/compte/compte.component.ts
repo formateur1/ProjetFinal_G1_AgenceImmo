@@ -23,6 +23,11 @@ export class CompteComponent implements OnInit{
     this.compteForm$ = this.fb.group({
       id:[null, Validators.required],
     })
+
+    if (sessionStorage.getItem('reload') == 'true') {
+      sessionStorage.setItem('reload', 'false')
+      location.reload()
+    }
   }
 
   saveData(){
@@ -33,11 +38,13 @@ export class CompteComponent implements OnInit{
         nom:[data.nom],
         prenom:[data.prenom]
       })
+
       sessionStorage.setItem('id', this.id.toString())
       sessionStorage.setItem('nom', this.compteFormComplet.value.nom)
       sessionStorage.setItem('prenom', this.compteFormComplet.value.prenom)
       sessionStorage.setItem('connecte', 'true')
       alert("Vous êtes connecté")
+      location.reload()
     })
 
     
@@ -48,6 +55,7 @@ export class CompteComponent implements OnInit{
   deco(){
     sessionStorage.clear()
     alert("Vous êtes déconnecté")
+    location.reload()
   }
 
  
