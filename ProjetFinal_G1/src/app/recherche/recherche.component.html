@@ -41,9 +41,9 @@
   </div>
 </form>
 <div class="h">Nos offres du moment :</div> 
-<button type="button" class="btn btn-secondary" routerLink="/listeOffres">Détails</button>
+<button type="button" class="btn btn-secondary" (click)="afficher=!afficher">Afficher</button>
 <br><br>
-
+<div *ngIf="afficher">
 <table class="table">
     <thead>
       <tr>
@@ -82,3 +82,4 @@
       </tr>
     </tbody>
   </table>
+</div>

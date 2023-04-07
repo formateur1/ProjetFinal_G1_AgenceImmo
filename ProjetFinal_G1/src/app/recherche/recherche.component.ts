@@ -17,4 +17,5 @@ export class RechercheComponent implements OnInit {
 this.listeOffres$= this.os.getListeOffres();
   }
 
+  afficher: boolean= false
 }
