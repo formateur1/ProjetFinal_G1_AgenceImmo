@@ -23,8 +23,9 @@ import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-
 import { CompteComponent } from './compte/compte.component';
 import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
 import { UpdateClientComponent } from './update-utilisateur/update-client/update-client.component';
-// import { UpdateAdminComponent } from './update-utilisateur/update-admin/update-admin.component';
+import { UpdateAdminComponent } from './update-utilisateur/update-admin/update-admin.component';
 import { UpdateGerantComponent } from './update-utilisateur/update-gerant/update-gerant.component';
+import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import { PropositionsClientComponent } from './propositions-client/propositions-client.component';
 
@@ -50,8 +51,9 @@ import { PropositionsClientComponent } from './propositions-client/propositions-
     CompteComponent,
     ListeUtilisateurComponent,
     UpdateClientComponent,
-    // UpdateAdminComponent,
+    UpdateAdminComponent,
     UpdateGerantComponent,
+    StatistiquesComponent,
     RechercheComponent,
     PropositionsClientComponent
 

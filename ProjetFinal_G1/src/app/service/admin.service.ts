@@ -123,4 +123,19 @@ export class AdminService {
   {
     return this.http.put<Gerant>("http://localhost:8080/admin/updateGerant", gerant)
   }
+
+  // Statistiques
+  moyenneNotes():Observable<number>
+  {
+    return this.http.get<number>("http://localhost:8080/admin/moyenneNotes")
+  }
+  nombreClients():Observable<number>
+  {
+    return this.http.get<number>("http://localhost:8080/admin/nombreClients")
+  }
+  nombreOffres():Observable<number>
+  {
+    return this.http.get<number>("http://localhost:8080/admin/nombreOffres")
+  }
+
 }
