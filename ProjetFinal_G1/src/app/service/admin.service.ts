@@ -131,11 +131,11 @@ export class AdminService {
   }
   nombreClients():Observable<number>
   {
-    return this.http.get<number>("http://localhost:8080/client/nombreClients")
+    return this.http.get<number>("http://localhost:8080/admin/nombreClients")
   }
   nombreOffres():Observable<number>
   {
-    return this.http.get<number>("http://localhost:8080/offres/nombreOffres")
+    return this.http.get<number>("http://localhost:8080/admin/nombreOffres")
   }
 
 }
