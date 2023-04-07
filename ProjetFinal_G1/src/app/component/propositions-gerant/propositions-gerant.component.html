@@ -1,5 +1,9 @@
-<p>offre-gerant works!</p>
-<p>Liste des offres AVEC Details pour le gérant</p>
+<p>propositions-gerant works!</p>
+
+<button  *ngIf="connecte == 'true'" >Afficher liste clients</button>       
+ID du client :  <input type="text" [(ngModel)]="idClient" type="text"  name="idClient" required="required" > 
+Proposer cette liste d'offres <button  *ngIf="connecte == 'true'" (click)="proposerListeOffres(idClient)">Envoyer au client {{idClient}}</button>
+  
 <table class="table"  *ngIf="connecte == 'true'" >
     <thead>
       <tr>
@@ -19,7 +23,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let o of listeOffres$ | async">
+        <tr *ngFor="let o of listePropositions$ | async">
         <th scope="row">{{o.id}}</th>
         <td>{{o.type_bien}}</td>
         <td>{{o.adresse}}</td>
@@ -33,10 +37,10 @@
         <td><img src = "{{o.croquis}}" width="25%"> </td>
         <td>{{o.note}}/5</td>
         <td>
-         
-         <button (click)="ajoutProposition(o.id)" >Ajouter aux propositions</button> =
           <button (click)="modifierOffre(o.id)" >Modifier</button>
-          <button (click)="deleteOffre(o.id)">Supprimer</button>
+          <button (click)="deleteProposition(o.id)">Retirer</button>
+          <button (click)="proposerOffre(o.id,idClient)">Proposer au client {{idClient}}</button>
+          
         </td>
       </tr>
     </tbody>

@@ -1,8 +1,9 @@
 <p>liste des clients</p>
+<h2 *ngIf="connecte == 'true'" style="color: white; text-align: center; font-size: 30px; margin-top: 20px;">Tu fais du bon boulot {{getDataPrenom()}} !</h2>
 
 <button (click)="ajoutOffre()">Ajouter une offre</button>
 <button (click)="afficherListeOffres()"> Voir toutes les offres </button>
 Rechercher une offre avec l'ID : <input  [(ngModel)]="idOffre" type="text"  name="idOffre"  >
 <button (click) ="getOffreById()"> Rechercher</button>
-
+<button (click)="afficherPropositions()">Mes propositions</button>
 

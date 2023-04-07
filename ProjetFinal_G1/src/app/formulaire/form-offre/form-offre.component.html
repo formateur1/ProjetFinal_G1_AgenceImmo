@@ -1,4 +1,4 @@
-<p>form-offre works!</p>
+
 
 <form [formGroup]="offreForm" (ngSubmit)="addOffre()" style="margin: 5%; color: white; text-align: center;">
     
@@ -34,17 +34,17 @@
           <input type="radio" class="form-control" formControlName="meuble" value="false">Non meublé
 
         </div><br><br>
-        <div class="col">
+        <div class="col" class="form-check">
             <label for="achat" class="form-label">Offre</label>
           <input type="radio" class="form-control" formControlName="achat" value="true">Achat
           <input type="radio" class="form-control" formControlName="achat" value="false">Location
         </div><br><br>
-        <div class="col">
+        <div class="col" class="form-check">
             <label for="exterieur" class="form-label">Exterieur</label>
           <input type="radio" class="form-control" formControlName="exterieur" value="true">Présent
           <input type="radio" class="form-control" formControlName="exterieur" value="false">Absent
         </div><br><br>
-        <div class="col">
+        <div class="col" >
             <label for="croquis" class="form-label">Lien du croquis</label>
           <input type="text" class="form-control" formControlName="croquis">
         </div><br><br>
