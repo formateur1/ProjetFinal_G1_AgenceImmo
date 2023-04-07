@@ -120,9 +120,10 @@ public class ClientController {
 		}
 		return listePropositionsClient;
 	}
-
+	
 	@PutMapping("recevoirProposition/{idOffre}/{idClient}")
 	public void recevoirProposition(@PathVariable int idOffre, @PathVariable int idClient) {
+
 		try {
 			Offre o = ior.getReferenceById(idOffre);
 			Client c = icr.getReferenceById(idClient);
@@ -154,7 +155,6 @@ public class ClientController {
 			e.printStackTrace();
 		}
 	}
-
 	// Gerer sa selection d'offres
 
 	@PutMapping("retirerProposition/{idOffre}/{idClient}")
