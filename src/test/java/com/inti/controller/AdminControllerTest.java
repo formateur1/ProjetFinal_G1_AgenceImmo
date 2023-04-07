@@ -31,6 +31,8 @@ import com.inti.repository.IClientAttenteRepository;
 import com.inti.repository.IClientRepository;
 import com.inti.repository.IGerantAttenteRepository;
 import com.inti.repository.IGerantRepository;
+import com.inti.repository.INoteRepository;
+import com.inti.repository.IOffreRepository;
 
 @WebMvcTest(controllers = AdministrateurController.class)
 public class AdminControllerTest {
@@ -53,6 +55,10 @@ public class AdminControllerTest {
 	@MockBean
 	IGerantAttenteRepository igar; 
 	
+	@MockBean
+	INoteRepository inr;
+	@MockBean
+	IOffreRepository ior;
 	
 	// Tests Client
 	@Test
@@ -292,5 +298,20 @@ public class AdminControllerTest {
 		.andExpect(status().isOk())
 		.andDo(print());
 	}
-	
+	@Test
+	@DisplayName("Test du nombre de clients")
+	public void nbClients() throws Exception
+	{
+		mock.perform(get("/admin/nombreClients"))
+		.andExpect(status().isOk())
+		.andDo(print());
+	}
+	@Test
+	@DisplayName("Test du nombre d'offres")
+	public void nbOffres() throws Exception
+	{
+		mock.perform(get("/admin/nombreOffres"))
+		.andExpect(status().isOk())
+		.andDo(print());
+	}
 }

@@ -26,6 +26,7 @@ import com.inti.repository.IClientRepository;
 import com.inti.repository.IGerantAttenteRepository;
 import com.inti.repository.IGerantRepository;
 import com.inti.repository.INoteRepository;
+import com.inti.repository.IOffreRepository;
 
 @RestController
 @RequestMapping("admin")
@@ -52,6 +53,9 @@ public class AdministrateurController {
 	
 	@Autowired
 	INoteRepository inr;
+	
+	@Autowired
+	IOffreRepository ior;
 	
 	// Client
 	@PostMapping("ajouterClient")
@@ -207,8 +211,27 @@ public class AdministrateurController {
 	// Statistiques
 	
 	@GetMapping("moyenneNotes")
-	public int moyenneNotes()
+	public double moyenneNotes() {
+	
+		double moy = inr.moyenneNotes();
+		System.out.println("Moyenne notes "+ moy);
+		return moy;
+	}
+	
+	@GetMapping("nombreClients")
+	public long nombreClient()
 	{
-		return inr.moyenneNotes();
+		long n=icr.count();
+		System.out.println("Nombre clients " + n);
+		return n;
+	}
+	
+	@GetMapping("nombreOffres")
+	public long nombreOffres()
+	{
+		long n=ior.count();
+		System.out.println("Nombre offres " +n);
+		return (int) n;
+
 	}
 }

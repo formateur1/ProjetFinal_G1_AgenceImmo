@@ -149,11 +149,5 @@ public class ClientController {
 
 		System.out.println("taille de la liste après ajout : " + c.getListePropositions().size());
 	}
-	
-	@GetMapping("nombreClients")
-	public long nombreClient()
-	{
-		return icr.count();
-	}
 
 }
