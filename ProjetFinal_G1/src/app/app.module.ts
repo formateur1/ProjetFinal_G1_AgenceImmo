@@ -14,8 +14,8 @@ import { OffreByIdComponent } from './component/offre-by-id/offre-by-id.componen
 import { GerantComponentComponent } from './component/gerant-component/gerant-component.component';
 import { FormAdminComponent } from './form-admin/form-admin.component';
 import { FormGerantComponent } from './form-gerant/form-gerant.component';
+import { OffreComponentComponent } from './component/offre-component/offre-component.component';
 import { PropositionsGerantComponent } from './component/propositions-gerant/propositions-gerant.component';
-import { OffreComponentComponent } from './component/offre-client/offre-component.component';
 import { ValiderUtilisateurComponent } from './valider-utilisateur/valider-utilisateur.component';
 import { QuestionComponent } from './component/question/question.component';
 import { FormulaireQuestionComponent } from './FormulairesQuestion/formulaire-question/formulaire-question.component';
@@ -25,6 +25,7 @@ import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur
 import { UpdateClientComponent } from './update-utilisateur/update-client/update-client.component';
 // import { UpdateAdminComponent } from './update-utilisateur/update-admin/update-admin.component';
 import { UpdateGerantComponent } from './update-utilisateur/update-gerant/update-gerant.component';
+import { RechercheComponent } from './recherche/recherche.component';
 import { PropositionsClientComponent } from './propositions-client/propositions-client.component';
 
 @NgModule({
@@ -54,7 +55,9 @@ import { PropositionsClientComponent } from './propositions-client/propositions-
     UpdateClientComponent,
     // UpdateAdminComponent,
     UpdateGerantComponent,
+    RechercheComponent,
     PropositionsClientComponent
+
   ],
   imports: [
     BrowserModule,

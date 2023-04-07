@@ -40,18 +40,6 @@
   <label class="form-check-label" for="achat2">Location
   </label>
 </div>
-<div class="col">
-  <label for="nb_piece" class="form-label">Nombre de pièce</label>
-<input type="number" class="form-control" formControlName="nb_piece">
-</div>
-<div class="col">
-  <label for="surface" class="form-label">Surface(en m2)</label>
-<input type="number" class="form-control" formControlName="surface">
-</div>
-<div class="col">
-  <label for="ville" class="form-label">Ville</label>
-<input type="text" class="form-control"; formControlName="ville">
-</div><br>
 
 <p>Liste des offres detaillées</p>
 <table class="table">
@@ -86,8 +74,7 @@
         <td>{{o.note}}/5</td>
         <td><img src = "{{o.croquis}}" width="100%"> Croquis Indisponible</td>
         <td>
-          
-        <button  *ngIf="connecte == 'true'" (click)="sauvegarderOffre(o.id)">Sauvergarder</button>
+          <!--<button (click)="sauvegarderOffre()">Sauvergarder</button>-->
         </td>
       </tr>
     </tbody>
