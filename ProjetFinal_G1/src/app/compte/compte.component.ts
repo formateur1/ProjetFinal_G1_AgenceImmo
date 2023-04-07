@@ -26,7 +26,7 @@ export class CompteComponent implements OnInit{
   }
 
   saveData(){
-      
+    if(this.compteForm$.value.gerant == null ) {
     this.as.getClientById(this.compteForm$.value.id).subscribe(data => {
       this.compteFormComplet = this.fb.group({
         id:[data.id],
@@ -37,8 +37,26 @@ export class CompteComponent implements OnInit{
       sessionStorage.setItem('nom', this.compteFormComplet.value.nom)
       sessionStorage.setItem('prenom', this.compteFormComplet.value.prenom)
       sessionStorage.setItem('connecte', 'true')
-      alert("Vous êtes connecté")
+      alert("Vous êtes connecté ")
     })
+} else {
+  this.as.getGerantById(this.compteForm$.value.id).subscribe(data => {
+    this.compteFormComplet = this.fb.group({
+      id:[data.id],
+      nom:[data.nom],
+      prenom:[data.prenom]
+    })
+    sessionStorage.setItem('id', this.id.toString())
+    sessionStorage.setItem('nom', this.compteFormComplet.value.nom)
+    sessionStorage.setItem('prenom', this.compteFormComplet.value.prenom)
+    sessionStorage.setItem('connecte', 'true')
+    
+    alert("Vous êtes connecté (Gérant)")
+  })
+}
+    
+      
+     
 
     
     
