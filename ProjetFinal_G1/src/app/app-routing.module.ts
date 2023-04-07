@@ -25,6 +25,9 @@ import { RechercheComponent } from './recherche/recherche.component';
 import { PropositionsGerantComponent } from './component/propositions-gerant/propositions-gerant.component';
 import { PropositionsClientComponent } from './propositions-client/propositions-client.component';
 
+
+
+
 const routes: Routes = [
   {path:"listeOffres", component:RechercheComponent},
   {path:"formOffre", component:FormOffreComponent},

@@ -12,7 +12,7 @@ export class AppComponent{
 
   checkboxGerant:boolean = false
   connecte = sessionStorage.getItem('connecte')
-  
+  role = sessionStorage.getItem('role')
   
   constructor(private router:Router){}
 
@@ -20,12 +20,9 @@ export class AppComponent{
     this.checkboxGerant = !this.checkboxGerant
   }
 
-  
-  
   redirect(){
     sessionStorage.setItem('reload', 'true')
     this.router.navigate(['/compte'])
   }
   
- 
 }
