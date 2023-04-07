@@ -104,7 +104,6 @@ public class GerantController {
 		System.out.println("taille de la liste après retrait : " + g.getListePropositionOffre().size());
 	}
 	
-
 	
 	@PostMapping("ajouterGerant")
 	public Gerant inscriptionGerant(@RequestBody Gerant g)
@@ -116,6 +115,6 @@ public class GerantController {
 	@GetMapping("getGerants")
 	public List<Gerant> getGerants()
 	{
-		return igr.findAll();
+	 return igr.findAll();
 	}
 }

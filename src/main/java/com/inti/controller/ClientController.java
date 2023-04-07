@@ -23,8 +23,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.inti.model.Client;
+import com.inti.model.Gerant;
 import com.inti.model.Offre;
 import com.inti.repository.IClientRepository;
+import com.inti.repository.IGerantRepository;
 import com.inti.repository.IOffreRepository;
 
 @RestController
@@ -36,6 +38,8 @@ public class ClientController {
 	IClientRepository icr;
 	@Autowired
 	IOffreRepository ior;
+	@Autowired
+	IGerantRepository igr; 
 
 	//Consulter la liste des offres
 	
@@ -88,6 +92,62 @@ public class ClientController {
 	public Client modifierClient(@RequestBody Client c)
 	{
 		return icr.save(c);
+	}
+	
+	//Propositions d'offres
+	@GetMapping("listePropositionsClient/{idClient}")
+	public List<Offre> listePropositionsClient(@PathVariable int idClient) {
+		return icr.getReferenceById(idClient).getListePropositions();
+	}
+	
+	@PutMapping("recevoirProposition/{idOffre}/{idClient}")
+	public void recevoirProposition(@PathVariable int idOffre, @PathVariable int idClient) {
+		Client c = icr.getReferenceById(idClient);
+		Offre o = ior.getReferenceById(idOffre);
+		
+		System.out.println("Récupération du client " + c.getId() + "pour recevoir l'offre " + o.getId());
+		System.out.println("taille de la liste avant ajout : " + c.getListePropositions().size());
+
+		c.getListePropositions().add(o);
+		icr.save(c);
+
+		System.out.println("taille de la liste après ajout : " + c.getListePropositions().size());
+		System.out.println("liste proposition après ajout" + c.getListePropositions());
+	}
+		
+	@PutMapping("recevoirListePropositions/{idGerant}/{idClient}")
+	public void recevoirListePropositions( @PathVariable int idClient, @PathVariable int idGerant) {
+		Client c = icr.getReferenceById(idClient);
+		Gerant g = igr.getReferenceById(idGerant);
+		System.out.println("Récupération du client " + c.getId() + "pour recevoir la liste du gérant " + g.getId());
+		System.out.println("taille de la liste avant ajout : " + c.getListePropositions().size());
+			
+		c.getListePropositions().addAll( g.getListePropositionOffre());
+		icr.save(c);
+
+		System.out.println("taille de la liste après ajout : " + c.getListePropositions().size());
+	}
+
+	@DeleteMapping("retirerProposition/{idOffre}/{idClient}")
+	public void retirerProposition(@PathVariable int idOffre, @PathVariable int idClient) {
+		Client c = icr.getReferenceById(idClient);
+		System.out.println("taille de la liste avant retrait : " + c.getListePropositions().size());
+		c.getListePropositions().remove(ior.getReferenceById(idOffre));
+		icr.save(c);
+		System.out.println("taille de la liste après retrait : " + c.getListePropositions().size());
+	}
+	@PutMapping("sauvegarderOffre/{idOffre}/{idClient}")
+	public void ajoutPropositionOffre(@PathVariable int idOffre, @PathVariable int idClient) {
+		Client c = icr.getReferenceById(idClient);
+		Offre o = ior.getReferenceById(idOffre);
+
+		System.out.println("Récupération du client " + c.getId() + "pour l'offre " + o.getId());
+		System.out.println("taille de la liste avant ajout : " + c.getListePropositions().size());
+
+		c.getListePropositions().add(o);
+		icr.save(c);
+
+		System.out.println("taille de la liste après ajout : " + c.getListePropositions().size());
 	}
 	
 	@GetMapping("nombreClients")
