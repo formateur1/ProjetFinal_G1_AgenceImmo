@@ -31,7 +31,7 @@ export class CompteComponent implements OnInit{
   }
 
   saveData(){
-    if(this.compteForm$.value.gerant == null ) {
+    if(this.compteForm$.value.gerant == false ) {
     this.as.getClientById(this.compteForm$.value.id).subscribe(data => {
       this.compteFormComplet = this.fb.group({
         id:[data.id],
