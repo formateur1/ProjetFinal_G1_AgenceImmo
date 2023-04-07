@@ -42,11 +42,8 @@ import { PropositionsClientComponent } from './propositions-client/propositions-
     ModifierOffreComponent,
     OffreByIdComponent,
     GerantComponentComponent,
-
     PropositionsGerantComponent,
-
     OffreComponentComponent,
-
     QuestionComponent,
     FormulaireQuestionComponent,
     FormRepondreComponent,

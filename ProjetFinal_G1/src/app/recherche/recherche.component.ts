@@ -16,4 +16,5 @@ export class RechercheComponent implements OnInit {
   ngOnInit(): void {
 this.listeOffres$= this.os.getListeOffres();
   }
+
 }
