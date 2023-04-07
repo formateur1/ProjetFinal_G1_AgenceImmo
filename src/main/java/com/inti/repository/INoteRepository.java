@@ -9,6 +9,6 @@ import com.inti.model.Note;
 @Repository
 public interface INoteRepository extends JpaRepository<Note, Integer>{
 
-	@Query(value="SELECT AVG(valeur) from Note")
-	int moyenneNotes();
+	@Query(value="SELECT ROUND(AVG(valeur),1) from note", nativeQuery = true, countQuery = "count")
+	double moyenneNotes();
 }
