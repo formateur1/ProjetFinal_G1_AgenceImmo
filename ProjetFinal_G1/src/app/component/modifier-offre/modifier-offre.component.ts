@@ -35,7 +35,7 @@ export class ModifierOffreComponent implements OnInit {
   }
 
   updateOffre() {
-    console.log(this.offreForm.value)
+    console.log(this.offreForm.value.adresse)
     this.os.modifierOffre(this.offreForm.value).subscribe();
   }
 

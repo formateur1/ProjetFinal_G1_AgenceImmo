@@ -1,5 +1,5 @@
-<!-- <button routerLink="/clients" type="button">Afficher la liste des clients</button>
-<button routerLink="/formClient" type="button">Ajouter un client</button> -->
+<h2 *ngIf="connecte == 'true'" style="color: white; text-align: center; font-size: 30px; margin-top: 20px;">Bienvenu à vous {{getData()}}</h2>
+
 <section class="page-section clearfix">
     <div class="container">
         <div class="intro">
@@ -49,7 +49,9 @@
                     </div>
                 </div>
                 <div class="intro-button  mx-auto" ><a class="reinitialise" id="btn2" href="/listeOffres">Faire une recherche</a></div>
-            </div>
+                <div *ngIf="connecte == 'true'" class="intro-button  mx-auto" ><a class="reinitialise" id="btn3" href="/listePropositionsClient">Ma selection d'offres</a></div>
+
+              </div>
            
         </div>
     </div>

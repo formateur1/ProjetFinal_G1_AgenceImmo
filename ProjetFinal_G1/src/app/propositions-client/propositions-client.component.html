@@ -1,6 +1,6 @@
-<p>offre-component works!</p>
-<p>Liste des offres AVEC Details pour le client</p>
-<table class="table">
+<p>Ma selection d'offres sauvegardées ou proposées par nos super agents nullos</p>   
+  
+<table class="table"  *ngIf="connecte == 'true'" >
     <thead>
       <tr>
         <th scope="col">Id</th>
@@ -8,31 +8,33 @@
         <th scope="col">Adresse</th>
         <th scope="col">Ville</th>
         <th scope="col">Prix</th>
-        <th scope="col">Surface(m2)</th>
+        <th scope="col">Surface</th>
         <th scope="col">Nombre de pièce</th>
         <th scope="col">Meublé</th>
         <th scope="col">Achat (false=location)</th>
         <th scope="col">Exterieur disponible</th>
-        <th scope="col">Note</th>
         <th scope="col">Croquis</th>
-        <th scope="col">Action</th>
+        <th scope="col">Note</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let o of listeOffres$ | async">
+        <tr *ngFor="let o of listePropositions$ | async">
         <th scope="row">{{o.id}}</th>
         <td>{{o.type_bien}}</td>
         <td>{{o.adresse}}</td>
         <td>{{o.ville}}</td>
-        <td>{{o.surface}} m2</td>
+        <td>{{o.prix}}€</td>
+        <td>{{o.surface}}m2</td>
         <td>{{o.nb_piece}}</td>
         <td>{{o.meuble}}</td>
         <td>{{o.achat}}</td>
         <td>{{o.exterieur}}</td>
+        <td><img src = "{{o.croquis}}" width="25%"> </td>
         <td>{{o.note}}/5</td>
-        <td><img src = "{{o.croquis}}" width="100%"> Croquis Indisponible</td>
         <td>
-          <!--<button (click)="sauvegarderOffre()">Sauvergarder</button>-->
+          <button (click)="noter(o.id)" disabled>Noter </button>
+          <button (click)="deleteProposition(o.id)">Retirer</button>          
         </td>
       </tr>
     </tbody>

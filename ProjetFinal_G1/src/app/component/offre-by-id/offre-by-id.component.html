@@ -33,7 +33,7 @@
         <td><img src = "{{o.croquis}}" width="25%"> </td>
         <td>{{o.note}}/5</td>
         <td>
-          <!--<button (click)="ajoutProposition()" >Ajouter aux propositions</button>-->
+          <button (click)="ajoutProposition(o.id)" >Ajouter aux propositions</button> =
           <button (click)="modifierOffre(o.id)" >Modifier</button>
           <button (click)="deleteOffre(o.id)">Supprimer</button>
         </td>

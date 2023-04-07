@@ -1,0 +1,14 @@
+<form [formGroup]="compteForm$" (ngSubmit)="saveData()" style="text-align: center; margin-left: 30em; margin-right: 30em;">
+    <div class="mb-3">
+        <label for="idCompte" class="form-label" style="text-align: center; color: white;">Selectionner votre id</label>
+        <input class="form-control" type="text" id="idCompte" formControlName="id" [(ngModel)]="id" style="text-align: center;" required>
+    </div>
+    <label for="gerant" style="text-align: center; color: white; margin-right: 5px;">Je suis gérant</label>
+    <input type="checkbox" name="gerant" id="gerant" style="text-align: center; color: white; margin-right: 5px;">
+    <button type="submit" class="btn btn-outline-light" style="margin-right: 5px;">Me connecter</button>
+    <button type="button" class="btn btn-outline-light" style="margin-left: 5px;" (click)="deco()">Me deconnecter</button>
+</form> 
+
+
+
+ 

@@ -1,53 +1,55 @@
-<p>form-offre works!</p>
 
-<form [formGroup]="offreForm" (ngSubmit)="addOffre()">
-    <div class="row">
+
+<form [formGroup]="offreForm" (ngSubmit)="addOffre()" style="margin: 5%; color: white; text-align: center;margin-left: 15em; margin-right: 15em;">
+    
       
         <div class="col">
             <label for="type_bien" class="form-label">Type de bien</label>
-          <input type="text" name="type_bien" formControlName="type_bien">
+          <input type="text" class="form-control" name="type_bien" formControlName="type_bien" style="text-align: center;">
         </div>
         <br><br>
         <div class="col">
             <label for="adresse" class="form-label">Adresse</label>
-          <input type="text" class="form-control" formControlName="adresse">
+          <input type="text" class="form-control" formControlName="adresse" style="text-align: center;">
         </div><br><br>
         <div class="col">
             <label for="ville" class="form-label">Ville</label>
-          <input type="text" class="form-control" formControlName="ville">
+          <input type="text" class="form-control" formControlName="ville" style="text-align: center;">
         </div><br><br>
         <div class="col">
             <label for="prix" class="form-label">Prix</label>
-          <input type="number" class="form-control" formControlName="prix">
+          <input type="number" class="form-control" formControlName="prix" style="text-align: center;">
         </div><br><br>
         <div class="col">
             <label for="surface" class="form-label">Surface (en m2) </label>
-          <input type="number" class="form-control" formControlName="surface">
+          <input type="number" class="form-control" formControlName="surface" style="text-align: center;">
         </div><br><br>
         <div class="col">
             <label for="nb_piece" class="form-label">Nombre de pièce</label>
-          <input type="number" class="form-control" formControlName="nb_piece">
+          <input type="number" class="form-control" formControlName="nb_piece" style="text-align: center;">
         </div><br><br>
         <div class="col">
-            <label for="meuble" class="form-label">Aménagement : </label>
-          <input type="radio" class="form-control" formControlName="meuble" value="true">Meublé
-          <input type="radio" class="form-control" formControlName="meuble" value="false">Non meublé
+          <label for="meuble" class="form-label" style="text-align: center;">Aménagement :</label>
+          <label for="achat" class="form-label" style="margin-right: 25%; margin-left: 25%;">Offre :</label>
+          <label for="exterieur" class="form-label" style="margin-right: 5%;">Exterieur :</label>
+        </div>
+        <div class="col" style="margin-right: 5%;">
+            
+          <input type="radio" class="form-control" class="reinitialise" formControlName="meuble" value="true" style="margin-right: 1%;">Meublé
+          <input type="radio" class="form-control" class="reinitialise" formControlName="meuble" value="false" style="margin-left: 1%; margin-right: 1%;">Non meublé
+          
+          <input type="radio" class="form-control" class="reinitialise" formControlName="achat" value="true" style="margin-left: 15%; margin-right: 1%;">Achat
+          <input type="radio" class="form-control" class="reinitialise" formControlName="achat" value="false" style="margin-left: 1%; margin-right: 1%;">Location
+          
+          <input type="radio" class="form-control" class="reinitialise" formControlName="exterieur" value="true" style="margin-left: 15%; margin-right: 1%;">Présent
+          <input type="radio" class="form-control" class="reinitialise" formControlName="exterieur" value="false" style="margin-left: 1%; margin-right: 1%;">Absent
+        </div><br><br>
 
-        </div><br><br>
-        <div class="col">
-            <label for="achat" class="form-label">Offre</label>
-          <input type="radio" class="form-control" formControlName="achat" value="true">Achat
-          <input type="radio" class="form-control" formControlName="achat" value="false">Location
-        </div><br><br>
-        <div class="col">
-            <label for="exterieur" class="form-label">Exterieur</label>
-          <input type="radio" class="form-control" formControlName="exterieur" value="true">Présent
-          <input type="radio" class="form-control" formControlName="exterieur" value="false">Absent
-        </div><br><br>
-        <div class="col">
+        <div class="col" >
             <label for="croquis" class="form-label">Lien du croquis</label>
-          <input type="text" class="form-control" formControlName="croquis">
+          <input type="text" class="form-control" formControlName="croquis" style="text-align: center;">
         </div><br><br>
-        <button type="submit">Envoyer</button>
-    </div>
+        <button type="submit" class="btn btn-outline-light">Envoyer</button>
+
+    
 </form>
