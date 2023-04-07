@@ -15,7 +15,9 @@ import com.inti.model.Offre;
 import com.inti.repository.IOffreRepository;
 
 @RestController
-@RequestMapping("offres")
+@RequestMapping("/offres")
+@CrossOrigin("http://localhost:4200")
+
 public class OffreController {
 	
 	@Autowired
