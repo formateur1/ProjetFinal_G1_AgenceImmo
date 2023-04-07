@@ -19,6 +19,8 @@ import { CompteComponent } from './compte/compte.component';
 import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
 import { UpdateClientComponent } from './update-utilisateur/update-client/update-client.component';
 import { UpdateGerantComponent } from './update-utilisateur/update-gerant/update-gerant.component';
+import { PropositionsGerantComponent } from './component/propositions-gerant/propositions-gerant.component';
+import { PropositionsClientComponent } from './propositions-client/propositions-client.component';
 // import { UpdateAdminComponent } from './update-utilisateur/update-admin/update-admin.component';
 
 
@@ -44,7 +46,9 @@ const routes: Routes = [
   {path:'', component:AccueilComponent},
   {path:'accueilGerant',component:GerantComponentComponent},
   {path:'offreById/:idOffre',component:OffreByIdComponent},
-  {path:'compte', component:CompteComponent}
+  {path:'compte', component:CompteComponent},
+  {path:'listePropositionsGerant',component:PropositionsGerantComponent},
+  {path:'listePropositionsClient',component:PropositionsClientComponent},
  
 ];
 
