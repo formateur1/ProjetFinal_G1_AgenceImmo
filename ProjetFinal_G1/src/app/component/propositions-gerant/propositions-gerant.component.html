@@ -1,10 +1,10 @@
 <p>propositions-gerant works!</p>
 
-<button  *ngIf="connecte == 'ok'" >Afficher liste clients</button>       
-ID du client :  <input type="text" [(ngModel)]="idClient" type="text"  name="idClient" id ="idClient"> 
-Proposer cette liste d'offres <button  *ngIf="connecte == 'ok'" (click)="proposerListeOffres(idClient)">Envoyer au client {{idClient}}</button>
+<button  *ngIf="role == 'gerant'" >Afficher liste clients</button>       
+Client à contacter ID:  <input type="text" [(ngModel)]="idClient" type="text"  name="idClient" id ="idClient" width="10%"> 
+Proposer cette liste d'offres <button  *ngIf="idClient != null "  (click)="proposerListeOffres(idClient)">Envoyer au client {{idClient}}</button>
   
-<table class="table"  *ngIf="connecte == 'ok'" >
+<table class="table" >
     <thead>
       <tr>
         <th scope="col">Id</th>
@@ -39,7 +39,7 @@ Proposer cette liste d'offres <button  *ngIf="connecte == 'ok'" (click)="propose
         <td>
           <button (click)="modifierOffre(o.id)" >Modifier/Ajouter un croquis</button>
           <button (click)="deleteProposition(o.id)">Retirer de ma liste</button>
-          <button (click)="proposerOffre(o.id,idClient)">Proposer au client : {{idClient}}</button>
+          <button *ngIf="idClient != null " (click)="proposerOffre(o.id,idClient)">Proposer au client : {{idClient}}</button>
           
         </td>
       </tr>

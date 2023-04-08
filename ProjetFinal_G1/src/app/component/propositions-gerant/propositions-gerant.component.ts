@@ -16,18 +16,17 @@ export class PropositionsGerantComponent {
   listePropositions$!: Observable<Offre[]>;
   idClient!: number;
   idGerant = Number(sessionStorage.getItem('id'));
-
+  role = sessionStorage.getItem('role')
   ngOnInit(): Observable<Offre[]> {
 
     return this.listePropositions$ = this.gs.getListePropositions(this.idGerant);
   }
 
-  connecte = sessionStorage.getItem('connecte')
-
   modifierOffre(idOffre: number) {
     return this.router.navigate(['modifierOffre/' + idOffre]);
   }
 
+  
   //Retirer une offre de la liste des propositions du gérant
   deleteProposition(idOffre: number) {
     this.gs.deleteProposition(idOffre, this.idGerant).subscribe();
