@@ -4,6 +4,7 @@ import { Client } from '../model/client.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Gerant } from '../model/gerant.model';
+import { ClientService } from './client.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,8 @@ export class GerantServiceService {
 
   listeOffres: Offre[] = []
   listeClients: Client[] = []
+  private cs!:ClientService;
+
 
 //Gerer les offres misent en ligne
   addOffre(offre:Offre):Observable <Offre> {
@@ -60,9 +63,9 @@ export class GerantServiceService {
   }
 
   //Envoyer une ou plusieurs propositions d'offres
-  proposerOffre(idOffre: number, idClient:number){
+  proposerOffre(idOffre: number, idClient:number): Observable<Client> {
     console.log("Envoie de la requette pour que le client "+ idClient+ "recoit l'offre" + idOffre)
-    this.http.put<Offre[]>("http://localhost:8080/client/recevoirProposition/"+ idOffre+ "/" + idClient, null);
+    return this.http.put<Client>("http://localhost:8080/client/recevoirProposition/"+idOffre+"/"+idClient, null);
   }
   proposerListeOffres(idClient:number, idGerant:number){
     console.log("envoie de la requette proposer la liste d'offres du gérant " + idGerant+" au client "+ idClient)

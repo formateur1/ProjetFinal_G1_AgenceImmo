@@ -40,7 +40,7 @@ export class PropositionsGerantComponent {
 
   proposerOffre(idOffre: number,idClient:number){
     alert ("L'offre "+idOffre + " va être envoyée au client "+idClient)
-    return this.gs.proposerOffre(idOffre, idClient);
+    return this.gs.proposerOffre(idOffre, idClient).subscribe();
   }
 
   proposerListeOffres(idClient:number)
