@@ -52,7 +52,7 @@ export class GerantServiceService {
   }
 
   ajoutProposition(idOffre: number,idGerant: number):  Observable<Offre> {
-  console.log("envoie de la requette ajouter proposition")
+  console.log("Envoie de la requette ajouter proposition")
    return this.http.put<Offre>("http://localhost:8080/gerant/ajoutPropOffre/"+idOffre+"/"+idGerant,null);
   }
   
@@ -67,9 +67,8 @@ export class GerantServiceService {
     console.log("Envoie de la requette pour que le client "+ idClient+ "recoit l'offre" + idOffre)
     return this.http.put<Client>("http://localhost:8080/client/recevoirProposition/"+idOffre+"/"+idClient, null);
   }
-  proposerListeOffres(idClient:number, idGerant:number){
-    console.log("envoie de la requette proposer la liste d'offres du gérant " + idGerant+" au client "+ idClient)
-    const url = `http://localhost:8080/client/recevoirListePropositions/${idGerant}/${idClient}`;
-    this.http.put<void>(url, []);
+  proposerListeOffres(idClient:number, idGerant:number):Observable<Client>{
+    console.log("Envoie de la requette pour que le client " + idClient+" recoit la liste du gérant "+ idGerant)
+    return this.http.put<Client>("http://localhost:8080/client/recevoirListePropositions/"+idClient+"/"+idGerant, null);
   }
 }

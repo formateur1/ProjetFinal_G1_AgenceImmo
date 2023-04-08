@@ -1,8 +1,8 @@
 <p>propositions-gerant works!</p>
 
-<button  *ngIf="connecte == 'true'" >Afficher liste clients</button>       
-ID du client :  <input type="text" [(ngModel)]="idClient" type="text"  name="idClient" required="required" > 
-Proposer cette liste d'offres <button  *ngIf="connecte == 'true'" (click)="proposerListeOffres(idClient)">Envoyer au client {{idClient}}</button>
+<button  *ngIf="connecte == 'ok'" >Afficher liste clients</button>       
+ID du client :  <input type="text" [(ngModel)]="idClient" type="text"  name="idClient" id ="idClient"> 
+Proposer cette liste d'offres <button  *ngIf="connecte == 'ok'" (click)="proposerListeOffres(idClient)">Envoyer au client {{idClient}}</button>
   
 <table class="table"  *ngIf="connecte == 'ok'" >
     <thead>
@@ -34,12 +34,12 @@ Proposer cette liste d'offres <button  *ngIf="connecte == 'true'" (click)="propo
         <td>{{o.meuble}}</td>
         <td>{{o.achat}}</td>
         <td>{{o.exterieur}}</td>
-        <td><img src = "{{o.croquis}}" width="25%"> </td>
+        <td><img src = "{{o.croquis}}" width="100%" ></td>
         <td>{{o.note}}/5</td>
         <td>
-          <button (click)="modifierOffre(o.id)" >Modifier</button>
-          <button (click)="deleteProposition(o.id)">Retirer</button>
-          <button (click)="proposerOffre(o.id,idClient)">Proposer au client {{idClient}}</button>
+          <button (click)="modifierOffre(o.id)" >Modifier/Ajouter un croquis</button>
+          <button (click)="deleteProposition(o.id)">Retirer de ma liste</button>
+          <button (click)="proposerOffre(o.id,idClient)">Proposer au client : {{idClient}}</button>
           
         </td>
       </tr>

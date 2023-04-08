@@ -15,8 +15,7 @@ export class PropositionsGerantComponent {
 
   listePropositions$!:Observable<Offre[]>;
   idClient!:number;
-  idG = sessionStorage.getItem('id');
-  idGerant=Number(this.idG);
+  idGerant=Number(sessionStorage.getItem('id'));
   
   ngOnInit():Observable<Offre[]> {
    
@@ -46,6 +45,6 @@ export class PropositionsGerantComponent {
   proposerListeOffres(idClient:number)
   {
     alert ("La liste d'offres du gérant "+this.idGerant +" va être envoyée au client "+idClient)
-    return this.gs.proposerListeOffres(idClient, this.idGerant);
+    return this.gs.proposerListeOffres(idClient, this.idGerant).subscribe();
   }
 }
