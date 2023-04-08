@@ -47,37 +47,15 @@ export class FormOffreComponent implements OnInit {
   savedExt!: boolean;
   savedAchat!: boolean;
 
-
-
   addOffre() {
 
-    if (this.offreForm.value.meuble == "true") {
-
-      this.savedMeuble = true;
-    } else { this.savedMeuble = false }
-
-    if (this.offreForm.value.exterieur == "true") {
-      this.savedExt = true;
-    } else { this.savedExt = false }
-    if (this.offreForm.value.achat == "true") {
-      this.savedAchat = true;
-    } else { this.savedAchat = false }
-
-
-    this.savedOffre = new Offre
-      (
-        this.offreForm.value.type_bien, this.offreForm.value.adresse, this.offreForm.value.ville,
-        this.offreForm.value.prix, this.offreForm.value.surface, this.offreForm.value.nb_piece,
-        this.savedMeuble, this.savedAchat, this.savedExt, this.offreForm.value.croquis
-      )
-
-   if(this.savedOffre!=null) {
+   if( this.os.saveOffre(this.offreForm.value).subscribe()!=null) {
       this.os.saveOffre(this.offreForm.value).subscribe();
       alert("Offre "+this.offreForm.value.adresse+" ajoutée");
       console.log(this.offreForm.value);
       location.reload();
     } else {
-      alert("Erreur dans le formulaire, offre incorrecte ")
+     alert("Erreur dans le formulaire, echec de l'enregistrement ");
     }
   }
 

@@ -31,9 +31,9 @@ export class ListeClientComponent {
     
   }
   proposerListeOffres(idClient: any) {
-    alert("La liste d'offres du gérant " + this.id + " va être envoyée au client " + idClient)
-    return this.gs.proposerListeOffres( Number(idClient), this.id ).subscribe();
+    alert("Votre liste de propositions (gérant " + this.id + ") va être envoyée au client " + idClient);
     location.reload();
+    return this.gs.proposerListeOffres( Number(idClient), this.id ).subscribe();
   }
 
 }
