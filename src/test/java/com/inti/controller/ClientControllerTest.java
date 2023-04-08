@@ -88,7 +88,7 @@ public class ClientControllerTest {
 	@Test
 	@DisplayName("Test d'enregistrement d'une liste de proposition envoyé par le gérant")
 	public void recevoirListePropositions() throws Exception {
-		mock.perform(put("/client/recevoirListePropositions/11/2")).andExpect(status().isOk()).andDo(print());
+		mock.perform(put("/client/recevoirListePropositions/4/2")).andExpect(status().isOk()).andDo(print());
 	}
 
 	// Gerer Propositions
@@ -96,7 +96,7 @@ public class ClientControllerTest {
 	@Test
 	@DisplayName("Test d'affichage de toutes les offres enregistrées par le client ou envoyées par un gérant")
 	public void listePropositionsClient() throws Exception {
-		mock.perform(get("/client/listePropositionsClient/2")).andExpect(status().isOk()).andDo(print());
+		mock.perform(get("/client/listePropositionsClient/5")).andExpect(status().isOk()).andDo(print());
 	}
 
 	@Test
@@ -106,8 +106,8 @@ public class ClientControllerTest {
 	}
 
 	@Test
-	@DisplayName("Test d'enregistrement d'une offre par le client")
-	public void ajoutPropositionOffre() throws Exception {
+	@DisplayName("Test sauvegarde d'une offre par le client")
+	public void sauvegarderOffre() throws Exception {
 		mock.perform(put("/client/sauvegarderOffre/2/5")).andExpect(status().isOk()).andDo(print());
 	}
 	
