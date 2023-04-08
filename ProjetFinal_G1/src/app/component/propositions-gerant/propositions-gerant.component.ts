@@ -33,6 +33,7 @@ export class PropositionsGerantComponent {
   deleteProposition(idOffre:number)
   {
     alert ("L'offre "+idOffre + " va être retirée de la liste des proposition du gérant "+this.idGerant)
+   
     return this.gs.deleteProposition(idOffre,this.idGerant).subscribe();
     location.reload();
   }

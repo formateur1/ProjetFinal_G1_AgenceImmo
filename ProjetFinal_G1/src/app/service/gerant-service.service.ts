@@ -46,6 +46,8 @@ export class GerantServiceService {
     console.log(Gerant);
     return this.http.post<Gerant>("http://localhost:8080/gerant/ajouterGerant", gerant);
   }
+
+ 
 //Gerer ka liste des propositions
   getListePropositions(idGerant: any): Observable<Offre[]> {
     return this.http.get<Offre[]>("http://localhost:8080/gerant/listePropositions/" + idGerant);
@@ -62,7 +64,7 @@ export class GerantServiceService {
     location.reload();
   }
 
-  //Envoyer une ou plusieurs propositions d'offres
+  //Envoyer une ou plusieurs propositions d'offres à un client
   proposerOffre(idOffre: number, idClient:number): Observable<Client> {
     console.log("Envoie de la requette pour que le client "+ idClient+ "recoit l'offre" + idOffre)
     return this.http.put<Client>("http://localhost:8080/client/recevoirProposition/"+idOffre+"/"+idClient, null);
