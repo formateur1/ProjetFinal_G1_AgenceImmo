@@ -21,8 +21,10 @@ export class OffreComponentComponent implements OnInit {
 this.listeOffres$= this.os.getListeOffres();
   }
 
-  sauvegarderOffre(idOffre:any){
-    this.cs.sauvegarderOffre(Number(idOffre), this.idClient);
-    alert ("Offre sauvegardée");
+  sauvegarderOffre(idOffre:number){
+   
+    alert ("Offre sauvegardée"); 
+    location.reload();
+    return this.cs.sauvegarderOffre(idOffre, Number(this.idClient)).subscribe();
   }
 }

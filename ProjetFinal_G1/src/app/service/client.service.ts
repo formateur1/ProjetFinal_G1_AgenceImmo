@@ -43,8 +43,8 @@ export class ClientService {
    return this.http.put<Client>("http://localhost:8080/client/retirerProposition/"+idOffre+"/"+idClient, null);
     
   }
-  sauvegarderOffre(idOffre:number,idClient:any): void {
-    console.log("envoie de la requette sauvegarder l'offre :"+ idOffre);
-    this.http.put<void>("http://localhost:8080/client/sauvegarderOffre/"+idOffre+"/"+idClient, null);
+  sauvegarderOffre(idOffre:number,idClient:number): Observable<Offre> {
+  console.log("envoie de la requette sauvegarder l'offre : "+ idOffre);
+   return this.http.put<Offre>("http://localhost:8080/client/sauvegarderOffre/"+idOffre+"/"+idClient, null);
   }
 }
