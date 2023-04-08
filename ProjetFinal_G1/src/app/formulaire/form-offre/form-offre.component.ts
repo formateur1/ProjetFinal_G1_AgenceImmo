@@ -73,9 +73,11 @@ export class FormOffreComponent implements OnInit {
 
    if(this.savedOffre!=null) {
       this.os.saveOffre(this.offreForm.value).subscribe();
+      alert("Offre "+this.offreForm.value.adresse+" ajoutée");
       console.log(this.offreForm.value);
+      location.reload();
     } else {
-      alert("erreur dans le formulaire, offre incorrecte ")
+      alert("Erreur dans le formulaire, offre incorrecte ")
     }
   }
 

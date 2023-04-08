@@ -15,7 +15,7 @@
                 <li class="nav-item px-lg-4">
                   <a *ngIf="role == 'client'; else nonConnectMesOffres " class="nav-link text-uppercase" href="/listePropositionsClient">Mes offres</a>
                   <ng-template #nonConnectMesOffres>
-                    <a class="nav-link text-uppercase" data-bs-toggle="modal" data-bs-target="#exampleModal">Mes Offres</a>
+                    <a class="nav-link text-uppercase" data-bs-toggle="modal" data-bs-target="#exampleModal">Nos Offres</a>
                   </ng-template>
                 </li>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/compte">Mon compte</a></li>
@@ -37,10 +37,11 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/clients">Afficher la liste des client</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeOffresGerant">Afficher la liste des offres</a>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/question">Afficher les questions</a></li>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/statistiques">Afficher les statistiques</a></li>
                 <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formOffre">Ajouter une offre</a></li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listePropositionsGerant">Liste des propositions</a></li>
+                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listePropositionsGerant">Proposer des offres</a></li>
           </ul>
       </div>
   </div>
