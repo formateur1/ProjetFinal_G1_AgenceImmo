@@ -1,0 +1,85 @@
+<div class="h">Critères de recherche : </div>
+<form  style="margin: 5%; color: white; text-align: center;margin-left: 15em; margin-right: 15em; display: inline-flex;">
+<div class="form-check" style="margin-right: 5%;">
+  <input class="form-check-input" type="radio" name="type_bien" id="type_bien1">
+  <label class="form-check-label" for="type_bien1">Maison</label>
+</div><br>
+
+<div class="form-check" style="margin-right: 5%;">
+  <input class="form-check-input" type="radio" name="type_bien" id="type_bien2">
+  <label class="form-check-label" for="type_bien2">Appartement</label>
+</div>
+<div class="form-check"style="margin-right: 5%;">
+  <input class="form-check-input" type="radio" name="achat" id="achat1">
+  <label class="form-check-label" for="achat1">Achat</label>
+</div>
+<div class="form-check" style="margin-right: 5%;">
+  <input class="form-check-input" type="radio" name="achat" id="achat2">
+  <label class="form-check-label" for="achat2" >Location</label>
+</div>
+<div class="form-check" style="margin-right: 5%;">
+    <input class="form-check-input" type="radio" name="meuble" id="meuble1">
+    <label class="form-check-label" for="meuble1">Meublé</label>
+  </div>
+  <div class="form-check" style="margin-right: 5%;">
+    <input class="form-check-input" type="radio" name="meuble" id="meuble2">
+    <label class="form-check-label" for="meuble2"> Non meublé</label>
+  </div>
+  <div class="form-check" style="margin-right: 5%;">
+    <input class="form-check-input" type="radio" name="exterieur" id="exterieur1">
+    <label class="form-check-label" for="exterieur1"> Avec exterieur
+    </label>
+  </div>
+  <div class="form-check" style="margin-right: 5%;">
+    <input class="form-check-input" type="radio" name="exterieur" id="exterieur2">
+    <label class="form-check-label" for="exterieur2"> Sans exterieur
+    </label>
+  </div>
+  <div class="form-check" style="margin-right: 5%;">
+    <label class="form-label" for="ville"> Ville</label>
+    <input class="form-input" type="text" name="ville" id="ville">
+  </div>
+</form>
+<div class="h">Nos offres du moment :</div> 
+<button type="button" class="btn btn-secondary" (click)="afficher=!afficher">Afficher</button>
+<br><br>
+<div *ngIf="afficher">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Type de bien</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Ville</th>
+        <th scope="col">Surface(m2)</th>
+        <th scope="col">Nombre de pièce</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Meublé</th>
+        <th scope="col">Achat (false=location)</th>
+        <th scope="col">Exterieur disponible</th>
+        <th scope="col">Note</th>
+        <th scope="col">Croquis</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let o of listeOffres$ | async">
+        <th scope="row">{{o.id}}</th>
+        <td>{{o.type_bien}}</td>
+        <td>{{o.adresse}}</td>
+        <td>{{o.ville}}</td>
+        <td>{{o.surface}} m2</td>
+        <td>{{o.nb_piece}}</td>
+        <td>{{o.prix}}</td>
+        <td>{{o.meuble}}</td>
+        <td>{{o.achat}}</td>
+        <td>{{o.exterieur}}</td>
+        <td>{{o.note}}/5</td>
+        <td><img src = "{{o.croquis}}" width="90%"></td>
+        <td>
+          <!--<button (click)="sauvegarderOffre()">Sauvergarder</button>-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

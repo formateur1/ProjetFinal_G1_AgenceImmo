@@ -1,7 +1,7 @@
+<div style="margin: 5%; color: white; text-align: center;">
+  <h1>Liste des questions</h1>
 
-  <h1 style="color: white; text-align: center;">Liste des questions</h1>
-
-  <table class="table" style="color: white; text-align: center;">
+  <table class="table" style="color: white;">
     <thead>
       <tr>
         <th scope="col">id de la question</th>
@@ -15,8 +15,8 @@
         <th scope="row">{{q.id}}</th>
         <td>{{q.idC}}</td>
         <td>{{q.contenu}}</td>
-        <div>
-          <button type="button" class="btn btn-primary position-relative" routerLink="/question/{{q.id}}">
+        <td>
+          <button type="button" class="btn btn-outline-light position-relative" routerLink="/question/{{q.id}}">
             Repondre
             <span *ngIf="q.traitement" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
@@ -24,7 +24,8 @@
               </svg>
             </span>
           </button>
-        </div>
+        </td>
       </tr>
     </tbody>
   </table>
+</div>

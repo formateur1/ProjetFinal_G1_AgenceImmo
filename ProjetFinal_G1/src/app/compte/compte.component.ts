@@ -13,7 +13,7 @@ export class CompteComponent implements OnInit{
   nom!:string
   prenom!:string
   compteForm$!:FormGroup
-
+  role!:string
   compteFormComplet!:FormGroup
 
   constructor(private as:AdminService, private fb:FormBuilder){}
@@ -22,12 +22,35 @@ export class CompteComponent implements OnInit{
   ngOnInit(): void {
     this.compteForm$ = this.fb.group({
       id:[null, Validators.required],
+      role:[null]
     })
+
+    if (sessionStorage.getItem('reload') == 'true') {
+      sessionStorage.setItem('reload', 'false')
+      location.reload()
+    }
   }
 
   saveData(){
-    if(this.compteForm$.value.gerant == null ) {
+    if(this.compteForm$.value.role == 'client' ) {
     this.as.getClientById(this.compteForm$.value.id).subscribe(data => {
+      this.compteFormComplet = this.fb.group({
+        id:[data.id],
+        nom:[data.nom],
+        prenom:[data.prenom]
+      })
+
+      sessionStorage.setItem('id', this.id.toString())
+      sessionStorage.setItem('nom', this.compteFormComplet.value.nom)
+      sessionStorage.setItem('prenom', this.compteFormComplet.value.prenom)
+      sessionStorage.setItem('connecte', 'ok')
+      sessionStorage.setItem('role', 'client')
+
+      alert("Vous êtes connecté (Client)")
+      location.reload()
+    })
+  } if(this.compteForm$.value.role == 'gerant' ) {
+    this.as.getGerantById(this.compteForm$.value.id).subscribe(data => {
       this.compteFormComplet = this.fb.group({
         id:[data.id],
         nom:[data.nom],
@@ -36,37 +59,36 @@ export class CompteComponent implements OnInit{
       sessionStorage.setItem('id', this.id.toString())
       sessionStorage.setItem('nom', this.compteFormComplet.value.nom)
       sessionStorage.setItem('prenom', this.compteFormComplet.value.prenom)
-      sessionStorage.setItem('connecte', 'true')
-      alert("Vous êtes connecté ")
-    })
-} else {
-  this.as.getGerantById(this.compteForm$.value.id).subscribe(data => {
-    this.compteFormComplet = this.fb.group({
-      id:[data.id],
-      nom:[data.nom],
-      prenom:[data.prenom]
-    })
-    sessionStorage.setItem('id', this.id.toString())
-    sessionStorage.setItem('nom', this.compteFormComplet.value.nom)
-    sessionStorage.setItem('prenom', this.compteFormComplet.value.prenom)
-    sessionStorage.setItem('connecte', 'true')
+      sessionStorage.setItem('connecte', 'ok')
+      sessionStorage.setItem('role', 'gerant')
     
-    alert("Vous êtes connecté (Gérant)")
+      alert("Vous êtes connecté (Gérant)")
+      location.reload()
+    })
+  } if (this.compteForm$.value.role == 'admin' ) {
+    this.as.getAdminById(this.compteForm$.value.id).subscribe(data => {
+      this.compteFormComplet = this.fb.group({
+        id:[data.id],
+        nom:[data.nom],
+        prenom:[data.prenom]
+      })
+      sessionStorage.setItem('id', this.id.toString())
+      sessionStorage.setItem('nom', this.compteFormComplet.value.nom)
+      sessionStorage.setItem('prenom', this.compteFormComplet.value.prenom)
+      sessionStorage.setItem('connecte', 'ok')
+      sessionStorage.setItem('role', 'admin')
+    
+      alert("Vous êtes connecté (Admin)")
+      location.reload()
   })
-}
-    
-      
-     
 
-    
-    
-  }
+}}
 
 
-  deco(){
+deco(){
     sessionStorage.clear()
     alert("Vous êtes déconnecté")
+    location.reload()
   }
-
- 
 }
+

@@ -36,6 +36,7 @@ export class FormRepondreComponent implements OnInit {
   repQuestion(){
     console.log(this.questionForm.value)
     this.qs.repQuestion(this.questionForm.value).subscribe()
+    sessionStorage.setItem('reload', 'true')
     this.router.navigate(['/question']) //, {queryParams: { re: 'true' }})
   }
  

@@ -71,11 +71,12 @@ export class FormOffreComponent implements OnInit {
         this.savedMeuble, this.savedAchat, this.savedExt, this.offreForm.value.croquis
       )
 
-    if (this.savedOffre != null) {
+   if(this.savedOffre!=null) {
       this.os.saveOffre(this.offreForm.value).subscribe();
       console.log(this.offreForm.value);
     } else {
       alert("erreur dans le formulaire, offre incorrecte ")
     }
   }
+
 }
