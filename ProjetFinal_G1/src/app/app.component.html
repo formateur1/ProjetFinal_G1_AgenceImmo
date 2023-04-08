@@ -1,89 +1,99 @@
 <header>
-    <h1 class="site-heading text-center text-faded d-none d-lg-block">
-        <span class="site-heading-lower">AgenceNulos</span>
-    </h1>
+  <h1 class="site-heading text-center text-faded d-none d-lg-block">
+    <span class="site-heading-lower">AgenceNulos</span>
+  </h1>
 </header>
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="/accueil">AgenceNulos</a>
-        
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/accueil">Home</a></li>
-                <li class="nav-item px-lg-4">
-                  <a *ngIf="role == 'client'; else nonConnectMesOffres " class="nav-link text-uppercase" href="/listePropositionsClient">Mes offres</a>
-                  <ng-template #nonConnectMesOffres>
-                    <a class="nav-link text-uppercase" data-bs-toggle="modal" data-bs-target="#exampleModal">Nos Offres</a>
-                  </ng-template>
-                </li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/compte">Mon compte</a></li>
-                <li class="nav-item px-lg-4">
-                    <a *ngIf="role == 'client'; else nonConnectContact " class="nav-link text-uppercase" href="/question/form">Contact</a> 
-                    <ng-template #nonConnectContact>
-                      <a class="nav-link text-uppercase" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
-                    </ng-template>
-                </li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeOffres">Faire une recherche</a></li>
-                
-            </ul>
-        </div>
+  <div class="container">
+    <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="/accueil">AgenceNulos</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/accueil">Accueil</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeOffreClient">Toutes les Offres</a>
+        </li>
+        <li *ngIf="role == 'client'" class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase" href="/listePropositionsClient"> Ma selection d'offres</a>
+        </li>
+      </ul>
+      <ul>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/compte">Mon compte</a></li>
+        <li class="nav-item px-lg-4">
+          <a *ngIf="role == 'client'; else nonConnectContact " class="nav-link text-uppercase"
+            href="/question/form">Contact</a>
+          <ng-template #nonConnectContact>
+            <a class="nav-link text-uppercase" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
+          </ng-template>
+        </li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeOffres">Faire une recherche</a></li>
+
+      </ul>
     </div>
+  </div>
 </nav>
 
 <nav *ngIf="role == 'gerant' || role == 'admin'" class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
   <div class="container">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto">
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/clients">Afficher la liste des client</a></li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeOffresGerant">Afficher la liste des offres</a>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/question">Afficher les questions</a></li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/statistiques">Afficher les statistiques</a></li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formOffre">Ajouter une offre</a></li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listePropositionsGerant">Proposer des offres</a></li>
-          </ul>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/clients">Afficher la liste des client</a>
+        </li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeOffresGerant">Afficher la liste des
+            offres</a>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/question">Afficher les questions</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/statistiques">Afficher les
+            statistiques</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formOffre">Ajouter une offre</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listePropositionsGerant">Proposer des
+            offres</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 
 <nav *ngIf="role == 'admin'" class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-    <div class="container">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formClient">Ajouter un client</a></li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formGerant">Ajouter un gérant</a></li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formAdmin">Ajouter un admin</a></li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/validerUtilisateur">Valider les utilisateurs</a></li>
-                <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeUtilisateur">Afficher les utilisateurs</a></li>
-            </ul>
-        </div>
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formClient">Ajouter un client</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formGerant">Ajouter un gérant</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/formAdmin">Ajouter un admin</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/validerUtilisateur">Valider les
+            utilisateurs</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeUtilisateur">Afficher les
+            utilisateurs</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 <router-outlet></router-outlet>
 
 
 <footer class="footer text-faded text-center py-5">
-    <div class="container"><p class="m-0 small">Copyright &copy; AgenceNulos Website 2023</p></div>
+  <div class="container">
+    <p class="m-0 small">Copyright &copy; AgenceNulos Website 2023</p>
+  </div>
 </footer>
 
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Veuillez vous connecter en tant que client pour accéder
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="redirect()">Me connecter</button>
-        </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Veuillez vous connecter en tant que client pour accéder
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="redirect()">Me connecter</button>
       </div>
     </div>
   </div>
-
-
+</div>

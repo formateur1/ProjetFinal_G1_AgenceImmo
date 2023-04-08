@@ -12,7 +12,8 @@ import { ClientService } from 'src/app/service/client.service';
 export class OffreComponentComponent implements OnInit {
   
  constructor(private os:OffreService, private cs:ClientService) { }
-  connecte = sessionStorage.getItem('connecte')
+  connecte = sessionStorage.getItem('connecte');
+  role = sessionStorage.getItem('role');
   idClient = sessionStorage.getItem('id');
   listeOffres$!:Observable<Offre[]>;
 
@@ -20,7 +21,8 @@ export class OffreComponentComponent implements OnInit {
 this.listeOffres$= this.os.getListeOffres();
   }
 
-  sauvegarderOffre(idOffre:number){
-    this.cs.sauvegarderOffre(idOffre, this.idClient);
+  sauvegarderOffre(idOffre:any){
+    this.cs.sauvegarderOffre(Number(idOffre), this.idClient);
+    alert ("Offre sauvegardée");
   }
 }

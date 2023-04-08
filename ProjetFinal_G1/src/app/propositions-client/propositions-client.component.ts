@@ -14,8 +14,7 @@ export class PropositionsClientComponent {
   constructor(private http: HttpClient,private ar:ActivatedRoute, private cs:ClientService ,  private router:Router ) { }
 
   listePropositions$!:Observable<Offre[]>;
-  idC = sessionStorage.getItem('id');
-  idClient=Number(this.idC);
+  idClient=Number(sessionStorage.getItem('id'));
   
   ngOnInit():Observable<Offre[]> {
    
@@ -24,10 +23,12 @@ export class PropositionsClientComponent {
   
   connecte = sessionStorage.getItem('connecte')
   
-  deleteProposition(idOffre:number)
+  retirerProposition(idOffre:number)
   {
     alert ("L'offre "+idOffre + " va être retirée de votre liste d'offres sauvegardées. ")
-    return this.cs.retirerProposition(this.idClient,idOffre);
+    location.reload();
+    return this.cs.retirerProposition(idOffre,this.idClient).subscribe();
+    
   }
 
   noter(idOffre:number){
