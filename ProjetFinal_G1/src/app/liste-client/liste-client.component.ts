@@ -12,7 +12,7 @@ import { AdminService } from '../service/admin.service';
   styleUrls: ['./liste-client.component.css']
 })
 export class ListeClientComponent {
-  constructor(private cs: ClientService, private router: Router, private gs: GerantServiceService, private as:AdminService) { }
+  constructor(private cs: ClientService, private router: Router, private gs: GerantServiceService, private as: AdminService) { }
   connecte = sessionStorage.getItem('connecte');
   role = sessionStorage.getItem('role');
   id = Number(sessionStorage.getItem('id'));
@@ -28,12 +28,16 @@ export class ListeClientComponent {
   }
   modifierClient(idClient: any) {
     // MANQUE FORMULAIRE////
-    
+
   }
   proposerListeOffres(idClient: any) {
-    alert("Votre liste de propositions (gérant " + this.id + ") va être envoyée au client " + idClient);
-    location.reload();
-    return this.gs.proposerListeOffres( Number(idClient), this.id ).subscribe();
+    this.gs.proposerListeOffres(Number(idClient), Number(this.id)).subscribe();
+    if (this.gs.proposerListeOffres(Number(idClient), Number(this.id)).subscribe() != null) {
+      alert("Votre liste de propositions (gérant " + this.id + ") a été envoyée au client " + idClient);
+      location.reload();
+    } else {
+      alert("ECHEC d'envoi de vos propositions")
+    }
   }
 
 }

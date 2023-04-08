@@ -24,11 +24,14 @@ export class PropositionsClientComponent {
   connecte = sessionStorage.getItem('connecte')
   
   retirerProposition(idOffre:number)
-  {
-    alert ("L'offre "+idOffre + " va être retirée de votre liste d'offres sauvegardées. ")
+  {      
+    this.cs.retirerProposition(idOffre,this.idClient).subscribe()
+    if(this.cs.retirerProposition(idOffre,this.idClient).subscribe()!=null){
+    alert ("L'offre "+idOffre + " a été retirée de votre liste d'offres sauvegardées. ")
     location.reload();
-    return this.cs.retirerProposition(idOffre,this.idClient).subscribe();
-    
+    } else{
+      alert("ECHEC du retrait de votre liste ")
+    }    
   }
 
   noter(idOffre:number){

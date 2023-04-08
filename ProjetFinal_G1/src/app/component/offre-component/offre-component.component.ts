@@ -23,12 +23,12 @@ this.listeOffres$= this.os.getListeOffres();
   }
 
   sauvegarderOffre(idOffre:number){
-    location.reload();
+    this.cs.sauvegarderOffre(idOffre, Number(this.idClient)).subscribe();
     if( this.cs.sauvegarderOffre(idOffre, Number(this.idClient)).subscribe() != null){
       alert ("Offre sauvegardée");  
     } else {
-      alert("Echec sauvegarde")
+      alert("ECHEC sauvegarde")
     }
-    return this.cs.sauvegarderOffre(idOffre, Number(this.idClient)).subscribe();
+    location.reload();
   }
 }

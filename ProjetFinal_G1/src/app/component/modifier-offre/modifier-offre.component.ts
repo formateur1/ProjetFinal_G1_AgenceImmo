@@ -35,8 +35,13 @@ export class ModifierOffreComponent implements OnInit {
   }
 
   updateOffre() {
-    console.log(this.offreForm.value.adresse)
     this.os.modifierOffre(this.offreForm.value).subscribe();
+    if (this.os.modifierOffre(this.offreForm.value).subscribe()!=null ){
+      alert("Mise à jour de l'offre "+this.offreForm.value.id)
+    }else{
+      alert("ECHEC de la mise à jour")
+    }
+    console.log(this.offreForm.value.adresse)
     location.reload();
   }
 

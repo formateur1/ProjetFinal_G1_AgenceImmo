@@ -48,14 +48,13 @@ export class FormOffreComponent implements OnInit {
   savedAchat!: boolean;
 
   addOffre() {
-
-   if( this.os.saveOffre(this.offreForm.value).subscribe()!=null) {
-      this.os.saveOffre(this.offreForm.value).subscribe();
-      alert("Offre "+this.offreForm.value.adresse+" ajoutée");
+    this.os.saveOffre(this.offreForm.value).subscribe();
+    if (this.os.saveOffre(this.offreForm.value).subscribe() != null) {
+      alert("Offre " + this.offreForm.value.adresse + " ajoutée");
       console.log(this.offreForm.value);
       location.reload();
     } else {
-     alert("Erreur dans le formulaire, echec de l'enregistrement ");
+      alert("ECHEC de l'enregistrement ");
     }
   }
 
