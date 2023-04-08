@@ -25,8 +25,8 @@ export class OffreGerantComponent implements OnInit{
    return this.listeOffres$= this.os.getListeOffres();
   }
   connecte = sessionStorage.getItem('connecte')
-  idG = sessionStorage.getItem('id');
-  idGerant = Number(this.idG);
+  
+   idGerant = Number(sessionStorage.getItem('id'));
   getOffre(id:number){
     return this.os.getOffre(id);
   }
@@ -37,13 +37,13 @@ export class OffreGerantComponent implements OnInit{
   }
 
   deleteOffre(id:number)
-  {
+  { 
     alert ("L'offre "+id + " va être supprimée")
-    return this.os.deleteOffre(id);
+   
+    return this.os.deleteOffre(id).subscribe();
   }
   ajoutProposition(idOffre:number){
     alert("offre "+idOffre+" ajoutée à la liste du gérant "+ this.idGerant)
-    return this.
-    gs.ajoutProposition(this.idGerant,idOffre);
+    return this.gs.ajoutProposition(idOffre,this.idGerant).subscribe();
   }
 }

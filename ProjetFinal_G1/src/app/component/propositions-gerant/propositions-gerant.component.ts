@@ -30,10 +30,12 @@ export class PropositionsGerantComponent {
     return this.router.navigate(['modifierOffre/'+idOffre]);
   }
 
+  //Retirer une offre de la liste des propositions du gérant
   deleteProposition(idOffre:number)
   {
     alert ("L'offre "+idOffre + " va être retirée de la liste des proposition du gérant "+this.idGerant)
-    return this.gs.deleteProposition(this.idGerant,idOffre);
+    return this.gs.deleteProposition(idOffre,this.idGerant).subscribe();
+    location.reload();
   }
 
   proposerOffre(idOffre: number,idClient:number){

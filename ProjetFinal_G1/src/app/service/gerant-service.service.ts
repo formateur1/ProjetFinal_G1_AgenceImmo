@@ -48,23 +48,21 @@ export class GerantServiceService {
     return this.http.get<Offre[]>("http://localhost:8080/gerant/listePropositions/" + idGerant);
   }
 
-  ajoutProposition(idGerant: number, idOffre: number): void {
-    const url = `http://localhost:8080/gerant/ajoutPropOffre/${idOffre}/${idGerant}`;
-    console.log("envoie de la requette ajouter proposition")
-    this.http.put<void>(url, null);
+  ajoutProposition(idOffre: number,idGerant: number):  Observable<Offre> {
+  console.log("envoie de la requette ajouter proposition")
+   return this.http.put<Offre>("http://localhost:8080/gerant/ajoutPropOffre/"+idOffre+"/"+idGerant,null);
+  }
+  
+  deleteProposition( idOffre: number,idGerant: number):  Observable<Gerant> {
+    console.log("Envoie de la requette retirer proposition." + idOffre);
+    return this.http.put<Gerant>("http://localhost:8080/gerant/deletePropOffre/"+idOffre+"/"+idGerant, null);
+    location.reload();
   }
 
-  deleteProposition(idGerant: number, idOffre: number): void {
-    const url = `http://localhost:8080/gerant/deletePropOffre/${idOffre}/${idGerant}`;
-    console.log("envoie de la requette retirer proposition" + idOffre)
-    this.http.put<Offre[]>(url, null);
-
-  }
   //Envoyer une ou plusieurs propositions d'offres
   proposerOffre(idOffre: number, idClient:number){
-    const url = `http://localhost:8080/client/recevoirProposition/${idOffre}/${idClient}}`;
-    console.log("envoie de la requette pour que le client "+ idClient+ "recoit l'offre" + idOffre)
-    this.http.put<Offre[]>(url, null);
+    console.log("Envoie de la requette pour que le client "+ idClient+ "recoit l'offre" + idOffre)
+    this.http.put<Offre[]>("http://localhost:8080/client/recevoirProposition/"+ idOffre+ "/" + idClient, null);
   }
   proposerListeOffres(idClient:number, idGerant:number){
     console.log("envoie de la requette proposer la liste d'offres du gérant " + idGerant+" au client "+ idClient)

@@ -38,7 +38,7 @@ export class OffreService {
   deleteOffre(id:number)
   {
     alert ("L'offre "+id + " a été supprimée")
-    return this.http.delete<void>("http://localhost8080/gerant/deleteOffre/"+id)
+    return this.http.delete<void>("http://localhost:8080/gerant/deleteOffre/"+id)
   }
 
 }
