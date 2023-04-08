@@ -129,11 +129,12 @@ public class GerantController {
 	}
 
 	@PutMapping("ajoutPropOffre/{idOffre}/{idGerant}")
-	public void ajoutPropositionOffre(@PathVariable int idOffre, @PathVariable int idGerant) {
-
+	public Offre ajoutPropositionOffre(@PathVariable("idOffre") int idOffre, @PathVariable("idGerant") int idGerant) {
+		Offre o = new Offre();
 		try {
+			
 			Gerant g = igr.getReferenceById(idGerant);
-			Offre o = ior.getReferenceById(idOffre);
+			o = ior.getReferenceById(idOffre);
 			System.out.println("Récupération du gérant " + g.getId() + "pour l'offre " + o.getId());
 			System.out.println("taille de la liste avant ajout : " + g.getListePropositionOffre().size());
 			g.getListePropositionOffre().add(o);
@@ -144,13 +145,14 @@ public class GerantController {
 			System.out.println("Echec de la récupération de l'offre" + idOffre + " ou du gérant " + idGerant);
 			e.printStackTrace();
 		}
+		return o;
 	}
 
 	@PutMapping("deletePropOffre/{idOffre}/{idGerant}")
-	public void deletePropOffre(@PathVariable int idOffre, @PathVariable int idGerant) {
-
+	public Gerant deletePropOffre(@PathVariable ("idOffre") int idOffre, @PathVariable ("idGerant") int idGerant) {
+		Gerant g = new Gerant();
 		try {
-			Gerant g = igr.getReferenceById(idGerant);
+			g = igr.getReferenceById(idGerant);
 			System.out.println("taille de la liste avant retrait : " + g.getListePropositionOffre().size());
 			g.getListePropositionOffre().remove(ior.getReferenceById(idOffre));
 			igr.save(g);
@@ -159,6 +161,7 @@ public class GerantController {
 			System.out.println("Echec de la récupération du gérant " + idGerant);
 			e.printStackTrace();
 		}
+		return g;
 	}
 
 	// Gestion gérant (admin)
