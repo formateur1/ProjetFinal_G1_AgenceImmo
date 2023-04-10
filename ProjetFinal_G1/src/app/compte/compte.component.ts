@@ -81,9 +81,9 @@ export class CompteComponent implements OnInit {
         alert("Vous êtes connecté (Admin)")
         location.reload()
       })
-
     } else {
       alert("ECHEC CONNEXION : id "+this.compteForm$.value.id);
+      location.reload();
     }
   }
 
