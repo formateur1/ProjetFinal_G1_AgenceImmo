@@ -56,7 +56,7 @@ public class ClientController {
 	public Client saveClient(@RequestBody Client c) {
 		Client c3 = new Client();	
 		try {
-			c3=icr.save(c);
+			c3 = icr.save(c);
 		}catch (Exception e) {
 			System.out.println("Echec de la sauvegarde");
 			e.printStackTrace();
@@ -65,15 +65,13 @@ public class ClientController {
 	}
 
 	@PutMapping("modifierClient/{id}")
-	public Client modifierClient(@RequestBody Client c) {
-	Client c4 = new Client();		
+	public void modifierClient(@RequestBody Client c) {
 		try {
-			c4=icr.save(c);
+			icr.save(c);
 		}catch (Exception e) {
 			System.out.println("Echec modification");
 			e.printStackTrace();
 		}
-		return c4;
 	}
 
 	// Consulter la liste des offres

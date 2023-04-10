@@ -59,9 +59,11 @@ public class ClientControllerTest {
 	@Test
 	@DisplayName("Test de modification d'un client")
 	public void modifierClient() throws Exception {
-		mock.perform(post("/client/modifierClient/2"))
-				.andExpect(status().isOk())
-				.andDo(print());
+		mock.perform(put("http://localhost:8080/client/modifierClient/2").contentType(MediaType.APPLICATION_JSON)
+		.content(Json.fromObject(
+		new Client(1, "Dureaud", "Louise", "loulou", "loulou", "louise@tst.fr", "Rue de la gare", "0123456"))))
+		.andExpect(status().isOk())
+		.andDo(print());
 	}
 
 //	@Test

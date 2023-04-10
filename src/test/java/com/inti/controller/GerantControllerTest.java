@@ -80,6 +80,16 @@ public class GerantControllerTest {
 		mock.perform(get("/gerant/offreId/2")).andExpect(status().isOk()).andDo(print());
 		
 	}
+	
+	//Test updateOffre
+	@Test
+	@DisplayName("Test update offre")
+	public void updateOffre() throws Exception {
+		mock.perform(put("http://localhost:8080/gerant/updateOffre").contentType(MediaType.APPLICATION_JSON)
+		.content(Json.fromObject(
+				new Offre("studio", "666 Privet Drive", "Dlardpou", 499.9, 9, 1, true, false, false, ""))))
+		.andExpect(status().isOk()).andDo(print());
+	}
 
 	// Offres en proposition
 	@Test
