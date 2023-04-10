@@ -36,7 +36,7 @@
           <!--<button (click)="sauvegarderOffre()">Sauvergarder</button>-->
         </td>
         <td>
-          <form (submit)="ajouterNote(o.id, note.value)">
+          <form (ngSubmit)="ajouterNote(o.id, note.value)">
             <input type="number" min="0" max="5" step="0.5" #note>
             <button type="submit">Ajouter une note</button>
           </form>

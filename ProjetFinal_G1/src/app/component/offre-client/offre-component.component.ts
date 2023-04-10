@@ -27,7 +27,7 @@ export class OffreComponentComponent implements OnInit {
     this.os.ajouterNote(offreId, noteEnNumber).subscribe( 
      () => {
       alert("La note a bien été prise en compte");
-      this.listeOffres$ = this.os.getListeOffres();
+     // this.listeOffres$ = this.os.getListeOffres();
     },
     (error) => {
       console.error("Erreur lors de l'ajout de la note", error);

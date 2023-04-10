@@ -43,7 +43,7 @@ export class OffreService {
   }
 
   ajouterNote(offreId: number, note: number): Observable<void> {
-    return this.http.put<void>("http://localhost:8080/offres/" + offreId + "/ajouterNote/" + note, {})
+    return this.http.post<void>("http://localhost:8080/offres/" + offreId + "/ajouterNote/" + note, {})
   }
 
   moyenneNotes(offreId: number): Observable<number> {
