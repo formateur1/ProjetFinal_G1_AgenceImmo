@@ -81,8 +81,7 @@ export class CompteComponent implements OnInit {
         alert("Vous êtes connecté (Admin)")
         location.reload()
       })
-    } 
-  }
+     } }
 
 
   deco() {

@@ -1,12 +1,12 @@
 <div class="h">Critères de recherche : </div>
 <form  style="margin: 5%; color: white; text-align: center;margin-left: 15em; margin-right: 15em; display: inline-flex;">
 <div class="form-check" style="margin-right: 5%;">
-  <input class="form-check-input" type="radio" name="type_bien" id="type_bien1">
+  <input class="form-check-input" type="radio" name="type_bien" id="type_bien1" (click)="choixMaison()">
   <label class="form-check-label" for="type_bien1">Maison</label>
 </div><br>
 
 <div class="form-check" style="margin-right: 5%;">
-  <input class="form-check-input" type="radio" name="type_bien" id="type_bien2">
+  <input class="form-check-input" type="radio" name="type_bien" id="type_bien2"(click)="choixAppartement()">
   <label class="form-check-label" for="type_bien2">Appartement</label>
 </div>
 <div class="form-check"style="margin-right: 5%;">
@@ -47,7 +47,7 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Id</th>
+        <th scope="col">Id</th> 
         <th scope="col">Type de bien</th>
         <th scope="col">Adresse</th>
         <th scope="col">Ville</th>

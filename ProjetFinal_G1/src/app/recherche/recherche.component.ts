@@ -12,10 +12,22 @@ export class RechercheComponent implements OnInit {
   
   constructor(private os:OffreService) { }
 
-  listeOffres$!:Observable<Offre[]>;
-  ngOnInit(): void {
+listeOffres$!:Observable<Offre[]>;
+ngOnInit(): void {
 this.listeOffres$= this.os.getListeOffres();
   }
 
-  afficher: boolean= false
+afficher: boolean= false
+
+type_bien: string=""
+choixMaison(){
+this.type_bien="maison"
+  }
+choixAppartement(){
+this.type_bien="appartement"
+      }
+
+chargerOffre(){
+
+  }
 }

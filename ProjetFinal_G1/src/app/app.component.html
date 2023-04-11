@@ -14,13 +14,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/accueil">Accueil</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeOffreClient">Toutes les Offres</a>
-        </li>
+        <!-- <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/listeOffreClient">Toutes les Offres</a></li> -->
         <li *ngIf="role == 'client'" class="nav-item px-lg-4">
-          <a class="nav-link text-uppercase" href="/listePropositionsClient"> Ma selection d'offres</a>
+          <a class="nav-link text-uppercase" href="/listePropositionsClient">Ma selection d'offres</a>
         </li>
-      </ul>
-      <ul>
         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/compte">Mon compte</a></li>
         <li class="nav-item px-lg-4">
           <a *ngIf="role == 'client'; else nonConnectContact " class="nav-link text-uppercase"
