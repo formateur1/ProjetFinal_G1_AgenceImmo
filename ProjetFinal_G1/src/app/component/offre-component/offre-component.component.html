@@ -33,8 +33,7 @@
         <td>{{o.exterieur}}</td>
         <td>{{o.note}}/5</td>
         <td><img src = "{{o.croquis}}" width="100%"> </td>
-        <td>
-          
+        <td> 
         <button  *ngIf="role == 'client'" (click)="sauvegarderOffre(o.id)">Sauvergarder</button>
         </td>
       </tr>

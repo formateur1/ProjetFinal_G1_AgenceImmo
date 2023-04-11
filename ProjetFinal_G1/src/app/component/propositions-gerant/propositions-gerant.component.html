@@ -58,7 +58,7 @@
         </th>
       </tr>
     </thead>
-    <tbody style="border-color: antiquewhite;border-width: 3px;">
+    <tbody style="border-color: antiquewhite;border-width: 3px;margin: auto;">
       <tr *ngFor="let o of listePropositions$ | async">
         <th scope="col">
           <h4>{{o.id}}</h4>
@@ -90,7 +90,7 @@
         <td scope="col">
           <h4>{{o.exterieur}}</h4>
         </td>
-        <td scope="col"><img src="{{o.croquis}}" width="100%"></td>
+        <td scope="col"><img src="{{o.croquis}}" width="90%"></td>
         <td scope="col">
           <h4>{{o.note}}/5</h4>
         </td>
