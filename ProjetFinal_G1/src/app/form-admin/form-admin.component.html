@@ -1,31 +1,32 @@
-
-<div style="margin: 5%; color: antiquewhite; text-align: center;margin-left: 15em; margin-right: 15em;">
-  <h1>Ajouter un admin</h1><br><br>
+<div style="margin: 5%;color: antiquewhite;">
+  <h1>Ajouter un admin</h1></div>
+  <div class="row" style=" color: rgb(43, 16, 3); text-align: center;margin-left: 25em; margin-right: 15em; background-color: antiquewhite;width: 60%;" >
   <form [formGroup]="adminForm" (ngSubmit)="saveAdmin()">
-    <div class="col">
-        <label for="nom" class="form-label">Nom</label>
+    <div class="col"><br>
+        <label for="nom" class="form-label"><b>Nom</b></label>
       <input type="text" class="form-control" name="nom" formControlName="nom" style="text-align: center;">
     </div><br><br>
     <div class="col">
-        <label for="prenom" class="form-label">Prénom</label>
+        <label for="prenom" class="form-label"><b>Prénom</b></label>
       <input type="text" class="form-control" name="prenom" formControlName="prenom" style="text-align: center;">
     </div><br><br>
     <div class="col">
-        <label for="login" class="form-label">Login</label>
+        <label for="login" class="form-label"><b>Login</b></label>
       <input type="text" class="form-control" name="login" formControlName="login" style="text-align: center;">
     </div><br><br>
     <div class="col">
-        <label for="mdp" class="form-label">Mot de passe</label>
+        <label for="mdp" class="form-label"><b>Mot de passe</b></label>
       <input type="password" class="form-control" name="mdp" formControlName="mdp" style="text-align: center;">
     </div><br><br>
     <div class="col">
-        <label for="mail" class="form-label">Mail</label>
+        <label for="mail" class="form-label"><b>Mail</b></label>
       <input type="email" class="form-control" name="mail" formControlName="mail" style="text-align: center;">
     </div><br><br>
     <div class="col">
-        <label for="agence_immobiliere" class="form-label">Agence Immobilière</label>
+        <label for="agence_immobiliere" class="form-label"><b>Agence Immobilière</b></label>
       <input type="number" class="form-control" name="agence_immobiliere" formControlName="agence_immobiliere" style="text-align: center;">
-    </div><br><br>
-    <button type="submit" class="btn btn-outline-light">Envoyer</button>
+    </div><br>
+    <div class="col">
+    <button type="submit">Envoyer</button></div><br>
   </form>
 </div>

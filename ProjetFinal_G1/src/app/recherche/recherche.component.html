@@ -1,6 +1,7 @@
-<div class="h" style="color: antiquewhite;">Critères de recherche : </div>
-<form
-  style="margin: 5%; color: antiquewhite; text-align: center;margin-left: 15em; margin-right: 15em; display: inline-flex;">
+<div style="margin: 5%; color: antiquewhite;">
+  <h3>Critères de recherche : </h3>
+</div>
+<form style="color: antiquewhite; text-align: center;margin-left: 15em; margin-right: 15em; display: inline-flex;">
   <div class="form-check" style="margin-right: 5%;">
     <input class="form-check-input" type="radio" name="type_bien" id="type_bien1" (click)="choixMaison()">
     <label class="form-check-label" for="type_bien1">Appartement</label>
@@ -41,11 +42,13 @@
     <input class="form-input" [(ngModel)]="ville" type="text" name="ville" id="ville">
   </div>
 </form>
-<div class="h" style="color: antiquewhite;">Nos offres du moment :</div>
-<button type="button" class="btn btn-secondary" (click)="afficher=!afficher">Afficher</button>
-<br><br>
+<div class="h">
+  <h3>Nos offres du moment :</h3>
+  <button style=" text-align: center; align-items: center;" type="button" class="btn btn-secondary"
+    (click)="afficher=!afficher"><b>Afficher</b></button>
+</div><br><br>
 <div *ngIf="afficher">
-  <table class="table table-hover" style=" color: antiquewhite;text-align: center; align-items: normal;">
+  <table class="table table-hover" style=" color: antiquewhite;text-align: center; align-items: normal;width: 85%; margin-left: 8%;">
     <thead style="border-color: antiquewhite;border-width: 3px;margin: auto;">
       <tr>
         <th scope="col">Id</th>
@@ -66,20 +69,20 @@
     <tbody *ngFor="let o of listeOffres$ | async" style="border-color: antiquewhite;border-width: 3px;margin: auto;">
       <tr
         *ngIf="type_bien != o.type_bien && achat != o.achat && meuble != o.meuble && exterieur != o.exterieur && (ville == o.ville || ville==null)">
-        <th scope="row">{{o.id}}</th>
-        <td>{{o.type_bien}}</td>
-        <td>{{o.adresse}}</td>
-        <td>{{o.ville}}</td>
-        <td>{{o.surface}} m2</td>
-        <td>{{o.nb_piece}}</td>
-        <td>{{o.prix}}</td>
-        <td>{{o.meuble}}</td>
-        <td>{{o.achat}}</td>
-        <td>{{o.exterieur}}</td>
-        <td *ngIf="moyennesNotes[o.id] !== undefined">{{moyennesNotes[o.id] | number:'1.1-1'}}/5</td>
-        <td *ngIf="moyennesNotes[o.id] === undefined"><button (click)="getMoyenneNotes(o.id)">Afficher la moyenne</button></td>
-        <td><img src="{{o.croquis}}" width="90%"></td>
-        <td>
+        <th scope="colw">{{o.id}}</th>
+        <td scope="col">{{o.type_bien}}</td>
+        <td scope="col">{{o.adresse}}</td>
+        <td scope="col">{{o.ville}}</td>
+        <td scope="col">{{o.surface}} m2</td>
+        <td scope="col">{{o.nb_piece}}</td>
+        <td scope="col">{{o.prix}}</td>
+        <td scope="col">{{o.meuble}}</td>
+        <td scope="col">{{o.achat}}</td>
+        <td scope="col">{{o.exterieur}}</td>
+        <td scope="col" *ngIf="moyennesNotes[o.id] !== undefined">{{moyennesNotes[o.id] | number:'1.1-1'}}/5</td>
+        <td scope="col" *ngIf="moyennesNotes[o.id] === undefined"><button (click)="getMoyenneNotes(o.id)">Afficher la moyenne</button></td>
+        <td scope="col"><img src="{{o.croquis}}" width="90%"></td>
+        <td scope="col">
           <input type="number" min="0" max="5" step="0.5" [(ngModel)]="note" name="note" style="width: 60px;">
           <button (click)="ajouterNote(o.id, note)">Noter</button>
         </td>

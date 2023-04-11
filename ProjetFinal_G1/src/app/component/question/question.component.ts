@@ -14,7 +14,7 @@ export class QuestionComponent implements OnInit{
 
   constructor(private qs:QuestionService, private route: ActivatedRoute, private router:Router){}
 
-
+  idGerant = Number(sessionStorage.getItem('id'))
   listeQuestion$!:Observable<Question[]>
 
   ngOnInit(){

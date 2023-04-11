@@ -1,7 +1,7 @@
-<p>Recherche Avancée</p>
+<h3>Recherche Avancée</h3>
    <!-- Cette partie est traitee dans le composant "recherche" -->
 
-<p>Liste des offres detaillées</p>
+<h3>Liste des offres detaillées</h3>
 <table class="table">
     <thead>
       <tr>
@@ -33,8 +33,7 @@
         <td>{{o.exterieur}}</td>
         <td>{{o.note}}/5</td>
         <td><img src = "{{o.croquis}}" width="100%"> </td>
-        <td>
-          
+        <td> 
         <button  *ngIf="role == 'client'" (click)="sauvegarderOffre(o.id)">Sauvergarder</button>
         </td>
       </tr>

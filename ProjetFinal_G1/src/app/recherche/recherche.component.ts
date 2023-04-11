@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OffreService } from '../service/offre.service';
 import { Observable } from 'rxjs';
 import { Offre } from '../model/offre.model';
+import { ClientService } from '../service/client.service';
 
 @Component({
   selector: 'app-recherche',
@@ -10,8 +11,11 @@ import { Offre } from '../model/offre.model';
 })
 export class RechercheComponent implements OnInit {
   
-  constructor(private os:OffreService) { }
-
+  constructor(private os:OffreService, private cs:ClientService) { }
+  connecte = sessionStorage.getItem('connecte');
+  role = sessionStorage.getItem('role');
+  idClient = sessionStorage.getItem('id');
+  ville!:string
 listeOffres$!:Observable<Offre[]>;
 ngOnInit(): void {
 this.listeOffres$= this.os.getListeOffres();
@@ -52,7 +56,6 @@ choixSansExterieur(){
 this.exterieur=false
   }
 
-ville!:string
 
 note!: string;
 

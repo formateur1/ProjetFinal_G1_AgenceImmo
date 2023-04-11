@@ -1,7 +1,8 @@
-<p>offre-component works!</p>
-<p>Liste des offres AVEC Details pour le client</p>
-<table class="table">
-    <thead>
+<div style="margin: 5%; color: antiquewhite;">
+  <h1>Offres sauvegardées </h1>
+   <h3 style="color: rgb(255, 214, 196);">Et proposées spécialement pour vous, par nos agents Nullos </h3><br><br>
+<table class="table table-hover" style=" color: antiquewhite;text-align: center; align-items: normal;">
+    <thead style="border-color: antiquewhite;border-width: 3px;margin: auto;">
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Type de bien</th>
@@ -18,21 +19,22 @@
         <th scope="col">Action</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody style="border-color: antiquewhite;border-width: 3px;margin: auto;">
       <tr *ngFor="let o of listePropositions$ | async">
-        <th scope="row">{{o.id}}</th>
-        <td>{{o.type_bien}}</td>
-        <td>{{o.adresse}}</td>
-        <td>{{o.ville}}</td>
-        <td>{{o.surface}} m2</td>
-        <td>{{o.nb_piece}}</td>
-        <td>{{o.meuble}}</td>
-        <td>{{o.achat}}</td>
-        <td>{{o.exterieur}}</td>
-        <td>{{o.note}}/5</td>
-        <td><img src = "{{o.croquis}}" width="100%"> Croquis Indisponible</td>
-        <td>
-          <!--<button (click)="sauvegarderOffre()">Sauvergarder</button>-->
+        <th scope="col">{{o.id}}</th>
+        <td scope="col">{{o.type_bien}}</td>
+        <td scope="col">{{o.adresse}}</td>
+        <td scope="col">{{o.ville}}</td>
+        <td scope="col">{{o.prix}}</td>
+        <td scope="col">{{o.surface}} m2</td>
+        <td scope="col">{{o.nb_piece}}</td>
+        <td scope="col">{{o.meuble}}</td>
+        <td scope="col">{{o.achat}}</td>
+        <td scope="col">{{o.exterieur}}</td>
+        <td scope="col">{{o.note}}/5</td>
+        <td><img src = "{{o.croquis}}" width="60%"></td>
+        <td scope="col">
+          <button (click)="retirerProposition(o.id)">Retirer de ma liste</button><br>
         </td>
       </tr>
     </tbody>
