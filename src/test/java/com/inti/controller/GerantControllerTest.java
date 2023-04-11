@@ -48,7 +48,7 @@ public class GerantControllerTest {
 	@Test
 	@DisplayName("Test d'affichage des gérants")
 	public void getGerants() throws Exception {
-		mock.perform(get("/gerants/getGerants")).andExpect(status().isOk()).andDo(print());
+		mock.perform(get("/gerant/getGerants")).andExpect(status().isOk()).andDo(print());
 	}
 
 	// Offres
@@ -70,13 +70,13 @@ public class GerantControllerTest {
 	@Test
 	@DisplayName("Test d'affichage de toutes les offres")
 	public void listeOffres() throws Exception {
-		mock.perform(get("/gerants/listeOffres")).andExpect(status().isOk()).andDo(print());
+		mock.perform(get("/gerant/listeOffres")).andExpect(status().isOk()).andDo(print());
 	}
 
 	@Test
 	@DisplayName("Test d'affichage d'une offre avec son id")
 	public void offreId() throws Exception {
-		mock.perform(get("/gerants/offreId/2")).andExpect(status().isOk()).andDo(print());
+		mock.perform(get("/gerant/offreId/2")).andExpect(status().isOk()).andDo(print());
 		
 	}
 
@@ -96,20 +96,20 @@ public class GerantControllerTest {
 	@Test
 	@DisplayName("Test d'affichage de toutes les propositions")
 	public void listePropositions() throws Exception {
-		mock.perform(get("/gerants/listePropositions/12")).andExpect(status().isOk()).andDo(print());
+		mock.perform(get("/gerant/listePropositions/12")).andExpect(status().isOk()).andDo(print());
 	}
 
 	// Clients
 	@Test
 	@DisplayName("Test d'affichage de tous les clients")
 	public void listeClients() throws Exception {
-		mock.perform(get("/gerants/listeClients")).andExpect(status().isOk()).andDo(print());
+		mock.perform(get("/gerant/listeClients")).andExpect(status().isOk()).andDo(print());
 	}
 
 	@Test
 	@DisplayName("Test d'affichage d'un client avec son id")
 	public void clientId() throws Exception {
-		mock.perform(get("/gerants/clientId/2")).andExpect(status().isOk()).andDo(print());
+		mock.perform(get("/gerant/clientId/2")).andExpect(status().isOk()).andDo(print());
 	}
 
 }
