@@ -230,8 +230,6 @@ Problème d'execution : utilisation de console.log() pour vérifier les étapes 
 <ul>
  <li>#Fonctionnalité client : test des fonctions CRUD:ok, suggestion sur la creation de menu dderoulant sur Angular pour que les clients effectuent des recherches avancées sur les offres.</li><li>
 # Fonctionnalité gerant : Formulaire création client ok, faire la même chose pour gérant et admin. A créer : page où l'admin peut valider les demandes de création </li><li>
-#Fonctionnalité utilisateurs :.....</li><li>
-#..... </li>
 </ul><br>
 
 *Fonctionnalite Client: 
@@ -290,7 +288,7 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
      - Etablissement du front global (page d'accueil du site)
   </ul>
 
-//Jour5// (Scrum master : )<br> 
+//Jour5// (Scrum master :Mariam BAMBA )<br> 
 05/04/2023<br>
 
  *Fonctionnalité gestion des utilisateurs:
@@ -312,8 +310,14 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
  On utilise un objet Json pour traduire les objets Personne et PersonneAttente en objet Json: Json.object(new Personne())
 </li>
 </ul> <br>
+*Fonctionnalite Client:
+<ul>
+  -En FrontEnd -> sur Angular dans le composant offre
+ <li>Pas de création de menu deroulant mais des boutons "radios" permettant de selectionnées des criteres</li>
+ </li>Probleme d'acces à la BDD, donc importation des tables creés dans la BDD en ligne vers la BDD local => modification du fichier "applications properties" <li>
+</ul> <br>
 
-//Jour6// (Scrum master : ) <br>
+//Jour6// (Scrum master :Mariam BAMBA ) <br>
 06/04/2023
 <br>
 *Fonctionnalité gestion des utilisateurs:
@@ -331,16 +335,23 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
  Ajout de 3 variables dans la classe pour traduire les valeurs et les afficher dans le html avec le binding {{var}}
 </li>
 </ul>
- <ul>
+<ul>
  -En BackEnd -> sur Eclipse
   <li>
   Création d'un INoteRepository pour les demandes SQL</li><li>
   Code des fonctions pour transmettre les valeurs à Angular dans le AdminController</li><li>
   Tests des fonctions de AdminController 
 </li>
+</ul>
+*Fonctionnalite Client:
+<ul>
+  -En FrontEnd -> sur Angular
+<li>Probleme d'acces à la BDD meme en local, donc creation d'un nouveau composant nommé "Recherche" afin de determiné si le probleme ne vient pas de Angular et non de Eclipse+BDD</li>
+<li>Probleme d'acces resolu avec cette nouvelle composant en reprennant que le formulaire qui permet d'afficher le tableau de la liste des offres. Le probleme d'affiche de la liste depuis le composant "offre" etait dû à la presence de boutons copie collé qui faisaient reference à des formulaires reactives or il y' avait pas de formulaires reactives associées </li>
+<li> Donc modification de ces boutons afin d'avoir sur la liste des offres des boutons permettant de trier la liste selon les criteres sélectionnés</li>
 </ul> <br>
 
-//Jour7// (Scrum master : ) <br>
+//Jour7// (Scrum master : Charlène Sanchez) <br>
 07/04/2023
 <br>
 *Fonctionnalité statistiques:
@@ -357,4 +368,29 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
   </li><li>
   Difficultés : erreur résolue avec le "countQuery", @CrossOrigin manquant dans un controller
 </li>
+</ul>
+
+*Fonctionnalite Client:
+<ul>
+  -En FrontEnd -> sur Angular, dans le component Recherche
+<li>fin de la mise en place des boutons de recherche avancées, reflexion sur les fonctions à mettre en place pour trier la liste des offres dès qu'on selectionne une ou plusieurs criteres</li>
 </ul> <br>
+
+//Jour8// (Scrum master : Jérémy Demange) <br>
+11/04/2023
+<br>
+*Fonctionnalite Client:
+<ul>
+  -En FrontEnd -> sur Angular, dans le component Recherche
+<li>creation de fonction "click" a qui on attribue une variable dans la balise input pour chaque criteres sur le fichier html=> declaration dans le fichier TS de cette variable</li>
+<li>Dans le fichier html : mise en place d'un *ngIf dans le 2e <tr> de la balise table du formulaire afin d'effectuer le trie</li>
+</ul> <br>
+
+
+//Jour9 : Fin de Projet// <br>
+12/04/2023
+<br>
+-Matin
+<li> Rassemblement des differentes branches de github, test de fonctionnement de l'application </li>
+-Après Midi
+<li> Presentation du projet</li>
