@@ -20,10 +20,6 @@ export class OffreService {
   return  this.http.get<Offre[]>("http://localhost:8080/gerant/listeOffres");
   }
 
-  // gettype_bien():Observable<Offre[]>{
-  //   return  this.http.get<Offre[]>("http://localhost:8080/gerant/listeOffres");
-  //   }
-
   getOffre(id:number):Observable<Offre> {
     return this.http.get<Offre>("http://localhost:8080/gerant/offreId/"+id);
   }
