@@ -17,7 +17,6 @@ export class PropositionsClientComponent {
   idClient=Number(sessionStorage.getItem('id'));
   
   ngOnInit():Observable<Offre[]> {
-   
    return this.listePropositions$= this.cs.getListePropositions(this.idClient);
   }
   
