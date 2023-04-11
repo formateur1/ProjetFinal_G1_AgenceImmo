@@ -8,6 +8,9 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class OffreService {
+  getMoyennesNotes() {
+    throw new Error('Method not implemented.');
+  }
 
  // listeO:Offre[]=[
     //new Offre(1,"appartement","15 rue mystere","Montpellier",850,45,3,true,false,false,"",4),
@@ -53,6 +56,10 @@ export class OffreService {
 
   moyenneNotes(offreId: number): Observable<number> {
     return this.http.get<number>("http://localhost:8080/offres/" + offreId + "/moyenneNotes")
+  }
+
+  getMoyenneNotes(offreId: number): Observable<number> {
+    return this.http.get<number>("http://localhost:8080/offres/" + offreId + "/moyenneNotes");
   }
   
 }
