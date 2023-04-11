@@ -19,15 +19,38 @@ this.listeOffres$= this.os.getListeOffres();
 
 afficher: boolean= false
 
-type_bien: string=""
+type_bien!: string
 choixMaison(){
 this.type_bien="maison"
+console.log("maison")
   }
 choixAppartement(){
 this.type_bien="appartement"
-      }
-
-chargerOffre(){
-
   }
+
+achat!: boolean
+choixAchat(){
+this.achat=true
+  }
+choixLocation(){
+this.achat=false
+  }
+
+meuble!: boolean
+choixMeuble(){
+this.meuble=true
+  }
+choixNonMeuble(){
+this.meuble=false
+  }  
+
+exterieur!: boolean
+choixAvecExterieur(){
+this.exterieur=true
+  }
+choixSansExterieur(){
+this.exterieur=false
+  }
+
+ville!:string
 }
