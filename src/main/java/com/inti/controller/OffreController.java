@@ -24,13 +24,21 @@ public class OffreController {
 	@Autowired
 	IOffreRepository ior;
 	
-    @PostMapping("/{offreId}/ajouterNote/{note}")
-    public void ajouterNote(@PathVariable int offreId, @PathVariable double note) {
-        Optional<Offre> ofr = ior.findById(offreId);
-            Offre offre = ofr.get();
-            offre.ajouterNote(new Note(note));
-            ior.save(offre); 
-    }
+	@PostMapping("/{offreId}/ajouterNote/{note}")
+	public ResponseEntity<Void> ajouterNote(@PathVariable int offreId, @PathVariable double note) {
+	    Optional<Offre> ofr = ior.findById(offreId);
+	    if (ofr.isPresent()) {
+	        Offre offre = ofr.get();
+	        Note newNote = new Note(note);
+	        offre.ajouterNote(newNote);
+	        ior.save(offre);
+	        System.out.println("Note ajoutée : " + newNote.getId() + ", valeur: " + newNote.getValeur());
+	        return ResponseEntity.status(HttpStatus.OK).build();
+	    } else {
+	        System.out.println("Offre introuvable, id: " + offreId);
+	        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+	    }
+	}
 	
 	@GetMapping("/{offreId}/moyenneNotes")
 	public double MoyenneNotes(@PathVariable int offreId)

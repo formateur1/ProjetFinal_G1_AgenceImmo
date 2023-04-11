@@ -7,8 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.NoArgsConstructor;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
 @NoArgsConstructor
 public class Note {
@@ -20,6 +24,7 @@ public class Note {
 	
 	@ManyToOne
 	@JoinColumn(name = "offre_id" )
+	@JsonBackReference
 	private Offre offre;
 	
 	
