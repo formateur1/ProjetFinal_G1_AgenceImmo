@@ -1,5 +1,5 @@
-<div style="margin: 5%;">
-  <h1 style="color: white; text-align: center;">Liste des clients</h1><br><br>
+<div style="margin: 5%;" style="color: white; text-align: center;">
+  <h1 >Liste des clients</h1><br><br>
 
   <table class="table" style="color: white; text-align: center;">
     <thead>
@@ -22,15 +22,24 @@
         <td scope="row">{{c.id}}</td>
         <td>{{c.nom}}</td>
         <td>{{c.prenom}}</td>
-        <td >{{c.login}}</td>
-        <td >{{c.mdp}}</td>
-        <td >{{c.mail}}</td>
-        <td >{{c.agence_immobiliere}}</td>
-        <td >{{c.adresse}}</td>
-        <td >{{c.telephone}}</td>
-        <td><button type="button" class="btn btn-outline-light position-relative" (click)="proposerOffre(c.id)">Proposer offres</button></td>
+        <td>{{c.login}}</td>
+        <td>{{c.mdp}}</td>
+        <td>{{c.mail}}</td>
+        <td>{{c.agence_immobiliere}}</td>
+        <td>{{c.adresse}}</td>
+        <td>{{c.telephone}}</td>
+        <!--Admin-->
+        <td>
+          <button *ngIf="role == 'admin'" type="submit" class="btn btn-outline-light position-relative"
+            (click)="supprimerClient(c.id)"> Supprimer</button>
+          <button *ngIf="role == 'admin'" type="submit" class="btn btn-outline-light position-relative"
+            (click)="modifierClient(c.id)"> Modifier</button>
+          <!--Gerant-->
+          <button *ngIf="role == 'gerant'" type="button" class="btn btn-outline-light position-relative"
+            (click)="proposerListeOffres(c.id)">Proposer des offres</button>
+        </td>
       </tr>
-      
+
     </tbody>
-  </table> 
+  </table>
 </div>
