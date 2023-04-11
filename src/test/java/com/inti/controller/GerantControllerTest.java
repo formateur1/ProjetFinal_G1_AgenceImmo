@@ -65,6 +65,7 @@ public class GerantControllerTest {
 	@DisplayName("Test de suppression d'une offre")
 	public void deleteOffre() throws Exception {
 		mock.perform(delete("/gerant/deleteOffre/1")).andExpect(status().isOk()).andDo(print());
+		  
 	}
 
 	@Test
@@ -79,12 +80,22 @@ public class GerantControllerTest {
 		mock.perform(get("/gerant/offreId/2")).andExpect(status().isOk()).andDo(print());
 		
 	}
+	
+	//Test updateOffre
+	@Test
+	@DisplayName("Test update offre")
+	public void updateOffre() throws Exception {
+		mock.perform(put("http://localhost:8080/gerant/updateOffre").contentType(MediaType.APPLICATION_JSON)
+		.content(Json.fromObject(
+				new Offre("studio", "666 Privet Drive", "Dlardpou", 499.9, 9, 1, true, false, false, ""))))
+		.andExpect(status().isOk()).andDo(print());
+	}
 
 	// Offres en proposition
 	@Test
 	@DisplayName("Test sauvegarder une offre en proposition coté gérant")
 	public void ajoutPropositionOffre() throws Exception {
-		mock.perform(put("/gerant/ajoutPropOffre/2/11")).andExpect(status().isOk()).andDo(print());
+		mock.perform(put("http://localhost:8080/gerant/ajoutPropOffre/4/14")).andExpect(status().isOk()).andDo(print());
 	}
 
 	@Test

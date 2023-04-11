@@ -56,7 +56,7 @@ public class ClientController {
 	public Client saveClient(@RequestBody Client c) {
 		Client c3 = new Client();	
 		try {
-			c3=icr.save(c);
+			c3 = icr.save(c);
 		}catch (Exception e) {
 			System.out.println("Echec de la sauvegarde");
 			e.printStackTrace();
@@ -65,15 +65,13 @@ public class ClientController {
 	}
 
 	@PutMapping("modifierClient/{id}")
-	public Client modifierClient(@RequestBody Client c) {
-	Client c4 = new Client();		
+	public void modifierClient(@RequestBody Client c) {
 		try {
-			c4=icr.save(c);
+			icr.save(c);
 		}catch (Exception e) {
 			System.out.println("Echec modification");
 			e.printStackTrace();
 		}
-		return c4;
 	}
 
 	// Consulter la liste des offres
@@ -110,7 +108,7 @@ public class ClientController {
 	// Propositions d'offres
 
 	@GetMapping("listePropositionsClient/{idClient}")
-	public List<Offre> listePropositionsClient(@PathVariable int idClient) {
+	public List<Offre> listePropositionsClient(@PathVariable ("idClient") int idClient) {
 		List<Offre> listePropositionsClient = new ArrayList<>();
 		try {
 			listePropositionsClient = icr.getReferenceById(idClient).getListePropositions();
@@ -122,11 +120,11 @@ public class ClientController {
 	}
 	
 	@PutMapping("recevoirProposition/{idOffre}/{idClient}")
-	public void recevoirProposition(@PathVariable int idOffre, @PathVariable int idClient) {
-
+	public Client recevoirProposition(@PathVariable("idOffre") int idOffre, @PathVariable ("idClient") int idClient) {
+		Client c = new Client();
 		try {
 			Offre o = ior.getReferenceById(idOffre);
-			Client c = icr.getReferenceById(idClient);
+			 c = icr.getReferenceById(idClient);
 			
 			System.out.println("Récupération du client " + c.getId() + "pour recevoir l'offre " + o.getId());
 			System.out.println("taille de la liste avant ajout : " + c.getListePropositions().size());
@@ -137,12 +135,14 @@ public class ClientController {
 			System.out.println("Echec de l'envoie de la proposition");
 			e.printStackTrace();
 		}
+		return c;
 	}
 
-	@PutMapping("recevoirListePropositions/{idGerant}/{idClient}")
-	public void recevoirListeProositions(@PathVariable int idClient, @PathVariable int idGerant) { 
+	@PutMapping("recevoirListePropositions/{idClient}/{idGerant}")
+	public Client recevoirListePropositions(@PathVariable ("idClient") int idClient, @PathVariable ("idGerant") int idGerant) { 
+		Client c = new Client();
 		try {
-			Client c = icr.getReferenceById(idClient);
+			 c = icr.getReferenceById(idClient);
 			Gerant g = igr.getReferenceById(idGerant);
 			
 			System.out.println("Récupération du client " + c.getId() + "pour recevoir la liste du gérant " + g.getId());
@@ -154,11 +154,12 @@ public class ClientController {
 			System.out.println("Echec de l'envoie de la liste de propositions");
 			e.printStackTrace();
 		}
+		return c;
 	}
 	// Gerer sa selection d'offres
 
 	@PutMapping("retirerProposition/{idOffre}/{idClient}")
-	public void retirerProposition(@PathVariable int idOffre, @PathVariable int idClient) {
+	public void retirerProposition(@PathVariable ("idOffre")int idOffre, @PathVariable ("idClient") int idClient) {
 		try {
 			Client c = icr.getReferenceById(idClient);
 			
@@ -173,9 +174,10 @@ public class ClientController {
 	}
 
 	@PutMapping("sauvegarderOffre/{idOffre}/{idClient}")
-	public void ajoutPropositionOffre(@PathVariable int idOffre, @PathVariable int idClient) {
+	public Client sauvegarderOffre(@PathVariable ("idOffre")int idOffre, @PathVariable ("idClient") int idClient) {
+		Client c = new Client();
 		try {
-			Client c = icr.getReferenceById(idClient);
+			 c = icr.getReferenceById(idClient);
 			Offre o = ior.getReferenceById(idOffre);
 
 			System.out.println("Récupération du client " + c.getId() + "pour l'offre " + o.getId());
@@ -188,6 +190,7 @@ public class ClientController {
 			System.out.println("Echec de l'ajout de l'offre");
 			e.printStackTrace();
 		}
+		return c;
 
 	}
 

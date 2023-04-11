@@ -212,26 +212,19 @@ public class AdministrateurController {
 	
 	@GetMapping("moyenneNotes")
 	public double moyenneNotes() {
-	
-		double moy = inr.moyenneNotes();
-		System.out.println("Moyenne notes "+ moy);
-		return moy;
+		return inr.moyenneNotes();
 	}
 	
 	@GetMapping("nombreClients")
 	public long nombreClient()
 	{
-		long n=icr.count();
-		System.out.println("Nombre clients " + n);
-		return n;
+		return icr.count();
 	}
 	
 	@GetMapping("nombreOffres")
 	public long nombreOffres()
 	{
-		long n=ior.count();
-		System.out.println("Nombre offres " +n);
-		return (int) n;
+		return ior.count();
 
 	}
 }
