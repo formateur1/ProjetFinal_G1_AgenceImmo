@@ -1,89 +1,99 @@
-<p>liste-utilisateur works!</p>
-
-<p>Liste des administrateurs</p>
-<table>
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Login</th>
-            <th>Mdp</th>
-            <th>Mail</th>
-            <th>Agence immobilière</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let a of listeA$ | async">
-            <td>{{a.id}}</td>
-            <td>{{a.nom}}</td>
-            <td>{{a.prenom}}</td>
-            <td>{{a.login}}</td>
-            <td>{{a.mdp}}</td>
-            <td>{{a.mail}}</td>
-            <td>{{a.agence_immobiliere}}</td>
-            <td><button (click)="updateAdmin(a, a.id)">Modifier</button> <button (click)="supprimerAdmin(a.id)">Supprimer</button></td>
-        </tr>
-    </tbody>
-</table>
-<p>Liste des gérants</p>
-<table>
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Login</th>
-            <th>Mdp</th>
-            <th>Mail</th>
-            <th>Agence immobilière</th>
-            <th></th>
-            
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let g of listeG$ | async">
-            <td>{{g.id}}</td>
-            <td>{{g.nom}}</td>
-            <td>{{g.prenom}}</td>
-            <td>{{g.login}}</td>
-            <td>{{g.mdp}}</td>
-            <td>{{g.mail}}</td>
-            <td>{{g.agence_immobiliere}}</td>
-            <td><button (click)="updateGerant(g, g.id)">Valider</button> <button (click)="supprimerGerant(g.id)">Supprimer</button></td>
-        </tr>
-    </tbody>
-</table>
-<p>Liste des clients</p>
-<table>
-    <thead>
-
-        <tr>
-            <th>id</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Login</th>
-            <th>Mdp</th>
-            <th>Mail</th>
-            <th>Agence immobilière</th>
-            <th>Adresse</th>
-            <th>Téléphone</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let c of listeC$ | async">
-            <td>{{c.id}}</td>
-            <td>{{c.nom}}</td>
-            <td>{{c.prenom}}</td>
-            <td>{{c.login}}</td>
-            <td>{{c.mdp}}</td>
-            <td>{{c.mail}}</td>
-            <td>{{c.agence_immobiliere}}</td>
-            <td>{{c.adresse}}</td>
-            <td>{{c.telephone}}</td>
-            <td><button (click)="updateClient(c, c.id)">Modifier</button> <button (click)="supprimerClient(c.id)">Supprimer</button></td>
-        </tr>
-    </tbody>
-</table>
+<div style="margin: 5%; color: white; text-align: center;">
+    <h1 >Liste des administrateurs</h1><br>
+    <table class="table" style="color: white;">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Login</th>
+                <th scope="col">Mdp</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Agence immobilière</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of listeA$ | async">
+                <td scope="row">{{a.id}}</td>
+                <td>{{a.nom}}</td>
+                <td>{{a.prenom}}</td>
+                <td>{{a.login}}</td>
+                <td>{{a.mdp}}</td>
+                <td>{{a.mail}}</td>
+                <td>{{a.agence_immobiliere}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-light position-relative" (click)="updateAdmin(a.id)" style="margin-right: 2px;">Modifier</button>
+                    <button type="button" class="btn btn-outline-light position-relative" (click)="supprimerAdmin(a.id)" style="margin-left: 2px;">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table >
+    <br><br>
+    <h1 style="color: white; text-align: center;">Liste des gérants</h1><br>
+    <table class="table" style="color: white; text-align: center;">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Login</th>
+                <th scope="col">Mdp</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Agence immobilière</th> 
+                <th scope="col">Action</th>   
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let g of listeG$ | async">
+                <td>{{g.id}}</td>
+                <td>{{g.nom}}</td>
+                <td>{{g.prenom}}</td>
+                <td>{{g.login}}</td>
+                <td>{{g.mdp}}</td>
+                <td>{{g.mail}}</td>
+                <td>{{g.agence_immobiliere}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-light position-relative" (click)="updateGerant(g.id)" style="margin-right: 2px;">Modifier</button>
+                    <button type="button" class="btn btn-outline-light position-relative" (click)="supprimerGerant(g.id)" style="margin-left: 2px;">Supprimer</button>
+                </td>
+                
+            </tr>
+        </tbody>
+    </table >
+    <br><br>
+    <h1 style="color: white; text-align: center;">Liste des clients</h1><br>
+    <table class="table" style="color: white; text-align: center;">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Login</th>
+                <th scope="col">Mdp</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Agence immobilière</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Téléphone</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of listeC$ | async">
+                <td>{{c.id}}</td>
+                <td>{{c.nom}}</td>
+                <td>{{c.prenom}}</td>
+                <td>{{c.login}}</td>
+                <td>{{c.mdp}}</td>
+                <td>{{c.mail}}</td>
+                <td>{{c.agence_immobiliere}}</td>
+                <td>{{c.adresse}}</td>
+                <td>{{c.telephone}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-light position-relative" (click)="updateClient(c.id)" style="margin-right: 2px;">Modifier</button>
+                    <button type="button" class="btn btn-outline-light position-relative" (click)="supprimerClient(c.id)" style="margin-left: 2px;">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

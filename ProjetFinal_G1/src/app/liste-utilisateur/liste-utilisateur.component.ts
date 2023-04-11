@@ -32,12 +32,9 @@ supprimerAdmin(id:string)
   location.reload()
 }
 
-updateAdmin(a:Administrateur, id:string)
+updateAdmin(id:string)
 {
-  this.as.deleteAdminValide(parseInt(id)).subscribe(); 
-  this.as.updateAdmin(a).subscribe();
-  this.router.navigate(['validerUtilisateur'])
-  location.reload()
+  this.router.navigate(['updateAdmin/'+id])
 }
 supprimerGerant(id:string)
 {
@@ -46,12 +43,9 @@ supprimerGerant(id:string)
   location.reload()
 }
 
-updateGerant(g:Gerant, id:string)
+updateGerant(id:string)
 {
-  this.as.deleteGerantValide(parseInt(id)).subscribe(); 
-  this.as.updateGerant(g).subscribe();
-  this.router.navigate(['validerUtilisateur'])
-  location.reload()
+  this.router.navigate(['updateGerant/'+id])
 }
 supprimerClient(id:string)
 {
@@ -60,11 +54,8 @@ supprimerClient(id:string)
   location.reload()
 }
 
-updateClient(c:Client, id:string)
+updateClient(id:string)
 {
-  this.as.deleteClientValide(parseInt(id)).subscribe(); 
-  this.as.updateClient(c).subscribe();
-  this.router.navigate(['validerUtilisateur'])
-  location.reload()
+  this.router.navigate(['updateClient/'+id])
 }
 }

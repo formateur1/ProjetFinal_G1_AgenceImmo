@@ -11,43 +11,41 @@ import { OffreService } from 'src/app/service/offre.service';
   styleUrls: ['./form-offre.component.css']
 })
 export class FormOffreComponent implements OnInit {
- 
-  constructor(private fb:FormBuilder, private http:HttpClient,private os:OffreService){}
+
+  constructor(private fb: FormBuilder, private http: HttpClient, private os: OffreService) { }
 
   ngOnInit(): void {
-    this.offreForm=this.fb.group({
-      type_bien:"",
-      adresse:"",
-      ville:"",
-      prix:0,
-      surface:0,
-      nb_piece:0,
-      meuble:false,
-      achat:false,
-      exterieur:false,
-      croquis:""
-      
+    this.offreForm = this.fb.group({
+      type_bien: "",
+      adresse: "",
+      ville: "",
+      prix: 0,
+      surface: 0,
+      nb_piece: 0,
+      meuble: false,
+      achat: false,
+      exterieur: false,
+      croquis: ""
+
     })
   }
-    id!:number;
-     type_bien:string="";
-     adresse:string="";
-     ville:string="";
-     prix!:number;
-     surface!:number;
-     nb_piece!:number;
-     meuble!:boolean;
-     achat!:boolean;
-     exterieur!:boolean;
-     croquis:string="";
 
-     savedOffre!:Offre;
-     offreForm!:FormGroup;
-     savedMeuble!:boolean;
-     savedExt!:boolean;
-     savedAchat!:boolean;
-     
+  type_bien: string = "";
+  adresse: string = "";
+  ville: string = "";
+  prix!: number;
+  surface!: number;
+  nb_piece!: number;
+  meuble!: boolean;
+  achat!: boolean;
+  exterieur!: boolean;
+  croquis: string = "";
 
+  savedOffre!: Offre;
+  offreForm!: FormGroup;
+  savedMeuble!: boolean;
+  savedExt!: boolean;
+  savedAchat!: boolean;
 
   addOffre()
   {
@@ -74,7 +72,8 @@ export class FormOffreComponent implements OnInit {
       this.os.saveOffre (this.savedOffre).subscribe();
       console.log("formulaire correct : " + this.savedOffre.adresse + " "+this.savedOffre.prix +"€ pour "+ this.savedOffre.surface+"m2.");
     } else {
-      alert("erreur dans le formulaire, offre incorrecte ")
+      alert("ECHEC de l'enregistrement ");
     }
   }
+
 }

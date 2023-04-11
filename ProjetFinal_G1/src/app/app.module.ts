@@ -9,18 +9,25 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { FormOffreComponent } from './formulaire/form-offre/form-offre.component';
 import { OffreGerantComponent } from './component/offre-gerant/offre-gerant.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { OffreComponentComponent } from './component/offre-client/offre-component.component';
 import { ModifierOffreComponent } from './component/modifier-offre/modifier-offre.component';
 import { OffreByIdComponent } from './component/offre-by-id/offre-by-id.component';
 import { GerantComponentComponent } from './component/gerant-component/gerant-component.component';
 import { FormAdminComponent } from './form-admin/form-admin.component';
 import { FormGerantComponent } from './form-gerant/form-gerant.component';
+import { PropositionsGerantComponent } from './component/propositions-gerant/propositions-gerant.component';
 import { ValiderUtilisateurComponent } from './valider-utilisateur/valider-utilisateur.component';
 import { QuestionComponent } from './component/question/question.component';
 import { FormulaireQuestionComponent } from './FormulairesQuestion/formulaire-question/formulaire-question.component';
 import { FormRepondreComponent } from './FormulairesQuestion/form-repondre/form-repondre.component';
+import { CompteComponent } from './compte/compte.component';
 import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
-
+import { UpdateClientComponent } from './update-utilisateur/update-client/update-client.component';
+import { UpdateAdminComponent } from './update-utilisateur/update-admin/update-admin.component';
+import { UpdateGerantComponent } from './update-utilisateur/update-gerant/update-gerant.component';
+// import { StatistiquesComponent } from './statistiques/statistiques.component';
+import { RechercheComponent } from './recherche/recherche.component';
+import { PropositionsClientComponent } from './propositions-client/propositions-client.component';
+import { OffreComponentComponent } from './component/offre-component/offre-component.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +43,19 @@ import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur
     ModifierOffreComponent,
     OffreByIdComponent,
     GerantComponentComponent,
+    PropositionsGerantComponent,
     OffreComponentComponent,
     QuestionComponent,
     FormulaireQuestionComponent,
     FormRepondreComponent,
-    ListeUtilisateurComponent
+    CompteComponent,
+    ListeUtilisateurComponent,
+    UpdateClientComponent,
+    UpdateAdminComponent,
+    UpdateGerantComponent,
+    // StatistiquesComponent,
+    RechercheComponent,
+    PropositionsClientComponent
 
   ],
   imports: [

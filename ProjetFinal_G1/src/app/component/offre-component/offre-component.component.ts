@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Offre } from 'src/app/model/offre.model';
 import { OffreService } from 'src/app/service/offre.service';
 import { Observable } from 'rxjs/internal/Observable';
-import { HttpClient } from '@angular/common/http';
-
-
+import { ClientService } from 'src/app/service/client.service';
+import { Client } from 'src/app/model/client.model';
+//mip moup mip
 @Component({
   selector: 'app-offre-component',
   templateUrl: './offre-component.component.html',
@@ -12,13 +12,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OffreComponentComponent implements OnInit {
   
-  constructor(private http: HttpClient,private os:OffreService) { }
-
+ constructor(private os:OffreService, private cs:ClientService) { }
+  connecte = sessionStorage.getItem('connecte');
+  role = sessionStorage.getItem('role');
+  idClient = sessionStorage.getItem('id');
   listeOffres$!:Observable<Offre[]>;
+
   ngOnInit(): void {
-    this.listeOffres$= this.os.getListeOffres();
+this.listeOffres$= this.os.getListeOffres();
   }
-  
+
+  sauvegarderOffre(idOffre:number){
+    this.cs.sauvegarderOffre(idOffre, Number(this.idClient)).subscribe();
+    if( this.cs.sauvegarderOffre(idOffre, Number(this.idClient)).subscribe() != null){
+      alert ("Offre sauvegardée");  
+    } else {
+      alert("ECHEC sauvegarde")
+    }
+    location.reload();
+  }
 
   ajouterNote(offreId: number, note: string): void {
     // Attention : ce qui est récupérer depuis le fichier html est toujours un string même si c'est un number qui est saisi, il faut donc le reconvertir en number.

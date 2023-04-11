@@ -1,5 +1,5 @@
-<!-- <button routerLink="/clients" type="button">Afficher la liste des clients</button>
-<button routerLink="/formClient" type="button">Ajouter un client</button> -->
+<h2 *ngIf="connecte == 'ok'" style="color: white; text-align: center; font-size: 30px; margin-top: 20px;">Bienvenu à vous {{getData()}}</h2>
+
 <section class="page-section clearfix">
     <div class="container">
         <div class="intro">
@@ -10,7 +10,12 @@
                     <span class="section-heading-lower">Pour vous servir</span>
                 </h2>
                 <p class="mb-3">Nos agents sont là pour vous, n'hesitez pas à poser vos questions dans l'onglet Contact</p>
-                <div class="intro-button  mx-auto"><a class="reinitialise" id="btn1" href="/question/form">Nous contacter</a></div>
+                <div class="intro-button  mx-auto">
+                  <a *ngIf="role == 'client'; else nonConnect " class="reinitialise" id="btn1" href="/question/form">Nous contacter</a>
+                  <ng-template #nonConnect>
+                    <a class="reinitialise" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn1" href="/question/form">Nous contacter</a>
+                  </ng-template>
+                </div>
             </div>
         </div>
     </div>
@@ -49,8 +54,7 @@
                     </div>
                 </div>
                 <div class="intro-button  mx-auto" ><a class="reinitialise" id="btn2" href="/listeOffres">Faire une recherche</a></div>
-            </div>
-           
+              </div>
         </div>
     </div>
 </section>

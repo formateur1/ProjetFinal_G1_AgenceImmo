@@ -1,0 +1,86 @@
+<div style="margin: 5%; color: antiquewhite;">
+  <h1>Mes propositions</h1>
+</div>
+<div style=" color: antiquewhite; text-align: center;margin-left: 15em; margin-right: 15em;">
+  <h3> Client à contacter ID: </h3><input type="text" [(ngModel)]="idClient" type="text" name="idClient" id="idClient"
+    width="1%"><br>
+  <h3>Proposer cette liste d'offres </h3>
+  <button *ngIf="idClient != null " (click)="proposerListeOffres(idClient)" width="15%">Envoyer au client
+    {{idClient}}</button>
+</div>
+<br>
+<br>
+<table class="table table-hover table-dark" style=" color: antiquewhite;text-align: center; align-items: center;margin-top: 10%;margin-left: 5%;margin-bottom: 10%;margin-bottom: 15%;">
+ <thead style="border-color: antiquewhite;border-width: 3px;margin: auto;">
+    <tr >
+      <th scope="col">
+        <h3>Id</h3>
+      </th>
+      <th scope="col">
+        <h4>Type de bien</h4>
+      </th>
+      <th scope="col">
+        <h3>Adresse</h3>
+      </th>
+      <th scope="col">
+        <h3>Ville</h3>
+      </th>
+      <th scope="col">
+        <h3>Prix</h3>
+      </th>
+      <th scope="col">
+        <h3>Surface</h3>
+      </th>
+      <th scope="col">
+        <h5>Nombre de pièce</h5>
+      </th>
+      <th scope="col">
+        <h3>Meublé</h3>
+      </th>
+      <th scope="col">
+        <h3>Achat</h3>
+        <h5>(false=location)</h5>
+      </th>
+      <th scope="col">
+        <h3>Exterieur</h3>
+      </th>
+      <th scope="col">
+        <h3>Croquis</h3>
+      </th>
+      <th scope="col">
+        <h4>Note</h4>
+      </th>
+      <th scope="col">
+        <h3>Actions</h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody style="border-color: antiquewhite;border-width: 3px;">
+    <tr *ngFor="let o of listePropositions$ | async" style="border-color: antiquewhite;border-width: 3px;">
+      <th scope="col"><h4>{{o.id}}</h4></th>
+      <td scope="col"><h4>{{o.type_bien}}</h4></td>
+      <td scope="col"><h5>{{o.adresse}}</h5></td>
+      <td scope="col"><h4>{{o.ville}}</h4></td>
+      <td scope="col"><h4>{{o.prix}}€</h4></td>
+      <td scope="col"><h4>{{o.surface}}m2</h4></td>
+      <td scope="col"><h4>{{o.nb_piece}}</h4></td>
+      <td scope="col"><h4>{{o.meuble}}</h4></td>
+      <td scope="col"><h4>{{o.achat}}</h4></td>
+      <td scope="col"><h4>{{o.exterieur}}</h4></td>
+      <td scope="col"><img src="{{o.croquis}}" width="100%"></td>
+      <td scope="col">
+       
+           <h4>{{o.note}}/5</h4></td>
+      
+      
+      <td scope="col">
+        <div  class="btn-group-vertical">
+        <button (click)="modifierOffre(o.id)"  >Modifier l'offre : Ajouter un croquis</button> <br>
+        <button (click)="deleteProposition(o.id)">Retirer de ma liste</button><br>
+        <button *ngIf="idClient != null " (click)="proposerOffre(o.id,idClient)">Proposer au client
+          {{idClient}}</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

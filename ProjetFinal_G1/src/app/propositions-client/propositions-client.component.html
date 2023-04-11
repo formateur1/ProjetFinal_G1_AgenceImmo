@@ -16,7 +16,6 @@
         <th scope="col">Note</th>
         <th scope="col">Croquis</th>
         <th scope="col">Action</th>
-        <th scope="col">Noter</th>
       </tr>
     </thead>
     <tbody>
@@ -34,12 +33,6 @@
         <td><img src = "{{o.croquis}}" width="100%"> Croquis Indisponible</td>
         <td>
           <!--<button (click)="sauvegarderOffre()">Sauvergarder</button>-->
-        </td>
-        <td>
-          <form (ngSubmit)="ajouterNote(o.id, note.value)">
-            <input type="number" min="0" max="5" step="0.5" #note>
-            <button type="submit">Ajouter une note</button>
-          </form>
         </td>
       </tr>
     </tbody>

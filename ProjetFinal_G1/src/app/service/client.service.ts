@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Client } from '../model/client.model';
 import { HttpClient } from '@angular/common/http';
+import { Offre } from '../model/offre.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,5 +32,19 @@ export class ClientService {
   modify(client:Client):Observable<void>
   {
     return this.http.put<void>("http://localhost:8080/client/modify/", client.id)
+  }
+
+  //Gerer ses propositions 
+  getListePropositions(idClient: number): Observable<Offre[]> {
+    return this.http.get<Offre[]>("http://localhost:8080/client/listePropositionsClient/" + idClient);
+  }
+  retirerProposition(idOffre: number,idClient: number): Observable<Client> {
+    console.log("envoie de la requette retirer proposition" + idOffre)
+   return this.http.put<Client>("http://localhost:8080/client/retirerProposition/"+idOffre+"/"+idClient, null);
+    
+  }
+  sauvegarderOffre(idOffre:number,idClient:number): Observable<Offre> {
+  console.log("envoie de la requette sauvegarder l'offre : "+ idOffre);
+   return this.http.put<Offre>("http://localhost:8080/client/sauvegarderOffre/"+idOffre+"/"+idClient, null);
   }
 }

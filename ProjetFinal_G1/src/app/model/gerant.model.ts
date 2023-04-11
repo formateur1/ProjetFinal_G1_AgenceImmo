@@ -1,14 +1,14 @@
 import { Offre } from "./offre.model";
 
 export class Gerant {
-    private listeProposition!:Offre[];
+    listeProposition!:Offre[];
     id!:string;
     nom:string;
     prenom:string;
     login:string;
     mdp:string;
     mail:string;
-    agence_immobiliere:number;
+    agence_immobiliere:number;  
 
     constructor(nom:string, prenom:string, login:string, mdp:string, mail:string,  agence_immobiliere:number){
        this.nom=nom;
