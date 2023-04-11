@@ -1,9 +1,9 @@
 .h{
         text-align: center;
-        display: flex;
         color: antiquewhite;
         width: 100em;
         font-weight: bold;
+        margin: 5%; 
 }
 .form-check-label{
     text-align: center;
