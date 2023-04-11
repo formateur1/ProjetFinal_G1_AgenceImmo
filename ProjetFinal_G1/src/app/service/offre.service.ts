@@ -33,16 +33,26 @@ export class OffreService {
       alert("Offre enregistrée :"+ offre.adresse);
       console.log(offre);
      return this.http.post<Offre>("http://localhost:8080/gerant/saveOffre", offre);
-  }
+  }   
+  
 
-  modifierOffre(offre:Offre):Observable<Offre>{
+  modifierOffre(offre:Offre):Observable<Offre>
+  {
   return  this.http.put<Offre>("http://localhost:8080/gerant/updateOffre", offre);
   }
   
   deleteOffre(id:number)
   {
-    alert ("L'offre "+id + " a été supprimée")
-    return this.http.delete<void>("http://localhost:8080/gerant/deleteOffre/"+id)
+    alert ("L'offre "+ id + " a été supprimée")
+    return this.http.delete<void>("http://localhost8080/gerant/deleteOffre/"+id)
   }
 
+  ajouterNote(offreId: number, note: number): Observable<void> {
+    return this.http.post<void>("http://localhost:8080/offres/" + offreId + "/ajouterNote/" + note, {})
+  }
+
+  moyenneNotes(offreId: number): Observable<number> {
+    return this.http.get<number>("http://localhost:8080/offres/" + offreId + "/moyenneNotes")
+  }
+  
 }

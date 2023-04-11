@@ -31,4 +31,23 @@ this.listeOffres$= this.os.getListeOffres();
     }
     location.reload();
   }
+
+  ajouterNote(offreId: number, note: string): void {
+    // Attention : ce qui est récupérer depuis le fichier html est toujours un string même si c'est un number qui est saisi, il faut donc le reconvertir en number.
+    // Const c'est une variable dont la valuer ne peut être modifiée
+    const noteEnNumber = parseFloat(note);
+    this.os.ajouterNote(offreId, noteEnNumber).subscribe( 
+     () => {
+      alert("La note a bien été prise en compte");
+     // this.listeOffres$ = this.os.getListeOffres();
+    },
+    (error) => {
+      console.error("Erreur lors de l'ajout de la note", error);
+      //Permet d'afficher les détails de l'erreur
+      console.error("Détails de l'erreur : ", error.error)
+      alert("Erreur lors de l'ajout de la note");      
+    }
+    );
+  }
+
 }
