@@ -4,13 +4,16 @@
 <div style=" color: antiquewhite; text-align: center;margin-left: 15em; margin-right: 15em;">
   <h3> Client à contacter ID: </h3><input type="text" [(ngModel)]="idClient" type="text" name="idClient" id="idClient"
     width="1%"><br>
-  <h3>Proposer cette liste d'offres </h3>
-  <button *ngIf="idClient != null " (click)="proposerListeOffres(idClient)" width="15%">Envoyer au client
+  <h3 >Proposer cette liste d'offres </h3>
+  <button *ngIf="idClient != null;else faux" (click)="proposerListeOffres(idClient)" width="15%">Envoyer au client
     {{idClient}}</button>
+    <ng-template #faux>
+      <button disabled="true" width="15%" >Entrez un ID client</button>
+    </ng-template>
 </div>
 <br>
 <br>
-<table class="table table-hover table-dark" style=" color: antiquewhite;text-align: center; align-items: center;margin-top: 10%;margin-left: 5%;margin-bottom: 10%;margin-bottom: 15%;">
+<table class="table table-hover" style=" color: antiquewhite;text-align: center; align-items: normal;">
  <thead style="border-color: antiquewhite;border-width: 3px;margin: auto;">
     <tr >
       <th scope="col">
@@ -77,8 +80,11 @@
         <div  class="btn-group-vertical">
         <button (click)="modifierOffre(o.id)"  >Modifier l'offre : Ajouter un croquis</button> <br>
         <button (click)="deleteProposition(o.id)">Retirer de ma liste</button><br>
-        <button *ngIf="idClient != null " (click)="proposerOffre(o.id,idClient)">Proposer au client
+        <button *ngIf="idClient != null ; else faux" (click)="proposerOffre(o.id,idClient)">Proposer au client
           {{idClient}}</button>
+          <ng-template #faux>
+            <button disabled="true" width="15%" >Entrez un ID client</button>
+          </ng-template>
         </div>
       </td>
     </tr>
