@@ -30,11 +30,11 @@
         <td>{{o.meuble}}</td>
         <td>{{o.achat}}</td>
         <td>{{o.exterieur}}</td>
-        <td><img src = "{{o.croquis}}" width="25%"> </td>
+        <td><img src = "{{o.croquis}}" width="65%"> </td>
         <td>{{o.note}}/5</td>
         <td>
           <button (click)="noter(o.id)" disabled>Noter </button>
-          <button (click)="deleteProposition(o.id)">Retirer</button>          
+          <button (click)="retirerProposition(o.id)">Retirer</button>          
         </td>
       </tr>
     </tbody>
