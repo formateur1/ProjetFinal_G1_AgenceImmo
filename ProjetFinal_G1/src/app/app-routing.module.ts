@@ -48,7 +48,7 @@ const routes: Routes = [
   {path:'statistiques', component:StatistiquesComponent},
   {path:'modifierOffre/:id',component:ModifierOffreComponent },
   {path:'', component:AccueilComponent},
-  {path:'listeOffreClient',component:OffreComponentComponent},
+  //{path:'listeOffreClient',component:OffreComponentComponent},
  // {path:'accueilGerant',component:GerantComponentComponent},
   //{path:'offreById/:idOffre',component:OffreByIdComponent},
   {path:'compte', component:CompteComponent},
