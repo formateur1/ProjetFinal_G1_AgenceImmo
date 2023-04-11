@@ -18,7 +18,6 @@ export class PropositionsClientComponent {
   idClient=Number(this.idC);
   
   ngOnInit():Observable<Offre[]> {
-   
    return this.listePropositions$= this.cs.getListePropositions(this.idClient);
   }
   
@@ -26,7 +25,7 @@ export class PropositionsClientComponent {
   
   deleteProposition(idOffre:number)
   {
-    alert ("L'offre "+idOffre + " va être retirée de votre liste d'offres sauvegardées. ")
+    alert ("L'offre " + idOffre + " va être retirée de votre liste d'offres sauvegardées. ")
     return this.cs.retirerProposition(this.idClient,idOffre);
   }
 
