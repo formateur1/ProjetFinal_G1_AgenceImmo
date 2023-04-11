@@ -217,13 +217,12 @@ Problème d'execution : utilisation de console.log() pour vérifier les étapes 
 </ul> <br>
 
 *Fonctionnalités Questions
-
 <ul>
   -En FrontEnd -> sur Angular
  <li>Finitions des options (afficher la liste des questions avec option pour y repondre, envois des questions)</li>
 </ul> <br>
 
-//Jour4// (Scrum master : Théodore Michielin)
+//Jour4// (Scrum master : Théodore Michielin)<br>
 <li>04/04/2023</li><br>
 
 - Compte rendu du reunion à 9h :
@@ -287,6 +286,7 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
   <ul>
      - Etablissement du front global (page d'accueil du site)
   </ul>
+  <br>
 
 //Jour5// (Scrum master :Mariam BAMBA )<br> 
 05/04/2023<br>
@@ -318,8 +318,8 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
 </ul> <br>
 
 //Jour6// (Scrum master :Mariam BAMBA ) <br>
-06/04/2023
-<br>
+06/04/2023<br>
+
 *Fonctionnalité gestion des utilisateurs:
 <ul>
   -Angular/Eclipse/MySQL
@@ -352,8 +352,8 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
 </ul> <br>
 
 //Jour7// (Scrum master : Charlène Sanchez) <br>
-07/04/2023
-<br>
+07/04/2023<br>
+
 *Fonctionnalité statistiques:
 <ul>
   -En BackEnd -> sur Eclipse
@@ -377,8 +377,8 @@ Quand l'administrateur valide une demande, l'objet PersonneAttente est supprimé
 </ul> <br>
 
 //Jour8// (Scrum master : Jérémy Demange) <br>
-11/04/2023
-<br>
+11/04/2023<br>
+
 *Fonctionnalite Client:
 <ul>
   -En FrontEnd -> sur Angular, dans le component Recherche
