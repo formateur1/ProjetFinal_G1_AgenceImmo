@@ -10,6 +10,8 @@
     <button disabled="true" width="15%">Entrez un ID client</button>
   </ng-template>
   <br><br></div>
+
+  
   <table class="table table-hover" style=" color: antiquewhite;text-align: center; align-items: normal;">
     <thead style="border-color: antiquewhite;border-width: 3px;margin: auto;">
       <tr>
@@ -92,7 +94,7 @@
           <h4>{{o.note}}/5</h4>
         </td>
         <td scope="col">
-          <button (click)="modifierOffre(o.id)">Modifier l'offre : Ajouter un croquis</button> <br>
+          <button (click)="modifierOffre(o.id)">Modifier-Ajouter un croquis</button> <br>
           <button (click)="deleteProposition(o.id)">Retirer de ma liste</button><br>
           <button *ngIf="idClient != null ; else faux" (click)="proposerOffre(o.id,idClient)">Proposer au client
             {{idClient}}</button>

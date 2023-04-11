@@ -29,14 +29,11 @@
         <td>{{c.adresse}}</td>
         <td>{{c.telephone}}</td>
         <!--Admin-->
-        <td>
-          <button *ngIf="role == 'admin'" type="submit" class="btn btn-outline-light position-relative"
-            (click)="supprimerClient(c.id)"> Supprimer</button>
-          <button *ngIf="role == 'admin'" type="submit" class="btn btn-outline-light position-relative"
-            (click)="modifierClient(c.id)"> Modifier</button>
+        <td scope="col">
+          <button *ngIf="role == 'admin'" type="submit" (click)="supprimerClient(c.id)"> Supprimer</button>
+          <button *ngIf="role == 'admin'" type="submit" (click)="modifierClient(c.id)"> Modifier</button>
           <!--Gerant-->
-          <button *ngIf="role == 'gerant'" type="button" class="btn btn-outline-light position-relative"
-            (click)="proposerListeOffres(c.id)">Proposer des offres</button>
+          <button *ngIf="role == 'gerant'" type="button" (click)="proposerListeOffres(c.id)">Proposer des offres</button>
         </td>
       </tr>
 
