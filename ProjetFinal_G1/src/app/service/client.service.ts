@@ -36,16 +36,15 @@ export class ClientService {
 
   //Gerer ses propositions 
   getListePropositions(idClient: number): Observable<Offre[]> {
-    return this.http.get<Offre[]>("http://localhost:8080/client/listePropositions/" + idClient);
+    return this.http.get<Offre[]>("http://localhost:8080/client/listePropositionsClient/" + idClient);
   }
-  retirerProposition(idClient: number, idOffre: number): void {
-    const url = `http://localhost:8080/client/retirerProposition/${idOffre}/${idClient}`;
+  retirerProposition(idOffre: number,idClient: number): Observable<Client> {
     console.log("envoie de la requette retirer proposition" + idOffre)
-    this.http.put<Offre[]>(url, null);
+   return this.http.put<Client>("http://localhost:8080/client/retirerProposition/"+idOffre+"/"+idClient, null);
+    
   }
-  sauvegarderOffre(idOffre:number,idClient:any): void {
-    const url = `http://localhost:8080/client/sauvegarderOffre/${idOffre}/${idClient}`;
-    console.log("envoie de la requette sauvegarder l'offre :"+ idOffre);
-    this.http.put<void>(url, null);
+  sauvegarderOffre(idOffre:number,idClient:number): Observable<Offre> {
+  console.log("envoie de la requette sauvegarder l'offre : "+ idOffre);
+   return this.http.put<Offre>("http://localhost:8080/client/sauvegarderOffre/"+idOffre+"/"+idClient, null);
   }
 }

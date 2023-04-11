@@ -48,11 +48,12 @@ const routes: Routes = [
   {path:'statistiques', component:StatistiquesComponent},
   {path:'modifierOffre/:id',component:ModifierOffreComponent },
   {path:'', component:AccueilComponent},
-  {path:'accueilGerant',component:GerantComponentComponent},
-  {path:'offreById/:idOffre',component:OffreByIdComponent},
+  {path:'listeOffreClient',component:OffreComponentComponent},
+ // {path:'accueilGerant',component:GerantComponentComponent},
+  //{path:'offreById/:idOffre',component:OffreByIdComponent},
   {path:'compte', component:CompteComponent},
   {path:'listePropositionsGerant',component:PropositionsGerantComponent},
-  {path:'listePropositionsClient',component:PropositionsClientComponent},
+  {path:'listePropositionsClient',component:PropositionsClientComponent}
  
 ];
 

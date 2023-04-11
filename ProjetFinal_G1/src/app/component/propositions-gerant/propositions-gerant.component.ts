@@ -11,39 +11,50 @@ import { GerantServiceService } from 'src/app/service/gerant-service.service';
   styleUrls: ['./propositions-gerant.component.css']
 })
 export class PropositionsGerantComponent {
-  constructor(private http: HttpClient,private ar:ActivatedRoute, private gs:GerantServiceService ,  private router:Router ) { }
+  constructor(private http: HttpClient, private ar: ActivatedRoute, private gs: GerantServiceService, private router: Router) { }
 
-  listePropositions$!:Observable<Offre[]>;
-  idClient!:number;
-  idG = sessionStorage.getItem('id');
-  idGerant=Number(this.idG);
+  listePropositions$!: Observable<Offre[]>;
+  idClient!: number;
+  idGerant = Number(sessionStorage.getItem('id'));
+  role = sessionStorage.getItem('role')
+  ngOnInit(): Observable<Offre[]> {
+
+    return this.listePropositions$ = this.gs.getListePropositions(this.idGerant);
+  }
+
+  modifierOffre(idOffre: number) {
+    return this.router.navigate(['modifierOffre/' + idOffre]);
+  }
+
   
-  ngOnInit():Observable<Offre[]> {
-   
-   return this.listePropositions$= this.gs.getListePropositions(this.idGerant);
-  }
-  
-  connecte = sessionStorage.getItem('connecte')
-  
-  modifierOffre(idOffre:number)
-  {
-    return this.router.navigate(['modifierOffre/'+idOffre]);
-  }
-
-  deleteProposition(idOffre:number)
-  {
-    alert ("L'offre "+idOffre + " va être retirée de la liste des proposition du gérant "+this.idGerant)
-    return this.gs.deleteProposition(this.idGerant,idOffre);
+  //Retirer une offre de la liste des propositions du gérant
+  deleteProposition(idOffre: number) {
+    this.gs.deleteProposition(idOffre, this.idGerant).subscribe();
+    if (this.gs.deleteProposition(idOffre, this.idGerant).subscribe() != null) {
+      alert("L'offre " + idOffre + " a été retirée de votre liste des propositions, gérant " + this.idGerant)
+    } else {
+      alert("ECHEC de la suppression");
+    }
+    location.reload();
   }
 
-  proposerOffre(idOffre: number,idClient:number){
-    alert ("L'offre "+idOffre + " va être envoyée au client "+idClient)
-    return this.gs.proposerOffre(idOffre, idClient);
+  proposerOffre(idOffre: number, idClient: number) {
+    this.gs.proposerOffre(idOffre, idClient).subscribe();
+    if(this.gs.proposerOffre(idOffre, idClient).subscribe()!=null){
+       alert("L'offre " + idOffre + " a bien été envoyée au client " + idClient)
+    }else {
+      alert("ECHEC de la proposition");
+    }
+    location.reload();
   }
 
-  proposerListeOffres(idClient:number)
-  {
-    alert ("La liste d'offres du gérant "+this.idGerant +" va être envoyée au client "+idClient)
-    return this.gs.proposerListeOffres(idClient, this.idGerant);
+  proposerListeOffres(idClient: number) {
+    this.gs.proposerListeOffres(idClient, this.idGerant).subscribe();
+    if(this.gs.proposerListeOffres(idClient, this.idGerant).subscribe()!=null){
+    alert("Votre liste de propositions (gérant " + this.idGerant + ") a bien été envoyée au client " + idClient)
+    }else {
+      alert("ECHEC des propositions");
+    }
+    location.reload();
   }
 }
