@@ -1,23 +1,25 @@
-<div style="color: antiquewhite; margin: 5%; text-align: center; margin-left: 15em; margin-right: 15em;">
+<div style="margin: 5%;color: antiquewhite;">
     <h1>Posez votre question</h1>
-    <form [formGroup]="questionForm" (ngSubmit)="saveQuestion()" > 
+</div>
+<div class="row"
+    style=" color: rgb(43, 16, 3); text-align: center;margin: auto; background-color: rgba(250, 235, 215, 0.825);width: 50%;">
+    <form [formGroup]="questionForm" (ngSubmit)="saveQuestion()">
         <br>
         <div class="mb-3">
-            <label for="idGerant" class="form-label">Selectionner un gerant à contacter</label>
-            <select  id="idGerant" formControlName="idGerant" class="form-select" style="text-align: center;">
+            <label for="idGerant" class="form-label"><b>Selectionner un gerant à contacter</b></label>
+            <select id="idGerant" formControlName="idGerant" class="form-select" style="margin: auto;width: 250px;">
                 <option [ngValue]="null" disabled>Selectionner un gérant</option>
                 <option *ngFor="let g of listeGerants$ | async" [ngValue]="g.id">M. {{g.prenom}} {{g.nom}}</option>
             </select>
-        </div><br>
+        </div>
         <div class="mb-3">
-            <label for="contenu" class="form-label">Contenu de la question</label>
-            <input type="text" class="form-control" id="contenu" formControlName="contenu" required="true" style="text-align: center;">
+            <label for="contenu" class="form-label"> <b>Contenu de laquestion</b></label>
+            <input type="text" class="form-control" id="contenu" formControlName="contenu" required="true"
+                style="text-align: center;height: 150px;">
         </div><br>
-        
         <div>
-            <button type="submit" class="btn btn-outline-light">Valider</button>
+            <button type="submit">Valider</button>
+            <br><br>
         </div>
     </form>
 </div>
-
-
