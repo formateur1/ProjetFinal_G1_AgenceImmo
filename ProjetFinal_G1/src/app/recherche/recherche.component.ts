@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OffreService } from '../service/offre.service';
 import { Observable } from 'rxjs';
 import { Offre } from '../model/offre.model';
+import { ClientService } from '../service/client.service';
 
 @Component({
   selector: 'app-recherche',
@@ -10,8 +11,11 @@ import { Offre } from '../model/offre.model';
 })
 export class RechercheComponent implements OnInit {
   
-  constructor(private os:OffreService) { }
-
+  constructor(private os:OffreService, private cs:ClientService) { }
+  connecte = sessionStorage.getItem('connecte');
+  role = sessionStorage.getItem('role');
+  idClient = sessionStorage.getItem('id');
+  ville!:string
 listeOffres$!:Observable<Offre[]>;
 ngOnInit(): void {
 this.listeOffres$= this.os.getListeOffres();
@@ -52,5 +56,32 @@ choixSansExterieur(){
 this.exterieur=false
   }
 
-ville!:string
+
+sauvegarderOffre(idOffre:number){
+  this.cs.sauvegarderOffre(idOffre, Number(this.idClient)).subscribe();
+  if( this.cs.sauvegarderOffre(idOffre, Number(this.idClient)).subscribe() != null){
+    alert ("Offre sauvegardée");  
+  } else {
+    alert("ECHEC sauvegarde")
+  }
+  location.reload();
+}
+
+ajouterNote(offreId: number, note: string): void {
+  // Attention : ce qui est récupérer depuis le fichier html est toujours un string même si c'est un number qui est saisi, il faut donc le reconvertir en number.
+  // Const c'est une variable dont la valuer ne peut être modifiée
+  const noteEnNumber = parseFloat(note);
+  this.os.ajouterNote(offreId, noteEnNumber).subscribe( 
+   () => {
+    alert("La note a bien été prise en compte");
+   // this.listeOffres$ = this.os.getListeOffres();
+  },
+  (error) => {
+    console.error("Erreur lors de l'ajout de la note", error);
+    //Permet d'afficher les détails de l'erreur
+    console.error("Détails de l'erreur : ", error.error)
+    alert("Erreur lors de l'ajout de la note");      
+  }
+  );
+}
 }

@@ -1,17 +1,18 @@
 <div style="margin: 5%; color: antiquewhite;">
   <h1>Mes propositions</h1><br><br>
   <div style="text-align: center;">
-  <h2> Client à contacter ID: </h2><input type="text" [(ngModel)]="idClient" type="text" name="idClient" id="idClient"
-    width="1%"><br>
-  <h2>Proposer cette liste d'offres </h2>
-  <button *ngIf="idClient != null;else faux" (click)="proposerListeOffres(idClient)" width="15%">Envoyer au client
-    {{idClient}}</button>
-  <ng-template #faux>
-    <button disabled="true" width="15%">Entrez un ID client</button>
-  </ng-template>
-  <br><br></div>
+    <h2> Client à contacter ID: </h2><input type="text" [(ngModel)]="idClient" type="text" name="idClient" id="idClient"
+      width="1%"><br>
+    <h2>Proposer cette liste d'offres </h2>
+    <button *ngIf="idClient != null;else faux" (click)="proposerListeOffres(idClient)" width="15%">Envoyer au client
+      {{idClient}}</button>
+    <ng-template #faux>
+      <button disabled="true" width="15%">Entrez un ID client</button>
+    </ng-template>
+    <br><br>
+  </div>
 
-  
+
   <table class="table table-hover" style=" color: antiquewhite;text-align: center; align-items: normal;">
     <thead style="border-color: antiquewhite;border-width: 3px;margin: auto;">
       <tr>
