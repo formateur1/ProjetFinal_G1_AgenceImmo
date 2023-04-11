@@ -18,6 +18,7 @@ export class FormulaireQuestionComponent implements OnInit{
   contenu!:string
 
   listeGerants$!:Observable<Gerant[]>
+  listeQuestion$!: Observable<Question[]>
 
   idCompte = Number(sessionStorage.getItem('id'))
 
@@ -28,6 +29,12 @@ export class FormulaireQuestionComponent implements OnInit{
     })
 
     this.listeGerants$ = this.as.getGerantsValide()
+    
+    this.listeQuestion$ = this.qs.readQuestion()
+    if (sessionStorage.getItem('reload') == 'true') {
+      sessionStorage.setItem('reload', 'false')
+      location.reload()
+    }
   }
   
   questionForm!: FormGroup

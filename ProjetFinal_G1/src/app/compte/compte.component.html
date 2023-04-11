@@ -3,12 +3,6 @@
     
     <form [formGroup]="compteForm$" (ngSubmit)="saveData()" >
         <br>
-        
-        <div class="mb-3" style="text-align: center; width: 35%; align-items: center;margin: auto;">
-            <label for="idCompte" class="form-label" style="text-align: center; color: antiquewhite;"><h4>Entrez votre ID</h4></label>
-            <input class="form-control" type="text" id="idCompte" formControlName="id" [(ngModel)]="id" style="text-align: center;" required>
-        </div><br>
-
         <div class="mb-3">
             <select  id="role" formControlName="role" class="form-select" style="text-align: center; width: 35%; align-items: center;margin: auto;">
                 <option [ngValue]="null" disabled>Selectionner un rôle</option>
@@ -18,10 +12,11 @@
             </select>
         </div><br>
 
-        <div class="mb-3">
-            <label for="idCompte" class="form-label" style="text-align: center; color: antiquewhite;">Selectionner votre id</label>
-            <input class="form-control" type="text" id="idCompte" formControlName="id" style="text-align: center;" required>
+        <div class="mb-3" style="text-align: center; width: 35%; align-items: center;margin: auto;">
+            <label for="idCompte" class="form-label" style="text-align: center; color: antiquewhite;"><h4>Entrez votre ID</h4></label>
+            <input class="form-control" type="text" id="idCompte" formControlName="id" [(ngModel)]="id" style="text-align: center;" required>
         </div><br>
+
         <button type="submit" class="btn btn-outline-light" style="margin-right: 5px;">Me connecter</button>
         <button type="button" class="btn btn-outline-light" style="margin-left: 5px;" (click)="deco()">Me deconnecter</button>
     </form> 
