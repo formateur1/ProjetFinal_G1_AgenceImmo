@@ -1,16 +1,16 @@
 .h{
         text-align: center;
         display: flex;
-        color: white;
+        color: antiquewhite;
         width: 100em;
         font-weight: bold;
 }
 .form-check-label{
     text-align: center;
     display: flex;
-    color: white;
+    color: antiquewhite;
 }
 .table{
     text-align: center;
-    color: white;
+    color: antiquewhite;
 }

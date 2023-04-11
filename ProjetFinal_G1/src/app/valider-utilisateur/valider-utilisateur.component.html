@@ -1,9 +1,9 @@
 
-<div style="margin: 5%;">
-    <h1 style="color: white; text-align: center;">Liste des administrateurs en attente de validation</h1><br>
+<div style="margin: 5%;color: antiquewhite;">
+    <h1>Liste des administrateurs en attente de validation</h1><br><br>
 
-    <table class="table" style="color: white; text-align: center;">
-        <thead>
+    <table class="table table-hover" style=" color: antiquewhite;text-align: center; align-items: normal;">
+        <thead style="border-color: antiquewhite;border-width: 3px;margin: auto;">
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">Nom</th>
@@ -15,7 +15,7 @@
                 <th scope="col">Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="border-color: antiquewhite;border-width: 3px;margin: auto;">
             <tr *ngFor="let a of listeA$ | async">
                 <td>{{a.id}}</td>
                 <td>{{a.nom}}</td>
@@ -24,7 +24,7 @@
                 <td>{{a.mdp}}</td>
                 <td>{{a.mail}}</td>
                 <td>{{a.agence_immobiliere}}</td>
-                <td>
+                <td  scope="col">
                     <button type="button" class="btn btn-outline-light position-relative" (click)="validerAdmin(a, a.id)"  style="margin-right: 2px;">Valider</button>
                     <button type="button" class="btn btn-outline-light position-relative" (click)="supprimerAdmin(a.id)"  style="margin-left: 2px;">Supprimer</button>
                 </td>
@@ -32,9 +32,9 @@
         </tbody>
     </table>
     <br><br>
-    <h1 style="color: white; text-align: center;">Liste des gérants en attente de validation</h1><br>
-    <table class="table" style="color: white; text-align: center;">
-        <thead>
+    <h1>Liste des gérants en attente de validation</h1><br><br>
+    <table class="table table-hover" style=" color: antiquewhite;text-align: center; align-items: normal;">
+        <thead style="border-color: antiquewhite;border-width: 3px;margin: auto;">
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">Nom</th>
@@ -47,7 +47,7 @@
                 
             </tr>
         </thead>
-        <tbody>
+        <tbody style="border-color: antiquewhite;border-width: 3px;margin: auto;">
             <tr *ngFor="let g of listeG$ | async">
                 <td>{{g.id}}</td>
                 <td>{{g.nom}}</td>
@@ -56,7 +56,7 @@
                 <td>{{g.mdp}}</td>
                 <td>{{g.mail}}</td>
                 <td>{{g.agence_immobiliere}}</td>
-                <td>
+                <td scope="col">
                     <button type="button" class="btn btn-outline-light position-relative" (click)="validerGerant(g, g.id)"  style="margin-right: 2px;">Valider</button>
                     <button type="button" class="btn btn-outline-light position-relative" (click)="supprimerGerant(g.id)"  style="margin-left: 2px;">Supprimer</button>
                 </td>
@@ -64,9 +64,9 @@
         </tbody>
     </table>
     <br><br>
-    <h1 style="color: white; text-align: center;">Liste des client en attente de validation</h1><br>
-    <table class="table" style="color: white; text-align: center;">
-        <thead>
+    <h1>Liste des client en attente de validation</h1><br>
+    <table class="table table-hover" style=" color: antiquewhite;text-align: center; align-items: normal;">
+        <thead style="border-color: antiquewhite;border-width: 3px;margin: auto;">
 
             <tr>
                 <th scope="col">id</th>
@@ -81,7 +81,7 @@
                 <th scope="col">Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="border-color: antiquewhite;border-width: 3px;margin: auto;">
             <tr *ngFor="let c of listeC$ | async">
                 <td>{{c.id}}</td>
                 <td>{{c.nom}}</td>
@@ -92,7 +92,7 @@
                 <td>{{c.agence_immobiliere}}</td>
                 <td>{{c.adresse}}</td>
                 <td>{{c.telephone}}</td>
-                <td>
+                <td scope="col">
                     <button type="button" class="btn btn-outline-light position-relative" (click)="validerClient(c, c.id)" style="margin-right: 2px;">Valider</button>
                     <button type="button" class="btn btn-outline-light position-relative" (click)="supprimerClient(c.id)" style="margin-left: 2px;">Supprimer</button>
                 </td>

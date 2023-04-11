@@ -2,7 +2,7 @@
   <h1 >Liste des clients</h1><br><br>
 
   <table class="table table-hover" style=" color: antiquewhite;text-align: center; align-items: normal;">
-    <thead  style="border-color: antiquewhite;border-width: 3px;margin: auto;">
+    <thead style="border-color: antiquewhite;border-width: 3px;margin: auto;">
       <tr>
         <th scope="col">id</th>
         <th scope="col">Nom</th>
@@ -17,7 +17,7 @@
 
       </tr>
     </thead>
-    <tbody  style="border-color: antiquewhite;border-width: 3px;margin: auto;">
+    <tbody style="border-color: antiquewhite;border-width: 3px;margin: auto;">
       <tr *ngFor="let c of listeC$ | async">
         <td scope="row">{{c.id}}</td>
         <td>{{c.nom}}</td>
