@@ -25,8 +25,8 @@
     <br><br>
     <h1>Liste de vos questions</h1>
 
-    <table class="table" style=" color: antiquewhite;text-align: center; align-items: normal;">
-        <thead style="border-color: antiquewhite;border-width: 3px;margin: auto;">
+    <table class="table" style=" color: rgb(0, 0, 0);text-align: center; align-items: normal;">
+        <thead style="border-color: rgb(255, 255, 255);border-width: 3px;margin: auto;">
           <tr>
             <th scope="col">id de la question</th>
             <th scope="col">id du gérant</th>
@@ -34,7 +34,7 @@
             <th scope="col">Reponse</th>
           </tr>
         </thead>
-        <tbody *ngFor="let q of listeQuestion$ | async" style="border-color: antiquewhite;border-width: 3px;margin: auto;">
+        <tbody *ngFor="let q of listeQuestion$ | async" style="border-color: rgb(255, 255, 255);border-width: 3px;margin: auto;">
             <tr *ngIf="q.idC == idCompte">
               <th scope="row">{{q.id}}</th>
               <td>{{q.idG}}</td>
